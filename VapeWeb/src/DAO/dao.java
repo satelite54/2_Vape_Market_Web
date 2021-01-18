@@ -14,7 +14,7 @@ public class dao {
 	
 	public dao() {
 		try {
-			String url = "jdbc:mysql://localhost:3306/BBS?useSSL=false";
+			String url = "jdbc:mysql://localhost:3306/Vape?useSSL=false";
 			String user = "root";
 			String password = "1234";
 
