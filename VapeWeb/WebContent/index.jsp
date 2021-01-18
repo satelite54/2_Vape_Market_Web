@@ -32,10 +32,7 @@
 	    </div>
 	  </div>
 	</nav>
-	 <h1>안녕하세요</h1>
-	 
-	 
-	 
+	
 	 <script src="css/bootstrap.min.css"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>
