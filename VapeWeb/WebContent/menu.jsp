@@ -4,50 +4,22 @@
 	//로그인과정에서 저장된 세션 id를 가져온다. 없으면 null값.
 	String sessionId = (String) session.getAttribute("sessionId");
 %>
-
-<nav class="navbar navbar-expand  navbar-dark bg-dark">
-	<div class="container">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="<c:url value="/welcome.jsp"/>">Home</a>
-		</div>
-		<div>
-			<ul class="navbar-nav">
-			
-			<c:choose>
-				<c:when test="${empty sessionId}">
-					<li class="nav-item">
-						<a class="nav-link" href="<c:url value="/member/loginMember.jsp"/>">로그인</a>
-					</li>	
-					<li class="nav-item">
-						<a class="nav-link" href="<c:url value="/member/addMember.jsp"/>">회원 가입</a>
-					</li>
-				</c:when>	
-				<c:otherwise>
-					<li style="padding-top: 7px; color: white;">
-						[<%=sessionId%>님]
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<c:url value="/member/logoutMember.jsp"/>">로그아웃</a>
-					</li>	
-					<li class="nav-item">
-						<a class="nav-link" href="<c:url value="/member/updateMember.jsp"/>">회원 수정</a>
-					</li>
-				</c:otherwise>			
-			</c:choose>
-			
-				<li class="nav-item">
-					<a class="nav-link" href="<c:url value="/products.jsp"/>">상품 목록</a>
-				</li>	
-				<li class="nav-item">
-					<a class="nav-link" href="<c:url value="/addProduct.jsp"/>">상품 등록</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="<c:url value="/editProduct.jsp?edit=update"/>">상품 수정</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="<c:url value="/editProduct.jsp?edit=delete"/>">상품 삭제</a>
-				</li>				
-			</ul>
-		</div>
-	</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">로그인<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">회원가입</a>
+      <a class="nav-item nav-link" href="#">나의 쇼핑</a>
+    </div>
+  </div>
 </nav>
+<div class="container">
+<img src="<c:url value="/img/logo.png"/>"/>
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+
+</div>
