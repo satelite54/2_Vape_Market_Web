@@ -4,11 +4,17 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<title>Insert title here</title>
+<title>JASET VAPE</title>
 </head>
 <body>
 
-<h1>재우재우</h1>
+<nav class="navbar navbar-dark bg-dark">
+	<ul style="list-style: none; display : inline;">
+		<li>로그인</li>
+		<li>회원가입</li>
+		<li>나의쇼핑</li>
+	</ul>
+</nav>
 
 
 
@@ -17,11 +23,7 @@
 
 
 
-
-
-
-
-	<script src="css/bootstrap.min.css"></script>
-	<script src="js/bootstrap.bundle.min.js"></script>
+	 <script src="css/bootstrap.min.css"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
