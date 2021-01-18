@@ -4,12 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>JASET VAPE</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-	 <h1>안녕하세요</h1>
-	 
+	<%-- index.jsp --%>
+	<%@ include file="menu.jsp" %>
+
+	
 	 
 	 
  <script src="css/bootstrap.min.css"></script>
