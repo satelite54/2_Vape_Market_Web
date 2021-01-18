@@ -1,6 +1,6 @@
 package DTO;
 
-import java.sql.Date;
+import java.sql.*;
 
 public class Board {
 	private int BNum;
