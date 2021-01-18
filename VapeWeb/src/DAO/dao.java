@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class dao {
-	//DB ¿¬°á °´Ã¼ ¼±¾ð 
+	//DB ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ 
 	private Connection conn;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
@@ -35,3 +35,4 @@ public class dao {
 		}	
 	}
 }
+
