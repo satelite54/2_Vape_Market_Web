@@ -47,7 +47,7 @@
 </style>
 <br>
 <br>
-<div id="pointer"><p style="color:white; font-size: x-large;">마이 쇼핑</div>
+<div id="pointer"><p style="color:white; font-size: x-large;">나의 쇼핑</div>
 
 
 							
