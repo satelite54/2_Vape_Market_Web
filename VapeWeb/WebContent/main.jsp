@@ -5,11 +5,13 @@
 <head>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<title>JASET VAPE</title>
+	
 </head>
 
 <body>
 
 <%@ include file="menu.jsp" %>
+<%@ include file="submenu.jsp" %>
 
 	
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
