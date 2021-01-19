@@ -4,13 +4,13 @@
 
 <head>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<title>Welcome</title>
+	<title>JASET VAPE</title>
 </head>
 
 <body>
-	<jsp:include page="menu.jsp" />
-	
-	
+
+<%@ include file="menu.jsp" %>
+
 	
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 		  <ol class="carousel-indicators">

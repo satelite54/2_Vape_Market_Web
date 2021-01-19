@@ -9,8 +9,10 @@
 </head>
 <body>
 	<%-- index.jsp --%>
-	<%@ include file="menu.jsp" %>
-
+	<script>
+		location.href = "main.jsp"	
+	</script>
+	
 	
 	 
 	 
