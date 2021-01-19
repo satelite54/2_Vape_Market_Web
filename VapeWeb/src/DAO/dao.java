@@ -16,7 +16,7 @@ public class dao {
 		try {
 			String url = "jdbc:mysql://localhost:3306/Vape?useSSL=false";
 			String user = "root";
-			String password = "1234";
+			String password = "root";
 
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(url, user, password);
@@ -34,5 +34,7 @@ public class dao {
 			e.printStackTrace();
 		}	
 	}
+	
+	
 }
 

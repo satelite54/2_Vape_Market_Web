@@ -9,9 +9,6 @@
 </head>
 <body>
 	<div class="container">
-		<%
-		dao DAO = new dao();
-		%>
 
 		<table class="table">
 			<thead class="thead-dark">
