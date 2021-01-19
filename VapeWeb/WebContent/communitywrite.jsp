@@ -1,3 +1,7 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.Statement"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="DAO.dao"%>
 <!DOCTYPE html>
@@ -8,6 +12,9 @@
 <title>JASET VAPE</title>
 </head>
 <body>
+<%
+	
+%>
 	<div class="container mt-3">
 	  <div class="card">
 	  	<div class="card-header">
@@ -25,6 +32,17 @@
 		
 	  </div>
 	</div>
+ 
+<% 
+dao DAO = new dao();
+String sql = "INSERT INTO Board Values(?,?,?,?,?,?,?)";
+Connection conn = null;
+PreparedStatement pstmt = conn.prepareStatement(sql);
+ResultSet rs = null;
+
+
+
+%>
 
 
 

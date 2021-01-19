@@ -23,7 +23,7 @@ public class BDAO{
 
 
 		public void BoardWrite() {
-			String sql = "INSERT INTO board (?,?,?,?,?,?,?)";
-			pstmt = conn.prepareStatement(sql);
+
+			
 		}
 }

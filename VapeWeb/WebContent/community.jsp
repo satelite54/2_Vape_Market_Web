@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="DAO.dao"%>
+<%@ page import="DTO.Board" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,9 @@
 <title>JASET VAPE</title>
 </head>
 <body>
+<script type="text/javascript">
+
+</script>
 	<div class="container">
 
 		<table class="table">
@@ -20,21 +24,19 @@
 				</tr>
 			</thead>
 			<tbody>
+			<!-- 반복문의 시작 -->
 				<tr>
-					<th scope="row">1</th>
-					<td>Mark</td>
+					<th scope="row"><a href="communityenter.jsp">1</a></th>
+					<td class="BNum">${Board.BNum }</td>
 					<td>Otto</td>
 					<td>@mdo</td>
+					
 				</tr>
 			</tbody>
 		</table>
-		<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-			<div class="btn-group mr-2" role="group" aria-label="First group">
 				<button type="button" class="btn btn-secondary">1</button>
-				<a href="communitywrite.jsp" class="btn button primary pull-light">글쓰기</a>
-			</div>
+				<a href="communitywrite.jsp" class="btn btn-success float-right" >글쓰기</a>
 		</div>
-	</div>
 
 
 
