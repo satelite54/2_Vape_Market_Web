@@ -22,7 +22,7 @@ div {text-align: center;}
         
     </div>  
     
-    <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar7">
+    <div class="collapse navbar-collapse flex-grow-1 text-right">
         <ul class="navbar-nav ml-auto flex-nowrap">
             <li class="nav-item active">
                 <a class="nav-link" href="#">로그인</a>
@@ -31,7 +31,7 @@ div {text-align: center;}
                 <a class="nav-link" href="#">회원가입</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">나의 쇼핑</a>
+                <a class="nav-link" href="myshopping.jsp">나의 쇼핑</a>
             </li>
      
         </ul>
@@ -39,7 +39,7 @@ div {text-align: center;}
 </nav>
 
 <br>
-<div ><img src="<c:url value="/img/logo.png"/>"/></div>
+<div ><a href="main.jsp"><img src="<c:url value="/img/logo.png"/>"/></a></div>
 
   <div class="item1">
   <form class="form-inline "><input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search">
