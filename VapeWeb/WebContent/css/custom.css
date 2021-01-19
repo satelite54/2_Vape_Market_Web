@@ -26,8 +26,22 @@ hr{
 .navbar-nav{
     padding-right: 30px;
 }
-
+/*--------------나의쇼핑css--------------*/
 #pointer {
     display: block;
     margin-left: auto;
     margin-right: auto }
+     #cart hr{
+	border: 1px solid;
+	color:lightgray
+}
+
+#submenu p{
+font-family: 'Gothic A1', sans-serif;
+font-style: italic;
+color: #223a6b !important;
+font-size: xx-large;
+position:absolute;
+left:0px;
+padding-left: 45px;
+}
