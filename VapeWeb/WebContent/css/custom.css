@@ -26,3 +26,8 @@ hr{
 .navbar-nav{
     padding-right: 30px;
 }
+
+#pointer {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
