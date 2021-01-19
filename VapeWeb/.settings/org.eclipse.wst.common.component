@@ -2,7 +2,7 @@
     <wb-module deploy-name="VapeWeb">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="java-output-path" value="/VapeWeb/build/classes"/>
         <property name="context-root" value="VapeWeb"/>
+        <property name="java-output-path" value="/VapeWeb/build/classes"/>
     </wb-module>
 </project-modules>

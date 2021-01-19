@@ -4,7 +4,7 @@
 	//로그인과정에서 저장된 세션 id를 가져온다. 없으면 null값.
 	String sessionId = (String) session.getAttribute("sessionId");
 %> --%>
-
+<br>
 <br>
 <hr>
 

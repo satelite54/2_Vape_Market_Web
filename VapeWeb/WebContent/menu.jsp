@@ -12,25 +12,37 @@ div {text-align: center;}
 }
 </style>
 
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">로그인<span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#">회원가입</a>
-      <a class="nav-item nav-link" href="#">나의 쇼핑</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">  
+   <div class="d-flex flex-grow-1"> 
+        <div class="w-100 text-right">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        
+    </div>  
+    
+    <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar7">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">로그인</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">회원가입</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">나의 쇼핑</a>
+            </li>
+     
+        </ul>
     </div>
-  </div>
 </nav>
+
 <br>
-<div class="container">
-  <form class="form-inline ">
-  <img src="<c:url value="/img/logo.png"/>"/>
-    <input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search">
-    <button class="btn bg-dark text-white btn-outline-white my-2 my-sm-0 {
-background-color: #223a6b !important;}" type="submit">Search</button>
+<div ><img src="<c:url value="/img/logo.png"/>"/></div>
+
+  <div class="item1">
+  <form class="form-inline "><input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search">
+  <button class="btn bg-dark text-white btn-outline-white my-2 my-sm-0 {background-color: #223a6b !important;}" type="submit">Search</button>
   </form>
-
-</div>
-
-
+ </div>
