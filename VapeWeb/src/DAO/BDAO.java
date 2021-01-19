@@ -1,12 +1,10 @@
 package DAO;
 
-import DTO.Board;
-import DAO.dao;
 import java.sql.*;
 
 public class BDAO{
 	Connection conn;
-	PreparedStatement stmt;
+	PreparedStatement pstmt;
 	ResultSet rs;
 	
 	public Connection getConnection() {
@@ -24,4 +22,8 @@ public class BDAO{
 	
 
 
+		public void BoardWrite() {
+			String sql = "INSERT INTO board (?,?,?,?,?,?,?)";
+			pstmt = conn.prepareStatement(sql);
+		}
 }

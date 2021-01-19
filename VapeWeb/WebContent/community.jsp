@@ -31,7 +31,7 @@
 		<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
 			<div class="btn-group mr-2" role="group" aria-label="First group">
 				<button type="button" class="btn btn-secondary">1</button>
-				<a href="BoardWrite.jsp" class="btn button primary pull-light">글쓰기</a>
+				<a href="communitywrite.jsp" class="btn button primary pull-light">글쓰기</a>
 			</div>
 		</div>
 	</div>

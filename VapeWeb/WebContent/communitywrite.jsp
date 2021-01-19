@@ -8,14 +8,24 @@
 <title>JASET VAPE</title>
 </head>
 <body>
-
-
-	<div>
-		<form>
-			<input type="text" class="BTitle" placeholder="글 제목을 입력해 주세요.">
-			<textarea class="BContent" placeholder="글 내용을 입력해 주세요.">
-		</form>
+	<div class="container mt-3">
+	  <div class="card">
+	  	<div class="card-header">
+	  		글쓰기 양식
+	  	</div>
+	  	<div class="card-body">
+	  		<form action="communityAction" method="post">
+	  			<input type="text" class="form-control mb-3" name="BTitle" placeholder="글제목" maxlength="50" required>
+	  			<textarea class="form-control mb-3" name="BContent" style="height: 350px" placeholder="글내용" maxlength="2048" required></textarea>
+	  			<div class="row">
+					<input type="submit" value="글작성" class="btn btn-primary ml-auto mr-3">
+				</div>
+	  		</form>
+	  	</div>
+		
+	  </div>
 	</div>
+
 
 
 	<script src="css/bootstrap.min.css"></script>
