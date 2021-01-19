@@ -4,26 +4,16 @@
 	//로그인과정에서 저장된 세션 id를 가져온다. 없으면 null값.
 	String sessionId = (String) session.getAttribute("sessionId");
 %> --%>
-<style>
 
-div {text-align: center;}
-.form {
-    float: right;
-}
-</style>
-
+<br>
+<hr>
 
 <div class="d-flex justify-content-around">
 
-<div class="p-2"><a>하드웨어</a></div>
-  <div class="p-2"><a>원본액상</a></div>
-  <div class="p-2"><a>코일</a></div>
-  <div class="p-2"><a>커뮤니티</a></div>
-
-
-
-
+<div id="submenu"><a href="#">하드웨어</a></div>
+  <div id="submenu"><a href="#">원본액상</a></div>
+  <div id="submenu"><a href="#">코일</a></div>
+  <div id="submenu"><a href="#">커뮤니티</a></div>
 
 </div>
-
-
+<hr>

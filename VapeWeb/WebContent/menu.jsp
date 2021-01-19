@@ -12,6 +12,7 @@ div {text-align: center;}
 }
 </style>
 
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
@@ -21,12 +22,13 @@ div {text-align: center;}
     </div>
   </div>
 </nav>
-
+<br>
 <div class="container">
   <form class="form-inline ">
   <img src="<c:url value="/img/logo.png"/>"/>
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search">
+    <button class="btn bg-dark text-white btn-outline-white my-2 my-sm-0 {
+background-color: #223a6b !important;}" type="submit">Search</button>
   </form>
 
 </div>

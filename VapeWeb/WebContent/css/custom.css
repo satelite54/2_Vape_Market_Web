@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@900&display=swap');
+
+#submenu{
+font-family: 'Gothic A1', sans-serif;
+font-style: italic;
+color: #223a6b !important;
+font-size: xx-large;
+text-decoration: none;
+}
+hr{
+	border: 4px solid;
+	color:#223a6b; 
+}
