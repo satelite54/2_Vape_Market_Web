@@ -4,6 +4,11 @@
 	//로그인과정에서 저장된 세션 id를 가져온다. 없으면 null값.
 	String sessionId = (String) session.getAttribute("sessionId");
 %>
+<style>
+
+div {text-align: center;}
+</style>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
@@ -13,14 +18,13 @@
     </div>
   </div>
 </nav>
+
 <div class="container">
-<img src="<c:url value="/img/logo.png"/>"/>
-<nav class="navbar navbar-light bg-light">
   <form class="form-inline">
+  <img src="<c:url value="/img/logo.png"/>"/>
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
-</nav>
 
 </div>
 
