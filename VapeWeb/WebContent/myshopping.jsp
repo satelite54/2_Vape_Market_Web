@@ -86,12 +86,10 @@
 }
   
 </style>
-<br>
-<br>
+<br><br><br><br>
 <div id="pointer"><p style="color:white; font-size: x-large;">나의 쇼핑</div>
 
-<br>
-<br>
+<br><br>
 <br>
 <br>
 <div id="submenu"><p>장바구니</div>
@@ -204,7 +202,7 @@
 			<tr>
 				<td> </td>
 				<td> </td>
-				<td class="text-right">	<strong>Total: </strong></td>
+				
 				<%-- <td class="text-center text-danger"><strong><%=sum%> </strong></td> --%>
 			</tr>
 			</table>
