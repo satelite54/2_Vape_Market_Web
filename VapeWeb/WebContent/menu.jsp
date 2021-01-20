@@ -10,8 +10,10 @@ div {text-align: center;}
 .form {
     float: right;
 }
+.item1 {
+float:right;
+margin-bottom: 25px;}
 </style>
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">  
    <div class="d-flex flex-grow-1"> 
         <div class="w-100 text-right">
@@ -46,3 +48,4 @@ div {text-align: center;}
   <button class="btn bg-dark text-white btn-outline-white my-2 my-sm-0 {background-color: #223a6b !important;}" type="submit">Search</button>
   </form>
  </div>
+ 
