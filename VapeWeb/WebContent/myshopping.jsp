@@ -11,11 +11,7 @@
 	String cartId = session.getId();
 
 	String shipping_cartId = "";
-	String shipping_name = "";
 	String shipping_shippingDate = "";
-	String shipping_country = "";
-	String shipping_zipCode = "";
-	String shipping_addressName = "";
 	
 	Cookie[] cookies = request.getCookies();
 
@@ -25,16 +21,9 @@
 			String n = thisCookie.getName();
 			if (n.equals("Shipping_cartId"))
 				shipping_cartId = URLDecoder.decode((thisCookie.getValue()), "utf-8");
-			if (n.equals("Shipping_name"))
-				shipping_name = URLDecoder.decode((thisCookie.getValue()), "utf-8");
 			if (n.equals("Shipping_shippingDate"))
 				shipping_shippingDate = URLDecoder.decode((thisCookie.getValue()), "utf-8");
-			if (n.equals("Shipping_country"))
-				shipping_country = URLDecoder.decode((thisCookie.getValue()), "utf-8");
-			if (n.equals("Shipping_zipCode"))
-				shipping_zipCode = URLDecoder.decode((thisCookie.getValue()), "utf-8");
-			if (n.equals("Shipping_addressName"))
-				shipping_addressName = URLDecoder.decode((thisCookie.getValue()), "utf-8");
+			
 		}
 	}
 %>
@@ -58,23 +47,19 @@
 <br><br><br><br>
 <div id="pointer"><p style="color:white; font-size: x-large;">나의 쇼핑</div>
 
-<br><br>
-<br>
-<br>
+<br><br><br><br>
 <div id="submenu"><p>장바구니</div>
 <!---------------------------------cart---------------------------------------------------------------  -->
-<br>
-<br>
+<br><br>
 <div class="container">
 		
 		<div style="padding-top: 50px">
 			<table class="table table-hover">
 				<tr>
-					<th>Item</th>
-					<th>Price</th>
-					<th>#</th>
-					<th>Sub total</th>
-					<th>Info</th>
+					<th>상품목록</th>
+					<th>수량</th><!-- 기본 수업내용에서는 #으로 저장되는 내용 파일 불러올때 잘 지켜 볼 것 -->
+					<th>가격</th>
+					
 				</tr>
 				<%-- <%				
 					int sum = 0;
@@ -97,24 +82,21 @@
 				<%
 					}
 				%> --%>
-				<tr>
-					<th></th>
-					<th></th>
-					<th>Total</th>
-				<%-- 	<th id="sum"><%=sum%></th> --%>
-					<th></th>
-				</tr> 
+					
 			</table>
+			
 			
 		</div>
 		
 		<div id="cart">
+		
 		<hr>
+		<th>Total: 	<p id="sum"><%-- <%=sum%> --%> </th>
 		</div>
 		<div class="row">
 			<table width="100%">
 				<tr>
-					<td align="center"><a href="deleteCart.jsp?cartId=<%=cartId%>" class="btn border border-danger bg-white text-danger">선택삭제</a></td>
+					<td align="center"><a href="deleteCart.jsp?cartId=<%=cartId%>" class="btn border border-danger bg-white text-danger">선택삭제</a></td><!-- 지금 코드는 카드 비워버리기 코 -->
 					<td align="center"><a onclick="return emtpyCheck();" href="shippingInfo.jsp?cartId=<%=cartId%>" class="btn btn-danger text-white">주문하기</a></td>
 				</tr>
 			</table>
@@ -122,15 +104,9 @@
 	</div>
 
 
-
-
-
 <br>
 <div id="submenu"><p>주문목록</div>
-<br>
-<br>
-<br>
-<br>
+<br><br><br><br>
 <!---------------------------------order---------------------------------------------------------------  -->
 	<div class="container col-8 alert alert-primary text-dark">
 		<div class="text-center ">
@@ -169,9 +145,7 @@
 				}
 			%> --%>
 			<tr>
-				<td> </td>
-				<td> </td>
-				
+				<td> </td>				
 				<%-- <td class="text-center text-danger"><strong><%=sum%> </strong></td> --%>
 			</tr>
 			</table>
@@ -179,12 +153,6 @@
 		</div>
 	</div>	
 </body>
-
-
-
-
-
-							
 		
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
