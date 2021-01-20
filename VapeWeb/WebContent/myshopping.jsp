@@ -55,37 +55,6 @@
 <%@ include file="menu.jsp" %>
 
 
-<style>
-#pointer {
-  width: 200px;
-  height: 40px;
-  position: relative;
-  background: #223a6b;
-}
-#pointer:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-left: 20px solid white;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-}
-#pointer:before {
-  content: "";
-  position: absolute;
-  right: -20px;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-left: 20px solid #223a6b;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-}
-  
-</style>
 <br><br><br><br>
 <div id="pointer"><p style="color:white; font-size: x-large;">나의 쇼핑</div>
 
