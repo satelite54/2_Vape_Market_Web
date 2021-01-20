@@ -170,22 +170,17 @@
 			<h1>Order</h1>
 		</div>
 		<div class="row justify-content-between">
-			<div class="col-4" align="left">
-				<strong>Delivery information</strong> <br> Name : <% out.println(shipping_name); %>	<br> 
-				Zip code : <% 	out.println(shipping_zipCode);%><br> 
-				Address : <%	out.println(shipping_addressName);%>(<%	out.println(shipping_country);%>) <br>
-			</div>
-			<div class="col-4 text-#212529" align="right">
-				<p>	<em>Shipping date: <% out.println(shipping_shippingDate);%></em>
-			</div>
+			
+			<%-- <div class="col-4 text-#212529" align="right">
+				<p>	<em>배송일: <% out.println(shipping_shippingDate);%></em>
+			</div> --%><!--배송일 출력깞 소스 확인 후 아래 배송일에 적용 후 삭제해야 함  -->
 		</div>
 		<div>
 			<table class="table table-hover">			
 			<tr>
-				<th class="text-center text-primary">Item</th>
-				<th class="text-center">#</th>
-				<th class="text-center">Price</th>
-				<th class="text-center">Sub total</th>
+				<th class="text-center">주문번호</th>
+				<th class="text-center">주문날짜</th>
+				<th class="text-center">배송일: <% out.println(shipping_shippingDate);%></th>
 			</tr>
 <%-- 			<%
 				int sum = 0; 
@@ -213,10 +208,7 @@
 				<%-- <td class="text-center text-danger"><strong><%=sum%> </strong></td> --%>
 			</tr>
 			</table>
-			
-				<a href="./shippingInfo.jsp?cartId=<%=shipping_cartId%>"class="btn btn-secondary" role="button"> Back </a>
-				<a href="./thankCustomer.jsp"  class="btn btn-success" role="button"> Confirm </a>
-				<a href="./checkOutCancelled.jsp" class="btn btn-secondary"	role="button"> Cancel </a>			
+						
 		</div>
 	</div>	
 </body>
