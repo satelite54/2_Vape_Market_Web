@@ -37,6 +37,55 @@
 	<link rel="stylesheet" href="css/custom.css">	
 	<title>JASET VAPE</title>
 	
+	<style>
+	#pointer {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+     #cart hr{
+	border: 1px solid;
+	color:lightgray
+}
+
+#submenu p{
+font-family: 'Gothic A1', sans-serif;
+font-style: italic;
+color: #223a6b !important;
+font-size: xx-large;
+position:absolute;
+left:0px;
+padding-left: 45px;
+}
+#pointer {
+  width: 200px;
+  height: 40px;
+  position: relative;
+  background: #223a6b;
+}
+#pointer:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid white;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+#pointer:before {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #223a6b;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+	</style>
+	
 </head>
 
 <body>
