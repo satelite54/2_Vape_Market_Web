@@ -66,8 +66,7 @@
 					while (rs1.next()) {
 				%>
 				    <div class="col-6 col-md-4">
-				    	<a herf = "Productdetailpage.jsp"><%=rs1.getString("pname")%></a>
-
+				    	<a href="Productdetailpage.jsp"><%=rs1.getString("pname")%></a>
 				    </div>
 				<%
 					}

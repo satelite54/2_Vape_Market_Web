@@ -1,12 +1,12 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.net.URLDecoder"%>
 <%@page import="java.util.Date"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
 
 
 <%
-	request.setCharacterEncoding("UTF-8");
+	request.setCharacterEncoding("utf-8");
 
 	String cartId = session.getId();
 
@@ -26,6 +26,9 @@
 			
 		}
 	}
+	
+	session.setAttribute("countresult", request.getAttribute("countresult"));
+	session.getAttribute("countresult");
 %>
 
 
@@ -106,6 +109,7 @@ padding-left: 45px;
 			<table class="table table-hover">
 				<tr>
 					<th>상품목록</th>
+					
 					<th>수량</th><!-- 기본 수업내용에서는 #으로 저장되는 내용 파일 불러올때 잘 지켜 볼 것 -->
 					<th>가격</th>
 					
