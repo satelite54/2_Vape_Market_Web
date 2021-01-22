@@ -40,7 +40,6 @@
 	 
 	boolean Deleteflag = false;
 	String temp = request.getParameter("id");
-	out.print(temp);
 	
 	if(temp == null) {
 		temp = "1";
@@ -53,14 +52,7 @@
 	}
 	
 	int Deletenumber = 0;
-/* 	Deleteflag = Boolean.parseBoolean((String)session.getAttribute("Deleteflag")); */
-	/* String strDeleteflag = String.valueOf(Deleteflag);
-	if(session.getAttribute("Deleteflag") == null) {
-		session.setAttribute("Deleteflag", strDeleteflag);
-	} else if(Deleteflag == true) {
-		list.removeAll(c);
-	} */
-%>
+	%>
 
 <html>
 
@@ -68,7 +60,6 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/custom.css">	
 <title>JASET VAPE</title>
-	
 	<style>
 		#pointer {
 		   display: block;
@@ -122,10 +113,8 @@
 
 <%@ include file="menu.jsp" %>
 
-
 <br><br><br><br>
 <div id="pointer"><p style="color:white; font-size: x-large;">나의 쇼핑</div>
-
 <br><br><br><br>
 <div id="submenu"><p>장바구니</div>
 <!---------------------------------cart---------------------------------------------------------------  -->
@@ -138,8 +127,6 @@
 					<th>수량</th><!-- 기본 수업내용에서는 #으로 저장되는 내용 파일 불러올때 잘 지켜 볼 것 -->
 					<th>가격</th>
 				</tr>
-				
-
 					<%
 						for(int i = 0; i < list.size()/3; i++) {
 					%>
@@ -150,20 +137,17 @@
 					 </tr>
 				 	<%}%>
 			</table>
-			
-			
 		</div>
 		
 		<div id="cart">
-		
 		<hr>
-		<th>Total: 	<p id="sum"><%-- <%=sum%> --%> </th>
+		<p>Total: <%=list.size()/3%>
 		</div>
 		<div class="row">
 			<table width="100%">
 				<tr>
-					<td align="center"><a href="./myshopping.jsp?id=<%=Deletenumber%>" class="btn btn-danger text-white">카트 비우기</a></td><!-- 지금 코드는 카드 비워버리기 코 -->
-					<td align="center"><a onclick="return emtpyCheck();" href="./myshopping.jsp?ordername=<%!%>"  class="btn btn-danger text-white">주문하기</a></td><!-- 리스트값을 지워버리는 기능추가 -->
+					<td align="center"><a href="./myshopping.jsp?id=<%=Deletenumber%>" class="btn btn-danger text-white">카트 비우기</a></td>
+					<td align="center"><a   class="btn btn-dark" role="button" href="./thank.jsp"  class="btn btn-danger text-white">주문하기 </a></td>
 				</tr>
 			</table>
 		</div>
