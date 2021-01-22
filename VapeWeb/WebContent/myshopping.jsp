@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.net.URLDecoder"%>
 <%@page import="java.util.Date"%>
@@ -26,69 +27,95 @@
 			
 		}
 	}
+
+	 List<String> list = (List<String>) session.getAttribute("list");
+	 if(list == null) {
+		 list = new ArrayList<String>();
+	 }
+	 list.add((String)session.getAttribute("pname"));
+	 list.add(request.getParameter("countresult"));
+	 list.add((String)session.getAttribute("price"));
 	
-	session.setAttribute("countresult", request.getAttribute("countresult"));
-	session.getAttribute("countresult");
+	 session.setAttribute("list", list);
+	 
+	boolean Deleteflag = false;
+	String temp = request.getParameter("id");
+	out.print(temp);
+	
+	if(temp == null) {
+		temp = "1";
+	}
+	if(temp.equals("0")) {
+		for(int i = list.size() - 1; i >= 0; i--) {
+			list.remove(i);
+		}
+		session.setAttribute("list", list);
+	}
+	
+	int Deletenumber = 0;
+/* 	Deleteflag = Boolean.parseBoolean((String)session.getAttribute("Deleteflag")); */
+	/* String strDeleteflag = String.valueOf(Deleteflag);
+	if(session.getAttribute("Deleteflag") == null) {
+		session.setAttribute("Deleteflag", strDeleteflag);
+	} else if(Deleteflag == true) {
+		list.removeAll(c);
+	} */
 %>
-
-
 
 <html>
 
 <head>
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/custom.css">	
-	<title>JASET VAPE</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/custom.css">	
+<title>JASET VAPE</title>
 	
 	<style>
-	#pointer {
-    display: block;
-    margin-left: auto;
-    margin-right: auto }
-     #cart hr{
-	border: 1px solid;
-	color:lightgray
-}
-
-#submenu p{
-font-family: 'Gothic A1', sans-serif;
-font-style: italic;
-color: #223a6b !important;
-font-size: xx-large;
-position:absolute;
-left:0px;
-padding-left: 45px;
-}
-#pointer {
-  width: 200px;
-  height: 40px;
-  position: relative;
-  background: #223a6b;
-}
-#pointer:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-left: 20px solid white;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-}
-#pointer:before {
-  content: "";
-  position: absolute;
-  right: -20px;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-left: 20px solid #223a6b;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-}
+		#pointer {
+		   display: block;
+		   margin-left: auto;
+		   margin-right: auto }
+		#cart hr{
+			border: 1px solid;
+			color:lightgray
+		}
+		#submenu p{
+			font-family: 'Gothic A1', sans-serif;
+			font-style: italic;
+			color: #223a6b !important;
+			font-size: xx-large;
+			position:absolute;
+			left:0px;
+			padding-left: 45px;
+		}
+		#pointer {
+		  width: 200px;
+		  height: 40px;
+		  position: relative;
+		  background: #223a6b;
+		}
+		#pointer:after {
+		  content: "";
+		  position: absolute;
+		  left: 0;
+		  bottom: 0;
+		  width: 0;
+		  height: 0;
+		  border-left: 20px solid white;
+		  border-top: 20px solid transparent;
+		  border-bottom: 20px solid transparent;
+		}
+		#pointer:before {
+		  content: "";
+		  position: absolute;
+		  right: -20px;
+		  bottom: 0;
+		  width: 0;
+		  height: 0;
+		  border-left: 20px solid #223a6b;
+		  border-top: 20px solid transparent;
+		  border-bottom: 20px solid transparent;
+		}
 	</style>
-	
 </head>
 
 <body>
@@ -104,38 +131,24 @@ padding-left: 45px;
 <!---------------------------------cart---------------------------------------------------------------  -->
 <br><br>
 <div class="container">
-		
 		<div style="padding-top: 50px">
 			<table class="table table-hover">
 				<tr>
 					<th>상품목록</th>
-					
 					<th>수량</th><!-- 기본 수업내용에서는 #으로 저장되는 내용 파일 불러올때 잘 지켜 볼 것 -->
 					<th>가격</th>
-					
 				</tr>
-				<%-- <%				
-					int sum = 0;
-					ArrayList<Product> cartList = (ArrayList<Product>) session.getAttribute("cartlist");
-					if (cartList == null)
-						cartList = new ArrayList<Product>();
+				
 
-					for (int i = 0; i < cartList.size(); i++) { // ?ê³¹ë­¹ç±Ñëª???ìêµ¹??ç°ìì °?ìë¦°
-						Product product = cartList.get(i);
-						int total = product.getUnitPrice() * product.getQuantity();
-						sum = sum + total;
-				%>
-				<tr>
-					<td><%=product.getProductId()%> - <%=product.getPname()%></td>
-					<td><%=product.getUnitPrice()%></td>
-					<td><%=product.getQuantity()%></td>
-					<td><%=total%></td>
-					<td><a href="./removeCart.jsp?id=<%=product.getProductId()%>" class="badge badge-danger">Delete</a></td>
-				</tr>
-				<%
-					}
-				%> --%>
-					
+					<%
+						for(int i = 0; i < list.size()/3; i++) {
+					%>
+					<tr>
+					 	<td><%=list.get(0 + i * 3)%></td>
+					 	<td><%=list.get(1 + i * 3)%></td>
+					 	<td><%=list.get(2 + i * 3)%></td>
+					 </tr>
+				 	<%}%>
 			</table>
 			
 			
@@ -149,14 +162,12 @@ padding-left: 45px;
 		<div class="row">
 			<table width="100%">
 				<tr>
-					<td align="center"><a href="deleteCart.jsp?cartId=<%=cartId%>" class="btn border border-danger bg-white text-danger">선택삭제</a></td><!-- 지금 코드는 카드 비워버리기 코 -->
-					<td align="center"><a onclick="return emtpyCheck();" href="shippingInfo.jsp?cartId=<%=cartId%>" class="btn btn-danger text-white">주문하기</a></td>
+					<td align="center"><a href="./myshopping.jsp?id=<%=Deletenumber%>" class="btn btn-danger text-white">카트 비우기</a></td><!-- 지금 코드는 카드 비워버리기 코 -->
+					<td align="center"><a onclick="return emtpyCheck();" href="./myshopping.jsp?ordername=<%!%>"  class="btn btn-danger text-white">주문하기</a></td><!-- 리스트값을 지워버리는 기능추가 -->
 				</tr>
 			</table>
 		</div>
 	</div>
-
-
 <br>
 <div id="submenu"><p>주문목록</div>
 <br><br><br><br>
