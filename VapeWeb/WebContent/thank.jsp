@@ -2,12 +2,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.net.URLDecoder"%>
 <%@page import="java.util.Date"%>
-
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-
-
-
-
 
 <html>
 
@@ -21,9 +16,6 @@
 <body>
 
 <%@ include file="menu.jsp" %>
-
-
-
 
 	<%
 		String shipping_cartId = "";
@@ -43,7 +35,7 @@
 		}
 		
 		Date today = new Date();
-		Date shippingdate = new Date(today.getTime() + (2000 * 60 * 60 * 24));
+		Date shippingDate = new Date(today.getTime() + (2000 * 60 * 60 * 24));
 	%>
 <br><br><br>
 
@@ -51,7 +43,7 @@
 <h1 class="display-3 font-weight-bold" style="color: #223a6b" >주문완료</h1>
 <h2 class="alert alert-info">구매해 주셔서 감사합니다!</h2>
 
-<p>	주문은	<%=	shippingdate %>에 배달예정입니다.!!	<p>	Order# :	<%	out.println(shipping_cartId);	%>		
+<p>	주문은	<%=	shippingDate %>에 배달예정입니다.!!	<p>	Order# :	<%	out.println(shipping_cartId);	%>		
 	<div class="container">
 		<p>	<a href="Productsalespage.jsp" class="btn btn-dark"> &laquo; 쇼핑더하기</a>		
 	</div>
