@@ -13,7 +13,7 @@
 <div id="submenu"><a href="#">하드웨어</a></div>
   <div id="submenu"><a href="#">원본액상</a></div>
   <div id="submenu"><a href="#">코일</a></div>
-  <div id="submenu"><a href="community.jsp">커뮤니티</a></div>
+  <div id="submenu"><a href="#">커뮤니티</a></div>
 
 </div>
 <hr>
