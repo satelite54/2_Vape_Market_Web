@@ -9,6 +9,8 @@
 <title>JASET VAPE</title>
 </head>
 <body>
+<%@ include file="menu.jsp"%>
+<%@ include file="submenu.jsp"%>
 <script type="text/javascript">
 
 </script>
@@ -27,7 +29,7 @@
 			<!-- 반복문의 시작 -->
 				<tr>
 					<th scope="row"><a href="communityenter.jsp">1</a></th>
-					<td class="BNum">${Board.BNum }</td>
+					<td class="BNum">1</td>
 					<td>Otto</td>
 					<td>@mdo</td>
 					

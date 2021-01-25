@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-	<%-- index.jsp --%>
+	<%-- index.jsp --%>  
 	<script>
 		location.href = "main.jsp"	
 	</script>
