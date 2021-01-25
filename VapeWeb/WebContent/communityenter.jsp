@@ -1,6 +1,11 @@
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="DTO.Board"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="DAO.dao"%>
+<%@ page import="java.io.PrintWriter"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +18,37 @@
 	<%@ include file="submenu.jsp"%>
 
 
+
+<%!
+Connection conn;
+PreparedStatement pstmt;
+ResultSet rs;
+dao DAO = new dao();
+
+public Board getBoard(int BNum) {
+	String SQL = "SELECT * FROM board WHERE BNum= ?";
+	try {
+		PreparedStatement pstmt = conn.prepareStatement(SQL);
+		pstmt.setInt(1, BNum);
+		rs = pstmt.executeQuery();
+		if (rs.next()) {
+			Board board = new Board();
+			board.setBNum(rs.getInt(1));
+			board.setBTitle(rs.getString(2));
+			board.setBContent(rs.getString(3));
+			board.setBDate(rs.getString(4));
+			board.setId(rs.getString(5));
+			board.setAuthority(rs.getInt(6));
+			board.setViews(rs.getInt(7));
+			return board;
+		}
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+	return null;
+}
+%>
+
 	<div class="container  border border-dark rounded">
 		<div class="row p-2 font-weight-bold"
 			style="background-color: black; color: white;">
@@ -23,20 +59,17 @@
 			<div class="col-sm-2">조회수</div>
 		</div>
 		<div class="row border border-dark">
-			<div class="col-sm-2">1</div>
-			<div class="col-sm-4">이것은 제목입니다.</div>
-			<div class="col-sm-2">정재우</div>
-			<div class="col-sm-2">2021-01-25</div>
-			<div class="col-sm-2">1</div>
+			<div class="col-sm-2"><%= %></div>
+			<div class="col-sm-4"><%= %></div>
+			<div class="col-sm-2"><%= %></div>
+			<div class="col-sm-2"><%= %></div>
+			<div class="col-sm-2"><%= %></div>
 		</div>
 			<div class="card-body text-dark">
-				<p class="card-text">Some quick example text to build on the
-					card title and make up the bulk of the card's content.</p>
+				<p class="card-text"> <%= %> </p>
 			</div>
 		</div>
 
-	</div>
-	</div>
 
 
 

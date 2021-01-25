@@ -1,12 +1,10 @@
 package DTO;
 
-import java.sql.*;
-
 public class Board {
 	private int BNum;
 	private String BTitle;
 	private String BContent;
-	private Date BDate;
+	private String BDate;
 	private String id;
 	private int authority;
 	private int views;
@@ -29,10 +27,10 @@ public class Board {
 	public void setBContent(String bContent) {
 		BContent = bContent;
 	}
-	public Date getBDate() {
+	public String getBDate() {
 		return BDate;
 	}
-	public void setBDate(Date bDate) {
+	public void setBDate(String bDate) {
 		BDate = bDate;
 	}
 	public String getId() {
@@ -54,3 +52,5 @@ public class Board {
 		this.views = views;
 	}
 }
+
+	
