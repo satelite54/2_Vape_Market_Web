@@ -1,11 +1,4 @@
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.SQLException"%>
-<%@page import="java.awt.print.PrinterIOException"%>
-<%@page import="java.awt.print.PrinterException"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.Statement"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="DAO.dao"%>
 <!DOCTYPE html>
@@ -35,25 +28,7 @@
 	  	</div>
 	  </div>
 	</div>
- 	<%
-		 	PreparedStatement pstmt;
- 			Connection conn;
- 			ResultSet rs;
- 			
- 			try{
- 				String url = "jdbc:mysql://localhost:3306/Vape?useSSL=false";
- 				String user = "root";
- 				String password = "root";
- 				Class.forName("com.mysql.jdbc.Driver");
- 				conn = DriverManager.getConnection(url, user, password);
- 				
- 			}catch (SQLException e){
- 				
- 			}
- 			
- 			
- 	%>
- 	
+
 
 
 

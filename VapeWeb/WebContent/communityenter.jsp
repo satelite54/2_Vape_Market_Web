@@ -59,11 +59,11 @@ public Board getBoard(int BNum) {
 			<div class="col-sm-2">조회수</div>
 		</div>
 		<div class="row border border-dark">
-			<div class="col-sm-2"><%= %></div>
-			<div class="col-sm-4"><%= %></div>
-			<div class="col-sm-2"><%= %></div>
-			<div class="col-sm-2"><%= %></div>
-			<div class="col-sm-2"><%= %></div>
+			<div class="col-sm-2"><%= rs.getInt(1)%></div>
+			<div class="col-sm-4"><%= rs.getString(3)%></div>
+			<div class="col-sm-2"><%= rs.getString(5) %></div>
+			<div class="col-sm-2"><%= rs.getString(4)%></div>
+			<div class="col-sm-2"><%= rs.getInt(7)%></div>
 		</div>
 			<div class="card-body text-dark">
 				<p class="card-text"> <%= %> </p>

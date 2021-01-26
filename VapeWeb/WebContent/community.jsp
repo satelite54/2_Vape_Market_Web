@@ -76,20 +76,7 @@ public int getNext() {
 %>
 
 <%!
-public boolean nextPage (int pageNumber) {
-	String SQL = "SELECT * FROM Board WHERE BNum < ? Authority = 1 ORDER BY BNum DESC LIMIT 10";
-	ArrayList<Board> list = new ArrayList<Board>();
-	try {
-		PreparedStatement pstmt = conn.prepareStatement(SQL);
-		pstmt.setInt(1, getNext() - (pageNumber -1) * 10);
-		rs = pstmt.executeQuery();
-		if (rs.next()) {
-			return true;
-		}
-	} catch (Exception e) {
-		e.printStackTrace();
-	}
-	return false; 		
+	
 }
 %>
 </head>
