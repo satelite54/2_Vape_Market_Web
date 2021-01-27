@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -20,56 +21,42 @@
 
 
 <%!
-Connection conn;
-PreparedStatement pstmt;
-ResultSet rs;
 dao DAO = new dao();
+PreparedStatement pstmt = null;
+ResultSet rs = null;
+%>
+<%
+ArrayList <Board> list =  DAO.getList();
+for(int i = 0 ; i< list.size() ; i++){
 
-public Board getBoard(int BNum) {
-	String SQL = "SELECT * FROM board WHERE BNum= ?";
-	try {
-		PreparedStatement pstmt = conn.prepareStatement(SQL);
-		pstmt.setInt(1, BNum);
-		rs = pstmt.executeQuery();
-		if (rs.next()) {
-			Board board = new Board();
-			board.setBNum(rs.getInt(1));
-			board.setBTitle(rs.getString(2));
-			board.setBContent(rs.getString(3));
-			board.setBDate(rs.getString(4));
-			board.setId(rs.getString(5));
-			board.setAuthority(rs.getInt(6));
-			board.setViews(rs.getInt(7));
-			return board;
-		}
-	} catch (Exception e) {
-		e.printStackTrace();
-	}
-	return null;
-}
 %>
 
+
+
+	
 	<div class="container  border border-dark rounded">
 		<div class="row p-2 font-weight-bold"
 			style="background-color: black; color: white;">
-			<div class="col-sm-2">번호</div>
+			<div class="col-sm-2"> %>번호</div>
 			<div class="col-sm-4">글 제목</div>
 			<div class="col-sm-2">작성자</div>
 			<div class="col-sm-2">작성일</div>
 			<div class="col-sm-2">조회수</div>
 		</div>
 		<div class="row border border-dark">
-			<div class="col-sm-2"><%= rs.getInt(1)%></div>
-			<div class="col-sm-4"><%= rs.getString(3)%></div>
-			<div class="col-sm-2"><%= rs.getString(5) %></div>
-			<div class="col-sm-2"><%= rs.getString(4)%></div>
-			<div class="col-sm-2"><%= rs.getInt(7)%></div>
+			<div class="col-sm-2"></div>
+			<div class="col-sm-4"></div>
+			<div class="col-sm-2"></div>
+			<div class="col-sm-2"></div>
+			<div class="col-sm-2"></div>
 		</div>
 			<div class="card-body text-dark">
-				<p class="card-text"> <%= %> </p>
-			</div>
+				<p class="card-text"></p>
+<!-- 			</div> -->
 		</div>
+<%! %>
 
+%>
 
 
 

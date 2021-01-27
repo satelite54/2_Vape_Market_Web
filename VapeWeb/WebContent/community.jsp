@@ -1,3 +1,4 @@
+<%@page import="java.awt.dnd.DropTargetListener"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.DriverManager"%>
@@ -5,9 +6,10 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@ page import="java.io.PrintWriter"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page import="DAO.dao"%>
-<%@ page import="DTO.Board" %>
+<%@ page import="DTO.Board"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,83 +18,19 @@
 <title>JASET VAPE</title>
 
 <%!
-	PreparedStatement pstmt = null;
-	Connection conn = null;
-	ResultSet rs = null;
-	%>
-<%
-	try{
-		String url = "jdbc:mysql://localhost:3306/Vape?useSSL=false";
-		String user = "root";
-		String password = "root";
-		Class.forName("com.mysql.jdbc.Driver");
-		conn = DriverManager.getConnection(url, user, password);
-		
-	}catch (SQLException e){
-		
-	}
-%>
-
-<%! 
-	public ArrayList<Board> getList(int pageNumber){ 
-	String SQL = "SELECT * FROM Board WHERE BNum < ? Authority = 1 ORDER BY BNum DESC LIMIT 10";
-	ArrayList<Board> list = new ArrayList<Board>();
-	try {
-		PreparedStatement pstmt = conn.prepareStatement(SQL);
-		pstmt.setInt(1, getNext() - (pageNumber -1) * 10);
-		rs = pstmt.executeQuery();
-		while (rs.next()) {
-			Board board = new Board();
-			board.setBNum(rs.getInt(1));
-			board.setBTitle(rs.getString(2));
-			board.setBContent(rs.getString(3));
-			board.setBDate(rs.getDate(4).toString());
-			board.setId(rs.getString(5));
-			board.setAuthority(rs.getInt(6));
-			board.setViews(rs.getInt(7));
-			list.add(board);
-		}
-	} catch (Exception e) {
-		e.printStackTrace();
-	}
-	return list; 
-}%>
-<%!
-public int getNext() { 
-	String SQL = "SELECT BNum FROM Board ORDER BY BNum DESC";
-	try {
-		PreparedStatement pstmt = conn.prepareStatement(SQL);
-		rs = pstmt.executeQuery();
-		if(rs.next()) {
-			return rs.getInt(1) + 1;
-		}
-		return 1;//첫 번째 게시물인 경우
-	} catch (Exception e) {
-		e.printStackTrace();
-	}
-	return -1; //데이터베이스 오류
-}
-
-%>
-
-<%!
-	
-}
+Board board = new Board();
+dao DAO = new dao();
 %>
 </head>
 <body>
-<%@ include file="menu.jsp"%>
-<%@ include file="submenu.jsp"%>
-<script type="text/javascript">
+	<%@ include file="menu.jsp"%>
+	<%@ include file="submenu.jsp"%>
+	<script type="text/javascript">
 
 </script>
 
 
-<%
-int pageNumber = 1; //기본 페이지 넘버
-%>
 	<div class="container">
-
 		<table class="table">
 			<thead class="thead-dark">
 				<tr>
@@ -100,47 +38,67 @@ int pageNumber = 1; //기본 페이지 넘버
 					<th scope="col">글 제목</th>
 					<th scope="col">작성자</th>
 					<th scope="col">작성일</th>
+					<th scope="col">조회수</th>
 				</tr>
 			</thead>
-			<tbody>
-						<%
-							ArrayList<Board> list = getList(pageNumber);
+			<tbody style="border:solid 2px;">
+				<%
+				
+							ArrayList<Board> list = DAO.getList();
+							String cnl = request.getParameter("cnl");
+							if(cnl == null) {
+								cnl = "1";
+							}
+							// !(CntIndex > (pageSelectectedIndex * 15 - 15) && CntIndex <= pageSelectectedIndex * 15)
+							int NowPageNumber = Integer.parseInt(cnl);
+							
 							for (int i = 0; i < list.size(); i++) {
+  								if((i <= (NowPageNumber * 10 - 10) - 1 || i > NowPageNumber * 10 - 1))
+									continue;
 						%>
-						<tr>
-							<td><%=list.get(i).getBNum()%></td>
-							<td><a href="communityenter.jsp?BNum="<%=list.get(i).getBNum()%>><%= list.get(i).getBTitle()%></a></td>
-							<td><%=list.get(i).getId()%></td>
-							<td><%=list.get(i).getBDate().substring(0, 11) + list.get(i).getBDate().substring(11, 13) + "시"
+				<tr>
+					<td><%=list.get(i).getBNum()%></td>
+					<td><a href="communityenter.jsp?BNum="<%=list.get(i).getBNum()%>><%= list.get(i).getBTitle()%></a></td>
+					<td><%=list.get(i).getId()%></td>
+					<td><%=list.get(i).getBDate().substring(0, 11) + list.get(i).getBDate().substring(11, 13) + "시"
 							+ list.get(i).getBDate().substring(14, 16) + "분"%></td>
-						</tr>
-						<%
+							<td><%= list.get(i).getViews()%></td>
+				</tr>
+				<%
 							}
 						%>
-					</tbody>
-				</table>
-				<!-- 페이지 넘기기 -->
+			</tbody>
+		</table>
+		<nav aria-label="Page navigation example">
+			<ul class="pagination" style="justify-content: center;">
 				<%
-					if (pageNumber != 1) {
-				%>
-				<a href="bbs.jsp?pageNumber=<%=pageNumber - 1%>"
-					class="btn btn-success btn-arrow-left">이전</a>
-				<%
-					}
-					if (list.nextPage(pageNumber)) {
-				%>
-				<a href="community.jsp?pageNumber=<%=pageNumber + 1%>"
-					class="btn btn-success btn-arrow-left">다음</a>
-				<%
+					int PreviousPageNumber = NowPageNumber - 1; 
+					if(PreviousPageNumber < 1) {
+						PreviousPageNumber = 1;
 					}
 				%>
-				<button type="button" class="btn btn-secondary">1</button>
-				<a href="communitywrite.jsp" class="btn btn-success float-right" >글쓰기</a>
-		</div>
-
-
-
-
+				<li class="page-item"><a class="page-link" href="community.jsp?cnl=<%=PreviousPageNumber%>"
+					aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+				</a></li>
+				<%
+					
+					NowPageNumber++;
+					if(NowPageNumber > list.size() / 10 + 1)
+						NowPageNumber = list.size() / 10 + 1;
+					for(int i = 1; i <= list.size() / 10 + 1; i++) {
+						
+				%>
+				<li class="page-item"><a class="page-link" href="community.jsp?cnl=<%=i%>"><%=i%></a></li>				
+				<%
+					}
+				%>
+				<li class="page-item"><a class="page-link" href="community.jsp?cnl=<%=NowPageNumber%>"
+					aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+				</a></li>
+			</ul>
+		</nav>
+		<a href="communitywrite.jsp" class="btn btn-success float-right">글쓰기</a>
+	</div>
 
 
 	<script src="css/bootstrap.min.css"></script>
