@@ -56,13 +56,13 @@ dao DAO = new dao();
   								if((i <= (NowPageNumber * 10 - 10) - 1 || i > NowPageNumber * 10 - 1))
 									continue;
 						%>
+						
 				<tr>
 					<td><%=list.get(i).getBNum()%></td>
-					<td><a href="communityenter.jsp?BNum="<%=list.get(i).getBNum()%>><%= list.get(i).getBTitle()%></a></td>
+					<td><a href="communityenter.jsp?BNum=<%=list.get(i).getBNum() %>"><%= list.get(i).getBTitle()%></a></td>
 					<td><%=list.get(i).getId()%></td>
-					<td><%=list.get(i).getBDate().substring(0, 11) + list.get(i).getBDate().substring(11, 13) + "시"
-							+ list.get(i).getBDate().substring(14, 16) + "분"%></td>
-							<td><%= list.get(i).getViews()%></td>
+					<td><%=list.get(i).getBDate()%></td>
+					<td><%= list.get(i).getViews()%></td>
 				</tr>
 				<%
 							}

@@ -52,7 +52,7 @@ public class dao {
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				return true;
-			}
+			}closeAll();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -71,7 +71,7 @@ public class dao {
 			ResultSet rs = pstmt.executeQuery();
 			if (rs.next()) {
 				BNum = rs.getInt("max(BNum)") + 1;
-			}
+			}closeAll();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -87,7 +87,7 @@ public class dao {
 
 			if (rs.next()) {
 				return rs.getString(1);
-			}
+			}closeAll();
 		} catch (Exception e) {
 		}
 		return "";
@@ -130,6 +130,7 @@ public class dao {
 				board.setAuthority(rs.getInt(6));
 				board.setViews(rs.getInt(7));
 				list.add(board);
+				closeAll();
 			}
 			return list;
 		} catch (Exception e) {
@@ -146,7 +147,7 @@ public class dao {
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				return rs.getInt(1);
-			}
+			}closeAll();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -173,7 +174,7 @@ public class dao {
 				}
 				
 				return true;
-			}
+			}closeAll();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -196,9 +197,9 @@ public class dao {
 	}
 
 	public Board getBoard(int BNum) {
-		String SQL = "SELECT * FROM board WHERE BNum= ?";
+		String SQL = "SELECT * FROM board WHERE BNum = ?";
 		try {
-			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt = conn.prepareStatement(SQL);
 			pstmt.setInt(1, BNum);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
@@ -211,11 +212,12 @@ public class dao {
 				board.setAuthority(rs.getInt(6));
 				board.setViews(rs.getInt(7));
 				return board;
-			}
+			}closeAll();
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		}System.out.println("보드 전송에러");
 		return null;
 	}
-
+	
+	
 }

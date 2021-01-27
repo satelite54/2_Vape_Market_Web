@@ -1,12 +1,7 @@
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.io.PrintWriter"%>
 <%@page import="DTO.Board"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ page import="DAO.dao"%>
-<%@ page import="java.io.PrintWriter"%>
+<%@page import="DAO.dao"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,45 +13,52 @@
 	<%@ include file="menu.jsp"%>
 	<%@ include file="submenu.jsp"%>
 
+	<%!
+		Board board = new Board();	
+		dao DAO = new dao();
+		
+		int BNum = 0;
+	%>
+		<%
+			if (request.getParameter("BNum") != null){
+		 	BNum = Integer.parseInt(request.getParameter("BNum"));
+		 	System.out.println(BNum) ;
+		 }
 
-
-<%!
-dao DAO = new dao();
-PreparedStatement pstmt = null;
-ResultSet rs = null;
-%>
-<%
-ArrayList <Board> list =  DAO.getList();
-for(int i = 0 ; i< list.size() ; i++){
-
-%>
-
-
-
+		 if (BNum == 0) {
+			 PrintWriter script = response.getWriter();
+			 script.println("<script>");
+			 script.println("alert('유효하지 않은 글 입니다.')");
+			 script.println("<location.href = 'community.jsp'");
+			 script.println("</script>");
+		 }
+		 DAO.getBoard(BNum);
+	%>
 	
 	<div class="container  border border-dark rounded">
 		<div class="row p-2 font-weight-bold"
 			style="background-color: black; color: white;">
-			<div class="col-sm-2"> %>번호</div>
+			<div class="col-sm-2">번호</div>
 			<div class="col-sm-4">글 제목</div>
 			<div class="col-sm-2">작성자</div>
 			<div class="col-sm-2">작성일</div>
 			<div class="col-sm-2">조회수</div>
 		</div>
 		<div class="row border border-dark">
-			<div class="col-sm-2"></div>
-			<div class="col-sm-4"></div>
-			<div class="col-sm-2"></div>
-			<div class="col-sm-2"></div>
-			<div class="col-sm-2"></div>
+			<div class="col-sm-2"><%= board.getBNum() %></div>
+			<div class="col-sm-4"><%= board.getBTitle() %></div>
+			<div class="col-sm-2"><%= board.getId() %></div>
+			<div class="col-sm-2"><%= board.getBDate() %></div>
+			<div class="col-sm-2"><%= board.getViews() %></div>
 		</div>
 			<div class="card-body text-dark">
-				<p class="card-text"></p>
-<!-- 			</div> -->
+				<p class="card-text"><%= board.getBContent() %></p>
+ 			</div>
+ 			<a href="community.jsp" class="btn btn-primary float-right mt-5">목록</a>
 		</div>
-<%! %>
+		
 
-%>
+
 
 
 
