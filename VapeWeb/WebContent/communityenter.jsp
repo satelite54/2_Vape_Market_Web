@@ -32,7 +32,7 @@
 			 script.println("<location.href = 'community.jsp'");
 			 script.println("</script>");
 		 }
-		 DAO.getBoard(BNum);
+		board = DAO.getBoard(BNum);
 	%>
 	
 	<div class="container  border border-dark rounded">

@@ -130,8 +130,7 @@ public class dao {
 				board.setAuthority(rs.getInt(6));
 				board.setViews(rs.getInt(7));
 				list.add(board);
-				closeAll();
-			}
+			}closeAll();
 			return list;
 		} catch (Exception e) {
 			e.printStackTrace();
