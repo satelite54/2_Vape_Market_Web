@@ -52,7 +52,7 @@ public class dao {
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				return true;
-			}closeAll();
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -71,7 +71,7 @@ public class dao {
 			ResultSet rs = pstmt.executeQuery();
 			if (rs.next()) {
 				BNum = rs.getInt("max(BNum)") + 1;
-			}closeAll();
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -87,7 +87,7 @@ public class dao {
 
 			if (rs.next()) {
 				return rs.getString(1);
-			}closeAll();
+			}
 		} catch (Exception e) {
 		}
 		return "";
@@ -116,7 +116,7 @@ public class dao {
 
 	public ArrayList<Board> getList(){
 		String sql = "Select * FROM Board";
-		ArrayList<Board> list = new ArrayList<Board>();{
+		ArrayList<Board> list = new ArrayList<Board>();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
@@ -130,56 +130,12 @@ public class dao {
 				board.setAuthority(rs.getInt(6));
 				board.setViews(rs.getInt(7));
 				list.add(board);
-			}closeAll();
+			}
 			return list;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}return null;
-	}
 }	
-	
-	// 관리자 전체  리뷰 개수
-	public int getAllCount() {
-		String sql = "select count(*) from Board";
-		try {
-			PreparedStatement pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			if(rs.next()) {
-				return rs.getInt(1);
-			}closeAll();
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return -1; //DB 오류
-	}
-	
-	// 관리자 리뷰 전체보기 다음 페이지
-	public boolean nextPageAdmin(int pageNum) {
-		int count = getAllCount();
-		int start = (pageNum -1)*10;
-		int index = start + 1;
-		
-		String SQL = "select * from board"; // 12개만 출력
-		try {
-			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			rs = pstmt.executeQuery();	//결과 리턴
-			while(rs.absolute(index)) {
-				
-				if (index < (start + 10) && index <= count) {
-					index++;
-				} else {
-					break;
-				}
-				
-				return true;
-			}closeAll();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return false; //결과가 없으면 false
-	}
-
 	public int getNext() {
 		String SQL = "SELECT BNum FROM Board ORDER BY BNum DESC";
 		try {
@@ -211,7 +167,7 @@ public class dao {
 				board.setAuthority(rs.getInt(6));
 				board.setViews(rs.getInt(7));
 				return board;
-			}closeAll();
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}System.out.println("보드 전송에러");

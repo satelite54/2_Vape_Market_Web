@@ -21,7 +21,7 @@
 Board board = new Board();
 dao DAO = new dao();
 %>
-</head>
+</head>\
 <body>
 	<%@ include file="menu.jsp"%>
 	<%@ include file="submenu.jsp"%>
