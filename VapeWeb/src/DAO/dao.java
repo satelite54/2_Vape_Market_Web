@@ -151,7 +151,25 @@ public class dao {
 		return -1; // 데이터베이스 오류
 	}
 
+	
+	
+	
+	
+	public void viewsCount(int BNum) {
+		String sql = "UPDATE board SET views = views +1 WHERE BNum = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, BNum);
+			 pstmt.executeUpdate();
+		}
+		 catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+
 	public Board getBoard(int BNum) {
+		viewsCount(BNum);
 		String SQL = "SELECT * FROM board WHERE BNum = ?";
 		try {
 			pstmt = conn.prepareStatement(SQL);
@@ -175,4 +193,5 @@ public class dao {
 	}
 	
 	
+
 }

@@ -1,3 +1,4 @@
+<%@page import="com.mysql.fabric.Response"%>
 <%@page import="java.awt.dnd.DropTargetListener"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.sql.SQLException"%>
@@ -21,7 +22,8 @@
 Board board = new Board();
 dao DAO = new dao();
 %>
-</head>\
+
+</head>
 <body>
 	<%@ include file="menu.jsp"%>
 	<%@ include file="submenu.jsp"%>
