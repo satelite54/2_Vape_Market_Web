@@ -54,7 +54,9 @@
 			<div class="card-body text-dark">
 				<p class="card-text"><%= board.getBContent() %></p>
  			</div>
- 			<a href="community.jsp" class="btn btn-primary float-right mt-5">목록</a>
+ 			<a href="community.jsp" class="btn btn-primary float-right mt-3">목록</a>
+ 			<a href="communityDeleteAction.jsp?BNum=<%= board.getBNum() %>" class="btn btn-primary float-right mt-3">삭제</a>
+ 			<a href="communityUpdate.jsp?BNum=<%=board.getBNum()%>&BTitle=<%=board.getBTitle()%>&BContent=<%=board.getBContent()%>" class="btn btn-primary float-right mt-3">수정</a>
 		</div>
 		
 

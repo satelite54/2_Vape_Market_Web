@@ -5,10 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import DTO.Board;
 
@@ -43,6 +40,7 @@ public class dao {
 		}
 	}
 
+	// 페이지네이션 10개식 끊어서 보여주는 메소드
 	public boolean nextPage(int pageNumber) {
 		String SQL = "SELECT * FROM Board WHERE BNum < ? and Authority = 1 ORDER BY BNum DESC LIMIT 10";
 		ArrayList<Board> list = new ArrayList<Board>();
@@ -58,10 +56,24 @@ public class dao {
 		}
 		return false;
 	}
-
-	/*********************************
-	 * writeAction
-	 **************************************************************/
+	
+	//1을 출력해주는 메소드
+	public int getNext() {
+		String SQL = "SELECT BNum FROM Board ORDER BY BNum DESC";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				return rs.getInt(1) + 1;
+			}
+			return 1;// 첫 번째 게시물인 경우
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1; // 데이터베이스 오류
+	}
+	
+	
 	public int getBNum() {
 		int BNum = 0;
 		String sql = "select max(BNum) from board";
@@ -77,7 +89,9 @@ public class dao {
 		}
 		return BNum;
 	}
-
+	
+	
+	// 금일 날짜를 불러오는 메소드.
 	public String getDate() {
 		String sql = "select now();";
 		PreparedStatement pstmt = null;
@@ -93,6 +107,9 @@ public class dao {
 		return "";
 	}
 
+	
+	
+	// 글을 쓰는 메소드
 	public void write(String BTitle, String BContent, String id) {
 		PreparedStatement pstmt = null;
 		String sql = "insert into board(BNum, BTitle, BContent, BDate, id, authority, views) values (?,?,?,?,?,?,?)";
@@ -114,8 +131,12 @@ public class dao {
 		}
 	}
 
+	
+	
+	
+	// 보드 리스트를 불러오는 메소드
 	public ArrayList<Board> getList(){
-		String sql = "Select * FROM Board";
+		String sql = "Select * FROM board WHERE authority =1;";
 		ArrayList<Board> list = new ArrayList<Board>();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -136,25 +157,16 @@ public class dao {
 			e.printStackTrace();
 		}return null;
 }	
-	public int getNext() {
-		String SQL = "SELECT BNum FROM Board ORDER BY BNum DESC";
-		try {
-			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				return rs.getInt(1) + 1;
-			}
-			return 1;// 첫 번째 게시물인 경우
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return -1; // 데이터베이스 오류
-	}
+	
+	
+	
+	
+
 
 	
 	
 	
-	
+	// 조회수를 증가시키는 메소드
 	public void viewsCount(int BNum) {
 		String sql = "UPDATE board SET views = views +1 WHERE BNum = ?";
 		try {
@@ -166,8 +178,10 @@ public class dao {
 			e.printStackTrace();
 		}
 	}
+	
+	
 
-
+	// 게시물 상세내용 메소드
 	public Board getBoard(int BNum) {
 		viewsCount(BNum);
 		String SQL = "SELECT * FROM board WHERE BNum = ?";
@@ -191,6 +205,37 @@ public class dao {
 		}System.out.println("보드 전송에러");
 		return null;
 	}
+	
+	
+	// 삭제 메소드
+	public void deleteBoard(int BNum) {
+		String sql = "UPDATE Board set authority = 0 where BNum = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, BNum);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	// 글 수정 메소드
+	public int updateBoard(String BTitle,String BContent,int BNum) {
+		String sql = "UPDATE board SET BTITLE = ? , BCONTENT = ? WHERE BNUM = ?";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,BTitle);
+			pstmt.setString(2,BContent);
+			pstmt.setInt(3, BNum);
+			return pstmt.executeUpdate(); 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}return -1;
+	}
+	
+	
+	
 	
 	
 

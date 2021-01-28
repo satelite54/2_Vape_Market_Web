@@ -99,7 +99,7 @@ dao DAO = new dao();
 				</a></li>
 			</ul>
 		</nav>
-		<a href="communitywrite.jsp" class="btn btn-success float-right">글쓰기</a>
+		<a href="communitywrite.jsp"class="btn btn-success float-right">글쓰기</a>
 	</div>
 
 

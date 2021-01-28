@@ -19,15 +19,17 @@
 </head>
 <body>
 	<%
-	String id = "WOOJ";
-	String BTitle = request.getParameter("BTitle");
-	String BContent = request.getParameter("BContent");
 	dao DAO = new dao();
-	DAO.write(BTitle, BContent, id);
-	DAO.closeAll();
-	response.sendRedirect("community.jsp");
 	%>
-
+	
+	<%
+	String BTitle = request.getParameter("BTitle");
+	String BContent= request.getParameter("BContent");
+	int BNum = Integer.parseInt(request.getParameter("BNum"));
+	
+	DAO.updateBoard(BTitle, BContent, BNum);
+// 	response.sendRedirect("communityenter.jsp");
+	%>
 
 
 

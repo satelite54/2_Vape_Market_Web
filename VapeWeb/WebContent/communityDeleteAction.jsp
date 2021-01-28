@@ -18,16 +18,17 @@
 <title>JASET VAPE</title>
 </head>
 <body>
-	<%
-	String id = "WOOJ";
-	String BTitle = request.getParameter("BTitle");
-	String BContent = request.getParameter("BContent");
+	<%!
+	int BNum = 0;
 	dao DAO = new dao();
-	DAO.write(BTitle, BContent, id);
+	%>
+	<%
+	BNum = Integer.parseInt(request.getParameter("BNum"));
+	System.out.println("BNum = " + BNum);
+	DAO.deleteBoard(BNum);
 	DAO.closeAll();
 	response.sendRedirect("community.jsp");
 	%>
-
 
 
 
