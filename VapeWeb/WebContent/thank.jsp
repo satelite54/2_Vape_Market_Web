@@ -17,11 +17,16 @@
 <%@ include file="menu.jsp" %>
 
 <%	
+/* 
+public class GuestBookMgr {
+
+	private final SimpleDateFormat SDF_DATE =
+			new SimpleDateFormat("yyyy'년'  M'월' d'일' (E)");
+} */
 	String cartId = session.getId();
 	Date today = new Date();
-	Date shippingDate = new Date(today.getTime() + (2000 * 60 * 60 * 24));
+	Date shippingDate = new Date(today.getDate() + (2000 * 60 * 60 * 24));
 %>
-	
 <br><br><br>
 
 <div class="container">
