@@ -4,29 +4,9 @@
 <%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
-
-
 <%
 	request.setCharacterEncoding("utf-8");
-
 	String cartId = session.getId();
-
-	String shipping_cartId = "";
-	String shipping_shippingDate = "";
-	
-	Cookie[] cookies = request.getCookies();
-
-	if (cookies != null) {
-		for (int i = 0; i < cookies.length; i++) {
-			Cookie thisCookie = cookies[i];
-			String n = thisCookie.getName();
-			if (n.equals("Shipping_cartId"))
-				shipping_cartId = URLDecoder.decode((thisCookie.getValue()), "utf-8");
-			if (n.equals("Shipping_shippingDate"))
-				shipping_shippingDate = URLDecoder.decode((thisCookie.getValue()), "utf-8");
-			
-		}
-	}
 
 	 List<String> list = (List<String>) session.getAttribute("list");
 	 if(list == null) {
@@ -117,14 +97,14 @@
 <div id="pointer"><p style="color:white; font-size: x-large;">나의 쇼핑</div>
 <br><br><br><br>
 <div id="submenu"><p>장바구니</div>
-<!---------------------------------cart---------------------------------------------------------------  -->
+<!---------------------------------cart--------------------------------------------------------->
 <br><br>
 <div class="container">
 		<div style="padding-top: 50px">
 			<table class="table table-hover">
 				<tr>
 					<th>상품목록</th>
-					<th>수량</th><!-- 기본 수업내용에서는 #으로 저장되는 내용 파일 불러올때 잘 지켜 볼 것 -->
+					<th>수량</th>
 					<th>가격</th>
 				</tr>
 					<%
@@ -147,7 +127,13 @@
 			<table width="100%">
 				<tr>
 					<td align="center"><a href="./myshopping.jsp?id=<%=Deletenumber%>" class="btn btn-danger text-white">카트 비우기</a></td>
-					<td align="center"><a   class="btn btn-dark" role="button" href="./thank.jsp"  class="btn btn-danger text-white">주문하기 </a></td>
+					<%
+						if(list.size() != 0) {
+					%>
+					<td align="center"><a onclick="return emtpyCheck();" href="thank.jsp?cartId=<%=cartId%>"  class="btn btn-dark">주문하기 </a></td>
+					<%
+						}
+					%>
 				</tr>
 			</table>
 		</div>
@@ -155,46 +141,24 @@
 <br>
 <div id="submenu"><p>주문목록</div>
 <br><br><br><br>
-<!---------------------------------order---------------------------------------------------------------  -->
+<!---------------------------------order---------------------------------------------------------------->
 	<div class="container col-8 alert alert-primary text-dark">
 		<div class="text-center ">
 			<h1>Order</h1>
 		</div>
 		<div class="row justify-content-between">
-			
-			<%-- <div class="col-4 text-#212529" align="right">
-				<p>	<em>배송일: <% out.println(shipping_shippingDate);%></em>
-			</div> --%><!--배송일 출력깞 소스 확인 후 아래 배송일에 적용 후 삭제해야 함  -->
+
 		</div>
 		<div>
 			<table class="table table-hover">			
 			<tr>
 				<th class="text-center">주문번호</th>
 				<th class="text-center">주문날짜</th>
-				<th class="text-center">배송일: <% out.println(shipping_shippingDate);%></th>
+				<th class="text-center">배송일</th>
 			</tr>
-<%-- 			<%
-				int sum = 0; 
-				ArrayList<Product> cartList = (ArrayList<Product>) session.getAttribute("cartlist");
-				if (cartList == null)
-					cartList = new ArrayList<Product>();
-				for (int i = 0; i < cartList.size(); i++) { // 상품리스트 하나씩 출력하기
-					Product product = cartList.get(i);
-					int total = product.getUnitPrice() * product.getQuantity();
-					sum = sum + total;
-			%>
-			<tr>
-				<td class="text-center"><em><%=product.getPname()%> </em></td>
-				<td class="text-center"><%=product.getQuantity()%></td>
-				<td class="text-center">$<%=product.getUnitPrice()%></td>
-				<td class="text-center">$<%=total%></td>
-			</tr>
-			<%
-				}
-			%> --%>
+
 			<tr>
 				<td> </td>				
-				<%-- <td class="text-center text-danger"><strong><%=sum%> </strong></td> --%>
 			</tr>
 			</table>
 						
