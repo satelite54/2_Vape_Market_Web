@@ -18,8 +18,8 @@
 <title>JASET VAPE</title>
 </head>
 <body>
-	<%
-	dao DAO = new dao();
+	<%!
+		dao DAO = new dao();
 	%>
 	
 	<%
@@ -28,7 +28,7 @@
 	int BNum = Integer.parseInt(request.getParameter("BNum"));
 	
 	DAO.updateBoard(BTitle, BContent, BNum);
-// 	response.sendRedirect("communityenter.jsp");
+	response.sendRedirect("communityenter.jsp");
 	%>
 
 

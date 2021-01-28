@@ -136,7 +136,7 @@ public class dao {
 	
 	// 보드 리스트를 불러오는 메소드
 	public ArrayList<Board> getList(){
-		String sql = "Select * FROM board WHERE authority =1;";
+		String sql = "Select * FROM board WHERE authority =1 order BY BNum DESC";
 		ArrayList<Board> list = new ArrayList<Board>();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);

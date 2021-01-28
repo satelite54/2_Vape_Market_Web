@@ -37,6 +37,7 @@
 	  	<div class="card-body" style="height:300px;">
 	  		<form action="communityUpdateAction.jsp" method="post">
 	  			<input type="text" class="form-control mb-3" name="BTitle" placeholder="글제목" maxlength="50" value="<%=BTitle%>" required>
+	  			<input type="hidden" class="form-control mb-3" name="BNum"  value="<%=BNum%>" required>
 	  			<textarea class="form-control mb-3" name="BContent" style="height: 350px" placeholder="글내용" maxlength="2048" required><%=BContent%></textarea>
 	  			<div class="row">
 					<input type="submit" value="글수정" class="btn btn-primary ml-auto mr-3">

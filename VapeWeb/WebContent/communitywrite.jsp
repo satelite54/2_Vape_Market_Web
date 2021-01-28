@@ -11,6 +11,15 @@
 <body>
 <%@ include file="menu.jsp" %>
 <%@ include file="submenu.jsp" %>
+	
+	<%! 
+	dao DAO = new dao(); 
+	int BNum = 0;
+	%>
+	
+	<%
+		BNum = DAO.getBNum();
+	%>
 
 	<div class="container mt-3">
 	  <div class="card">
@@ -20,6 +29,7 @@
 	  	<div class="card-body" style="height:300px;">
 	  		<form action="communityAction.jsp" method="post">
 	  			<input type="text" class="form-control mb-3" name="BTitle" placeholder="글제목" maxlength="50" required>
+	  			<input type="hidden" name="BNum" value="<%=BNum%>">
 	  			<textarea class="form-control mb-3" name="BContent" style="height: 350px" placeholder="글내용" maxlength="2048" required></textarea>
 	  			<div class="row">
 					<input type="submit" value="글작성" class="btn btn-primary ml-auto mr-3">

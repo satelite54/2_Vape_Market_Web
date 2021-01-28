@@ -25,7 +25,7 @@
 	dao DAO = new dao();
 	DAO.write(BTitle, BContent, id);
 	DAO.closeAll();
-	response.sendRedirect("community.jsp");
+	response.sendRedirect("communityenter.jsp");
 	%>
 
 
