@@ -7,14 +7,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class dao {
-	//DB ¿¬°á °´Ã¼ ¼±¾ğ 
+	//DB ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ 
 	private Connection conn;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 	
 	public dao() {
 		try {
-			String url = "jdbc:mysql://localhost:3306/Vape?useSSL=false";
+			String url = "jdbc:mysql://localhost:3306/vape?useSSL=false";
 			String user = "root";
 			String password = "1234";
 
@@ -34,4 +34,23 @@ public class dao {
 			e.printStackTrace();
 		}	
 	}
+	
+	
+	
+	// ê¸ˆì¼ ë‚ ì§œë¥¼ ë¶ˆëŸ¬ì˜¤ëŠ” ë©”ì†Œë“œ.
+	public String getDate() {
+		String sql = "SELECT adddate(CURDATE(),2)";
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				return rs.getString(1);
+			}
+		} catch (Exception e) {
+		}
+		return "";
+	}
+	
 }

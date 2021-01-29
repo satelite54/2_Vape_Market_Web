@@ -1,3 +1,5 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="DAO.dao"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.net.URLDecoder"%>
@@ -15,7 +17,11 @@
 <body>
 
 <%@ include file="menu.jsp" %>
+<%!
+dao DAO = new dao();
+String Date = DAO.getDate();
 
+%>
 <%	
 /* 
 public class GuestBookMgr {
@@ -23,16 +29,25 @@ public class GuestBookMgr {
 	private final SimpleDateFormat SDF_DATE =
 			new SimpleDateFormat("yyyy'년'  M'월' d'일' (E)");
 } */
+// 	Date today = new Date();
+// 	Date shippingDate = new Date(today.getDate() + (2000 * 60 * 60 * 24));
+
 	String cartId = session.getId();
-	Date today = new Date();
-	Date shippingDate = new Date(today.getDate() + (2000 * 60 * 60 * 24));
+	
+
+	
+	
+	
+
+
+	
 %>
 <br><br><br>
 
 <div class="container">
 	<h1 class="display-3 font-weight-bold" style="color: #223a6b" >주문완료</h1>
 	<h2 class="alert alert-info">구매해 주셔서 감사합니다!</h2>
-	<p>	주문은	<%=	shippingDate %>에 배달예정입니다.!!	<p>	Order# :	<%	out.println(cartId);	%>		
+	<p>	주문은	<%=	Date %> 에 배달예정입니다.!!	<p>	Order# :	<%	out.println(cartId);	%>		
 		<div class="container">
 			<p>	<a href="Productsalespage.jsp" class="btn btn-dark"> &laquo; 쇼핑더하기</a>		
 		</div>
