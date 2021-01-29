@@ -33,7 +33,7 @@ dao DAO = new dao();
 
 
 	<div class="container">
-		<table class="table">
+		<table class="table border-dark rounded">
 			<thead class="thead-dark">
 				<tr>
 					<th scope="col">번호</th>
@@ -43,7 +43,7 @@ dao DAO = new dao();
 					<th scope="col">조회수</th>
 				</tr>
 			</thead>
-			<tbody style="border:solid 2px;">
+			<tbody class="border">
 				<%
 				
 							ArrayList<Board> list = DAO.getList();
@@ -63,7 +63,7 @@ dao DAO = new dao();
 					<td><%=list.get(i).getBNum()%></td>
 					<td><a href="communityenter.jsp?BNum=<%=list.get(i).getBNum() %>"><%= list.get(i).getBTitle()%></a></td>
 					<td><%=list.get(i).getId()%></td>
-					<td><%=list.get(i).getBDate()%></td>
+					<td><%=list.get(i).getBDate().substring(0,16)%></td>
 					<td><%= list.get(i).getViews()%></td>
 				</tr>
 				<%
