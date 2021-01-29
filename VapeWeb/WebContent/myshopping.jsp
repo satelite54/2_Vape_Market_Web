@@ -1,3 +1,6 @@
+<%@page import="DTO.Orders"%>
+<%@page import="sun.security.mscapi.CKeyPairGenerator.RSA"%>
+<%@page import="DAO.dao"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.net.URLDecoder"%>
@@ -6,7 +9,7 @@
 
 <%
 	request.setCharacterEncoding("utf-8");
-	String cartId = session.getId();
+	String cartID = session.getId();
 
 	 List<String> list = (List<String>) session.getAttribute("list");
 	 if(list == null) {
@@ -32,6 +35,12 @@
 	}
 	
 	int Deletenumber = 0;
+	
+	dao DAO = new dao();
+	
+	
+
+	
 	%>
 
 <html>
@@ -130,7 +139,7 @@
 					<%
 						if(list.size() != 0) {
 					%>
-					<td align="center"><a onclick="return emtpyCheck();" href="thank.jsp?cartId=<%=cartId%>"  class="btn btn-dark">주문하기 </a></td>
+					<td align="center"><a onclick="return emtpyCheck();" href="thank.jsp?cartId=<%=cartID%>"  class="btn btn-dark">주문하기 </a></td>
 					<%
 						}
 					%>
@@ -156,10 +165,18 @@
 				<th class="text-center">주문날짜</th>
 				<th class="text-center">배송일</th>
 			</tr>
-
+		<%
+			String id = "Ahyoung";
+			ArrayList <Orders> Olist = DAO.getOrderList(id);
+			for(int  i = 0 ; i < Olist.size();i++){		
+		%>
 			<tr>
-				<td> </td>				
+				<td><%= Olist.get(i).getCartID() %></td>				
+				<td><%= Olist.get(i).getOdate() %></td>				
+				<td><%= Olist.get(i).getLaterDate() %></td>
+				<% %>				
 			</tr>
+			<%} %>
 			</table>
 						
 		</div>
