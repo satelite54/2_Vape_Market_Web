@@ -30,7 +30,6 @@ Orders orders = new Orders();
 
 <%	
 String cartID = session.getId();
-String id = "Ahyoung";
 DAO.upDateOrder(id, session);
 
 %>

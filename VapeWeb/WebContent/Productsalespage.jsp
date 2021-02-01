@@ -1,4 +1,4 @@
-<%@page import="etc.CSQL"%>
+<%@page import="etc.*"%>
 <%@page import="DTO.Products"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>

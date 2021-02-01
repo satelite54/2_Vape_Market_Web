@@ -164,7 +164,6 @@
 				<th class="text-center">배송일</th>
 			</tr>
 		<%
-			String id = "Ahyoung";
 			ArrayList <Orders> Olist = DAO.getOrderList(id);
 			for(int  i = 0 ; i < Olist.size();i++){		
 		%>

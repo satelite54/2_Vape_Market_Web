@@ -218,7 +218,7 @@ public class dao {
 	public void deleteBoard(int BNum) {
 		String sql = "UPDATE Board set authority = 0 where BNum = ?";
 		try {
-			pstmt = conn.prepareStatement(sql);
+			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, BNum);
 			pstmt.executeUpdate();
 		} catch (SQLException e) {

@@ -1,9 +1,12 @@
+<%@page import="org.apache.tomcat.util.buf.Utf8Encoder"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
+<link rel="stylesheet" href="css/custom.css">	
 <%-- <%
 	//로그인과정에서 저장된 세션 id를 가져온다. 없으면 null값.
 	String sessionId = (String) session.getAttribute("sessionId");
 %> --%>
+
 <%! String hardware = "hardware";
 	String liquid = "liquid";
 	String coil = "coil";

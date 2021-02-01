@@ -26,7 +26,6 @@
 	BNum = Integer.parseInt(request.getParameter("BNum"));
 	System.out.println("BNum = " + BNum);
 	DAO.deleteBoard(BNum);
-	DAO.closeAll();
 	response.sendRedirect("community.jsp");
 	%>
 
