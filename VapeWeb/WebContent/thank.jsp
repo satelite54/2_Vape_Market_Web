@@ -45,7 +45,7 @@
 
   <meta name="viewport" content="width=device-width">
   
-  <title>Bitc-project2/myshopping.jsp at Ahyoung · satelite54/Bitc-project2</title>
+  <title>Bitc-project2/thank.jsp at Ahyoung · satelite54/Bitc-project2</title>
     <meta name="description" content="Contribute to satelite54/Bitc-project2 development by creating an account on GitHub.">
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
   <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
@@ -59,11 +59,11 @@
     
 
   <link rel="assets" href="https://github.githubassets.com/">
-    <link rel="shared-web-socket" href="wss://alive.github.com/_sockets/u/73506250/ws?session=eyJ2IjoiVjMiLCJ1Ijo3MzUwNjI1MCwicyI6NjQyMTg2NTUxLCJjIjo0MDgyODYwMDA5LCJ0IjoxNjEyMTQ5MTcxfQ==--9a3d74c83435f762d0f09999920bfb87d1aaca05313470e268fc9a6ab9f98215" data-refresh-url="/_alive">
+    <link rel="shared-web-socket" href="wss://alive.github.com/_sockets/u/73506250/ws?session=eyJ2IjoiVjMiLCJ1Ijo3MzUwNjI1MCwicyI6NjQyMTg2NTUxLCJjIjoyMTk0MTM2NjIwLCJ0IjoxNjEyMTQ5MTc2fQ==--9882e2dda66a61d757ef811c41cc3e49ef0654fdc42679083792d49952309bae" data-refresh-url="/_alive">
     <link rel="shared-web-socket-src" href="/socket-worker-5029ae85.js">
   <link rel="sudo-modal" href="/sessions/sudo_modal">
 
-  <meta name="request-id" content="CCEA:3DA0:44661F:4DCEC1:601771AC" data-pjax-transient="true" /><meta name="html-safe-nonce" content="4ff76117c13bf27a1cfa0b1a4d6ad3570d625ffcee659c1a8d92dc75a9881462" data-pjax-transient="true" /><meta name="visitor-payload" content="eyJyZWZlcnJlciI6Imh0dHBzOi8vZ2l0aHViLmNvbS9zYXRlbGl0ZTU0L0JpdGMtcHJvamVjdDIvdHJlZS9BaHlvdW5nL1ZhcGVXZWIvV2ViQ29udGVudCIsInJlcXVlc3RfaWQiOiJDQ0VBOjNEQTA6NDQ2NjFGOjREQ0VDMTo2MDE3NzFBQyIsInZpc2l0b3JfaWQiOiI2Mjc4MDU1NDc2MDE1MzU5MDE2IiwicmVnaW9uX2VkZ2UiOiJhcC1ub3J0aGVhc3QtMiIsInJlZ2lvbl9yZW5kZXIiOiJpYWQifQ==" data-pjax-transient="true" /><meta name="visitor-hmac" content="1bd1b9eaae96920466ab00659b5f2e95555a95814f024615bf9a48225865b167" data-pjax-transient="true" />
+  <meta name="request-id" content="CCEA:3DA0:4466BB:4DCF67:601771B3" data-pjax-transient="true" /><meta name="html-safe-nonce" content="4ff76117c13bf27a1cfa0b1a4d6ad3570d625ffcee659c1a8d92dc75a9881462" data-pjax-transient="true" /><meta name="visitor-payload" content="eyJyZWZlcnJlciI6Imh0dHBzOi8vZ2l0aHViLmNvbS9zYXRlbGl0ZTU0L0JpdGMtcHJvamVjdDIvdHJlZS9BaHlvdW5nL1ZhcGVXZWIvV2ViQ29udGVudCIsInJlcXVlc3RfaWQiOiJDQ0VBOjNEQTA6NDQ2NkJCOjREQ0Y2Nzo2MDE3NzFCMyIsInZpc2l0b3JfaWQiOiI2Mjc4MDU1NDc2MDE1MzU5MDE2IiwicmVnaW9uX2VkZ2UiOiJhcC1ub3J0aGVhc3QtMiIsInJlZ2lvbl9yZW5kZXIiOiJpYWQifQ==" data-pjax-transient="true" /><meta name="visitor-hmac" content="b3a4aa9e0c9c972dd23d979e1abded3b1c454653b451456fe6883e68d4a0753d" data-pjax-transient="true" />
 
     <meta name="hovercard-subject-tag" content="repository:330517079" data-pjax-transient>
 
@@ -102,14 +102,14 @@
 
       <meta name="expected-hostname" content="github.com">
 
-      <meta name="js-proxy-site-detection-payload" content="N2I5NDk4ZjgwNDE3NTUwMDQ4ZGI5MGE5ZjZkZDE2NWM0NDJkYzZjODg1OTgzYTgyYmFkMmZjODU4YjE3ZTQ5YXx7InJlbW90ZV9hZGRyZXNzIjoiMjIyLjIzNC4zNi44OSIsInJlcXVlc3RfaWQiOiJDQ0VBOjNEQTA6NDQ2NjFGOjREQ0VDMTo2MDE3NzFBQyIsInRpbWVzdGFtcCI6MTYxMjE0OTE3MSwiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
+      <meta name="js-proxy-site-detection-payload" content="ZjBiOWMzMDgyYzllNTMwMzJjZjExOWIwN2E0MzRiODg4MGExY2I4ZTUwNGFiZTU2YzgwZTI2Yjg5MGFiN2RkZHx7InJlbW90ZV9hZGRyZXNzIjoiMjIyLjIzNC4zNi44OSIsInJlcXVlc3RfaWQiOiJDQ0VBOjNEQTA6NDQ2NkJCOjREQ0Y2Nzo2MDE3NzFCMyIsInRpbWVzdGFtcCI6MTYxMjE0OTE3NiwiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
 
     <meta name="enabled-features" content="MARKETPLACE_PENDING_INSTALLATIONS,JS_HTTP_CACHE_HEADERS,ACTIONS_SHORT_SHA_WARNING,TASK_LIST_AUTOCOMPLETE,MULTI_WORD_SUGGESTER">
 
   <meta http-equiv="x-pjax-version" content="b605dcd943073ba15cd739f1ea6cf707fa205699471359259346600a408c5474">
   
 
-        <link href="https://github.com/satelite54/Bitc-project2/commits/Ahyoung.atom?token=ARQZ3SQDOMMWJZZY6JF3BA56ENJLG" rel="alternate" title="Recent Commits to Bitc-project2:Ahyoung" type="application/atom+xml">
+        <link href="https://github.com/satelite54/Bitc-project2/commits/Ahyoung.atom?token=ARQZ3STYRSHLNZIIWFCFB656ENJLQ" rel="alternate" title="Recent Commits to Bitc-project2:Ahyoung" type="application/atom+xml">
 
   <meta name="go-import" content="github.com/satelite54/Bitc-project2 git https://github.com/satelite54/Bitc-project2.git">
 
@@ -117,7 +117,7 @@
 
 
 
-    <link rel="canonical" href="https://github.com/satelite54/Bitc-project2/blob/Ahyoung/VapeWeb/WebContent/myshopping.jsp" data-pjax-transient>
+    <link rel="canonical" href="https://github.com/satelite54/Bitc-project2/blob/Ahyoung/VapeWeb/WebContent/thank.jsp" data-pjax-transient>
 
 
   <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
@@ -191,7 +191,7 @@
           spellcheck="false"
           autocomplete="off"
           >
-          <input type="hidden" value="/0qskTXuLWJAvPBsr+vPPn3RANSBJ/DqBsBf3jYaHEWR9hC7Kxz2HFaUG2imTRnx+ggolmDALRJnnoaEqlD3Xw==" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" />
+          <input type="hidden" value="a44O2OCQyAd4Jm0AojI8ZFkB7SQPzjVtK9fNGWs2nTcFMrLy/mITeW4OhgSrlOqr3tjFZu4p6JVKiRRD93x2LQ==" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" />
           <input type="hidden" class="js-site-search-type-field" name="type" >
             <img src="https://github.githubassets.com/images/search-key-slash.svg" alt="" class="mr-2 header-search-key-slash">
 
@@ -380,7 +380,7 @@
       <img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/73506250?s=40&amp;v=4" width="20" height="20" alt="@curong" />
       curong
 </a>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="IKpD9haXQNr8EB6KL5DZhuRRQkoJxqWfFYsQbxlegDyxnsYzhF+GusJ0Sw5zlquC6e+cpjtBY+oNtUvn69dTlQ==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="n9qT5cdL8uiRuBYcc9Y9B4wEAM2e/on+BKqJVHN5hHQO7hYgVYM0iK/cQ5gv0E8DgbreIax5T4sclNLcgfBX3Q==" />
       <button type="submit" class="Header-link mr-0 mr-md-3 py-2 py-md-3 border-top border-md-top-0 border-white-fade-15 d-md-none btn-link d-block width-full text-left" data-ga-click="Header, sign out, icon:logout" style="padding-left: 2px;">
         <svg class="octicon octicon-sign-out v-align-middle" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2 2.75C2 1.784 2.784 1 3.75 1h2.5a.75.75 0 010 1.5h-2.5a.25.25 0 00-.25.25v10.5c0 .138.112.25.25.25h2.5a.75.75 0 010 1.5h-2.5A1.75 1.75 0 012 13.25V2.75zm10.44 4.5H6.75a.75.75 0 000 1.5h5.69l-1.97 1.97a.75.75 0 101.06 1.06l3.25-3.25a.75.75 0 000-1.06l-3.25-3.25a.75.75 0 10-1.06 1.06l1.97 1.97z"></path></svg>
         Sign out
@@ -400,7 +400,7 @@
     <div class="Header-item mr-0 mr-md-3 flex-order-1 flex-md-order-none">
         
 
-    <notification-indicator class="js-socket-channel" data-channel="eyJjIjoibm90aWZpY2F0aW9uLWNoYW5nZWQ6NzM1MDYyNTAiLCJ0IjoxNjEyMTQ5MTcxfQ==--52f6acafa71a0218f18f7d8906ff024e97f1be2a48b58025d6394784ae432f73">
+    <notification-indicator class="js-socket-channel" data-channel="eyJjIjoibm90aWZpY2F0aW9uLWNoYW5nZWQ6NzM1MDYyNTAiLCJ0IjoxNjEyMTQ5MTc2fQ==--c7a92d7411c40c8a891e4577d0390f9c458a30ea6014164f6a5639e8df9d3706">
       <a href="/notifications"
          class="Header-link notification-indicator position-relative tooltipped tooltipped-sw"
          
@@ -579,7 +579,7 @@
         data-action="toggle:notifications-list-subscription-form#detailsToggled"
       >
 
-      <summary class="btn btn-sm rounded-right-0" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:330517079,&quot;originating_url&quot;:&quot;https://github.com/satelite54/Bitc-project2/blob/Ahyoung/VapeWeb/WebContent/myshopping.jsp&quot;,&quot;user_id&quot;:73506250}}" data-hydro-click-hmac="229fab18246e7e31374398efaa04e211fd55a3e8bce7e2f78e7db0c0c69aa115" data-ga-click="Repository, click Watch settings, action:blob#show" aria-label="Notifications settings">
+      <summary class="btn btn-sm rounded-right-0" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:330517079,&quot;originating_url&quot;:&quot;https://github.com/satelite54/Bitc-project2/blob/Ahyoung/VapeWeb/WebContent/thank.jsp&quot;,&quot;user_id&quot;:73506250}}" data-hydro-click-hmac="3608cce9906a185858b7177ede7d246a69f55fed810b1435552718bc1089cb6f" data-ga-click="Repository, click Watch settings, action:blob#show" aria-label="Notifications settings">
           <span data-menu-button>
             <span
               hidden
@@ -623,7 +623,7 @@
             </header>
 
             <div class="SelectMenu-list">
-              <form data-target="notifications-list-subscription-form.form" data-action="submit:notifications-list-subscription-form#submitForm" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="HmidhXNTfbd79aBnQ8v4/8TIJleVw4jo8z0GvxxaPM5ymLPv1nGDAxLa4qJIe+sZ+aBNRsZUBdT0IVTDEpjH7g==" />
+              <form data-target="notifications-list-subscription-form.form" data-action="submit:notifications-list-subscription-form#submitForm" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="B6eWKfX+A6Jp4EWlTnBoQi17XOT3l64jJ6EwyRyyvFxrV7hDUNz9FgDPB2BFwHukEBM39aQAIx8gvWK1EnBHfA==" />
 
                 <input type="hidden" name="repository_id" value="330517079">
 
@@ -725,7 +725,7 @@
 
         <details-dialog class="notifications-component-dialog " data-target="notifications-list-subscription-form.customDialog" hidden>
           <div class="SelectMenu-modal notifications-component-dialog-modal overflow-visible">
-            <form data-target="notifications-list-subscription-form.customform" data-action="submit:notifications-list-subscription-form#submitCustomForm" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="HL4asyf8vdJODptjSAQSN6yT0BtEmCEP3yM9e8JApzFwTjTZgt5DZich2aZDtAHRkfu7ChcPrDPYP28HzIJcEQ==" />
+            <form data-target="notifications-list-subscription-form.customform" data-action="submit:notifications-list-subscription-form#submitCustomForm" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="aHHNZLS3FWEQGUpz94RU5qwKqXcDtiFcCEMuF8LpSs8EgeMOEZXr1Xk2CLb8NEcAkWLCZlAhrGAPX3xrzCux7w==" />
 
               <input type="hidden" name="repository_id" value="330517079">
 
@@ -841,9 +841,9 @@
 
   <li>
         <div class="d-block js-toggler-container js-social-container starring-container ">
-    <form class="starred js-social-form" action="/satelite54/Bitc-project2/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="5JmV6CU3m2VSvu0VmlGwkQ9BfKKMBgKQXGD+pMJdJQMFRtkHn+sk6j7zbYk4PpPBtnBHc8VOY+xp1ng7eVxAxg==" />
+    <form class="starred js-social-form" action="/satelite54/Bitc-project2/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="5bFw+AKIzDNG44lXYLyACeKY7AmdFXLHYYJciwhRpZwEbjwXuFRzvCquCcvC06NZW6nX2NRdE7tUNNoUs1DAWQ==" />
       <input type="hidden" name="context" value="repository">
-      <button type="submit" class="btn btn-sm btn-with-count  js-toggler-target" aria-label="Unstar this repository" title="Unstar satelite54/Bitc-project2" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:330517079,&quot;originating_url&quot;:&quot;https://github.com/satelite54/Bitc-project2/blob/Ahyoung/VapeWeb/WebContent/myshopping.jsp&quot;,&quot;user_id&quot;:73506250}}" data-hydro-click-hmac="c314f09bd5aa4c7859ab755b8676429142b28b3283cec91153a8eeb6b15bbd57" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">        <svg class="octicon octicon-star-fill mr-1" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg>
+      <button type="submit" class="btn btn-sm btn-with-count  js-toggler-target" aria-label="Unstar this repository" title="Unstar satelite54/Bitc-project2" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:330517079,&quot;originating_url&quot;:&quot;https://github.com/satelite54/Bitc-project2/blob/Ahyoung/VapeWeb/WebContent/thank.jsp&quot;,&quot;user_id&quot;:73506250}}" data-hydro-click-hmac="0a16536526c6ae05fe3ab8b1a398a072a74e9be51cc071103da83db14d997360" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">        <svg class="octicon octicon-star-fill mr-1" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg>
         <span>
           Unstar
 </span></button>        <a class="social-count js-social-count" href="/satelite54/Bitc-project2/stargazers"
@@ -851,9 +851,9 @@
            0
         </a>
 </form>
-    <form class="unstarred js-social-form" action="/satelite54/Bitc-project2/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="qJTgTrGISGF5yNp9H6Y8DuKR3vbAjGasHjP1p5SDzW8rF4g8jVezCzHpY9GtfU4TTpksUjTXupAj6DIFq0/CEQ==" />
+    <form class="unstarred js-social-form" action="/satelite54/Bitc-project2/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="Uis0dtvDVNr7B6PSd033WgSUIPxuedxgl6qhCAqdRrTRqFwE5xyvsLMmGn7FloVHqJzSWJoiAFyqcWaqNVFJyg==" />
       <input type="hidden" name="context" value="repository">
-      <button type="submit" class="btn btn-sm btn-with-count  js-toggler-target" aria-label="Unstar this repository" title="Star satelite54/Bitc-project2" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:330517079,&quot;originating_url&quot;:&quot;https://github.com/satelite54/Bitc-project2/blob/Ahyoung/VapeWeb/WebContent/myshopping.jsp&quot;,&quot;user_id&quot;:73506250}}" data-hydro-click-hmac="ead08cddf49b1c4472d426e7f0b3c805728a09536b0a1f2164674dd1e512943b" data-ga-click="Repository, click star button, action:blob#show; text:Star">        <svg class="octicon octicon-star mr-1" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg>
+      <button type="submit" class="btn btn-sm btn-with-count  js-toggler-target" aria-label="Unstar this repository" title="Star satelite54/Bitc-project2" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:330517079,&quot;originating_url&quot;:&quot;https://github.com/satelite54/Bitc-project2/blob/Ahyoung/VapeWeb/WebContent/thank.jsp&quot;,&quot;user_id&quot;:73506250}}" data-hydro-click-hmac="7bc041d27364ecea995d8de65f8f211621c101e205b874fb594164db685d2d92" data-ga-click="Repository, click star button, action:blob#show; text:Star">        <svg class="octicon octicon-star mr-1" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg>
         <span>
           Star
 </span></button>        <a class="social-count js-social-count" href="/satelite54/Bitc-project2/stargazers"
@@ -870,7 +870,7 @@
                       <summary
                     class="btn btn-sm btn-with-count"
                     title="Fork your own copy of satelite54/Bitc-project2 to your account"
-                    data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:330517079,&quot;originating_url&quot;:&quot;https://github.com/satelite54/Bitc-project2/blob/Ahyoung/VapeWeb/WebContent/myshopping.jsp&quot;,&quot;user_id&quot;:73506250}}" data-hydro-click-hmac="d2ffc1c1ef266c742a052a1e7e5e80c5353090eefae672c956b3de6b5a52d482" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork">
+                    data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:330517079,&quot;originating_url&quot;:&quot;https://github.com/satelite54/Bitc-project2/blob/Ahyoung/VapeWeb/WebContent/thank.jsp&quot;,&quot;user_id&quot;:73506250}}" data-hydro-click-hmac="c922fe1c32bfc6caeea216a32345ad9eb3f14674835478df6be1fc9a6784d185" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork">
                     <svg class="octicon octicon-repo-forked" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z"></path></svg>
                     Fork
                   </summary>
@@ -1026,9 +1026,9 @@
   
 
 
-    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/satelite54/Bitc-project2/blob/0febfd583a3dbb7f8ae27973123d371c816988e1/VapeWeb/WebContent/myshopping.jsp">Permalink</a>
+    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/satelite54/Bitc-project2/blob/0febfd583a3dbb7f8ae27973123d371c816988e1/VapeWeb/WebContent/thank.jsp">Permalink</a>
 
-    <!-- blob contrib key: blob_contributors:v22:07b56d62bcc4b9c136f550c6c14572485ec14294b82460bf127b3c7938804c65 -->
+    <!-- blob contrib key: blob_contributors:v22:b1674d833d06b0aa164d2f306f82cb6da0870136cfe9ec7c78d40e544c40a76d -->
 
     <div class="d-flex flex-items-start flex-shrink-0 pb-3 flex-wrap flex-md-nowrap flex-justify-between flex-md-justify-start">
       
@@ -1042,7 +1042,7 @@
       <span class="dropdown-caret"></span>
     </summary>
 
-    <details-menu class="SelectMenu SelectMenu--hasFilter" src="/satelite54/Bitc-project2/refs/Ahyoung/VapeWeb/WebContent/myshopping.jsp?source_action=show&amp;source_controller=blob" preload>
+    <details-menu class="SelectMenu SelectMenu--hasFilter" src="/satelite54/Bitc-project2/refs/Ahyoung/VapeWeb/WebContent/thank.jsp?source_action=show&amp;source_controller=blob" preload>
       <div class="SelectMenu-modal">
         <include-fragment class="SelectMenu-loading" aria-label="Menu is loading">
           <svg class="octicon octicon-octoface anim-pulse" height="32" viewBox="0 0 24 24" version="1.1" width="32" aria-hidden="true"><path d="M7.75 11c-.69 0-1.25.56-1.25 1.25v1.5a1.25 1.25 0 102.5 0v-1.5C9 11.56 8.44 11 7.75 11zm1.27 4.5a.469.469 0 01.48-.5h5a.47.47 0 01.48.5c-.116 1.316-.759 2.5-2.98 2.5s-2.864-1.184-2.98-2.5zm7.23-4.5c-.69 0-1.25.56-1.25 1.25v1.5a1.25 1.25 0 102.5 0v-1.5c0-.69-.56-1.25-1.25-1.25z"></path><path fill-rule="evenodd" d="M21.255 3.82a1.725 1.725 0 00-2.141-1.195c-.557.16-1.406.44-2.264.866-.78.386-1.647.93-2.293 1.677A18.442 18.442 0 0012 5c-.93 0-1.784.059-2.569.17-.645-.74-1.505-1.28-2.28-1.664a13.876 13.876 0 00-2.265-.866 1.725 1.725 0 00-2.141 1.196 23.645 23.645 0 00-.69 3.292c-.125.97-.191 2.07-.066 3.112C1.254 11.882 1 13.734 1 15.527 1 19.915 3.13 23 12 23c8.87 0 11-3.053 11-7.473 0-1.794-.255-3.647-.99-5.29.127-1.046.06-2.15-.066-3.125a23.652 23.652 0 00-.689-3.292zM20.5 14c.5 3.5-1.5 6.5-8.5 6.5s-9-3-8.5-6.5c.583-4 3-6 8.5-6s7.928 2 8.5 6z"></path></svg>
@@ -1054,7 +1054,7 @@
 </div>
 
       <h2 id="blob-path" class="breadcrumb flex-auto min-width-0 text-normal mx-0 mx-md-3 width-full width-md-auto flex-order-1 flex-md-order-none mt-3 mt-md-0">
-        <span class="js-repo-root text-bold"><span class="js-path-segment d-inline-block wb-break-all"><a data-pjax="true" href="/satelite54/Bitc-project2/tree/Ahyoung"><span>Bitc-project2</span></a></span></span><span class="separator">/</span><span class="js-path-segment d-inline-block wb-break-all"><a data-pjax="true" href="/satelite54/Bitc-project2/tree/Ahyoung/VapeWeb"><span>VapeWeb</span></a></span><span class="separator">/</span><span class="js-path-segment d-inline-block wb-break-all"><a data-pjax="true" href="/satelite54/Bitc-project2/tree/Ahyoung/VapeWeb/WebContent"><span>WebContent</span></a></span><span class="separator">/</span><strong class="final-path">myshopping.jsp</strong>
+        <span class="js-repo-root text-bold"><span class="js-path-segment d-inline-block wb-break-all"><a data-pjax="true" href="/satelite54/Bitc-project2/tree/Ahyoung"><span>Bitc-project2</span></a></span></span><span class="separator">/</span><span class="js-path-segment d-inline-block wb-break-all"><a data-pjax="true" href="/satelite54/Bitc-project2/tree/Ahyoung/VapeWeb"><span>VapeWeb</span></a></span><span class="separator">/</span><span class="js-path-segment d-inline-block wb-break-all"><a data-pjax="true" href="/satelite54/Bitc-project2/tree/Ahyoung/VapeWeb/WebContent"><span>WebContent</span></a></span><span class="separator">/</span><strong class="final-path">thank.jsp</strong>
       </h2>
       <a href="/satelite54/Bitc-project2/find/Ahyoung"
             class="js-pjax-capture-input btn mr-2 d-none d-md-block"
@@ -1069,7 +1069,7 @@
 </summary>  <div>
     <ul class="dropdown-menu dropdown-menu-sw">
             <li class="d-block d-md-none">
-              <a class="dropdown-item d-flex flex-items-baseline" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FIND_FILE_BUTTON&quot;,&quot;repository_id&quot;:330517079,&quot;originating_url&quot;:&quot;https://github.com/satelite54/Bitc-project2/blob/Ahyoung/VapeWeb/WebContent/myshopping.jsp&quot;,&quot;user_id&quot;:73506250}}" data-hydro-click-hmac="80ec119e8d6313144c2ac74c3bbb49f997a0726d688c53d55d091eb451f5adda" data-ga-click="Repository, find file, location:repo overview" data-hotkey="t" data-pjax="true" href="/satelite54/Bitc-project2/find/Ahyoung">
+              <a class="dropdown-item d-flex flex-items-baseline" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FIND_FILE_BUTTON&quot;,&quot;repository_id&quot;:330517079,&quot;originating_url&quot;:&quot;https://github.com/satelite54/Bitc-project2/blob/Ahyoung/VapeWeb/WebContent/thank.jsp&quot;,&quot;user_id&quot;:73506250}}" data-hydro-click-hmac="71c76313d22e5718c5313c387265ea64994cae0fa2fb37e50f325f49dfc099f5" data-ga-click="Repository, find file, location:repo overview" data-hotkey="t" data-pjax="true" href="/satelite54/Bitc-project2/find/Ahyoung">
                 <span class="flex-auto">Go to file</span>
                 <span class="text-small text-gray" aria-hidden="true">T</span>
 </a>            </li>
@@ -1083,7 +1083,7 @@
             </li>
             <li class="dropdown-divider" role="none"></li>
             <li>
-              <clipboard-copy value="VapeWeb/WebContent/myshopping.jsp" class="dropdown-item cursor-pointer" data-toggle-for="blob-more-options-details">
+              <clipboard-copy value="VapeWeb/WebContent/thank.jsp" class="dropdown-item cursor-pointer" data-toggle-for="blob-more-options-details">
                 Copy path
               </clipboard-copy>
             </li>
@@ -1093,7 +1093,7 @@
 
 
     <div class="Box d-flex flex-column flex-shrink-0 mb-3">
-      <include-fragment src="/satelite54/Bitc-project2/contributors/Ahyoung/VapeWeb/WebContent/myshopping.jsp" class="commit-loader">
+      <include-fragment src="/satelite54/Bitc-project2/contributors/Ahyoung/VapeWeb/WebContent/thank.jsp" class="commit-loader">
         <div class="Box-header Box-header--blue d-flex flex-items-center">
           <div class="Skeleton avatar avatar-user flex-shrink-0 ml-n1 mr-n1 mt-n1 mb-n1" style="width:24px;height:24px;"></div>
           <div class="Skeleton Skeleton--text col-5 ml-2">&nbsp;</div>
@@ -1116,34 +1116,34 @@
 <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
   <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
 
-      187 lines (170 sloc)
+      52 lines (43 sloc)
       <span class="file-info-divider"></span>
-    4.33 KB
+    1.4 KB
   </div>
 
   <div class="d-flex py-1 py-md-0 flex-auto flex-order-1 flex-md-order-2 flex-sm-grow-0 flex-justify-between">
 
     <div class="BtnGroup">
-      <a href="/satelite54/Bitc-project2/raw/Ahyoung/VapeWeb/WebContent/myshopping.jsp" id="raw-url" role="button" class="btn btn-sm BtnGroup-item ">Raw</a>
-        <a href="/satelite54/Bitc-project2/blame/Ahyoung/VapeWeb/WebContent/myshopping.jsp" data-hotkey="b" role="button" class="btn js-update-url-with-hash btn-sm BtnGroup-item ">Blame</a>
+      <a href="/satelite54/Bitc-project2/raw/Ahyoung/VapeWeb/WebContent/thank.jsp" id="raw-url" role="button" class="btn btn-sm BtnGroup-item ">Raw</a>
+        <a href="/satelite54/Bitc-project2/blame/Ahyoung/VapeWeb/WebContent/thank.jsp" data-hotkey="b" role="button" class="btn js-update-url-with-hash btn-sm BtnGroup-item ">Blame</a>
     </div>
 
     <div>
           <a class="btn-octicon tooltipped tooltipped-nw js-remove-unless-platform"
              data-platforms="windows,mac"
-             href="x-github-client://openRepo/https://github.com/satelite54/Bitc-project2?branch=Ahyoung&amp;filepath=VapeWeb%2FWebContent%2Fmyshopping.jsp"
+             href="x-github-client://openRepo/https://github.com/satelite54/Bitc-project2?branch=Ahyoung&amp;filepath=VapeWeb%2FWebContent%2Fthank.jsp"
              aria-label="Open this file in GitHub Desktop"
              data-ga-click="Repository, open with desktop">
               <svg class="octicon octicon-device-desktop" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M1.75 2.5h12.5a.25.25 0 01.25.25v7.5a.25.25 0 01-.25.25H1.75a.25.25 0 01-.25-.25v-7.5a.25.25 0 01.25-.25zM14.25 1H1.75A1.75 1.75 0 000 2.75v7.5C0 11.216.784 12 1.75 12h3.727c-.1 1.041-.52 1.872-1.292 2.757A.75.75 0 004.75 16h6.5a.75.75 0 00.565-1.243c-.772-.885-1.193-1.716-1.292-2.757h3.727A1.75 1.75 0 0016 10.25v-7.5A1.75 1.75 0 0014.25 1zM9.018 12H6.982a5.72 5.72 0 01-.765 2.5h3.566a5.72 5.72 0 01-.765-2.5z"></path></svg>
           </a>
 
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/satelite54/Bitc-project2/edit/Ahyoung/VapeWeb/WebContent/myshopping.jsp" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="d0EqK1bJgAhjJdzULtCJ+nyw6i/j/D230A7UkDv6l5dpOTUdaLN5rnjttvg3A2UDAIkR+jT4DrNIKPQgvkPyFA==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/satelite54/Bitc-project2/edit/Ahyoung/VapeWeb/WebContent/thank.jsp" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="EwwOiKjWPWNCGy/+NhN/t9U/Db2I3Z/yx8DQrbErsQIeGlUAhmosWg3EiQmltaWVS9dfPVD95RG2KHd/kkiInA==" />
             <button class="btn-octicon tooltipped tooltipped-nw" type="submit"
               aria-label="Edit this file" data-hotkey="e" data-disable-with>
               <svg class="octicon octicon-pencil" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z"></path></svg>
             </button>
 </form>
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/satelite54/Bitc-project2/delete/Ahyoung/VapeWeb/WebContent/myshopping.jsp" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="Cf49JlbaNwloVGg7MpDTrD0Vh63YXFJYn6rQlEQ0MUzw3ZOsTEWSNAu22VPacWXwbRjg5htx24VuR+9aR3KuzQ==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/satelite54/Bitc-project2/delete/Ahyoung/VapeWeb/WebContent/thank.jsp" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="hx/m7x/uBCf/Dz4NfFbI3sPYvO/yAHIWEqTMvTj6j/W9ugrDvPGrOxYAw0NBYNirQ6NqJGZxRTaCfun/h5K6iA==" />
             <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
               aria-label="Delete this file" data-disable-with>
               <svg class="octicon octicon-trashcan" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.5 1.75a.25.25 0 01.25-.25h2.5a.25.25 0 01.25.25V3h-3V1.75zm4.5 0V3h2.25a.75.75 0 010 1.5H2.75a.75.75 0 010-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75zM4.496 6.675a.75.75 0 10-1.492.15l.66 6.6A1.75 1.75 0 005.405 15h5.19c.9 0 1.652-.681 1.741-1.576l.66-6.6a.75.75 0 00-1.492-.149l-.66 6.6a.25.25 0 01-.249.225h-5.19a.25.25 0 01-.249-.225l-.66-6.6z"></path></svg>
@@ -1163,7 +1163,7 @@
       </tr>
       <tr>
         <td id="L2" class="blob-num js-line-number" data-line-number="2"></td>
-        <td id="LC2" class="blob-code blob-code-inner js-file-line">&lt;%@<span class="pl-k">page</span> <span class="pl-e">import</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>sun.security.mscapi.CKeyPairGenerator.RSA<span class="pl-pds">&quot;</span></span>%&gt;</td>
+        <td id="LC2" class="blob-code blob-code-inner js-file-line">&lt;%@<span class="pl-k">page</span> <span class="pl-e">import</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>java.text.SimpleDateFormat<span class="pl-pds">&quot;</span></span>%&gt;</td>
       </tr>
       <tr>
         <td id="L3" class="blob-num js-line-number" data-line-number="3"></td>
@@ -1196,723 +1196,182 @@
       </tr>
       <tr>
         <td id="L10" class="blob-num js-line-number" data-line-number="10"></td>
-        <td id="LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-pse">&lt;%</span><span class="pl-s1"></span></td>
+        <td id="LC10" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">html</span>&gt;</td>
       </tr>
       <tr>
         <td id="L11" class="blob-num js-line-number" data-line-number="11"></td>
-        <td id="LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	request<span class="pl-k">.</span>setCharacterEncoding(<span class="pl-s"><span class="pl-pds">&quot;</span>utf-8<span class="pl-pds">&quot;</span></span>);</span></td>
+        <td id="LC11" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L12" class="blob-num js-line-number" data-line-number="12"></td>
-        <td id="LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	<span class="pl-smi">String</span> cartID <span class="pl-k">=</span> session<span class="pl-k">.</span>getId();</span></td>
+        <td id="LC12" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">head</span>&gt;</td>
       </tr>
       <tr>
         <td id="L13" class="blob-num js-line-number" data-line-number="13"></td>
-        <td id="LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span></td>
+        <td id="LC13" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>stylesheet<span class="pl-pds">&quot;</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>css/bootstrap.min.css<span class="pl-pds">&quot;</span></span>&gt;</td>
       </tr>
       <tr>
         <td id="L14" class="blob-num js-line-number" data-line-number="14"></td>
-        <td id="LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	 <span class="pl-k">List&lt;<span class="pl-smi">String</span>&gt;</span> list <span class="pl-k">=</span> (<span class="pl-k">List&lt;<span class="pl-smi">String</span>&gt;</span>) session<span class="pl-k">.</span>getAttribute(<span class="pl-s"><span class="pl-pds">&quot;</span>list<span class="pl-pds">&quot;</span></span>);</span></td>
+        <td id="LC14" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>stylesheet<span class="pl-pds">&quot;</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>css/custom.css<span class="pl-pds">&quot;</span></span>&gt;	</td>
       </tr>
       <tr>
         <td id="L15" class="blob-num js-line-number" data-line-number="15"></td>
-        <td id="LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	 <span class="pl-k">if</span>(list <span class="pl-k">==</span> <span class="pl-c1">null</span>) {</span></td>
+        <td id="LC15" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">title</span>&gt;JASET VAPE&lt;/<span class="pl-ent">title</span>&gt;</td>
       </tr>
       <tr>
         <td id="L16" class="blob-num js-line-number" data-line-number="16"></td>
-        <td id="LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		 list <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-k">ArrayList&lt;<span class="pl-smi">String</span>&gt;</span>();</span></td>
+        <td id="LC16" class="blob-code blob-code-inner js-file-line">&lt;/<span class="pl-ent">head</span>&gt;</td>
       </tr>
       <tr>
         <td id="L17" class="blob-num js-line-number" data-line-number="17"></td>
-        <td id="LC17" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	 }</span></td>
+        <td id="LC17" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L18" class="blob-num js-line-number" data-line-number="18"></td>
-        <td id="LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	 list<span class="pl-k">.</span>add((<span class="pl-smi">String</span>)session<span class="pl-k">.</span>getAttribute(<span class="pl-s"><span class="pl-pds">&quot;</span>pname<span class="pl-pds">&quot;</span></span>));</span></td>
+        <td id="LC18" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">body</span>&gt;</td>
       </tr>
       <tr>
         <td id="L19" class="blob-num js-line-number" data-line-number="19"></td>
-        <td id="LC19" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	 list<span class="pl-k">.</span>add(request<span class="pl-k">.</span>getParameter(<span class="pl-s"><span class="pl-pds">&quot;</span>countresult<span class="pl-pds">&quot;</span></span>));</span></td>
+        <td id="LC19" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L20" class="blob-num js-line-number" data-line-number="20"></td>
-        <td id="LC20" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	 list<span class="pl-k">.</span>add((<span class="pl-smi">String</span>)session<span class="pl-k">.</span>getAttribute(<span class="pl-s"><span class="pl-pds">&quot;</span>price<span class="pl-pds">&quot;</span></span>));</span></td>
+        <td id="LC20" class="blob-code blob-code-inner js-file-line">&lt;%@ <span class="pl-k">include</span> <span class="pl-e">file</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>menu.jsp<span class="pl-pds">&quot;</span></span> %&gt;</td>
       </tr>
       <tr>
         <td id="L21" class="blob-num js-line-number" data-line-number="21"></td>
-        <td id="LC21" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	</span></td>
+        <td id="LC21" class="blob-code blob-code-inner js-file-line"><span class="pl-pse">&lt;%!</span><span class="pl-s1"></span></td>
       </tr>
       <tr>
         <td id="L22" class="blob-num js-line-number" data-line-number="22"></td>
-        <td id="LC22" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	 session<span class="pl-k">.</span>setAttribute(<span class="pl-s"><span class="pl-pds">&quot;</span>list<span class="pl-pds">&quot;</span></span>, list);</span></td>
+        <td id="LC22" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">dao <span class="pl-c1">DAO</span> <span class="pl-k">=</span> <span class="pl-k">new</span> dao();</span></td>
       </tr>
       <tr>
         <td id="L23" class="blob-num js-line-number" data-line-number="23"></td>
-        <td id="LC23" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	 </span></td>
+        <td id="LC23" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-smi">String</span> <span class="pl-smi">Date</span> <span class="pl-k">=</span> <span class="pl-c1">DAO</span><span class="pl-k">.</span>getDate();</span></td>
       </tr>
       <tr>
         <td id="L24" class="blob-num js-line-number" data-line-number="24"></td>
-        <td id="LC24" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	<span class="pl-k">boolean</span> <span class="pl-smi">Deleteflag</span> <span class="pl-k">=</span> <span class="pl-c1">false</span>;</span></td>
+        <td id="LC24" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-smi">Orders</span> orders <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">Orders</span>();</span></td>
       </tr>
       <tr>
         <td id="L25" class="blob-num js-line-number" data-line-number="25"></td>
-        <td id="LC25" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	<span class="pl-smi">String</span> temp <span class="pl-k">=</span> request<span class="pl-k">.</span>getParameter(<span class="pl-s"><span class="pl-pds">&quot;</span>id<span class="pl-pds">&quot;</span></span>);</span></td>
+        <td id="LC25" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span><span class="pl-pse"><span class="pl-s1">%</span>&gt;</span></td>
       </tr>
       <tr>
         <td id="L26" class="blob-num js-line-number" data-line-number="26"></td>
-        <td id="LC26" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	</span></td>
+        <td id="LC26" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L27" class="blob-num js-line-number" data-line-number="27"></td>
-        <td id="LC27" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	<span class="pl-k">if</span>(temp <span class="pl-k">==</span> <span class="pl-c1">null</span>) {</span></td>
+        <td id="LC27" class="blob-code blob-code-inner js-file-line"><span class="pl-pse">&lt;%</span><span class="pl-s1">	</span></td>
       </tr>
       <tr>
         <td id="L28" class="blob-num js-line-number" data-line-number="28"></td>
-        <td id="LC28" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		temp <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">&quot;</span>1<span class="pl-pds">&quot;</span></span>;</span></td>
+        <td id="LC28" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-smi">String</span> cartID <span class="pl-k">=</span> session<span class="pl-k">.</span>getId();</span></td>
       </tr>
       <tr>
         <td id="L29" class="blob-num js-line-number" data-line-number="29"></td>
-        <td id="LC29" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	}</span></td>
+        <td id="LC29" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-smi">String</span> id <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">&quot;</span>Ahyoung<span class="pl-pds">&quot;</span></span>;</span></td>
       </tr>
       <tr>
         <td id="L30" class="blob-num js-line-number" data-line-number="30"></td>
-        <td id="LC30" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	<span class="pl-k">if</span>(temp<span class="pl-k">.</span>equals(<span class="pl-s"><span class="pl-pds">&quot;</span>0<span class="pl-pds">&quot;</span></span>)) {</span></td>
+        <td id="LC30" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c1">DAO</span><span class="pl-k">.</span>upDateOrder(id, session);	</span></td>
       </tr>
       <tr>
         <td id="L31" class="blob-num js-line-number" data-line-number="31"></td>
-        <td id="LC31" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		<span class="pl-k">for</span>(<span class="pl-k">int</span> i <span class="pl-k">=</span> list<span class="pl-k">.</span>size() <span class="pl-k">-</span> <span class="pl-c1">1</span>; i <span class="pl-k">&gt;=</span> <span class="pl-c1">0</span>; i<span class="pl-k">--</span>) {</span></td>
+        <td id="LC31" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span><span class="pl-pse"><span class="pl-s1">%</span>&gt;</span></td>
       </tr>
       <tr>
         <td id="L32" class="blob-num js-line-number" data-line-number="32"></td>
-        <td id="LC32" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">			list<span class="pl-k">.</span>remove(i);</span></td>
+        <td id="LC32" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">br</span>&gt;&lt;<span class="pl-ent">br</span>&gt;&lt;<span class="pl-ent">br</span>&gt;</td>
       </tr>
       <tr>
         <td id="L33" class="blob-num js-line-number" data-line-number="33"></td>
-        <td id="LC33" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		}</span></td>
+        <td id="LC33" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L34" class="blob-num js-line-number" data-line-number="34"></td>
-        <td id="LC34" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		session<span class="pl-k">.</span>setAttribute(<span class="pl-s"><span class="pl-pds">&quot;</span>list<span class="pl-pds">&quot;</span></span>, list);</span></td>
+        <td id="LC34" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>container<span class="pl-pds">&quot;</span></span>&gt;</td>
       </tr>
       <tr>
         <td id="L35" class="blob-num js-line-number" data-line-number="35"></td>
-        <td id="LC35" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	}</span></td>
+        <td id="LC35" class="blob-code blob-code-inner js-file-line">	&lt;<span class="pl-ent">h1</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>display-3 font-weight-bold<span class="pl-pds">&quot;</span></span> <span class="pl-e">style</span>=<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-s1"><span class="pl-c1"><span class="pl-c1">color</span></span>: <span class="pl-c1">#223a6b</span></span><span class="pl-pds">&quot;</span></span> &gt;주문완료&lt;/<span class="pl-ent">h1</span>&gt;</td>
       </tr>
       <tr>
         <td id="L36" class="blob-num js-line-number" data-line-number="36"></td>
-        <td id="LC36" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	<span class="pl-k">int</span> <span class="pl-smi">Deletenumber</span> <span class="pl-k">=</span> <span class="pl-c1">0</span>;</span></td>
+        <td id="LC36" class="blob-code blob-code-inner js-file-line">	&lt;<span class="pl-ent">h2</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>alert alert-info<span class="pl-pds">&quot;</span></span>&gt;구매해 주셔서 감사합니다!&lt;/<span class="pl-ent">h2</span>&gt;</td>
       </tr>
       <tr>
         <td id="L37" class="blob-num js-line-number" data-line-number="37"></td>
-        <td id="LC37" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	</span></td>
+        <td id="LC37" class="blob-code blob-code-inner js-file-line">	&lt;<span class="pl-ent">p</span>&gt;	주문은	<span class="pl-pse">&lt;%=</span><span class="pl-s1">	<span class="pl-smi">Date</span> </span><span class="pl-pse"><span class="pl-s1">%</span>&gt;</span> 에 배달예정입니다.!!	&lt;<span class="pl-ent">p</span>&gt;	Order# :<span class="pl-pse">&lt;%</span><span class="pl-s1">	out<span class="pl-k">.</span>println(cartID);</span><span class="pl-pse"><span class="pl-s1">%</span>&gt;</span>		</td>
       </tr>
       <tr>
         <td id="L38" class="blob-num js-line-number" data-line-number="38"></td>
-        <td id="LC38" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	dao <span class="pl-c1">DAO</span> <span class="pl-k">=</span> <span class="pl-k">new</span> dao();</span></td>
+        <td id="LC38" class="blob-code blob-code-inner js-file-line">		&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>container<span class="pl-pds">&quot;</span></span>&gt;</td>
       </tr>
       <tr>
         <td id="L39" class="blob-num js-line-number" data-line-number="39"></td>
-        <td id="LC39" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	</span><span class="pl-pse"><span class="pl-s1">%</span>&gt;</span></td>
+        <td id="LC39" class="blob-code blob-code-inner js-file-line">			&lt;<span class="pl-ent">p</span>&gt;	&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>Productsalespage.jsp<span class="pl-pds">&quot;</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>btn btn-dark<span class="pl-pds">&quot;</span></span>&gt; <span class="pl-c1">&amp;<span class="pl-en">laquo</span>;</span> 쇼핑더하기&lt;/<span class="pl-ent">a</span>&gt;		</td>
       </tr>
       <tr>
         <td id="L40" class="blob-num js-line-number" data-line-number="40"></td>
-        <td id="LC40" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC40" class="blob-code blob-code-inner js-file-line">		&lt;/<span class="pl-ent">div</span>&gt;</td>
       </tr>
       <tr>
         <td id="L41" class="blob-num js-line-number" data-line-number="41"></td>
-        <td id="LC41" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">html</span>&gt;</td>
+        <td id="LC41" class="blob-code blob-code-inner js-file-line">&lt;/<span class="pl-ent">div</span>&gt;</td>
       </tr>
       <tr>
         <td id="L42" class="blob-num js-line-number" data-line-number="42"></td>
-        <td id="LC42" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC42" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>js/jquery-3.5.1.min.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</td>
       </tr>
       <tr>
         <td id="L43" class="blob-num js-line-number" data-line-number="43"></td>
-        <td id="LC43" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">head</span>&gt;</td>
+        <td id="LC43" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>js/bootstrap.bundle.min.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</td>
       </tr>
       <tr>
         <td id="L44" class="blob-num js-line-number" data-line-number="44"></td>
-        <td id="LC44" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>stylesheet<span class="pl-pds">&quot;</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>css/bootstrap.min.css<span class="pl-pds">&quot;</span></span>&gt;</td>
+        <td id="LC44" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>css/bootstrap.min.css<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</td>
       </tr>
       <tr>
         <td id="L45" class="blob-num js-line-number" data-line-number="45"></td>
-        <td id="LC45" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>stylesheet<span class="pl-pds">&quot;</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>css/custom.css<span class="pl-pds">&quot;</span></span>&gt;	</td>
+        <td id="LC45" class="blob-code blob-code-inner js-file-line">		</td>
       </tr>
       <tr>
         <td id="L46" class="blob-num js-line-number" data-line-number="46"></td>
-        <td id="LC46" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">title</span>&gt;JASET VAPE&lt;/<span class="pl-ent">title</span>&gt;</td>
+        <td id="LC46" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>js/jquery-3.5.1.min.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</td>
       </tr>
       <tr>
         <td id="L47" class="blob-num js-line-number" data-line-number="47"></td>
-        <td id="LC47" class="blob-code blob-code-inner js-file-line">	&lt;<span class="pl-ent">style</span>&gt;<span class="pl-s1"></span></td>
+        <td id="LC47" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>js/bootstrap.bundle.min.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</td>
       </tr>
       <tr>
         <td id="L48" class="blob-num js-line-number" data-line-number="48"></td>
-        <td id="LC48" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		<span class="pl-e">#pointer</span> {</span></td>
+        <td id="LC48" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>css/bootstrap.min.css<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</td>
       </tr>
       <tr>
         <td id="L49" class="blob-num js-line-number" data-line-number="49"></td>
-        <td id="LC49" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		   <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">block</span>;</span></td>
+        <td id="LC49" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L50" class="blob-num js-line-number" data-line-number="50"></td>
-        <td id="LC50" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		   <span class="pl-c1"><span class="pl-c1">margin-left</span></span>: <span class="pl-c1">auto</span>;</span></td>
+        <td id="LC50" class="blob-code blob-code-inner js-file-line">&lt;/<span class="pl-ent">body</span>&gt;</td>
       </tr>
       <tr>
         <td id="L51" class="blob-num js-line-number" data-line-number="51"></td>
-        <td id="LC51" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		   <span class="pl-c1"><span class="pl-c1">margin-right</span></span>: <span class="pl-c1">auto</span> }</span></td>
+        <td id="LC51" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L52" class="blob-num js-line-number" data-line-number="52"></td>
-        <td id="LC52" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		<span class="pl-e">#cart</span> <span class="pl-ent">hr</span>{</span></td>
-      </tr>
-      <tr>
-        <td id="L53" class="blob-num js-line-number" data-line-number="53"></td>
-        <td id="LC53" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">			<span class="pl-c1"><span class="pl-c1">border</span></span>: <span class="pl-c1">1<span class="pl-k">px</span></span> <span class="pl-c1">solid</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L54" class="blob-num js-line-number" data-line-number="54"></td>
-        <td id="LC54" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">			<span class="pl-c1"><span class="pl-c1">color</span></span>:<span class="pl-c1">lightgray</span></span></td>
-      </tr>
-      <tr>
-        <td id="L55" class="blob-num js-line-number" data-line-number="55"></td>
-        <td id="LC55" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		}</span></td>
-      </tr>
-      <tr>
-        <td id="L56" class="blob-num js-line-number" data-line-number="56"></td>
-        <td id="LC56" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		<span class="pl-e">#submenu</span> <span class="pl-ent">p</span>{</span></td>
-      </tr>
-      <tr>
-        <td id="L57" class="blob-num js-line-number" data-line-number="57"></td>
-        <td id="LC57" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">			<span class="pl-c1"><span class="pl-c1">font-family</span></span>: <span class="pl-s"><span class="pl-pds">&#39;</span>Gothic A1<span class="pl-pds">&#39;</span></span>, <span class="pl-c1">sans-serif</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L58" class="blob-num js-line-number" data-line-number="58"></td>
-        <td id="LC58" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">			<span class="pl-c1"><span class="pl-c1">font-style</span></span>: <span class="pl-c1">italic</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L59" class="blob-num js-line-number" data-line-number="59"></td>
-        <td id="LC59" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">			<span class="pl-c1"><span class="pl-c1">color</span></span>: <span class="pl-c1">#223a6b</span> <span class="pl-k">!important</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L60" class="blob-num js-line-number" data-line-number="60"></td>
-        <td id="LC60" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">			<span class="pl-c1"><span class="pl-c1">font-size</span></span>: <span class="pl-c1">xx-large</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L61" class="blob-num js-line-number" data-line-number="61"></td>
-        <td id="LC61" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">			<span class="pl-c1"><span class="pl-c1">position</span></span>:<span class="pl-c1">absolute</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L62" class="blob-num js-line-number" data-line-number="62"></td>
-        <td id="LC62" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">			<span class="pl-c1"><span class="pl-c1">left</span></span>:<span class="pl-c1">0<span class="pl-k">px</span></span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L63" class="blob-num js-line-number" data-line-number="63"></td>
-        <td id="LC63" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">			<span class="pl-c1"><span class="pl-c1">padding-left</span></span>: <span class="pl-c1">45<span class="pl-k">px</span></span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L64" class="blob-num js-line-number" data-line-number="64"></td>
-        <td id="LC64" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		}</span></td>
-      </tr>
-      <tr>
-        <td id="L65" class="blob-num js-line-number" data-line-number="65"></td>
-        <td id="LC65" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		<span class="pl-e">#pointer</span> {</span></td>
-      </tr>
-      <tr>
-        <td id="L66" class="blob-num js-line-number" data-line-number="66"></td>
-        <td id="LC66" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		  <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">200<span class="pl-k">px</span></span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L67" class="blob-num js-line-number" data-line-number="67"></td>
-        <td id="LC67" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		  <span class="pl-c1"><span class="pl-c1">height</span></span>: <span class="pl-c1">40<span class="pl-k">px</span></span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L68" class="blob-num js-line-number" data-line-number="68"></td>
-        <td id="LC68" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		  <span class="pl-c1"><span class="pl-c1">position</span></span>: <span class="pl-c1">relative</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L69" class="blob-num js-line-number" data-line-number="69"></td>
-        <td id="LC69" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		  <span class="pl-c1"><span class="pl-c1">background</span></span>: <span class="pl-c1">#223a6b</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L70" class="blob-num js-line-number" data-line-number="70"></td>
-        <td id="LC70" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		}</span></td>
-      </tr>
-      <tr>
-        <td id="L71" class="blob-num js-line-number" data-line-number="71"></td>
-        <td id="LC71" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		<span class="pl-e">#pointer</span><span class="pl-e">:after</span> {</span></td>
-      </tr>
-      <tr>
-        <td id="L72" class="blob-num js-line-number" data-line-number="72"></td>
-        <td id="LC72" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		  <span class="pl-c1"><span class="pl-c1">content</span></span>: <span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-pds">&quot;</span></span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L73" class="blob-num js-line-number" data-line-number="73"></td>
-        <td id="LC73" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		  <span class="pl-c1"><span class="pl-c1">position</span></span>: <span class="pl-c1">absolute</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L74" class="blob-num js-line-number" data-line-number="74"></td>
-        <td id="LC74" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		  <span class="pl-c1"><span class="pl-c1">left</span></span>: <span class="pl-c1">0</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L75" class="blob-num js-line-number" data-line-number="75"></td>
-        <td id="LC75" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		  <span class="pl-c1"><span class="pl-c1">bottom</span></span>: <span class="pl-c1">0</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L76" class="blob-num js-line-number" data-line-number="76"></td>
-        <td id="LC76" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		  <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">0</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L77" class="blob-num js-line-number" data-line-number="77"></td>
-        <td id="LC77" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		  <span class="pl-c1"><span class="pl-c1">height</span></span>: <span class="pl-c1">0</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L78" class="blob-num js-line-number" data-line-number="78"></td>
-        <td id="LC78" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		  <span class="pl-c1"><span class="pl-c1">border-left</span></span>: <span class="pl-c1">20<span class="pl-k">px</span></span> <span class="pl-c1">solid</span> <span class="pl-c1">white</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L79" class="blob-num js-line-number" data-line-number="79"></td>
-        <td id="LC79" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		  <span class="pl-c1"><span class="pl-c1">border-top</span></span>: <span class="pl-c1">20<span class="pl-k">px</span></span> <span class="pl-c1">solid</span> <span class="pl-c1">transparent</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L80" class="blob-num js-line-number" data-line-number="80"></td>
-        <td id="LC80" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		  <span class="pl-c1"><span class="pl-c1">border-bottom</span></span>: <span class="pl-c1">20<span class="pl-k">px</span></span> <span class="pl-c1">solid</span> <span class="pl-c1">transparent</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L81" class="blob-num js-line-number" data-line-number="81"></td>
-        <td id="LC81" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		}</span></td>
-      </tr>
-      <tr>
-        <td id="L82" class="blob-num js-line-number" data-line-number="82"></td>
-        <td id="LC82" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		<span class="pl-e">#pointer</span><span class="pl-e">:before</span> {</span></td>
-      </tr>
-      <tr>
-        <td id="L83" class="blob-num js-line-number" data-line-number="83"></td>
-        <td id="LC83" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		  <span class="pl-c1"><span class="pl-c1">content</span></span>: <span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-pds">&quot;</span></span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L84" class="blob-num js-line-number" data-line-number="84"></td>
-        <td id="LC84" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		  <span class="pl-c1"><span class="pl-c1">position</span></span>: <span class="pl-c1">absolute</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L85" class="blob-num js-line-number" data-line-number="85"></td>
-        <td id="LC85" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		  <span class="pl-c1"><span class="pl-c1">right</span></span>: <span class="pl-c1">-20<span class="pl-k">px</span></span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L86" class="blob-num js-line-number" data-line-number="86"></td>
-        <td id="LC86" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		  <span class="pl-c1"><span class="pl-c1">bottom</span></span>: <span class="pl-c1">0</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L87" class="blob-num js-line-number" data-line-number="87"></td>
-        <td id="LC87" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		  <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">0</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L88" class="blob-num js-line-number" data-line-number="88"></td>
-        <td id="LC88" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		  <span class="pl-c1"><span class="pl-c1">height</span></span>: <span class="pl-c1">0</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L89" class="blob-num js-line-number" data-line-number="89"></td>
-        <td id="LC89" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		  <span class="pl-c1"><span class="pl-c1">border-left</span></span>: <span class="pl-c1">20<span class="pl-k">px</span></span> <span class="pl-c1">solid</span> <span class="pl-c1">#223a6b</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L90" class="blob-num js-line-number" data-line-number="90"></td>
-        <td id="LC90" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		  <span class="pl-c1"><span class="pl-c1">border-top</span></span>: <span class="pl-c1">20<span class="pl-k">px</span></span> <span class="pl-c1">solid</span> <span class="pl-c1">transparent</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L91" class="blob-num js-line-number" data-line-number="91"></td>
-        <td id="LC91" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		  <span class="pl-c1"><span class="pl-c1">border-bottom</span></span>: <span class="pl-c1">20<span class="pl-k">px</span></span> <span class="pl-c1">solid</span> <span class="pl-c1">transparent</span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L92" class="blob-num js-line-number" data-line-number="92"></td>
-        <td id="LC92" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		}</span></td>
-      </tr>
-      <tr>
-        <td id="L93" class="blob-num js-line-number" data-line-number="93"></td>
-        <td id="LC93" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">	</span>&lt;/<span class="pl-ent">style</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L94" class="blob-num js-line-number" data-line-number="94"></td>
-        <td id="LC94" class="blob-code blob-code-inner js-file-line">&lt;/<span class="pl-ent">head</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L95" class="blob-num js-line-number" data-line-number="95"></td>
-        <td id="LC95" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L96" class="blob-num js-line-number" data-line-number="96"></td>
-        <td id="LC96" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">body</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L97" class="blob-num js-line-number" data-line-number="97"></td>
-        <td id="LC97" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L98" class="blob-num js-line-number" data-line-number="98"></td>
-        <td id="LC98" class="blob-code blob-code-inner js-file-line">&lt;%@ <span class="pl-k">include</span> <span class="pl-e">file</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>menu.jsp<span class="pl-pds">&quot;</span></span> %&gt;</td>
-      </tr>
-      <tr>
-        <td id="L99" class="blob-num js-line-number" data-line-number="99"></td>
-        <td id="LC99" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L100" class="blob-num js-line-number" data-line-number="100"></td>
-        <td id="LC100" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">br</span>&gt;&lt;<span class="pl-ent">br</span>&gt;&lt;<span class="pl-ent">br</span>&gt;&lt;<span class="pl-ent">br</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L101" class="blob-num js-line-number" data-line-number="101"></td>
-        <td id="LC101" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>pointer<span class="pl-pds">&quot;</span></span>&gt;&lt;<span class="pl-ent">p</span> <span class="pl-e">style</span>=<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-s1"><span class="pl-c1"><span class="pl-c1">color</span></span>:<span class="pl-c1">white</span>; <span class="pl-c1"><span class="pl-c1">font-size</span></span>: <span class="pl-c1">x-large</span>;</span><span class="pl-pds">&quot;</span></span>&gt;나의 쇼핑&lt;/<span class="pl-ent">div</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L102" class="blob-num js-line-number" data-line-number="102"></td>
-        <td id="LC102" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">br</span>&gt;&lt;<span class="pl-ent">br</span>&gt;&lt;<span class="pl-ent">br</span>&gt;&lt;<span class="pl-ent">br</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L103" class="blob-num js-line-number" data-line-number="103"></td>
-        <td id="LC103" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>submenu<span class="pl-pds">&quot;</span></span>&gt;&lt;<span class="pl-ent">p</span>&gt;장바구니&lt;/<span class="pl-ent">div</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L104" class="blob-num js-line-number" data-line-number="104"></td>
-        <td id="LC104" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">&lt;!--</span><span class="pl-ii">------------------------------</span>-cart-------------------------------------------------------<span class="pl-c">--&gt;</span></span></td>
-      </tr>
-      <tr>
-        <td id="L105" class="blob-num js-line-number" data-line-number="105"></td>
-        <td id="LC105" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">br</span>&gt;&lt;<span class="pl-ent">br</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L106" class="blob-num js-line-number" data-line-number="106"></td>
-        <td id="LC106" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>container<span class="pl-pds">&quot;</span></span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L107" class="blob-num js-line-number" data-line-number="107"></td>
-        <td id="LC107" class="blob-code blob-code-inner js-file-line">		&lt;<span class="pl-ent">div</span> <span class="pl-e">style</span>=<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-s1"><span class="pl-c1"><span class="pl-c1">padding-top</span></span>: <span class="pl-c1">50<span class="pl-k">px</span></span></span><span class="pl-pds">&quot;</span></span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L108" class="blob-num js-line-number" data-line-number="108"></td>
-        <td id="LC108" class="blob-code blob-code-inner js-file-line">			&lt;<span class="pl-ent">table</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>table table-hover<span class="pl-pds">&quot;</span></span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L109" class="blob-num js-line-number" data-line-number="109"></td>
-        <td id="LC109" class="blob-code blob-code-inner js-file-line">				&lt;<span class="pl-ent">tr</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L110" class="blob-num js-line-number" data-line-number="110"></td>
-        <td id="LC110" class="blob-code blob-code-inner js-file-line">					&lt;<span class="pl-ent">th</span>&gt;상품목록&lt;/<span class="pl-ent">th</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L111" class="blob-num js-line-number" data-line-number="111"></td>
-        <td id="LC111" class="blob-code blob-code-inner js-file-line">					&lt;<span class="pl-ent">th</span>&gt;수량&lt;/<span class="pl-ent">th</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L112" class="blob-num js-line-number" data-line-number="112"></td>
-        <td id="LC112" class="blob-code blob-code-inner js-file-line">					&lt;<span class="pl-ent">th</span>&gt;가격&lt;/<span class="pl-ent">th</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L113" class="blob-num js-line-number" data-line-number="113"></td>
-        <td id="LC113" class="blob-code blob-code-inner js-file-line">				&lt;/<span class="pl-ent">tr</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L114" class="blob-num js-line-number" data-line-number="114"></td>
-        <td id="LC114" class="blob-code blob-code-inner js-file-line">					<span class="pl-pse">&lt;%</span><span class="pl-s1"></span></td>
-      </tr>
-      <tr>
-        <td id="L115" class="blob-num js-line-number" data-line-number="115"></td>
-        <td id="LC115" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">						<span class="pl-k">for</span>(<span class="pl-k">int</span> i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> list<span class="pl-k">.</span>size()<span class="pl-k">/</span><span class="pl-c1">3</span>; i<span class="pl-k">++</span>) {</span></td>
-      </tr>
-      <tr>
-        <td id="L116" class="blob-num js-line-number" data-line-number="116"></td>
-        <td id="LC116" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">					</span><span class="pl-pse"><span class="pl-s1">%</span>&gt;</span></td>
-      </tr>
-      <tr>
-        <td id="L117" class="blob-num js-line-number" data-line-number="117"></td>
-        <td id="LC117" class="blob-code blob-code-inner js-file-line">					&lt;<span class="pl-ent">tr</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L118" class="blob-num js-line-number" data-line-number="118"></td>
-        <td id="LC118" class="blob-code blob-code-inner js-file-line">					 	&lt;<span class="pl-ent">td</span>&gt;<span class="pl-pse">&lt;%=</span><span class="pl-s1">list<span class="pl-k">.</span>get(<span class="pl-c1">0</span> <span class="pl-k">+</span> i <span class="pl-k">*</span> <span class="pl-c1">3</span>)</span><span class="pl-pse"><span class="pl-s1">%</span>&gt;</span>&lt;/<span class="pl-ent">td</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L119" class="blob-num js-line-number" data-line-number="119"></td>
-        <td id="LC119" class="blob-code blob-code-inner js-file-line">					 	&lt;<span class="pl-ent">td</span>&gt;<span class="pl-pse">&lt;%=</span><span class="pl-s1">list<span class="pl-k">.</span>get(<span class="pl-c1">1</span> <span class="pl-k">+</span> i <span class="pl-k">*</span> <span class="pl-c1">3</span>)</span><span class="pl-pse"><span class="pl-s1">%</span>&gt;</span>&lt;/<span class="pl-ent">td</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L120" class="blob-num js-line-number" data-line-number="120"></td>
-        <td id="LC120" class="blob-code blob-code-inner js-file-line">					 	&lt;<span class="pl-ent">td</span>&gt;<span class="pl-pse">&lt;%=</span><span class="pl-s1">list<span class="pl-k">.</span>get(<span class="pl-c1">2</span> <span class="pl-k">+</span> i <span class="pl-k">*</span> <span class="pl-c1">3</span>)</span><span class="pl-pse"><span class="pl-s1">%</span>&gt;</span>&lt;/<span class="pl-ent">td</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L121" class="blob-num js-line-number" data-line-number="121"></td>
-        <td id="LC121" class="blob-code blob-code-inner js-file-line">					 &lt;/<span class="pl-ent">tr</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L122" class="blob-num js-line-number" data-line-number="122"></td>
-        <td id="LC122" class="blob-code blob-code-inner js-file-line">				 	<span class="pl-pse">&lt;%</span><span class="pl-s1">}</span><span class="pl-pse"><span class="pl-s1">%</span>&gt;</span></td>
-      </tr>
-      <tr>
-        <td id="L123" class="blob-num js-line-number" data-line-number="123"></td>
-        <td id="LC123" class="blob-code blob-code-inner js-file-line">			&lt;/<span class="pl-ent">table</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L124" class="blob-num js-line-number" data-line-number="124"></td>
-        <td id="LC124" class="blob-code blob-code-inner js-file-line">		&lt;/<span class="pl-ent">div</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L125" class="blob-num js-line-number" data-line-number="125"></td>
-        <td id="LC125" class="blob-code blob-code-inner js-file-line">		</td>
-      </tr>
-      <tr>
-        <td id="L126" class="blob-num js-line-number" data-line-number="126"></td>
-        <td id="LC126" class="blob-code blob-code-inner js-file-line">		&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>cart<span class="pl-pds">&quot;</span></span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L127" class="blob-num js-line-number" data-line-number="127"></td>
-        <td id="LC127" class="blob-code blob-code-inner js-file-line">		&lt;<span class="pl-ent">hr</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L128" class="blob-num js-line-number" data-line-number="128"></td>
-        <td id="LC128" class="blob-code blob-code-inner js-file-line">		&lt;<span class="pl-ent">p</span>&gt;Total: <span class="pl-pse">&lt;%=</span><span class="pl-s1">list<span class="pl-k">.</span>size()<span class="pl-k">/</span><span class="pl-c1">3</span></span><span class="pl-pse"><span class="pl-s1">%</span>&gt;</span></td>
-      </tr>
-      <tr>
-        <td id="L129" class="blob-num js-line-number" data-line-number="129"></td>
-        <td id="LC129" class="blob-code blob-code-inner js-file-line">		&lt;/<span class="pl-ent">div</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L130" class="blob-num js-line-number" data-line-number="130"></td>
-        <td id="LC130" class="blob-code blob-code-inner js-file-line">		&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>row<span class="pl-pds">&quot;</span></span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L131" class="blob-num js-line-number" data-line-number="131"></td>
-        <td id="LC131" class="blob-code blob-code-inner js-file-line">			&lt;<span class="pl-ent">table</span> <span class="pl-e">width</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>100%<span class="pl-pds">&quot;</span></span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L132" class="blob-num js-line-number" data-line-number="132"></td>
-        <td id="LC132" class="blob-code blob-code-inner js-file-line">				&lt;<span class="pl-ent">tr</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L133" class="blob-num js-line-number" data-line-number="133"></td>
-        <td id="LC133" class="blob-code blob-code-inner js-file-line">					&lt;<span class="pl-ent">td</span> <span class="pl-e">align</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>center<span class="pl-pds">&quot;</span></span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>./myshopping.jsp?id=<span class="pl-pse">&lt;%=</span><span class="pl-s1"><span class="pl-smi">Deletenumber</span></span><span class="pl-pse"><span class="pl-s1">%</span>&gt;</span><span class="pl-pds">&quot;</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>btn btn-danger text-white<span class="pl-pds">&quot;</span></span>&gt;카트 비우기&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">td</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L134" class="blob-num js-line-number" data-line-number="134"></td>
-        <td id="LC134" class="blob-code blob-code-inner js-file-line">					<span class="pl-pse">&lt;%</span><span class="pl-s1"></span></td>
-      </tr>
-      <tr>
-        <td id="L135" class="blob-num js-line-number" data-line-number="135"></td>
-        <td id="LC135" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">						<span class="pl-k">if</span>(list<span class="pl-k">.</span>size() <span class="pl-k">!=</span> <span class="pl-c1">0</span>) {</span></td>
-      </tr>
-      <tr>
-        <td id="L136" class="blob-num js-line-number" data-line-number="136"></td>
-        <td id="LC136" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">					</span><span class="pl-pse"><span class="pl-s1">%</span>&gt;</span></td>
-      </tr>
-      <tr>
-        <td id="L137" class="blob-num js-line-number" data-line-number="137"></td>
-        <td id="LC137" class="blob-code blob-code-inner js-file-line">					&lt;<span class="pl-ent">td</span> <span class="pl-e">align</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>center<span class="pl-pds">&quot;</span></span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">onclick</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>return emtpyCheck();<span class="pl-pds">&quot;</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>thank.jsp?cartId=<span class="pl-pse">&lt;%=</span><span class="pl-s1">cartID</span><span class="pl-pse"><span class="pl-s1">%</span>&gt;</span><span class="pl-pds">&quot;</span></span>  <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>btn btn-dark<span class="pl-pds">&quot;</span></span>&gt;주문하기 &lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">td</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L138" class="blob-num js-line-number" data-line-number="138"></td>
-        <td id="LC138" class="blob-code blob-code-inner js-file-line">					<span class="pl-pse">&lt;%</span><span class="pl-s1"></span></td>
-      </tr>
-      <tr>
-        <td id="L139" class="blob-num js-line-number" data-line-number="139"></td>
-        <td id="LC139" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">						}</span></td>
-      </tr>
-      <tr>
-        <td id="L140" class="blob-num js-line-number" data-line-number="140"></td>
-        <td id="LC140" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">					</span><span class="pl-pse"><span class="pl-s1">%</span>&gt;</span></td>
-      </tr>
-      <tr>
-        <td id="L141" class="blob-num js-line-number" data-line-number="141"></td>
-        <td id="LC141" class="blob-code blob-code-inner js-file-line">				&lt;/<span class="pl-ent">tr</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L142" class="blob-num js-line-number" data-line-number="142"></td>
-        <td id="LC142" class="blob-code blob-code-inner js-file-line">			&lt;/<span class="pl-ent">table</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L143" class="blob-num js-line-number" data-line-number="143"></td>
-        <td id="LC143" class="blob-code blob-code-inner js-file-line">		&lt;/<span class="pl-ent">div</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L144" class="blob-num js-line-number" data-line-number="144"></td>
-        <td id="LC144" class="blob-code blob-code-inner js-file-line">	&lt;/<span class="pl-ent">div</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L145" class="blob-num js-line-number" data-line-number="145"></td>
-        <td id="LC145" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">br</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L146" class="blob-num js-line-number" data-line-number="146"></td>
-        <td id="LC146" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>submenu<span class="pl-pds">&quot;</span></span>&gt;&lt;<span class="pl-ent">p</span>&gt;주문목록&lt;/<span class="pl-ent">div</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L147" class="blob-num js-line-number" data-line-number="147"></td>
-        <td id="LC147" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">br</span>&gt;&lt;<span class="pl-ent">br</span>&gt;&lt;<span class="pl-ent">br</span>&gt;&lt;<span class="pl-ent">br</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L148" class="blob-num js-line-number" data-line-number="148"></td>
-        <td id="LC148" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">&lt;!--</span><span class="pl-ii">------------------------------</span>-order--------------------------------------------------------------<span class="pl-c">--&gt;</span></span></td>
-      </tr>
-      <tr>
-        <td id="L149" class="blob-num js-line-number" data-line-number="149"></td>
-        <td id="LC149" class="blob-code blob-code-inner js-file-line">	&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>container col-8 alert alert-primary text-dark<span class="pl-pds">&quot;</span></span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L150" class="blob-num js-line-number" data-line-number="150"></td>
-        <td id="LC150" class="blob-code blob-code-inner js-file-line">		&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text-center <span class="pl-pds">&quot;</span></span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L151" class="blob-num js-line-number" data-line-number="151"></td>
-        <td id="LC151" class="blob-code blob-code-inner js-file-line">			&lt;<span class="pl-ent">h1</span>&gt;Order&lt;/<span class="pl-ent">h1</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L152" class="blob-num js-line-number" data-line-number="152"></td>
-        <td id="LC152" class="blob-code blob-code-inner js-file-line">		&lt;/<span class="pl-ent">div</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L153" class="blob-num js-line-number" data-line-number="153"></td>
-        <td id="LC153" class="blob-code blob-code-inner js-file-line">		&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>row justify-content-between<span class="pl-pds">&quot;</span></span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L154" class="blob-num js-line-number" data-line-number="154"></td>
-        <td id="LC154" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L155" class="blob-num js-line-number" data-line-number="155"></td>
-        <td id="LC155" class="blob-code blob-code-inner js-file-line">		&lt;/<span class="pl-ent">div</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L156" class="blob-num js-line-number" data-line-number="156"></td>
-        <td id="LC156" class="blob-code blob-code-inner js-file-line">		&lt;<span class="pl-ent">div</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L157" class="blob-num js-line-number" data-line-number="157"></td>
-        <td id="LC157" class="blob-code blob-code-inner js-file-line">			&lt;<span class="pl-ent">table</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>table table-hover<span class="pl-pds">&quot;</span></span>&gt;			</td>
-      </tr>
-      <tr>
-        <td id="L158" class="blob-num js-line-number" data-line-number="158"></td>
-        <td id="LC158" class="blob-code blob-code-inner js-file-line">			&lt;<span class="pl-ent">tr</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L159" class="blob-num js-line-number" data-line-number="159"></td>
-        <td id="LC159" class="blob-code blob-code-inner js-file-line">				&lt;<span class="pl-ent">th</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text-center<span class="pl-pds">&quot;</span></span>&gt;주문번호&lt;/<span class="pl-ent">th</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L160" class="blob-num js-line-number" data-line-number="160"></td>
-        <td id="LC160" class="blob-code blob-code-inner js-file-line">				&lt;<span class="pl-ent">th</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text-center<span class="pl-pds">&quot;</span></span>&gt;주문날짜&lt;/<span class="pl-ent">th</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L161" class="blob-num js-line-number" data-line-number="161"></td>
-        <td id="LC161" class="blob-code blob-code-inner js-file-line">				&lt;<span class="pl-ent">th</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text-center<span class="pl-pds">&quot;</span></span>&gt;배송일&lt;/<span class="pl-ent">th</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L162" class="blob-num js-line-number" data-line-number="162"></td>
-        <td id="LC162" class="blob-code blob-code-inner js-file-line">			&lt;/<span class="pl-ent">tr</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L163" class="blob-num js-line-number" data-line-number="163"></td>
-        <td id="LC163" class="blob-code blob-code-inner js-file-line">		<span class="pl-pse">&lt;%</span><span class="pl-s1"></span></td>
-      </tr>
-      <tr>
-        <td id="L164" class="blob-num js-line-number" data-line-number="164"></td>
-        <td id="LC164" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">			<span class="pl-smi">String</span> id <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">&quot;</span>Ahyoung<span class="pl-pds">&quot;</span></span>;</span></td>
-      </tr>
-      <tr>
-        <td id="L165" class="blob-num js-line-number" data-line-number="165"></td>
-        <td id="LC165" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">			<span class="pl-smi">ArrayList</span> <span class="pl-k">&lt;</span><span class="pl-smi">Orders</span><span class="pl-k">&gt;</span> <span class="pl-smi">Olist</span> <span class="pl-k">=</span> <span class="pl-c1">DAO</span><span class="pl-k">.</span>getOrderList(id);</span></td>
-      </tr>
-      <tr>
-        <td id="L166" class="blob-num js-line-number" data-line-number="166"></td>
-        <td id="LC166" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">			<span class="pl-k">for</span>(<span class="pl-k">int</span>  i <span class="pl-k">=</span> <span class="pl-c1">0</span> ; i <span class="pl-k">&lt;</span> <span class="pl-smi">Olist</span><span class="pl-k">.</span>size();i<span class="pl-k">++</span>){		</span></td>
-      </tr>
-      <tr>
-        <td id="L167" class="blob-num js-line-number" data-line-number="167"></td>
-        <td id="LC167" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">		</span><span class="pl-pse"><span class="pl-s1">%</span>&gt;</span></td>
-      </tr>
-      <tr>
-        <td id="L168" class="blob-num js-line-number" data-line-number="168"></td>
-        <td id="LC168" class="blob-code blob-code-inner js-file-line">			&lt;<span class="pl-ent">tr</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L169" class="blob-num js-line-number" data-line-number="169"></td>
-        <td id="LC169" class="blob-code blob-code-inner js-file-line">				&lt;<span class="pl-ent">td</span>&gt;<span class="pl-pse">&lt;%=</span><span class="pl-s1"> <span class="pl-smi">Olist</span><span class="pl-k">.</span>get(i)<span class="pl-k">.</span>getCartID() </span><span class="pl-pse"><span class="pl-s1">%</span>&gt;</span>&lt;/<span class="pl-ent">td</span>&gt;				</td>
-      </tr>
-      <tr>
-        <td id="L170" class="blob-num js-line-number" data-line-number="170"></td>
-        <td id="LC170" class="blob-code blob-code-inner js-file-line">				&lt;<span class="pl-ent">td</span>&gt;<span class="pl-pse">&lt;%=</span><span class="pl-s1"> <span class="pl-smi">Olist</span><span class="pl-k">.</span>get(i)<span class="pl-k">.</span>getOdate() </span><span class="pl-pse"><span class="pl-s1">%</span>&gt;</span>&lt;/<span class="pl-ent">td</span>&gt;				</td>
-      </tr>
-      <tr>
-        <td id="L171" class="blob-num js-line-number" data-line-number="171"></td>
-        <td id="LC171" class="blob-code blob-code-inner js-file-line">				&lt;<span class="pl-ent">td</span>&gt;<span class="pl-pse">&lt;%=</span><span class="pl-s1"> <span class="pl-smi">Olist</span><span class="pl-k">.</span>get(i)<span class="pl-k">.</span>getLaterDate() </span><span class="pl-pse"><span class="pl-s1">%</span>&gt;</span>&lt;/<span class="pl-ent">td</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L172" class="blob-num js-line-number" data-line-number="172"></td>
-        <td id="LC172" class="blob-code blob-code-inner js-file-line">				<span class="pl-pse">&lt;%</span><span class="pl-s1"> </span><span class="pl-pse"><span class="pl-s1">%</span>&gt;</span>				</td>
-      </tr>
-      <tr>
-        <td id="L173" class="blob-num js-line-number" data-line-number="173"></td>
-        <td id="LC173" class="blob-code blob-code-inner js-file-line">			&lt;/<span class="pl-ent">tr</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L174" class="blob-num js-line-number" data-line-number="174"></td>
-        <td id="LC174" class="blob-code blob-code-inner js-file-line">			<span class="pl-pse">&lt;%</span><span class="pl-s1">} </span><span class="pl-pse"><span class="pl-s1">%</span>&gt;</span></td>
-      </tr>
-      <tr>
-        <td id="L175" class="blob-num js-line-number" data-line-number="175"></td>
-        <td id="LC175" class="blob-code blob-code-inner js-file-line">			&lt;/<span class="pl-ent">table</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L176" class="blob-num js-line-number" data-line-number="176"></td>
-        <td id="LC176" class="blob-code blob-code-inner js-file-line">						</td>
-      </tr>
-      <tr>
-        <td id="L177" class="blob-num js-line-number" data-line-number="177"></td>
-        <td id="LC177" class="blob-code blob-code-inner js-file-line">		&lt;/<span class="pl-ent">div</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L178" class="blob-num js-line-number" data-line-number="178"></td>
-        <td id="LC178" class="blob-code blob-code-inner js-file-line">	&lt;/<span class="pl-ent">div</span>&gt;	</td>
-      </tr>
-      <tr>
-        <td id="L179" class="blob-num js-line-number" data-line-number="179"></td>
-        <td id="LC179" class="blob-code blob-code-inner js-file-line">&lt;/<span class="pl-ent">body</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L180" class="blob-num js-line-number" data-line-number="180"></td>
-        <td id="LC180" class="blob-code blob-code-inner js-file-line">		</td>
-      </tr>
-      <tr>
-        <td id="L181" class="blob-num js-line-number" data-line-number="181"></td>
-        <td id="LC181" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>js/jquery-3.5.1.min.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L182" class="blob-num js-line-number" data-line-number="182"></td>
-        <td id="LC182" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>js/bootstrap.bundle.min.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L183" class="blob-num js-line-number" data-line-number="183"></td>
-        <td id="LC183" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>css/bootstrap.min.css<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L184" class="blob-num js-line-number" data-line-number="184"></td>
-        <td id="LC184" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L185" class="blob-num js-line-number" data-line-number="185"></td>
-        <td id="LC185" class="blob-code blob-code-inner js-file-line">&lt;/<span class="pl-ent">body</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L186" class="blob-num js-line-number" data-line-number="186"></td>
-        <td id="LC186" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L187" class="blob-num js-line-number" data-line-number="187"></td>
-        <td id="LC187" class="blob-code blob-code-inner js-file-line">&lt;/<span class="pl-ent">html</span>&gt;</td>
+        <td id="LC52" class="blob-code blob-code-inner js-file-line">&lt;/<span class="pl-ent">html</span>&gt;</td>
       </tr>
 </table>
 
@@ -1932,7 +1391,7 @@
             Copy permalink
           </clipboard-copy>
         </li>
-        <li><a class="dropdown-item js-update-url-with-hash" id="js-view-git-blame" role="menuitem" href="/satelite54/Bitc-project2/blame/0febfd583a3dbb7f8ae27973123d371c816988e1/VapeWeb/WebContent/myshopping.jsp">View git blame</a></li>
+        <li><a class="dropdown-item js-update-url-with-hash" id="js-view-git-blame" role="menuitem" href="/satelite54/Bitc-project2/blame/0febfd583a3dbb7f8ae27973123d371c816988e1/VapeWeb/WebContent/thank.jsp">View git blame</a></li>
           <li><a class="dropdown-item" id="js-new-issue" role="menuitem" href="/satelite54/Bitc-project2/issues/new">Reference in new issue</a></li>
       </ul>
     </details-menu>
