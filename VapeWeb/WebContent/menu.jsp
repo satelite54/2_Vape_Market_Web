@@ -14,13 +14,13 @@ div {text-align: center;}
 }
 </style>
 	<%
-		String id = null;
+		String idnull = null;
 		if	(session.getAttribute("id") != null) {
-		id = (String) session.getAttribute("id");
+		idnull = (String) session.getAttribute("id");
 		}
 	%>
     <%
-    	if(id == null) {
+    	if(idnull == null) {
    	%>		
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">  
    		<div class="d-flex flex-grow-1"> 

@@ -13,16 +13,24 @@
 <%
 	request.setCharacterEncoding("utf-8");
 	String cartID = session.getId();
-
+	
 	 List<String> list = (List<String>) session.getAttribute("list");
 	 if(list == null) {
 		 list = new ArrayList<String>();
 	 }
-	 list.add((String)session.getAttribute("pname"));
-	 list.add(request.getParameter("countresult"));
-	 list.add((String)session.getAttribute("price"));
-	
-	 session.setAttribute("list", list);
+	 if(id != null) {
+		 list.add((String)session.getAttribute("pname"));
+		 list.add(request.getParameter("countresult"));
+		 list.add((String)session.getAttribute("price"));
+		 session.setAttribute("list", list);
+	 } else {
+		 list = (List<String>) session.getAttribute("list");
+		 List<String> listswap = new ArrayList<String>();
+		 for(int i = 0; i < list.size(); i++) {
+			 listswap.add(list.get(i));
+		 }
+		 list = listswap;
+	 }
 	 
 	boolean Deleteflag = false;
 	String temp = request.getParameter("id");
