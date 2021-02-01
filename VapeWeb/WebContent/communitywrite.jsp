@@ -22,7 +22,7 @@
 	%>
 
 	<div class="container mt-3">
-	  <div class="card">
+	  <div class="card" style="height:500px;">
 	  	<div class="card-header">
 	  		글쓰기 양식
 	  	</div>

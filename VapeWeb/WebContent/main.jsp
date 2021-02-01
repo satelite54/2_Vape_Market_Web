@@ -10,7 +10,9 @@
 </head>
 
 <body>
-
+<%
+request.setCharacterEncoding("UTF-8");
+%>
 <%@ include file="menu.jsp" %>
 <%@ include file="submenu.jsp" %>
 

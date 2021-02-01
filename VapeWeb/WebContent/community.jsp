@@ -63,7 +63,7 @@ dao DAO = new dao();
 					<td><%=list.get(i).getBNum()%></td>
 					<td><a href="communityenter.jsp?BNum=<%=list.get(i).getBNum() %>"><%= list.get(i).getBTitle()%></a></td>
 					<td><%=list.get(i).getId()%></td>
-					<td><%=list.get(i).getBDate().substring(0,16)%></td>
+					<td><%=list.get(i).getBDate()%></td>
 					<td><%= list.get(i).getViews()%></td>
 				</tr>
 				<%

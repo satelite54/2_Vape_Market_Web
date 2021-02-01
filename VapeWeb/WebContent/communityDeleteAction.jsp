@@ -10,6 +10,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ page import="DAO.dao"%>
 
+<%
+request.setCharacterEncoding("UTF-8");
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +30,7 @@
 	BNum = Integer.parseInt(request.getParameter("BNum"));
 	System.out.println("BNum = " + BNum);
 	DAO.deleteBoard(BNum);
-	DAO.closeAll();
+	//DAO.closeAll();
 	response.sendRedirect("community.jsp");
 	%>
 

@@ -12,7 +12,9 @@
 <body>
 	<%@ include file="menu.jsp"%>
 	<%@ include file="submenu.jsp"%>
-
+<%
+request.setCharacterEncoding("UTF-8");
+%>
 	<%!
 		Board board = new Board();	
 		dao DAO = new dao();
@@ -47,15 +49,17 @@
 			<div class="col-sm-2"><%= board.getBNum() %></div>
 			<div class="col-sm-4"><%= board.getBTitle() %></div>
 			<div class="col-sm-2"><%= board.getId() %></div>
-			<div class="col-sm-2"><%= board.getBDate().substring(0,16) %></div>
+			<div class="col-sm-2"><%= board.getBDate() %></div>
 			<div class="col-sm-2"><%= board.getViews() %></div>
 		</div>
 			<div class="card-body text-dark border boder-dark rounded mt-3 mb-5">
 				<p class="card-text text-left" style="height:350px"><%= board.getBContent() %></p>
  			</div>
+ 			<div>
 		 				<a href="community.jsp" class="btn btn-primary float-right mt-3">글목록</a>
 	 					<a href="communityDeleteAction.jsp?BNum=<%= board.getBNum() %>" class="btn btn-primary float-right mt-3">삭제</a>
 	 					<a href="communityUpdate.jsp?BNum=<%=board.getBNum()%>&BTitle=<%=board.getBTitle()%>&BContent=<%=board.getBContent()%>" class="btn btn-primary float-right mt-3">수정</a>
+	 		</div>
 		</div>
 		
 
