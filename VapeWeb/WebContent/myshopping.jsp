@@ -33,14 +33,9 @@
 		}
 		session.setAttribute("list", list);
 	}
-	
 	int Deletenumber = 0;
 	
 	dao DAO = new dao();
-	
-	
-
-	
 	%>
 
 <html>

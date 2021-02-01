@@ -113,7 +113,7 @@
 					<a href="Productdetailpage.jsp
 					?pname=${pageScope.pname}&code=${pageScope.code}&manufacturer=${pageScope.manufacturer}
 					&price=${pageScope.price}&stock=${pageScope.stock}&imgname=${pageContext.request.contextPath}/img/${pageScope.imgname}
-					&adddate=${pageScope.adddate}&producttype=${pageScope.producttype}&Detailedimagepath=${pageScope.Detailedimagepath}
+					&adddate=${pageScope.adddate}&producttype=${pageScope.producttype}&Detailedimagepath=${pageContext.request.contextPath}/img/${pageScope.Detailedimagepath}
 					"><img src="${pageContext.request.contextPath}/img/${pageScope.imgname}" style="width: 100%"></a>
 					<h3><%=pname%></h3>
 					<p><%=price%>원

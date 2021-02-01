@@ -32,29 +32,27 @@
 				<h4>원산지 : <%=request.getParameter("price")%>원</h4>
 				<h4>판매가 : <%=request.getParameter("stock")%></h4>
 				<h4>상품코드 : <%=request.getParameter("code")%></h4>
-<%-- 					<p><form name="addForm" action="./addCart.jsp?id=<%=product.getProductId()%>" method="post">
-					<a href="#" class="btn btn-info" onclick="addToCart()"> 상품 주문 &raquo;</a>
-					<a href="./cart.jsp" class="btn btn-warning"> 장바구니 &raquo;</a> 
-					<a href="./products.jsp" class="btn btn-secondary"> 상품 목록 &raquo;</a>
-				</form> --%>
+
 				<%
 					String pname = request.getParameter("pname");
 					String price = request.getParameter("price");
+					String dsadsa = request.getParameter("Detailedimagepath");
 					session.setAttribute("pname", pname);
 					session.setAttribute("price", price);
 				%>
-				<form>
 
-				</form>
 			  <form class="form-inline " action="myshopping.jsp">
 			  	<button class="btn bg-dark text-white btn-outline-white my-2 my-sm-0 {background-color: #223a6b !important;}" type="submit" value="Submit">장바구니</button>
 				<input type="text" name=countresult value=1>
 				<input type=button value="증가" onClick="javascript:this.form.countresult.value++;">
 				<input type=button value="감소" onClick="javascript:this.form.countresult.value--;">			  	
 			  </form>
-			</div>
-		</div>
-		<hr>
+				</div>
+				<hr>
+				</div>
+					<div class="imgbox">
+					   <img src="<%=request.getParameter("Detailedimagepath")%>" style="width: 100%" />
+					</div>
 	</div>
 	
 	<script src="js/jquery-3.5.1.min.js"></script>
