@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import DTO.Board;
 import DTO.Orders;
@@ -26,7 +27,7 @@ public class dao {
 		try {
 			String url = "jdbc:mysql://localhost:3306/Vape?useSSL=false";
 			String user = "root";
-			String password = "root";
+			String password = "1234";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(url, user, password);
 		} catch (Exception e) {
@@ -435,8 +436,8 @@ public class dao {
 				}
 				return -1; // 데이터 베이스 오류
 			}
-			public int set_update(Users user) {
-				String SQL = "UPDATE SET USERS VALUES (?, ?, ?, ?, ?, ?, ? , ? , ?)";
+			public int set_update(Users user, HttpSession session) {
+				String SQL = "UPDATE USERS SET ID = ? ,Pw = ?, Zip = ? ,Street = ?,Building = ? ,Mobile = ?, Authority = ?  ,Birthday =? , Admin = ? where id = ?";
 				try {
 					pstmt = conn.prepareStatement(SQL);
 					pstmt.setString(1, user.getId());
@@ -448,6 +449,7 @@ public class dao {
 					pstmt.setInt(7, user.getAuthority());
 					pstmt.setString(8, user.getBirthday());
 					pstmt.setInt(9, user.getAdmin());
+					pstmt.setString(10,(String)session.getAttribute("id"));
 					return pstmt.executeUpdate();
 				} catch(Exception e) {
 					e.printStackTrace();
@@ -475,15 +477,14 @@ public class dao {
 			
 			
 			// 회원수정 Page 정보를 불러오는 메소드
-			 public ArrayList<Users> getUserList(HttpSession id){
+			 public Users getUserList(HttpSession id){
 		            String sql = "Select * FROM users where id = ?";
-		            ArrayList<Users> list = new ArrayList<Users>();
 		            try {
 		               PreparedStatement pstmt = conn.prepareStatement(sql);
 		               pstmt.setString(1, (String)id.getAttribute("id"));
 		               rs = pstmt.executeQuery();
 		               Users users = new Users();
-		               while (rs.next()){
+		               if (rs.next()){
 		                  users.setId(rs.getString(1));
 		                  users.setPw(rs.getString(2));
 		                  users.setZip(rs.getString(3));
@@ -493,8 +494,7 @@ public class dao {
 		                  users.setAuthority(rs.getInt(7));
 		                  users.setBirthday(rs.getString(8));
 		                  users.setAdmin(rs.getInt(9));
-		                  list.add(users);
-		               }return list;
+		               }return users;
 		            } catch (Exception e) {
 		               e.printStackTrace();
 		            }return null;
@@ -502,7 +502,7 @@ public class dao {
 		         
 		         
 			 // 회원수정 Page 회원정보를 수정하는 메소드
-		         public int updateUser(Users user) {
+		         public void updateUser(Users user) {
 		            String SQL = "UPDATE SET USERS VALUES (?, ?, ?, ?, ?, ?, ? , ? , ?)";
 		            try {
 		               pstmt = conn.prepareStatement(SQL);
@@ -515,10 +515,23 @@ public class dao {
 		               pstmt.setInt(7, user.getAuthority());
 		               pstmt.setString(8, user.getBirthday());
 		               pstmt.setInt(9, user.getAdmin());
-		               return pstmt.executeUpdate();
+		               pstmt.executeUpdate();
 		            } catch(Exception e) {
 		               e.printStackTrace();
-		            }
-		            return -1; // 데이터 베이스 오류
+		            }System.out.println("회원수정 Page 수정메소드 에러");
 		         } 
-}
+		         
+		      // 회원수정 Page 회원정보를 삭제하는 메소드
+		         public int deleteUser(HttpSession id) {
+		        	 String sql = "Delete From USERS where id = ?";
+		          try {
+		        	 PreparedStatement pstmt = conn.prepareStatement(sql);
+		             pstmt.setString(1, (String)id.getAttribute("id"));
+		             return pstmt.executeUpdate();
+		             } catch (Exception e) {
+		             e.printStackTrace();
+		             }System.out.println("회원수정 Page 삭제메소드 에러");
+		         	
+		         	return -1;
+		         }
+			}

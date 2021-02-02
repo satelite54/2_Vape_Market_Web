@@ -103,10 +103,16 @@
 		 </div>
 		 
   			<button type="submit" class="btn btn-primary ">회원가입</button>
-  			<button type="button" class="btn btn-primary ml-3">취소</button>
+  			<button type="button" class="btn btn-primary ml-3" name="cancle_home" onclick="sendit();">취소</button>
+  			
   		</form>
 	</div>   
+	<script type="text/javascript">
 
+	function sendit(){
+		location.href ="http://localhost/VapeWeb/main.jsp";
+	}
+</script>
 
  
 <script src="js/jquery-3.5.1.min.js"></script>

@@ -40,7 +40,7 @@ div {text-align: center;}
                 	<a class="nav-link" href="join.jsp">회원가입</a>
 	            </li>
     	        <li class="nav-item">
-        	        <a class="nav-link" href="myshopping.jsp" onclick="checkForm(); return false;">나의 쇼핑</a>
+        	        <a class="nav-link" href="myshopping.jsp" onclick="return checkForm();">나의 쇼핑</a>
 	            </li>
     	    </ul>
     	</div>
@@ -80,18 +80,25 @@ div {text-align: center;}
 <div ><a href="main.jsp"><img src="<c:url value="/img/logo.png"/>"/></a></div>
 
   <div class="item1">
-  <form class="form-inline" action="Productsalespage.jsp"><input class="form-control mr-sm-2 " name="search" type="search" placeholder="Search" aria-label="Search">
-  <button class="btn bg-dark text-white btn-outline-white my-2 my-sm-0 {background-color: #223a6b !important;} float-right" type="submit">Search</button>
+  <form onsubmit="checkForm();" class="form-inline" action="#"><input class="form-control mr-sm-2 " name="search" type="search" placeholder="Search" aria-label="Search">
+  <button class="btn bg-dark text-white btn-outline-white my-2 my-sm-0 {background-color: #223a6b !important;} float-right" type="submit" onclick="sendit()">Search</button>
   </form>
  </div>
 
   
 <script type="text/javascript">
    function checkForm() {
-      if (${id==null}) {
-         alert("로그인 해주세요.");
-         href.history.back();
-         return false;
+      if (sessionStorage.getItem("id") == null) {
+    	 alert("로그인 해주세요.");
       }
    }
+   
+   function sendit(){
+		location.href ="http://localhost/VapeWeb/main.jsp";
+	}
 </script>
+
+
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="css/bootstrap.min.css"></script>

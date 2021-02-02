@@ -20,7 +20,7 @@
 <body>
 
 	<%
-	String id = "WOOJ";
+	String id =(String)session.getAttribute("id");
 	String BTitle = request.getParameter("BTitle");
 	String BContent = request.getParameter("BContent");
 	dao DAO = new dao();

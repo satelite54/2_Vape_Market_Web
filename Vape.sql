@@ -14,29 +14,33 @@ CREATE TABLE Products (
     CONSTRAINT Products_pkname PRIMARY KEY (pname, code)
 ) DEFAULT CHARSET = utf8;
 
+DROP TABLE Users;
 CREATE TABLE Users (
 	id VARCHAR(650) primary key,
     pw VARCHAR(1000) not null,
     zip VARCHAR(1000) not null,
-    street VARCHAR(1000) not null,
+    street VARCHAR(1000) not NULL,
     building VARCHAR(1000) not null,
     mobile VARCHAR(1000) not null,
     authority int not null,
-    birthday VARCHAR(1000) not null
-);
+    birthday VARCHAR(1000) not NULL,
+    admin INT NOT null
+) DEFAULT CHARSET = utf8;
 
 CREATE TABLE Board (
-	BNum int primary key,
+	BNum int primary KEY,
     BTitle VARCHAR(1000) not null,
     BContent VARCHAR(3000) not null,
     BDate DATETIME not null,
     id VARCHAR(1000) not null,
     authority int not null,
-    views int Default 0
-);
+    views int DEFAULT 0
+)DEFAULT CHARSET = utf8;
 
 CREATE TABLE Orders (
 	Onumber VARCHAR(1000) Primary key,
     Odate DATETIME not null,
-    delivery DATETIME not null
-)
+    delivery DATETIME not NULL
+)DEFAULT CHARSET = UTF8;
+
+UPDATE SET USERS VALUE('1', '1234', '1', '1', '1', '1', 1 , '2021-02-17' , 0) where id = '1';
