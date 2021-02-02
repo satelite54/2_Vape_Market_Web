@@ -13,23 +13,10 @@
     pageEncoding="utf-8"%>
 <%@ page import="java.sql.*"%>
 <%
+	
+	String idx = (String)session.getAttribute("id");
 	String sqlQuery = request.getParameter("sqlQuery");
  	Map<String, String[]> hashParameterMap = request.getParameterMap();
-	
-	Set<String> set = hashParameterMap.keySet();
-	Iterator iter = set.iterator();
-	while(iter.hasNext()) {
-		String temp = (String) iter.next();
-		String[] strAry = hashParameterMap.get(temp);
-		System.out.println(temp);
-		for(int i = 0; i < strAry.length; i++) {
-			String str = strAry[i];
-			System.out.print(str + " ");
-		}
-		System.out.println();
-	}
-
-	System.out.println();
 	
 	String pageSelectedIndexstr = request.getParameter("pageSelectedIndx");
 	int pageSelectectedIndex;
@@ -38,8 +25,7 @@
 	} else {
 		pageSelectectedIndex = 1;
 	}
-		
-%>
+		%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -75,40 +61,98 @@
 		<%@ include file="submenu.jsp" %>
 		<%
 		String getproducttype = request.getParameter("producttype");
+        String searchfromMain = request.getParameter("search");
+        if(searchfromMain != null) {
+            getproducttype = "search";
+        }
 		String sqlQueryforOrderby = request.getParameter("sqlQuery");
 		String orderbyint = request.getParameter("orderbyint");
 		CSQL sqlforOrderby = new CSQL();
 		if(orderbyint == null) {
 			orderbyint = "1";
 		}
-		String[] getsalespagedata = sqlforOrderby.generateSQLQuery(getproducttype, sqlQueryforOrderby, orderbyint);
+        
+        String[] getsalespagedata = sqlforOrderby.generateSQLQuery(getproducttype, sqlQueryforOrderby, orderbyint, searchfromMain);
+		String sqlQuerynew = "";
 		%>
 		<div class="orderbyContainer">
+				<%if(searchfromMain == null) {
+					sqlQuerynew = getsalespagedata[0];
+				%>
 			<p><a href="Productsalespage.jsp?sqlQuery=<%=getsalespagedata[0]%>&producttype=<%=getsalespagedata[1]%>&orderbyint=<%=1%>"><%="가격 오름차순"%></a></p>
 			 <p><a href="Productsalespage.jsp?sqlQuery=<%=getsalespagedata[0]%>&producttype=<%=getsalespagedata[1]%>&orderbyint=<%=2%>"><%="가격 내림차순"%></a></p>
 			 <p><a href="Productsalespage.jsp?sqlQuery=<%=getsalespagedata[0]%>&producttype=<%=getsalespagedata[1]%>&orderbyint=<%=3%>"><%="날짜순"%></a></p>
+			<%} else {
+				sqlQuerynew = getsalespagedata[0];
+			%>
+            <p><a href="Productsalespage.jsp?sqlQuery=<%=getsalespagedata[0]%>&producttype=<%="search"%>&orderbyint=<%=1%>&search=<%=searchfromMain%>"><%="가격 오름차순"%></a></p>
+             <p><a href="Productsalespage.jsp?sqlQuery=<%=getsalespagedata[0]%>&producttype=<%="search"%>&orderbyint=<%=2%>&search=<%=searchfromMain%>"><%="가격 내림차순"%></a></p>
+             <p><a href="Productsalespage.jsp?sqlQuery=<%=getsalespagedata[0]%>&producttype=<%="search"%>&orderbyint=<%=3%>&search=<%=searchfromMain%>"><%="날짜순"%></a></p>
+            <%}%>
 		</div>
 		
 		<div class="container">
 			<div class="row" align="center">
 				<%	
-					dao products = new dao();
-					List<Products> ItemList = new ArrayList<Products>();
-					ItemList = products.makeProductsList(sqlQuery);
 					int CntIndex = 0;
 					int Cnthardware = 0;
 					int Cntliquid = 0;
 					int Cntcoil = 0;
-					String str = hashParameterMap.get("producttype")[0];
+					
+                    int Cntsum = 0;
+                    dao products = new dao();
+                    List<Products> ItemList = new ArrayList<Products>();
+                    ItemList = products.makeProductsList(sqlQuerynew);
+                    boolean searchFlag = false;
+                    if(request.getParameter("producttype") == null || request.getParameter("search") != null) {
+
+                        List<Products> ItemListRefine = new ArrayList<Products>();
+                        for(int i = 0; i < ItemList.size(); i++) {
+                            if(request.getParameter("producttype") == null) {
+                                if(ItemList.get(i).getPname().contains(request.getParameter("search"))) {
+                                    ItemListRefine.add(ItemList.get(i));
+                                }
+                            } else if(request.getParameter("producttype").equals("search")){
+                                if(ItemList.get(i).getPname().contains(request.getParameter("search"))) {
+                                    ItemListRefine.add(ItemList.get(i));
+                                }
+                            } else {
+                            	searchFlag = false;
+                                break;
+                            }
+                            searchFlag = true;
+                        }
+                        if(searchFlag)
+                            ItemList = ItemListRefine;
+                    }
+					
 					for(int i = 0; i < ItemList.size(); i++) {// total Count가 36이면 2페이지이면 16 ~ 30까지 출력 아니면 스킵
 						Products product = ItemList.get(i);
 						CntIndex++;
-						if(product.getProducttype().equals("hardware"))
-							Cnthardware++;
-						else if(product.getProducttype().equals("liquid"))
-							Cntliquid++;
-						else if(product.getProducttype().equals("coil"))
-							Cntcoil++;
+						
+                        
+                        if(searchFlag == true) {
+                            Cntsum++;
+                            if(!(CntIndex > (pageSelectectedIndex * 15 - 15) && CntIndex <= pageSelectectedIndex * 15))
+                                continue;
+                        }
+                        else {
+                            if(product.getProducttype().equals("hardware")) {
+                                Cnthardware++;
+                                if(!(CntIndex > (pageSelectectedIndex * 15 - 15) && CntIndex <= pageSelectectedIndex * 15))
+                                    continue;                                
+                            }
+                            else if(product.getProducttype().equals("liquid")) {
+                                Cntliquid++;
+                                if(!(CntIndex > (pageSelectectedIndex * 15 - 15) && CntIndex <= pageSelectectedIndex * 15))
+                                    continue;                                
+                            }
+                            else if(product.getProducttype().equals("coil")) {
+                                Cntcoil++;
+                                if(!(CntIndex > (pageSelectectedIndex * 15 - 15) && CntIndex <= pageSelectectedIndex * 15))
+                                    continue;                                
+                            }
+                        }
 						
 						// JSP 변수를 html에 쓰기 위해서는 pageContext 객체를 이용해야한다.
 						pageContext.setAttribute("pname", product.getPname());
@@ -137,7 +181,19 @@
 					<%-- <p><a href="./product.jsp?id=<%=rs.getString("p_id")%>"class="btn btn-secondary" role="button">상세 정보 &raquo;></a> --%>
 				</div>
 				<%
-					}
+                  } else if (request.getParameter("producttype").equals("search")) {    
+                      %>
+                      <div class="col-md-3">
+                          <a href="Productdetailpage.jsp
+                          ?pname=${pageScope.pname}&code=${pageScope.code}&manufacturer=${pageScope.manufacturer}
+                          &price=${pageScope.price}&stock=${pageScope.stock}&imgname=${pageContext.request.contextPath}/img/${pageScope.imgname}
+                          &adddate=${pageScope.adddate}&producttype=${pageScope.producttype}&Detailedimagepath=${pageContext.request.contextPath}/img/${pageScope.Detailedimagepath}
+                          "><img src="${pageContext.request.contextPath}/img/${pageScope.imgname}" style="width: 100%"></a>
+                          <h3><%=product.getPname()%></h3>
+                          <p><%=product.getPrice()%>원
+                          <%-- <p><a href="./product.jsp?id=<%=rs.getString("p_id")%>"class="btn btn-secondary" role="button">상세 정보 &raquo;></a> --%>
+                      </div>
+                      <%    }
 				} else {
 				%>
 					<div class="col-md-3">
@@ -174,9 +230,25 @@
 		    </li> --%>
 		    <%}%>
 		    <%
-		    	int pageItemCnt = 15;
-		    // 현재 클릭한 페이지 넘버 a태그 에 넣어주고
-		    	int pageNumber = 0;
+
+            int pageItemCnt = 15;
+        // 현재 클릭한 페이지 넘버 a태그 에 넣어주고
+            int pageNumber = 0;
+            
+            if(searchFlag == true) {
+                String search = request.getParameter("search");
+                String sqlQuerySearch = "select * from products where pname Like '%"+search+"%'";
+                for(int i = 1; i <= Cntsum / pageItemCnt + 1; i++) {
+                    pageNumber = i;
+                    String strsearch = "search";
+            %>
+            <li class="page-item"><a class="page-link"
+                href="Productsalespage.jsp?sqlQuery=<%=sqlQuerySearch%>&producttype=<%=strsearch%>&search=<%=search%> &orderbyint=<%=orderbyint%>&pageSelectedIndx=<%=pageNumber%>"><%=pageNumber%></a></li>
+            <%
+                }
+            } else {
+            %>
+            <%
 		    	if(hashParameterMap.get("producttype")[0].equals("hardware")) {
 		    	for(int i = 1; i <= Cnthardware / pageItemCnt + 1; i++) {
 		    		pageNumber = i;
@@ -210,6 +282,7 @@
 		    </li> --%>
 		    <%}
 		    }
+            }
 		    %>
 		    
 		    

@@ -18,6 +18,7 @@
 	} */
 %>
 
+
 <body>
 	<%@ include file="menu.jsp" %>
 	<%@ include file="submenu.jsp" %>

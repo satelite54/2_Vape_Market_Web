@@ -13,24 +13,19 @@
 <%
 	request.setCharacterEncoding("utf-8");
 	String cartID = session.getId();
-	
+	 String idx = (String)session.getAttribute("id");
+
+	 
 	 List<String> list = (List<String>) session.getAttribute("list");
 	 if(list == null) {
 		 list = new ArrayList<String>();
 	 }
-	 if(id != null) {
-		 list.add((String)session.getAttribute("pname"));
-		 list.add(request.getParameter("countresult"));
-		 list.add((String)session.getAttribute("price"));
-		 session.setAttribute("list", list);
-	 } else {
-		 list = (List<String>) session.getAttribute("list");
-		 List<String> listswap = new ArrayList<String>();
-		 for(int i = 0; i < list.size(); i++) {
-			 listswap.add(list.get(i));
-		 }
-		 list = listswap;
-	 }
+	 list.add((String)session.getAttribute("pname"));
+	 list.add(request.getParameter("countresult"));
+	 list.add((String)session.getAttribute("price"));
+	 session.setAttribute("list", list);
+	 
+	 
 	 
 	boolean Deleteflag = false;
 	String temp = request.getParameter("id");
@@ -107,6 +102,7 @@
 <body>
 
 <%@ include file="menu.jsp" %>
+<%@ include file="submenu.jsp" %>
 
 <br><br><br><br>
 <div id="pointer"><p style="color:white; font-size: x-large;">나의 쇼핑</div>

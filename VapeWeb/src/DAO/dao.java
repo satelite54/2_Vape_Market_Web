@@ -435,6 +435,25 @@ public class dao {
 				}
 				return -1; // 데이터 베이스 오류
 			}
+			public int set_update(Users user) {
+				String SQL = "UPDATE SET USERS VALUES (?, ?, ?, ?, ?, ?, ? , ? , ?)";
+				try {
+					pstmt = conn.prepareStatement(SQL);
+					pstmt.setString(1, user.getId());
+					pstmt.setString(2, user.getPw());
+					pstmt.setString(3, user.getZip());
+					pstmt.setString(4, user.getStreet());
+					pstmt.setString(5, user.getBuilding());
+					pstmt.setString(6, user.getMobile());
+					pstmt.setInt(7, user.getAuthority());
+					pstmt.setString(8, user.getBirthday());
+					pstmt.setInt(9, user.getAdmin());
+					return pstmt.executeUpdate();
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
+				return -1; // 데이터 베이스 오류
+			}
 		
 			public int getadmin(String id) {
 				String sql = "select admin from Users where id = ?";
@@ -453,4 +472,53 @@ public class dao {
 					return -1;
 				}
 			}
+			
+			
+			// 회원수정 Page 정보를 불러오는 메소드
+			 public ArrayList<Users> getUserList(HttpSession id){
+		            String sql = "Select * FROM users where id = ?";
+		            ArrayList<Users> list = new ArrayList<Users>();
+		            try {
+		               PreparedStatement pstmt = conn.prepareStatement(sql);
+		               pstmt.setString(1, (String)id.getAttribute("id"));
+		               rs = pstmt.executeQuery();
+		               Users users = new Users();
+		               while (rs.next()){
+		                  users.setId(rs.getString(1));
+		                  users.setPw(rs.getString(2));
+		                  users.setZip(rs.getString(3));
+		                  users.setStreet(rs.getString(4));
+		                  users.setBuilding(rs.getString(5));
+		                  users.setMobile(rs.getString(6));
+		                  users.setAuthority(rs.getInt(7));
+		                  users.setBirthday(rs.getString(8));
+		                  users.setAdmin(rs.getInt(9));
+		                  list.add(users);
+		               }return list;
+		            } catch (Exception e) {
+		               e.printStackTrace();
+		            }return null;
+		      }   
+		         
+		         
+			 // 회원수정 Page 회원정보를 수정하는 메소드
+		         public int updateUser(Users user) {
+		            String SQL = "UPDATE SET USERS VALUES (?, ?, ?, ?, ?, ?, ? , ? , ?)";
+		            try {
+		               pstmt = conn.prepareStatement(SQL);
+		               pstmt.setString(1, user.getId());
+		               pstmt.setString(2, user.getPw());
+		               pstmt.setString(3, user.getZip());
+		               pstmt.setString(4, user.getStreet());
+		               pstmt.setString(5, user.getBuilding());
+		               pstmt.setString(6, user.getMobile());
+		               pstmt.setInt(7, user.getAuthority());
+		               pstmt.setString(8, user.getBirthday());
+		               pstmt.setInt(9, user.getAdmin());
+		               return pstmt.executeUpdate();
+		            } catch(Exception e) {
+		               e.printStackTrace();
+		            }
+		            return -1; // 데이터 베이스 오류
+		         } 
 }

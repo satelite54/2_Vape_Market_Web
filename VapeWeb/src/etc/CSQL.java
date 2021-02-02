@@ -1,7 +1,7 @@
 package etc;
 
 public class CSQL {
-	public String[] generateSQLQuery(String getproducttype, String orderbyproducttype, String orderbyString) {
+    public String[] generateSQLQuery(String getproducttype, String orderbyproducttype, String orderbyString, String searchsql) {
 		String[] strAry = new String[3];
 		if(getproducttype == null) {
 			orderbyproducttype = "select * from products order by price DESC";
@@ -16,14 +16,18 @@ public class CSQL {
 			if(orderbyString.equals("2")) {
 				orderbyproducttype = "select * from products  where producttype = '" + getproducttype + "'" + "order by price ASC";
 			} 
-			
 			if(orderbyString.equals("3")) {
 				orderbyproducttype = "select * from products  where producttype = '" + getproducttype + "'" + "order by adddate ASC";
 			}
-			
-			if(orderbyString.equals("4")) {
-				orderbyproducttype = "select * from products order by price DESC";
-			}
+            if(getproducttype.equals("search") && orderbyString.equals("1")) {
+                orderbyproducttype = "select * from products where pname Like '%"+searchsql+"%'" + "order by price DESC";
+            }
+            if(getproducttype.equals("search") && orderbyString.equals("2")) {
+                orderbyproducttype = "select * from products where pname Like '%"+searchsql+"%'" + "order by price ASC";
+            }
+            if(getproducttype.equals("search") && orderbyString.equals("3")) {
+                orderbyproducttype = "select * from products where pname Like '%"+searchsql+"%'" + "order by adddate ASC";
+            }
 		}
 		strAry[0] = orderbyproducttype;
 		strAry[1] = getproducttype;

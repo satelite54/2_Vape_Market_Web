@@ -18,6 +18,7 @@
 <title>JASET VAPE</title>
 </head>
 <body>
+
 	<%!
 	int BNum = 0;
 	dao DAO = new dao();

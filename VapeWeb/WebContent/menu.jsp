@@ -14,13 +14,13 @@ div {text-align: center;}
 }
 </style>
 	<%
-		String idnull = null;
+		String id = null;
 		if	(session.getAttribute("id") != null) {
-		idnull = (String) session.getAttribute("id");
+		id = (String) session.getAttribute("id");
 		}
 	%>
     <%
-    	if(idnull == null) {
+    	if(id == null) {
    	%>		
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">  
    		<div class="d-flex flex-grow-1"> 
@@ -40,7 +40,7 @@ div {text-align: center;}
                 	<a class="nav-link" href="join.jsp">회원가입</a>
 	            </li>
     	        <li class="nav-item">
-        	        <a class="nav-link" href="myshopping.jsp">나의 쇼핑</a>
+        	        <a class="nav-link" href="myshopping.jsp" onclick="checkForm(); return false;">나의 쇼핑</a>
 	            </li>
     	    </ul>
     	</div>
@@ -68,6 +68,7 @@ div {text-align: center;}
             	<li class="nav-item">
                 	<a class="nav-link" href="myshopping.jsp">나의 쇼핑</a>
             	</li>
+            	
         	</ul>
     	</div>
 	</nav>
@@ -79,7 +80,18 @@ div {text-align: center;}
 <div ><a href="main.jsp"><img src="<c:url value="/img/logo.png"/>"/></a></div>
 
   <div class="item1">
-  <form class="form-inline "><input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search">
+  <form class="form-inline" action="Productsalespage.jsp"><input class="form-control mr-sm-2 " name="search" type="search" placeholder="Search" aria-label="Search">
   <button class="btn bg-dark text-white btn-outline-white my-2 my-sm-0 {background-color: #223a6b !important;} float-right" type="submit">Search</button>
   </form>
  </div>
+
+  
+<script type="text/javascript">
+   function checkForm() {
+      if (${id==null}) {
+         alert("로그인 해주세요.");
+         href.history.back();
+         return false;
+      }
+   }
+</script>

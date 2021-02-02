@@ -18,6 +18,7 @@
 <title>JASET VAPE</title>
 </head>
 <body>
+
 	<%
 	String id = "WOOJ";
 	String BTitle = request.getParameter("BTitle");
