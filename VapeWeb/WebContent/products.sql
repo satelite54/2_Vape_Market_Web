@@ -1,1 +1,14 @@
+INSERT INTO products VALUES(' 상품명 ', ' 코드 ', ' 제조사 ', 가격 , 재고 , ' 파일명 ', NOW(), ' hardware ', ' product_hardware_detail_testimg.png ');
 INSERT INTO products VALUES('LG HG2 18650 3000mAh', 'P0000DVH', 'LG', 9500, 98, 'product_hardware_1.png', NOW(), 'hardware', 'product_hardware_detail_testimg.png');
+INSERT INTO products VALUES('노틸러스', 'A001PRK, 'Aspire', 34000, 62, 'a1.jpg', NOW(), 'hardware', 'a1d.png');
+INSERT INTO products VALUES('아이콘200', 'A002PRK, 'CKS', 137500, 28, ' a2.jpg', NOW(), ' hardware ', ' a2d.png ');
+INSERT INTO products VALUES('베이프 펜 22 스타터 킷', ' A003PRK , 'SMOK Tech', 23000, 48 , ' a3.jpg', NOW(), ' hardware ', ' a3d.png ');
+INSERT INTO products VALUES('아이저스트2 스타터 킷', ' A004PRK , 'Eleaf', 38000, 110, 'a4.jpg', NOW(), 'hardware', 'a4d.png');
+INSERT INTO products VALUES('아이저스트 S 스타터 킷', ' A005PRK , 'Eleaf', 44000, 97, 'a5.jpg', NOW(), 'hardware', 'a5d.png');
+INSERT INTO products VALUES('피쉬본', ' A006PRK , '더베이퍼', 14400 , 130, 'a6.jpg', NOW(), 'hardware', 'a6d.png');
+INSERT INTO products VALUES('Goon Two Post Clamp Style RDA', ' A007PRK , '528Customs', 가격 , 재고 , 'a7.jpg', NOW(), 'hardware', 'a7d.png');
+INSERT INTO products VALUES(' 상품명 ', ' A008PRK , ' 제조사 ', 가격 , 재고 , 'a8.jpg', NOW(), 'hardware', );
+INSERT INTO products VALUES(' 상품명 ', ' A009PRK , ' 제조사 ', 가격 , 재고 , 'a9.jpg', NOW(), 'hardware', 'a9d.png');
+INSERT INTO products VALUES(' 상품명 ', ' A010PRK , ' 제조사 ', 가격 , 재고 , 'a100.jpg', NOW(), 'hardware', 'a10d.png');
+INSERT INTO products VALUES(' 상품명 ', ' A011PRK , ' 제조사 ', 가격 , 재고 , 'a11.jpg', NOW(), 'hardware', 'a11d.png');
+INSERT INTO products VALUES(' 상품명 ', ' A012PRK , ' 제조사 ', 가격 , 재고 , 'a12.jpg', NOW(), 'hardware', 'a12d.png');
