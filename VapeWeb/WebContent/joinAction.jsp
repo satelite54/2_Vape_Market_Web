@@ -1,7 +1,7 @@
 <%@page import="java.util.Date"%>
 <%@page import="DAO.dao"%>
 <%@page import="java.io.PrintWriter"%>
-<% request.setCharacterEncoding("UTF-8"); %>
+<% request.setCharacterEncoding("utf-8"); %>
 <jsp:useBean id="user" class="DTO.Users" scope="page" />
 <jsp:setProperty name="user" property="id" />
 <jsp:setProperty name="user" property="pw" />
