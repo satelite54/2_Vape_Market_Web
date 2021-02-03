@@ -22,6 +22,7 @@
 <body>
 	<%@ include file="menu.jsp" %>
 	<%@ include file="submenu.jsp" %>
+	<br><br><br><br><br><br>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5">
@@ -49,8 +50,9 @@
 				<input type=button value="감소" onClick="javascript:this.form.countresult.value--;">			  	
 			  </form>
 				</div>
-				<hr>
+				
 				</div>
+				<br><br><br><br><br><br>
 					<div class="imgbox">
 					   <img src="<%=request.getParameter("Detailedimagepath")%>" style="width: 100%" />
 					</div>

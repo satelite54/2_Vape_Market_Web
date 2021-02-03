@@ -46,10 +46,12 @@
 			    /* 넘치는 부분은 안보이게 하겠다. */
 			}
 			
-			[class*="col-md-3"] {
-				  padding: 8px;
-				  border: 1px solid gray;
+			.col-md-3 {
+				  padding: 30px;
 				  text-align: center;
+			}
+			.orderbyContainer a:hover {
+				text-decoration: none;
 			}
 		</style>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -75,22 +77,25 @@
         String[] getsalespagedata = sqlforOrderby.generateSQLQuery(getproducttype, sqlQueryforOrderby, orderbyint, searchfromMain);
 		String sqlQuerynew = "";
 		%>
-		<div class="orderbyContainer">
+		<br><br><br><br>
+		<div class="orderbyContainer d-flex justify-content-end">
 				<%if(searchfromMain == null) {
 					sqlQuerynew = getsalespagedata[0];
 				%>
-			<p><a href="Productsalespage.jsp?sqlQuery=<%=getsalespagedata[0]%>&producttype=<%=getsalespagedata[1]%>&orderbyint=<%=1%>"><%="가격 오름차순"%></a></p>
-			 <p><a href="Productsalespage.jsp?sqlQuery=<%=getsalespagedata[0]%>&producttype=<%=getsalespagedata[1]%>&orderbyint=<%=2%>"><%="가격 내림차순"%></a></p>
-			 <p><a href="Productsalespage.jsp?sqlQuery=<%=getsalespagedata[0]%>&producttype=<%=getsalespagedata[1]%>&orderbyint=<%=3%>"><%="날짜순"%></a></p>
+			
+			<a href="Productsalespage.jsp?sqlQuery=<%=getsalespagedata[0]%>&producttype=<%=getsalespagedata[1]%>&orderbyint=<%=1%>"><%="↓높은 가격 순&nbsp;&nbsp;"%></a>
+			<a href="Productsalespage.jsp?sqlQuery=<%=getsalespagedata[0]%>&producttype=<%=getsalespagedata[1]%>&orderbyint=<%=2%>"><%="↑낮은 가격 순&nbsp;&nbsp;"%></a>
+			<a href="Productsalespage.jsp?sqlQuery=<%=getsalespagedata[0]%>&producttype=<%=getsalespagedata[1]%>&orderbyint=<%=3%>"><%="날짜순&nbsp;&nbsp;"%></a><%= "&nbsp;"%>
 			<%} else {
 				sqlQuerynew = getsalespagedata[0];
 			%>
-            <p><a href="Productsalespage.jsp?sqlQuery=<%=getsalespagedata[0]%>&producttype=<%="search"%>&orderbyint=<%=1%>&search=<%=searchfromMain%>"><%="가격 오름차순"%></a></p>
-             <p><a href="Productsalespage.jsp?sqlQuery=<%=getsalespagedata[0]%>&producttype=<%="search"%>&orderbyint=<%=2%>&search=<%=searchfromMain%>"><%="가격 내림차순"%></a></p>
-             <p><a href="Productsalespage.jsp?sqlQuery=<%=getsalespagedata[0]%>&producttype=<%="search"%>&orderbyint=<%=3%>&search=<%=searchfromMain%>"><%="날짜순"%></a></p>
+			
+            <a href="Productsalespage.jsp?sqlQuery=<%=getsalespagedata[0]%>&producttype=<%="search"%>&orderbyint=<%=1%>&search=<%=searchfromMain%>"><%="↓높은 가격 순&nbsp;&nbsp;"%></a>
+            <a href="Productsalespage.jsp?sqlQuery=<%=getsalespagedata[0]%>&producttype=<%="search"%>&orderbyint=<%=2%>&search=<%=searchfromMain%>"><%="↑낮은 가격 순&nbsp;&nbsp;"%></a>
+            <a href="Productsalespage.jsp?sqlQuery=<%=getsalespagedata[0]%>&producttype=<%="search"%>&orderbyint=<%=3%>&search=<%=searchfromMain%>"><%="날짜순"%></a><%= "&nbsp;"%>
             <%}%>
 		</div>
-		
+		<br>
 		<div class="container">
 			<div class="row" align="center">
 				<%	
@@ -184,6 +189,7 @@
 					<p><%=product.getPrice()%>원
 					<%-- <p><a href="./product.jsp?id=<%=rs.getString("p_id")%>"class="btn btn-secondary" role="button">상세 정보 &raquo;></a> --%>
 				</div>
+				<br>
 				<%
                   } else if (request.getParameter("producttype").equals("search")) {    
                       %>
@@ -197,6 +203,7 @@
                           <p><%=product.getPrice()%>원
                           <%-- <p><a href="./product.jsp?id=<%=rs.getString("p_id")%>"class="btn btn-secondary" role="button">상세 정보 &raquo;></a> --%>
                       </div>
+                      <br>
                       <%    }
 				} else {
 				%>
@@ -210,6 +217,7 @@
 					<p><%=product.getPrice()%>원
 					<%-- <p><a href="./product.jsp?id=<%=rs.getString("p_id")%>"class="btn btn-secondary" role="button">상세 정보 &raquo;></a> --%>
 				</div>
+				<br>
 				<%
 				}
 				%>
@@ -218,9 +226,9 @@
 				}
 				%>
 			</div>
-			<hr>
+			
 		</div>
-		
+		<hr>
 		<nav aria-label="Page navigation example">
 		  <ul class="pagination" style="justify-content: center;">
 		  	<%

@@ -181,9 +181,9 @@
 			for(int  i = 0 ; i < Olist.size();i++){		
 		%>
 			<tr>
-				<td><%= Olist.get(i).getCartID() %></td>				
-				<td><%= Olist.get(i).getOdate() %></td>				
-				<td><%= Olist.get(i).getLaterDate() %></td>
+				<td style="text-align:center"><%= Olist.get(i).getCartID() %></td>				
+				<td style="text-align:center"><%= Olist.get(i).getOdate() %></td>				
+				<td style="text-align:center"><%= Olist.get(i).getLaterDate() %></td>
 				<% %>				
 			</tr>
 			<%} %>
