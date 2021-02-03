@@ -20,13 +20,22 @@
 	 if(list == null) {
 		 list = new ArrayList<String>();
 	 }
+
 	 list.add((String)session.getAttribute("pname"));
 	 list.add(request.getParameter("countresult"));
 	 list.add((String)session.getAttribute("price"));
+	 
+	 int listSize = list.size();
+	 
+	 for(int i = listSize - 1; i >= 0; i--) {
+		 if(list.get(i) == null)
+			 list.remove(i);
+	 }
+	 
 	 session.setAttribute("list", list);
 	 
 	 
-	 
+	 // 장바구니 비우기 관련
 	boolean Deleteflag = false;
 	String temp = request.getParameter("id");
 	

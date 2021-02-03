@@ -40,7 +40,7 @@ div {text-align: center;}
                 	<a class="nav-link" href="join.jsp">회원가입</a>
 	            </li>
     	        <li class="nav-item">
-        	        <a class="nav-link" href="myshopping.jsp" onclick="return checkForm();">나의 쇼핑</a>
+        	        <a class="nav-link" href="myshopping.jsp" onclick="checkForm(); return false;">나의 쇼핑</a>
 	            </li>
     	    </ul>
     	</div>

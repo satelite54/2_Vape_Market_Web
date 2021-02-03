@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <title>JASET VAPE</title>
 </head>
@@ -35,7 +35,7 @@
 	  		글 수정
 	  	</div>
 	  	<div class="card-body" style="height:500px; ">
-	  		<form action="communityUpdateAction.jsp" method="post">
+	  		<form action="communityUpdateAction.jsp" method="post" onsubmit="return confirm('글을 수정하시겠습니까?')">
 	  			<input type="text" class="form-control mb-3" name="BTitle" placeholder="글제목" maxlength="50" value="<%=BTitle%>" required>
 	  			<input type="hidden" class="form-control mb-3" name="BNum"  value="<%=BNum%>" required>
 	  			<textarea class="form-control mb-3" name="BContent" style="height: 350px" placeholder="글내용" maxlength="2048" required><%=BContent%></textarea>
