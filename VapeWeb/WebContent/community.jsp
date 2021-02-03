@@ -112,7 +112,6 @@ dao DAO = new dao();
 	         return false;
 	      }
 	      location.href = "./communitywrite.jsp?id=${id}"
-	   }}
 	   }
 	</script>
 	<script src="css/bootstrap.min.css"></script>
