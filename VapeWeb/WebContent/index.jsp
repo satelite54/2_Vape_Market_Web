@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <title>JASET VAPE</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
