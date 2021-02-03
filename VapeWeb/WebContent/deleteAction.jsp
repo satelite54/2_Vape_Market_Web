@@ -23,7 +23,9 @@
 <%! 
 
 %>
-
+	<%
+	request.setCharacterEncoding("UTF-8");
+	%>	
 <%// 알러트 창 띄운 다음 메인 홈페이지 이동
 	dao userDAO = new dao();
 	int Updateresult = userDAO.deleteUser(session);

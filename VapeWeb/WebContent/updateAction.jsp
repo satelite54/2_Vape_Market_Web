@@ -1,7 +1,14 @@
+<!DOCTYPE html>
+<%
+request.setCharacterEncoding("UTF-8");
+%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
-<jsp:useBean id="user" class="DTO.Users" scope="page" />
+<%@ page import="DAO.dao"%>
+<%@ page import="DTO.Users" %>
+<jsp:useBean id="user" class="DTO.Users" scope="page"/>
 <jsp:setProperty name="user" property="id" />
 <jsp:setProperty name="user" property="pw" />
 <jsp:setProperty name="user" property="birthday" />
@@ -11,20 +18,18 @@
 <jsp:setProperty name="user" property="mobile" />
 <jsp:setProperty name="user" property="admin" />
 <jsp:setProperty name="user" property="authority" />
-<%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>
-<%@ page import="DAO.dao"%>
-<%@ page import="DTO.Users" %>
-<!DOCTYPE html>
+
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 </head>
 <body>
 <%! 
 
 %>
-
+		
 <%// 알러트 창 띄운 다음 메인 홈페이지 이동
+
 	dao userDAO = new dao();
 	int Updateresult = userDAO.set_update(user, session);
 	PrintWriter pw = response.getWriter();

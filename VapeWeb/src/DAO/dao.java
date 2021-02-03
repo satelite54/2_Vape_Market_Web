@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 
@@ -25,7 +26,7 @@ public class dao {
 
 	public dao() {
 		try {
-			String url = "jdbc:mysql://localhost:3306/Vape?useSSL=false";
+			String url = "jdbc:mysql://localhost:3306/vape?useSSL=false&useUnicode=true&characterEncoding=utf8";
 			String user = "root";
 			String password = "1234";
 			Class.forName("com.mysql.jdbc.Driver");
@@ -438,7 +439,7 @@ public class dao {
 			}
 			public int set_update(Users user, HttpSession session) {
 				String SQL = "UPDATE USERS SET ID = ? ,Pw = ?, Zip = ? ,Street = ?,Building = ? ,Mobile = ?, Authority = ?  ,Birthday =? , Admin = ? where id = ?";
-				try {
+				try {					
 					pstmt = conn.prepareStatement(SQL);
 					pstmt.setString(1, user.getId());
 					pstmt.setString(2, user.getPw());

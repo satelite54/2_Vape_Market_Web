@@ -11,7 +11,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
 <%
-	request.setCharacterEncoding("utf-8");
+	request.setCharacterEncoding("UTF-8");
 	String cartID = session.getId();
 	 String idx = (String)session.getAttribute("id");
 

@@ -9,7 +9,7 @@
 <%@page import="java.sql.Date"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>
 <%@ page import="DAO.dao"%>
-
+<%@ include file="menu.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +18,9 @@
 <title>JASET VAPE</title>
 </head>
 <body>
-
+	<%
+	request.setCharacterEncoding("UTF-8");
+	%>	
 	<%!
 		dao DAO = new dao();
 	%>

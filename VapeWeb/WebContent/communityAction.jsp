@@ -9,7 +9,6 @@
 <%@page import="java.sql.Date"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@ page import="DAO.dao"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,8 +17,11 @@
 <title>JASET VAPE</title>
 </head>
 <body>
-
 	<%
+	request.setCharacterEncoding("UTF-8");
+	%>	
+	<%
+	request.setCharacterEncoding("UTF-8");
 	String id =(String)session.getAttribute("id");
 	String BTitle = request.getParameter("BTitle");
 	String BContent = request.getParameter("BContent");

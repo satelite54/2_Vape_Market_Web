@@ -11,7 +11,9 @@
 <body>
 <%@ include file="menu.jsp" %>
 <%@ include file="submenu.jsp" %>
-	
+	<%
+	request.setCharacterEncoding("UTF-8");
+	%>
 	<%! 
 	dao DAO = new dao(); 
 	int BNum = 0;

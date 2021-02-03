@@ -23,6 +23,9 @@ dao DAO = new dao();
 %>
 
 </head>
+	<%
+	request.setCharacterEncoding("UTF-8");
+	%>	
 <body>
 <%@ include file="menu.jsp" %>
 <%@ include file="submenu.jsp" %>
@@ -31,7 +34,6 @@ dao DAO = new dao();
 	<script type="text/javascript">
 
 </script>
-
 
 	<div class="container">
 		<table class="table border-dark rounded">
@@ -100,13 +102,13 @@ dao DAO = new dao();
 				</a></li>
 			</ul>
 		</nav>
-		<a href="#" onclick="checkForm(); return false;" class="btn btn-success float-right">글쓰기</a>			
+		<a href="#" onclick="checkForm1(); return false;" class="btn btn-success float-right">글쓰기</a>			
 		
 		
 	</div>
-
+	
 	<script type="text/javascript">
-	   function checkForm() {
+	   function checkForm1() {
 	      if (${id==null}) {
 	         alert("로그인 해주세요.");
 	         return false;

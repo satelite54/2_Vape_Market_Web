@@ -11,7 +11,9 @@
 <body>
 <%@ include file="menu.jsp" %>
 <%@ include file="submenu.jsp" %>
-	
+	<%
+	request.setCharacterEncoding("UTF-8");
+	%>	
 	<%!
 		int BNum = 0;
 		String BTitle = null;

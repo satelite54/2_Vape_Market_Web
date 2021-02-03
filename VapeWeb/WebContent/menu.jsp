@@ -1,7 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page import="java.io.PrintWriter"%>
-<%@page import="DAO.dao"%>	
+<%@page import="DAO.dao"%>
+<%@page import="com.mysql.fabric.Response"%>
+<%@page import="java.awt.dnd.DropTargetListener"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.sql.SQLException"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@ page import="java.io.PrintWriter"%>
+<%@ page import="DTO.Board"%>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/custom.css">	
+	<title>JASET VAPE</title>
+</head>
 <%-- <%
 	//로그인과정에서 저장된 세션 id를 가져온다. 없으면 null값.
 	String sessionId = (String) session.getAttribute("sessionId");
@@ -80,22 +96,23 @@ div {text-align: center;}
 <div ><a href="main.jsp"><img src="<c:url value="/img/logo.png"/>"/></a></div>
 
   <div class="item1">
-  <form onsubmit="checkForm();" class="form-inline" action="#"><input class="form-control mr-sm-2 " name="search" type="search" placeholder="Search" aria-label="Search">
-  <button class="btn bg-dark text-white btn-outline-white my-2 my-sm-0 {background-color: #223a6b !important;} float-right" type="submit" onclick="sendit()">Search</button>
+  <form onsubmit="return checkForm2();" class="form-inline" action="Productsalespage.jsp"><input class="form-control mr-sm-2 " name="search" type="search" placeholder="Search" aria-label="Search">
+  <button class="btn bg-dark text-white btn-outline-white my-2 my-sm-0 {background-color: #223a6b !important;} float-right" type="submit">Search</button>
   </form>
  </div>
 
   
 <script type="text/javascript">
-   function checkForm() {
-      if (sessionStorage.getItem("id") == null) {
+   function checkForm2() {
+      if (${id == null}) {
     	 alert("로그인 해주세요.");
+    	 location.href ="http://localhost/VapeWeb/login.jsp";
+    	 return false;
+      } else {
+		return true;
       }
    }
    
-   function sendit(){
-		location.href ="http://localhost/VapeWeb/main.jsp";
-	}
 </script>
 
 

@@ -6,11 +6,13 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/custom.css">	
 	<title>JASET VAPE</title>
+	<%
+	request.setCharacterEncoding("UTF-8");
+	%>	
 	
 </head>
 
 <body>
-
 <%@ include file="menu.jsp" %>
 <%@ include file="submenu.jsp" %>
 
@@ -65,7 +67,7 @@
 
 
 							
-<%@ include file="footer.jsp" %>
+		
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="css/bootstrap.min.css"></script>
