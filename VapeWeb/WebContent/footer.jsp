@@ -1,16 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-<style>
-#footer a{
-	 display: flex;
-  justify-content: center; 
-  align-items: center; 
-}
-#footer {
-	 display: flex;
-  justify-content: center; 
-  align-items: center; 
-}
-</style>
+
 
 <footer>
 <br><br><br><br><br><br><br><br>
