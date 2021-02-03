@@ -104,27 +104,31 @@
                     List<Products> ItemList = new ArrayList<Products>();
                     ItemList = products.makeProductsList(sqlQuerynew);
                     boolean searchFlag = false;
-                    if(request.getParameter("producttype") == null || request.getParameter("search") != null) {
-
-                        List<Products> ItemListRefine = new ArrayList<Products>();
-                        for(int i = 0; i < ItemList.size(); i++) {
-                            if(request.getParameter("producttype") == null) {
-                                if(ItemList.get(i).getPname().contains(request.getParameter("search"))) {
-                                    ItemListRefine.add(ItemList.get(i));
-                                }
-                            } else if(request.getParameter("producttype").equals("search")){
-                                if(ItemList.get(i).getPname().contains(request.getParameter("search"))) {
-                                    ItemListRefine.add(ItemList.get(i));
-                                }
-                            } else {
-                            	searchFlag = false;
-                                break;
-                            }
-                            searchFlag = true;
-                        }
-                        if(searchFlag)
-                            ItemList = ItemListRefine;
-                    }
+                    
+                    String moreShopping = request.getParameter("fromShop");
+                    if(moreShopping == null)
+	                    if(request.getParameter("producttype") == null || request.getParameter("search") != null) {
+							
+	                        List<Products> ItemListRefine = new ArrayList<Products>();
+	                        for(int i = 0; i < ItemList.size(); i++) {
+	                            if(request.getParameter("producttype") == null) {
+	                            	
+	                                if(ItemList.get(i).getPname().contains(request.getParameter("search"))) {
+	                                    ItemListRefine.add(ItemList.get(i));
+	                                }
+	                            } else if(request.getParameter("producttype").equals("search")){
+	                                if(ItemList.get(i).getPname().contains(request.getParameter("search"))) {
+	                                    ItemListRefine.add(ItemList.get(i));
+	                                }
+	                            } else {
+	                            	searchFlag = false;
+	                                break;
+	                            }
+	                            searchFlag = true;
+	                        }
+	                        if(searchFlag)
+	                            ItemList = ItemListRefine;
+	                    };
 					
 					for(int i = 0; i < ItemList.size(); i++) {// total Count가 36이면 2페이지이면 16 ~ 30까지 출력 아니면 스킵
 						Products product = ItemList.get(i);

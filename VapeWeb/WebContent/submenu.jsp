@@ -25,8 +25,8 @@
 <hr>
 
 <div class="d-flex justify-content-around">
-  <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=hardware%>','<%=nforhardware%>','<%="aadssdsadadsadsadsadsadsadsadsasaaedwdwadwadwadwadwadwadwadwadwadwadwa"%>')">하드웨어</a></div>
-  <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=liquid%>','<%=nforliquid%>','<%= Menuliquid_sql%>')">원본액상</a></div>
+  <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=hardware%>','<%=nforhardware%>','<%="aaa"%>')">하드웨어</a></div>
+  <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=liquid%>','<%=nforliquid%>','<%="aaa"%>')">원본액상</a></div>
   <div id="submenu"><a href="Productsalespage.jsp?producttype=<%=coil%>&orderbyint=<%=nforcoil%>&sqlQuery=<%="select * from products where producttype = 'coil'"%>" onclick="checkForm()">코일</a></div>
   <div id="submenu"><a href="community.jsp">커뮤니티</a></div>
        

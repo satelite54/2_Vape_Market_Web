@@ -192,7 +192,7 @@
 		</div>
 	</div>
 	
-	  	  <%
+<%-- 	  	  <%
 		 	Map<String, String[]> hashParameterMapfortransfer = request.getParameterMap();
 			Set<String> setfortransfer = hashParameterMapfortransfer.keySet();
 			Iterator iterfortramsfer = setfortransfer.iterator();
@@ -204,7 +204,7 @@
 					request.setAttribute(tempstr, strfortramsfer);
 				}
 			}
-		    %>
+		    %> --%>
 </body>
 		
 <script src="js/jquery-3.5.1.min.js"></script>

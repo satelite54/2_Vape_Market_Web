@@ -14,7 +14,6 @@ CREATE TABLE Products (
     CONSTRAINT Products_pkname PRIMARY KEY (pname, code)
 ) DEFAULT CHARSET = utf8;
 
-DROP TABLE Users;
 CREATE TABLE Users (
 	id VARCHAR(650) primary key,
     pw VARCHAR(1000) not null,
@@ -37,10 +36,11 @@ CREATE TABLE Board (
     views int DEFAULT 0
 )DEFAULT CHARSET = utf8;
 
+DROP TABLE orders;
 CREATE TABLE Orders (
-	Onumber VARCHAR(1000) Primary key,
-    Odate DATETIME not null,
-    delivery DATETIME not NULL
-)DEFAULT CHARSET = UTF8;
+	cartID VARCHAR(1000) Primary key,
+    Odate DATETIME not NULL,
+    id VARCHAR(1000) NOT NULL
+)DEFAULT CHARSET = utf8;
 
 UPDATE SET USERS VALUE('1', '1234', '1', '1', '1', '1', 1 , '2021-02-17' , 0) where id = '1';
