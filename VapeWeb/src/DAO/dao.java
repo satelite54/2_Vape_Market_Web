@@ -343,7 +343,7 @@ public class dao {
 					product.setImgname(rs.getString("imgname"));
 					product.setAdddate(rs.getDate("adddate"));
 					product.setProducttype(rs.getString("producttype"));
-					product.setDetailedimagepath(rs.getString("detailedimagepath"));
+					product.setDetailedimagepath(rs.getString("detailedimgpath"));
 					list.add(product);
 				} closeAll();
 			} catch (SQLException e) {
