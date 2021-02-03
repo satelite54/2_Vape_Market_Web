@@ -26,5 +26,6 @@ hr{
 .navbar-nav{
     padding-right: 30px;
 }
-/*--------------나의쇼핑css--------------*/
-
+#footer {
+	justify-content: center;
+}

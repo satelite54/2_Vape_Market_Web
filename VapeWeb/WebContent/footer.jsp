@@ -1,19 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<style>
+#footer a{
+	 display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+#footer {
+	 display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+</style>
+
 <footer>
-
-
-<div style="background-color:#141E3D;" class="d-flex">
-
-	<div class="padding-left: 15px;"><img src="<c:url value="/img/logo2.jpg"/>"/></div>
-
-	<div class="text-align:center;">
-		<ul class="">
-			<a style="color:white;" href="https://github.com/parka01">박아영 |</a>
+<br><br><br><br><br><br><br><br>
+<div class="row">
+  <div class="col-md-2" style="background-color:#141E3D;"><img src="<c:url value="/img/logo2.jpg"/>"/></div>
+  <div class="col-md-10" style="background-color:#141E3D;">col-sm-8	<p><a style="color:white;" href="https://github.com/parka01">박아영 |</a>
 			<a style="color:white;" href="https://github.com/satelite54">김태헌 |</a>
 			<a style="color:white;" href="https://github.com/curong">정재우 |</a>
-			<a style="color:white;" href="https://github.com/franksausageocean">이세준</a>
-			
-			<p style="color:white;" id="address">
+			<a style="color:white;" href="https://github.com/franksausageocean">이세준</a><p style="color:white;" id="address">
 						
 						<span >법인명(상호): 자셋베잎</span>
 						<span>대표자(성명): 자셋</span>
@@ -27,12 +33,9 @@
 						<span>주소: 부산광역시 진구 IT로 30 5층</span>
 					<br>
 		
-			</p>	
-		</ul>
-	</div>
+			</p>	</div>
 
 </div>
-
 
 
 
