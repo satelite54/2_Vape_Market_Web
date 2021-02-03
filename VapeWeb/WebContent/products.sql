@@ -1,8 +1,9 @@
+DELETE FROM products;
 INSERT INTO products VALUES('노틸러스', 'A001prk', 'Aspire', 34000, 62, 'a1.jpg', NOW(), 'hardware', 'a1d.png');
-INSERT INTO products VALUES('아이콘200', 'A002prk', 'CKS', 137500, 28, ' a2.jpg', NOW(), 'hardware', ' a2d.png ');
-INSERT INTO products VALUES('베이프 펜 22 스타터 킷', 'A003PRK', 'SMOK Tech', 23000, 48 , ' a3.jpg', NOW(), 'hardware', 'a3d.png');
+INSERT INTO products VALUES('아이콘200', 'A002prk', 'CKS', 137500, 28, 'a2.jpg', NOW(), 'hardware', 'a2d.png');
+INSERT INTO products VALUES('베이프 펜 22 스타터 킷', 'A003PRK', 'SMOK Tech', 23000, 48 , 'a3.jpg', NOW(), 'hardware', 'a3d.png');
 INSERT INTO products VALUES('아이저스트2 스타터 킷', 'A004PRK', 'Eleaf', 38000, 110, 'a4.jpg', NOW(), 'hardware', 'a4d.png');
-INSERT INTO products VALUES('아이저스트 S 스타터 킷', 'A005PRK', 'Eleaf', 44000, 97, 'a5.jpg', NOW(), 'hardware', 'a5d.png');
+INSERT INTO products VALUES('아이저스트 S 스타터 킷', 'A005PRK', 'Eleaf', 44000, 97, 'a5.png', NOW(), 'hardware', 'a5d.png');
 INSERT INTO products VALUES('피쉬본', 'A006PRK', '더베이퍼', 14400 , 130, 'a6.jpg', NOW(), 'hardware', 'a6d.png');
 INSERT INTO products VALUES('Goon Two Post Clamp Style RDA', 'A007PRK', '528Customs', 79400, 120, 'a7.jpg', NOW(), 'hardware', 'a7d.png');
 INSERT INTO products VALUES('VCC 프리미엄 코튼', 'A008PRK', 'Vapors Choice Cotton', 12000, 430, 'a8.jpg', NOW(), 'hardware', '');
@@ -10,7 +11,7 @@ INSERT INTO products VALUES('우드#02 510 드립팁', 'A009PRK', '더베이퍼'
 INSERT INTO products VALUES('DNA 250 박스모드', 'A010PRK', 'Vapor Shark', 298000, 40, 'a10.jpg', NOW(), 'hardware', 'a10d.png');
 INSERT INTO products VALUES('Xtar VC2', 'A011PRK', '더베이퍼', 31500, 3000, 'a11.jpg', NOW(), 'hardware', 'a11d.png');
 INSERT INTO products VALUES('나이트코어 D2', 'A012PRK', 'Nitecore', 25000, 2000, 'a12.jpg', NOW(), 'hardware', 'a12d.png');
-INSERT INTO products VALUES('싸이클론 Cream 60ml', 'B001PRK', 'Aqua', 22000, 9, 'b1.jpg', NOW(), ' liquid', 'b1d.png');
+INSERT INTO products VALUES('싸이클론 Cream 60ml', 'B001PRK', 'Aqua', 22000, 9, 'b1.jpg', NOW(), 'liquid', 'b1d.png');
 INSERT INTO products VALUES('버터스카치 100ml', 'B002PRK', 'The Custard Shoppe', 35000, 11, 'b2.jpg', NOW(), 'liquid', 'b2d.png');
 INSERT INTO products VALUES('파인애플 100ml', 'B003PRK', 'Final Fantasy', 32000, 7, 'b3.jpg', NOW(), 'liquid', 'b3d.png');
 INSERT INTO products VALUES('져 드라퍼 100ml', 'B004PRK', 'Treat Factory', 35000, 7, 'b4.jpg', NOW(), 'liquid', 'b4d.png');
