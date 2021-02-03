@@ -106,8 +106,9 @@
   			<button type="button" class="btn btn-primary ml-3" name="cancle_home" onclick="sendit();">취소</button>
   			
   		</form>
-	</div>   
-	<script type="text/javascript">
+	</div> 
+<%@ include file="footer.jsp" %>  
+<script type="text/javascript">
 
 	function sendit(){
 		location.href ="http://localhost/VapeWeb/main.jsp";

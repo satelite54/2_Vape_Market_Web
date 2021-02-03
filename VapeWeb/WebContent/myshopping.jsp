@@ -192,21 +192,9 @@
 		</div>
 	</div>
 	
-<%-- 	  	  <%
-		 	Map<String, String[]> hashParameterMapfortransfer = request.getParameterMap();
-			Set<String> setfortransfer = hashParameterMapfortransfer.keySet();
-			Iterator iterfortramsfer = setfortransfer.iterator();
-			while(iterfortramsfer.hasNext()) {
-				String tempstr = (String) iterfortramsfer.next();
-				String[] strAry = hashParameterMapfortransfer.get(temp);
-				for(int i = 0; i < strAry.length; i++) {
-					String strfortramsfer = strAry[i];
-					request.setAttribute(tempstr, strfortramsfer);
-				}
-			}
-		    %> --%>
+
 </body>
-		
+<%@ include file="footer.jsp" %>		
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="css/bootstrap.min.css"></script>

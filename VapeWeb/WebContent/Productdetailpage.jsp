@@ -55,7 +55,7 @@
 					   <img src="<%=request.getParameter("Detailedimagepath")%>" style="width: 100%" />
 					</div>
 	</div>
-	
+	<%@ include file="footer.jsp" %>
 	<script src="js/jquery-3.5.1.min.js"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
 	<script src="css/bootstrap.min.css"></script>

@@ -43,6 +43,7 @@ DAO.upDateOrder(id, session);
 			<p>	<a href="Productsalespage.jsp?fromShop=<%=1%>&producttype=<%="hardware"%>&sqlQuery=<%="select * from products where producttype = 'hardware'"%>&orderbyint=<%=1%>&pageSelectedIndx=<%=1%>" class="btn btn-dark"> &laquo; 쇼핑더하기</a>		
 		</div>
 </div>
+<%@ include file="footer.jsp" %>
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="css/bootstrap.min.css"></script>
