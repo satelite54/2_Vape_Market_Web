@@ -86,11 +86,10 @@ dao DAO = new dao();
 					aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
 				</a></li>
 				<%
-					
 					NowPageNumber++;
-					if(NowPageNumber > list.size() / 10 + 1)
-						NowPageNumber = list.size() / 10 + 1;
-					for(int i = 1; i <= list.size() / 10 + 1; i++) {
+					if(NowPageNumber > (list.size() - 1) / 10 + 1)
+						NowPageNumber = (list.size() - 1) / 10 + 1;
+					for(int i = 1; i <= (list.size() - 1) / 10 + 1; i++) {
 						
 				%>
 				<li class="page-item"><a class="page-link" href="community.jsp?cnl=<%=i%>"><%=i%></a></li>				

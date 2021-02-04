@@ -109,7 +109,6 @@
 	</div> 
 <%@ include file="footer.jsp" %>  
 <script type="text/javascript">
-
 	function sendit(){
 		location.href ="http://localhost/VapeWeb/main.jsp";
 	}
