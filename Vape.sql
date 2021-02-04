@@ -1,80 +1,180 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               5.7.33-log - MySQL Community Server (GPL)
+-- Server OS:                    Win64
+-- HeidiSQL Version:             11.2.0.6213
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+drop database vape;
 create database vape;
-use vape; -- vape db를 사용하겠다.
+-- Dumping database structure for vape
+DROP DATABASE IF EXISTS `vape`;
+CREATE DATABASE IF NOT EXISTS `vape` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `vape`;
 
-DROP TABLE IF EXISTS products;
-CREATE TABLE Products (
-	pname VARCHAR(500),
-    code VARCHAR(500),
-    manufacturer VARCHAR(1000) not null,
-    price int not null,
-    stock int not null,
-    imgname VARCHAR(1000) not null,
-    adddate DATETIME not null,
-    producttype VARCHAR(1000) not null,
-    detailedimgpath VARCHAR(1000) not null,
-    CONSTRAINT Products_pkname PRIMARY KEY (pname, code)
-) DEFAULT CHARSET = utf8;
+-- Dumping structure for table vape.board
+DROP TABLE IF EXISTS `board`;
+CREATE TABLE IF NOT EXISTS `board` (
+  `BNum` int(11) NOT NULL,
+  `BTitle` varchar(1000) NOT NULL,
+  `BContent` varchar(3000) NOT NULL,
+  `BDate` datetime NOT NULL,
+  `id` varchar(1000) NOT NULL,
+  `authority` int(11) NOT NULL,
+  `views` int(11) DEFAULT '0',
+  PRIMARY KEY (`BNum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO products VALUES('노틸러스', 'A001prk', 'Aspire', 34000, 62, 'a1.jpg', NOW(), 'hardware', 'a1d.png');
-INSERT INTO products VALUES('아이콘200', 'A002prk', 'CKS', 137500, 28, ' a2.jpg', NOW(), ' hardware ', ' a2d.png ');
-INSERT INTO products VALUES('베이프 펜 22 스타터 킷', 'A003PRK', 'SMOK Tech', 23000, 48 , ' a3.jpg', NOW(), ' hardware ', ' a3d.png ');
-INSERT INTO products VALUES('아이저스트2 스타터 킷', 'A004PRK', 'Eleaf', 38000, 110, 'a4.jpg', NOW(), 'hardware', 'a4d.png');
-INSERT INTO products VALUES('아이저스트 S 스타터 킷', 'A005PRK', 'Eleaf', 44000, 97, 'a5.jpg', NOW(), 'hardware', 'a5d.png');
-INSERT INTO products VALUES('피쉬본', 'A006PRK', '더베이퍼', 14400 , 130, 'a6.jpg', NOW(), 'hardware', 'a6d.png');
-INSERT INTO products VALUES('Goon Two Post Clamp Style RDA', 'A007PRK', '528Customs', 79400, 120, 'a7.jpg', NOW(), 'hardware', 'a7d.png');
-INSERT INTO products VALUES('VCC 프리미엄 코튼', 'A008PRK', 'Vapors Choice Cotton', 12000, 430, 'a8.jpg', NOW(), 'hardware', );
-INSERT INTO products VALUES('우드#02 510 드립팁', 'A009PRK', '더베이퍼', 5500, 800, 'a9.jpg', NOW(), 'hardware', 'a9d.png');
-INSERT INTO products VALUES('DNA 250 박스모드', 'A010PRK', 'Vapor Shark', 298000, 40, 'a100.jpg', NOW(), 'hardware', 'a10d.png');
-INSERT INTO products VALUES('Xtar VC2', 'A011PRK', '더베이퍼', 31500, 3000, 'a11.jpg', NOW(), 'hardware', 'a11d.png');
-INSERT INTO products VALUES('나이트코어 D2', 'A012PRK', 'Nitecore', 25000, 2000, 'a12.jpg', NOW(), 'hardware', 'a12d.png');
-INSERT INTO products VALUES('싸이클론 Cream 60ml', 'B001PRK', 'Aqua', 22000, 9, 'b1.jpg', NOW(), ' liquid', 'b1d.png');
-INSERT INTO products VALUES('버터스카치 100ml', 'B002PRK', 'The Custard Shoppe', 35000, 11, 'b2.jpg', NOW(), 'liquid', 'b2d.png');
-INSERT INTO products VALUES('파인애플 100ml', 'B003PRK', 'Final Fantasy', 32000, 7, 'b3.jpg', NOW(), 'liquid', 'b3d.png');
-INSERT INTO products VALUES('져 드라퍼 100ml', 'B004PRK', 'Treat Factory', 35000, 7, 'b4.jpg', NOW(), 'liquid', 'b4d.png');
-INSERT INTO products VALUES('바나나 아이스 100ml', 'B005PRK', 'Frozen Fruit Monster', 35000, 9, 'b5.jpg', NOW(), 'liquid', 'b5d.png');
-INSERT INTO products VALUES('워터멜론 아이스 30ml', 'B006PRK', 'BLVK', 30000, 5, 'b6.jpg', NOW(), 'liquid', 'b6d.png');
-INSERT INTO products VALUES('워터멜론 라임 30ml 9.5mg/ml', 'B007PRK', 'Juice Head Freeze', 21000, 3, 'b7.jpg', NOW(), 'liquid', 'b7d.png');
-INSERT INTO products VALUES('트랩퀸 하이민트 60ml 3mg', 'B008PRK', 'Nasty Juice', 34000, 8, 'b8.jpg', NOW(), 'liquid', 'b8d.png');
-INSERT INTO products VALUES('초코민트 60ml x 1병', 'B009PRK', 'MINTS Vape Co.', 28000, 5, 'b9.jpg', NOW(), 'liquid', 'b9d.png');
-INSERT INTO products VALUES('멜론 스플래쉬 60ml', 'B0010PRK', 'Take Off', 32000, 11, 'b10.jpg', NOW(), 'liquid', 'b10d.png');
-INSERT INTO products VALUES('월탱크 코일 1개', 'C001PRK', 'UWELL', 3000, 350, 'c1.jpg', NOW(), 'coil', 'c1d.png');
-INSERT INTO products VALUES('팔콘 코일 1개', 'C002PRK', 'Horizon Tech', 4500, 500, 'c2.jpg', NOW(), 'coil', );
-INSERT INTO products VALUES('저스트포그 하부코일', 'C003PRK', 'justfog', 3000, 50, 'c3.jpg', NOW(), 'coil', 'c3d.png');
-INSERT INTO products VALUES('V8 RBA (TFV8 RBA 데크)', 'C004PRK', 'SMOK Tech', 15000, 50, 'c4.jpg', NOW(), 'coil', );
-INSERT INTO products VALUES('서브탱크 OCC 코일', 'C005PRK', '더베이퍼', 3000, 100, 'c5.jpg', NOW(), 'coil', 'c5d.png');
-INSERT INTO products VALUES('서브탱크 니켈 OCC 코일', 'C006PRK', 'Kangertech', 3500, 70, 'c6.jpg', NOW(), 'coil', 'c6d.png');
-INSERT INTO products VALUES('아틱 터보 코일', 'C007PRK', 'Horizon Tech', 35000, 50, 'c7.jpg', NOW(), 'coil', );
-INSERT INTO products VALUES('이고원 CL 코일', 'C008PRK', '더베이퍼', 3000, 200, 'c8.jpg', NOW(), 'coil', 'c8d.png');
-INSERT INTO products VALUES('코브라 코일 5개', 'C009PRK', 'ASvape', 19000, 150, 'c9.jpg', NOW(), 'coil', );
-INSERT INTO products VALUES('저스트원 코일', 'C0010PRK', 'Justfog', 4000, 300, 'c10.jpg', NOW(), 'coil', 'c10d.png');
+-- Dumping data for table vape.board: ~8 rows (approximately)
+/*!40000 ALTER TABLE `board` DISABLE KEYS */;
+INSERT INTO `board` (`BNum`, `BTitle`, `BContent`, `BDate`, `id`, `authority`, `views`) VALUES
+	(1, 'ÃÂ£ÃÂÃÂÃÂ£ÃÂÃÂ´ÃÂ£ÃÂÃÂÃÂ£ÃÂÃÂÃÂ£ÃÂÃÂ´ÃÂ£ÃÂÃÂÃÂ£ÃÂÃÂÃÂ£ÃÂÃÂ´ÃÂ£ÃÂÃÂ', 'dsadsadsadsadawdwadÃÂ£ÃÂÃÂÃÂ£ÃÂÃÂÃÂ£ÃÂÃÂÃÂ£ÃÂÃÂÃÂ£ÃÂÃÂÃÂ£ÃÂÃÂÃÂ£ÃÂÃÂÃÂ£ÃÂÃÂÃÂ£ÃÂÃÂÃÂ£ÃÂÃÂÃÂ£ÃÂÃÂÃÂ£ÃÂÃÂÃÂ£ÃÂÃÂÃÂ£ÃÂÃÂÃÂ£ÃÂÃÂ', '2021-02-03 02:08:00', 'WOOJ', 0, 6),
+	(2, 'ãã´ããã´ããã´ã', 'ãããããããããããããããã', '2021-02-03 02:08:09', 'WOOJ', 1, 1),
+	(3, 'ã´ããã´ããã´ããã´ã', 'ãã´ããã´ããã´ããã´ã', '2021-02-03 02:09:25', 'WOOJ', 0, 3),
+	(4, 'Ã£ÂÂ´Ã£ÂÂÃ£ÂÂ´Ã£ÂÂÃ£ÂÂÃ£ÂÂ´Ã£ÂÂÃ£ÂÂÃ£ÂÂ´Ã£ÂÂ', 'Ã£ÂÂÃ£ÂÂ´Ã£ÂÂÃ£ÂÂÃ£ÂÂ´Ã£ÂÂÃ£ÂÂÃ£ÂÂ´Ã£ÂÂÃ£ÂÂÃ£ÂÂ´', '2021-02-03 02:10:20', '1', 1, 6),
+	(5, 'ãã´ããã´ããã´ã', 'dsãããããããããããããã', '2021-02-03 14:15:08', '1', 1, 1),
+	(6, 'ãã´ããã´ããã´ã', 'dwaddwadwadwadwaãããããããããããããããããããããããããããããã', '2021-02-03 15:07:57', '1', 1, 1),
+	(7, 'ãã´ããã´ããã´ã', 'ãã´ããã´ããã´ããã´ããã´ã', '2021-02-03 15:12:46', '1', 1, 3),
+	(8, 'ㅇㅈㅁㅇㅈㅁㅇㅈㅁㅇㅈㅁ', 'ㅇㅈㅁㅇㅈㅁㅇㅈㅁㅇㅈㅁ', '2021-02-03 16:12:46', '1', 1, 1);
+/*!40000 ALTER TABLE `board` ENABLE KEYS */;
 
-CREATE TABLE Users (
-	id VARCHAR(650) primary key,
-    pw VARCHAR(1000) not null,
-    zip VARCHAR(1000) not null,
-    street VARCHAR(1000) not NULL,
-    building VARCHAR(1000) not null,
-    mobile VARCHAR(1000) not null,
-    authority int not null,
-    birthday VARCHAR(1000) not NULL,
-    admin INT NOT null
-) DEFAULT CHARSET = utf8;
+-- Dumping structure for table vape.orders
+DROP TABLE IF EXISTS `orders`;
+CREATE TABLE IF NOT EXISTS `orders` (
+  `cartID` varchar(1000) NOT NULL,
+  `Odate` datetime NOT NULL,
+  `id` varchar(1000) NOT NULL,
+  PRIMARY KEY (`cartID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE Board (
-	BNum int primary KEY,
-    BTitle VARCHAR(1000) not null,
-    BContent VARCHAR(3000) not null,
-    BDate DATETIME not null,
-    id VARCHAR(1000) not null,
-    authority int not null,
-    views int DEFAULT 0
-)DEFAULT CHARSET = utf8;
+-- Dumping data for table vape.orders: ~7 rows (approximately)
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` (`cartID`, `Odate`, `id`) VALUES
+	('1DAB81E1681A92123223D721684DF122', '2021-02-03 12:09:02', '1'),
+	('6488834A2900504CD11BCB833B4C9D3F', '2021-02-03 11:39:17', '1'),
+	('71514BCEED194C9B5D8424DD127B9DAB', '2021-02-03 11:52:38', '1'),
+	('787E5DB053825892D2B1CC218F0C32A0', '2021-02-03 12:11:26', '1'),
+	('996DBC2D0806C66E4317B2460354A8A9', '2021-02-03 14:11:58', '1'),
+	('C0CEB564985A8B5ECDF737F4B9A07074', '2021-02-03 12:54:22', '1'),
+	('DDA8FBA0C69050DDD2D4598EDB592FD7', '2021-02-03 11:55:08', '1');
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 
-DROP TABLE orders;
-CREATE TABLE Orders (
-	cartID VARCHAR(1000) Primary key,
-    Odate DATETIME not NULL,
-    id VARCHAR(1000) NOT NULL
-)DEFAULT CHARSET = utf8;
+-- Dumping structure for table vape.products
+DROP TABLE IF EXISTS `products`;
+CREATE TABLE IF NOT EXISTS `products` (
+  `pname` varchar(500) NOT NULL,
+  `code` varchar(500) NOT NULL,
+  `manufacturer` varchar(1000) NOT NULL,
+  `price` int(11) NOT NULL,
+  `stock` int(11) NOT NULL,
+  `imgname` varchar(1000) NOT NULL,
+  `adddate` datetime NOT NULL,
+  `producttype` varchar(1000) NOT NULL,
+  `detailedimgpath` varchar(1000) NOT NULL,
+  PRIMARY KEY (`pname`,`code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-UPDATE SET USERS VALUE('1', '1234', '1', '1', '1', '1', 1 , '2021-02-17' , 0) where id = '1';
+-- Dumping data for table vape.products: ~30 rows (approximately)
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` (`pname`, `code`, `manufacturer`, `price`, `stock`, `imgname`, `adddate`, `producttype`, `detailedimgpath`) VALUES
+	('100ml Juice Co. 레몬 타르트 100ml  Lemon', 'P0000HCW', '브랙퍼스트', 35000, 112, '레몬.jpg', '2021-02-03 19:45:47', 'liquid', '레몬.png'),
+	('100ml Juice Co. 브랙퍼스트 카놀리 100ml - Breakfast Cannoli (원본액상)', 'P0000HCU', '브랙퍼스트', 35000, 102, '카놀리.jpg', '2021-02-03 19:45:47', 'liquid', '카놀리.png'),
+	('100ml Juice Co. 스트로베리 크림 100ml - Strawberry Cream (원본액상)', 'P0000HCV', '브랙퍼스트', 35000, 91, '딸기.jpg', '2021-02-03 19:45:47', 'liquid', '딸기.png'),
+	('DNA 250 박스모드', 'A010PRK', 'Vapor Shark', 298000, 40, 'a100.jpg', '2021-02-03 12:44:48', 'hardware', 'a10d.png'),
+	('Goon Two Post Clamp Style RDA', 'A007PRK', '528Customs', 79400, 120, 'a7.jpg', '2021-02-03 12:43:55', 'hardware', 'a7d.png'),
+	('Istick 60W Temperature Control by Eleaf', 'P0000EYO', 'Eleaf', 48000, 22, 'Istick 60W Temperature Control by Eleaf.jpg', '2021-02-03 19:45:47', 'hardware', 'Istick 60W Temperature Control by Eleaf.png'),
+	('OCC Ceramic Coil by Kangertech', 'P0000DQQ', 'OCC', 3800, 985, 'OCC Ceramic Coil by Kangertech.jpg', '2021-02-03 19:45:47', 'coil', 'OCC Ceramic Coil by Kangertech.png'),
+	('Skar DNA 75 by Lost Vape', 'P0000EYZ', 'Skar', 142800, 62, 'Skar DNA 75 by Lost Vape.jpg', '2021-02-03 19:45:47', 'hardware', 'Skar DNA 75 by Lost Vape.png'),
+	('Xtar VC2', 'A011PRK', '더베이퍼', 31500, 3000, 'a11.jpg', '2021-02-03 12:44:48', 'hardware', 'a11d.png'),
+	('나이트코어 D2', 'A012PRK', 'Nitecore', 25000, 2000, 'a12.jpg', '2021-02-03 12:44:48', 'hardware', 'a12d.png'),
+	('노틸러스', 'A001prk', 'Aspire', 34000, 62, 'a1.jpg', '2021-02-03 12:43:55', 'hardware', 'a1d.png'),
+	('데리온 DNA 166 Therion DNA 166 by Lost Vape', 'P0000EYP', '데리온', 204000, 61, '데리온 DNA 166 Therion DNA 166 by Lost Vape.jpg', '2021-02-03 19:45:47', 'hardware', '데리온 DNA 166 Therion DNA 166 by Lost Vape.png'),
+	('멜론 스플래쉬 60ml', 'B0010PRK', 'Take Off', 32000, 11, 'b10.jpg', '2021-02-03 12:44:55', 'liquid', 'b10d.png'),
+	('바나나 아이스 100ml', 'B005PRK', 'Frozen Fruit Monster', 35000, 9, 'b5.jpg', '2021-02-03 12:44:48', 'liquid', 'b5d.png'),
+	('버터스카치 100ml', 'B002PRK', 'The Custard Shoppe', 35000, 11, 'b2.jpg', '2021-02-03 12:44:48', 'liquid', 'b2d.png'),
+	('베이프 펜 22 스타터 킷', 'A003PRK', 'SMOK Tech', 23000, 48, ' a3.jpg', '2021-02-03 12:43:55', ' hardware', 'a3d.png'),
+	('싸이클론 Cream 60ml', 'B001PRK', 'Aqua', 22000, 9, 'b1.jpg', '2021-02-03 12:44:48', ' liquid', 'b1d.png'),
+	('아이저스트 S 스타터 킷', 'A005PRK', 'Eleaf', 44000, 97, 'a5.jpg', '2021-02-03 12:43:55', 'hardware', 'a5d.png'),
+	('아이저스트2 스타터 킷', 'A004PRK', 'Eleaf', 38000, 110, 'a4.jpg', '2021-02-03 12:43:55', 'hardware', 'a4d.png'),
+	('아이콘200', 'A002prk', 'CKS', 137500, 28, ' a2.jpg', '2021-02-03 12:43:55', ' hardware ', 'a2d.png'),
+	('아틱 터보 코일 Arctic Turbo Replacement Coils by Horizontech', 'P0000DSB', '아틱', 3500, 502, '아틱 터보 코일 Arctic Turbo Replacement Coils by Horizontech.jpg', '2021-02-03 19:45:47', 'coil', '아틱 터보 코일 Arctic Turbo Replacement Coils by Horizontech.png'),
+	('워터멜론 라임 30ml 9.5mg/ml', 'B007PRK', 'Juice Head Freeze', 21000, 3, 'b7.jpg', '2021-02-03 12:44:55', 'liquid', 'b7d.png'),
+	('저스트원 코일', 'C0010PRK', 'Justfog', 4000, 300, 'c10.jpg', '2021-02-03 12:45:21', 'coil', 'c10d.png'),
+	('저스트포그 하부코일', 'C003PRK', 'justfog', 3000, 50, 'c3.jpg', '2021-02-03 12:45:01', 'coil', 'c3d.png'),
+	('져 드라퍼 100ml', 'B004PRK', 'Treat Factory', 35000, 7, 'b4.jpg', '2021-02-03 12:44:48', 'liquid', 'b4d.png'),
+	('초코민트 60ml x 1병', 'B009PRK', 'MINTS Vape Co.', 28000, 5, 'b9.jpg', '2021-02-03 12:44:55', 'liquid', 'b9d.png'),
+	('큐비스 RBA 코일 Cubis RBA Coil by Joyetech', 'P0000DSA', '큐비스', 9800, 985, '큐비스 RBA 코일 Cubis RBA Coil by Joyetech.jpg', '2021-02-03 19:45:47', 'coil', '큐비스 RBA 코일 Cubis RBA Coil by Joyetech.png'),
+	('트랩퀸 하이민트 60ml 3mg', 'B008PRK', 'Nasty Juice', 34000, 8, 'b8.jpg', '2021-02-03 12:44:55', 'liquid', 'b8d.png'),
+	('파인애플 100ml', 'B003PRK', 'Final Fantasy', 32000, 7, 'b3.jpg', '2021-02-03 12:44:48', 'liquid', 'b3d.png'),
+	('피쉬본', 'A006PRK', '더베이퍼', 14400, 130, 'a6.jpg', '2021-02-03 12:43:55', 'hardware', 'a6d.png');
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
+
+-- Dumping structure for table vape.tblpollitem
+DROP TABLE IF EXISTS `tblpollitem`;
+CREATE TABLE IF NOT EXISTS `tblpollitem` (
+  `listnum` int(11) NOT NULL,
+  `itemnum` smallint(6) NOT NULL DEFAULT '0',
+  `item` varchar(50) NOT NULL,
+  `count` int(11) DEFAULT NULL,
+  PRIMARY KEY (`listnum`,`itemnum`)
+) ENGINE=InnoDB DEFAULT CHARSET=euckr;
+
+-- Dumping data for table vape.tblpollitem: ~2 rows (approximately)
+/*!40000 ALTER TABLE `tblpollitem` DISABLE KEYS */;
+INSERT INTO `tblpollitem` (`listnum`, `itemnum`, `item`, `count`) VALUES
+	(1, 0, 'JAVA', 0),
+	(1, 1, '안드로이드', 0);
+/*!40000 ALTER TABLE `tblpollitem` ENABLE KEYS */;
+
+-- Dumping structure for table vape.tblpolllist
+DROP TABLE IF EXISTS `tblpolllist`;
+CREATE TABLE IF NOT EXISTS `tblpolllist` (
+  `num` int(11) NOT NULL AUTO_INCREMENT,
+  `question` varchar(200) NOT NULL,
+  `sdate` date DEFAULT NULL,
+  `edate` date DEFAULT NULL,
+  `wdate` date DEFAULT NULL,
+  `type` smallint(6) DEFAULT '1',
+  `active` smallint(6) DEFAULT '1',
+  PRIMARY KEY (`num`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=euckr;
+
+-- Dumping data for table vape.tblpolllist: ~1 rows (approximately)
+/*!40000 ALTER TABLE `tblpolllist` DISABLE KEYS */;
+INSERT INTO `tblpolllist` (`num`, `question`, `sdate`, `edate`, `wdate`, `type`, `active`) VALUES
+	(1, '취업하고 싶은 분야는', '2020-01-01', '2020-01-01', '2021-02-02', 1, 1);
+/*!40000 ALTER TABLE `tblpolllist` ENABLE KEYS */;
+
+-- Dumping structure for table vape.users
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` varchar(650) NOT NULL,
+  `pw` varchar(1000) NOT NULL,
+  `zip` varchar(1000) NOT NULL,
+  `street` varchar(1000) NOT NULL,
+  `building` varchar(1000) NOT NULL,
+  `mobile` varchar(1000) NOT NULL,
+  `authority` int(11) NOT NULL,
+  `birthday` varchar(1000) NOT NULL,
+  `admin` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table vape.users: ~2 rows (approximately)
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` (`id`, `pw`, `zip`, `street`, `building`, `mobile`, `authority`, `birthday`, `admin`) VALUES
+	('1', '1', '08275', 'ãìë©ãë§ãããë§ã', '1', '07081155222', 1, '1994-09-25', 0),
+	('WOOJ', '1', '1', '1', '1', '1', 0, '1994-09-25', 0);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
