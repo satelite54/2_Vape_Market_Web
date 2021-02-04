@@ -5,7 +5,7 @@
 <br><br><br><br><br><br><br><br>
 <div class="row">
   <div class="col-md-2" style="background-color:#141E3D;"><img src="<c:url value="/img/logo2.jpg"/>"/></div>
-  <div class="col-md-10" style="background-color:#141E3D;">col-sm-8	<p><a style="color:white;" href="https://github.com/parka01">박아영 |</a>
+  <div class="col-md-10" style="background-color:#141E3D;"><p><a style="color:white;" href="https://github.com/parka01">박아영 |</a>
 			<a style="color:white;" href="https://github.com/satelite54">김태헌 |</a>
 			<a style="color:white;" href="https://github.com/curong">정재우 |</a>
 			<a style="color:white;" href="https://github.com/franksausageocean">이세준</a><p style="color:white;" id="address">

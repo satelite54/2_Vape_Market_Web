@@ -48,19 +48,7 @@ DAO.upDateOrder(id, session);
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="css/bootstrap.min.css"></script>
 
-	  	  <%
-		 	Map<String, String[]> hashParameterMapfortransfer = request.getParameterMap();
-			Set<String> setfortransfer = hashParameterMapfortransfer.keySet();
-			Iterator iterfortramsfer = setfortransfer.iterator();
-			while(iterfortramsfer.hasNext()) {
-				String tempstr = (String) iterfortramsfer.next();
-				String[] strAry = hashParameterMapfortransfer.get(tempstr);
-				for(int i = 0; i < strAry.length; i++) {
-					String strfortramsfer = strAry[i];
-					request.setAttribute(tempstr, strfortramsfer);
-				}
-			}
-		    %>		
+	  	  	
 
 </body>
 
