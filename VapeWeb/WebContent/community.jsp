@@ -106,7 +106,7 @@ dao DAO = new dao();
 		
 		
 	</div>
-	
+	<%@ include file="footer.jsp" %>
 	<script type="text/javascript">
 	   function checkForm1() {
 	      if (${id==null}) {
