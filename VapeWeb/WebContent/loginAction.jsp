@@ -28,8 +28,11 @@
 		}
 		dao userDAO = new dao();
 		int result = userDAO.login(user.getId(), user.getPw());
+		int admin = userDAO.getadmin(user.getId());
 		if (result == 1) {
 			session.setAttribute("id", user.getId());
+			if(admin == 1)
+				session.setAttribute("admin", String.valueOf(admin));
 			session.setMaxInactiveInterval(30*60);
 			PrintWriter script = response.getWriter();
 			script.println("<script>");

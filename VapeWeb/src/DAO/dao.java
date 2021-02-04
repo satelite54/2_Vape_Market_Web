@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -308,10 +309,15 @@ public class dao {
 		PreparedStatement pstmt = null;
 		String sql = null;
 		try {
+			Random random = new Random(2100000000);
+			String n = Integer.toString(random.nextInt());
+			String n1 = String.valueOf(random.nextInt());
+			String n2 = Long.toString(random.nextInt());
+			 
 			sql = "INSERT INTO ORDERS VALUES (?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 //			pstmt.setString(1,session.getId());
-			pstmt.setString(1,session.getId());
+			pstmt.setString(1,session.getId()+n);
 			pstmt.setString(2,getToday());
 			pstmt.setString(3,id);
 			pstmt.executeUpdate();
@@ -417,7 +423,7 @@ public class dao {
 			}
 			return -2; // DB 오류
 		}
-
+		
 			public int join(Users user) {
 				String SQL = "INSERT INTO USERS VALUES (?, ?, ?, ?, ?, ?, ? , ? , ?)";
 				try {
@@ -457,7 +463,19 @@ public class dao {
 				}
 				return -1; // 데이터 베이스 오류
 			}
-		
+			
+			public int setadmin(String modalid) {
+				String sql = "update Users set admin = 1 where id = ?";
+				try {
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, modalid);
+					return pstmt.executeUpdate();
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				return -1;
+			}
+			
 			public int getadmin(String id) {
 				String sql = "select admin from Users where id = ?";
 				try {

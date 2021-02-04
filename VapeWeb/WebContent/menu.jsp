@@ -15,7 +15,9 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/custom.css">	
+	<link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/stove99/jquery-modal-sample@v1.4/css/animate.min.css" />
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/stove99/jquery-modal-sample@v1.4/css/jquery.modal.css" />
 	<title>JASET VAPE</title>
 </head>
 <%-- <%
@@ -84,14 +86,43 @@ div {text-align: center;}
             	<li class="nav-item">
                 	<a class="nav-link" href="myshopping.jsp">나의 쇼핑</a>
             	</li>
-            	
+            	<%
+            		String admin = (String) session.getAttribute("admin");
+            		if(admin == null)
+            			admin = "0";
+            		if(admin.equals("1")) {
+            	%>
+            	<li class="nav-item">
+                	<a data-toggle="modal" href="#myModal" class="nav-link">관리자 권한 부여</a>
+            	</li>
+            	<%}%>
         	</ul>
     	</div>
 	</nav>
     <% 	
     	}
 	%>
-
+  <form action="setadmin.jsp" method ="post">
+	  <div class="modal fade" id="myModal" role="dialog"> <!-- 사용자 지정 부분① : id명 -->
+	    <div class="modal-dialog">
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title">관리자 등록</h4> <!-- 사용자 지정 부분② : 타이틀 -->
+	        </div>
+	        <div class="modal-body">
+	          	<label for="userid">아이디
+	          	<input type="text" name="userid" value="">
+	          	</label> <!-- 사용자 지정 부분③ : 텍스트 메시지 -->
+	        </div>
+	        <div class="modal-footer">
+	          <button type="submit" class="btn btn-default">등록</button>
+	          <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+  </form>
 <br>
 <div ><a href="main.jsp"><img src="<c:url value="/img/logo.png"/>"/></a></div>
 
@@ -100,8 +131,7 @@ div {text-align: center;}
   <button class="btn bg-dark text-white btn-outline-white my-2 my-sm-0 {background-color: #223a6b !important;} float-right" type="submit">Search</button>
   </form>
  </div>
-
-  
+ 
 <script type="text/javascript">
    function checkForm2() {
       if (${id == null}) {
@@ -112,10 +142,10 @@ div {text-align: center;}
 		return true;
       }
    }
-   
 </script>
 
-
+<script src="//cdn.jsdelivr.net/gh/stove99/jquery-modal-sample@v1.4/js/jquery.modal.js"></script>
+<script src="//cdn.jsdelivr.net/gh/stove99/jquery-modal-sample@v1.4/js/modal.js"></script>
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="css/bootstrap.min.css"></script>
