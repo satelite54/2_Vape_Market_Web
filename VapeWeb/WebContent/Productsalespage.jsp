@@ -66,10 +66,12 @@ header {
 	<%
 		String getproducttype = request.getParameter("producttype");
 		String searchfromMain = request.getParameter("search");
-
+/* 		if(searchfromMain == null) {
+			searchfromMain = "  ";
+		}
 		String searchtrim = searchfromMain.trim();
-
-		if (searchtrim != null) {
+ */
+		if (searchfromMain != null) {
 			getproducttype = "search";
 		}
 		String sqlQueryforOrderby = request.getParameter("sqlQuery");
@@ -80,7 +82,7 @@ header {
 		}
 
 		String[] getsalespagedata = sqlforOrderby.generateSQLQuery(getproducttype, sqlQueryforOrderby, orderbyint,
-				searchtrim);
+				searchfromMain);
 		String sqlQuerynew = "";
 	%>
 	<br>
@@ -89,7 +91,7 @@ header {
 	<br>
 	<div class="orderbyContainer d-flex justify-content-end">
 		<%
-			if (searchtrim == null) {
+			if (searchfromMain == null) {
 				sqlQuerynew = getsalespagedata[0];
 		%>
 
