@@ -288,7 +288,7 @@ header {
 			%>
 			<%
 				if (hashParameterMap.get("producttype")[0].equals("hardware")) {
-						for (int i = 1; i <= (Cntsum - 1) / pageItemCnt + 1; i++) {
+						for (int i = 1; i <= (Cnthardware - 1) / pageItemCnt + 1; i++) {
 							pageNumber = i;
 			%>
 			<li class="page-item"><a class="page-link"
@@ -301,7 +301,7 @@ header {
 		    <li class="page-item"><a class="page-link" href="#">3</a></li> -->
 			<%
 				if (hashParameterMap.get("producttype")[0].equals("liquid")) {
-						for (int i = 1; i <= (Cntsum - 1) / pageItemCnt + 1; i++) {
+						for (int i = 1; i <= (Cntliquid - 1) / pageItemCnt + 1; i++) {
 							pageNumber = i;
 			%>
 			<li class="page-item"><a class="page-link"
@@ -310,7 +310,7 @@ header {
 				}
 					}
 					if (hashParameterMap.get("producttype")[0].equals("coil")) {
-						for (int i = 1; i <= (Cntsum - 1) / pageItemCnt + 1; i++) {
+						for (int i = 1; i <= (Cntcoil - 1) / pageItemCnt + 1; i++) {
 							pageNumber = i;
 			%>
 			<li class="page-item"><a class="page-link"
