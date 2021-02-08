@@ -555,7 +555,7 @@ public class dao {
 	}
 	
 	public int insertProduct(Products products) {
-		String SQL = "insert into VALUES (?, ?, ?, ?, ?, ?, ? , ? , ?)";
+		String SQL = "insert into products VALUES (?, ?, ?, ?, ?, ?, now() , ? , ?)";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, products.getPname());
@@ -564,13 +564,12 @@ public class dao {
 			pstmt.setInt(4, products.getPrice());
 			pstmt.setInt(5, products.getStock());
 			pstmt.setString(6, products.getImgname());
-			pstmt.setString(7, "now()");
-			pstmt.setString(8, products.getProducttype());
-			pstmt.setString(9, products.getDetailedimagepath());
+			pstmt.setString(7, products.getProducttype());
+			pstmt.setString(8, products.getDetailedimagepath());
 			return pstmt.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();
-		}System.out.println("회원수정 Page 수정메소드 에러");
+		}
 		return -1;
 	}
 }

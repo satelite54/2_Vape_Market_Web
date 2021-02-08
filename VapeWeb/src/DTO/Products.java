@@ -11,7 +11,7 @@ public class Products {
 	private String imgname;
 	private Date adddate;
 	private String producttype;
-	private String Detailedimagepath;
+	private String detailedimgname;
 	
 	
 	public String getPname() {
@@ -63,9 +63,9 @@ public class Products {
 		this.producttype = producttype;
 	}
 	public String getDetailedimagepath() {
-		return Detailedimagepath;
+		return detailedimgname;
 	}
 	public void setDetailedimagepath(String detailedimagepath) {
-		Detailedimagepath = detailedimagepath;
+		detailedimgname = detailedimagepath;
 	}
 }

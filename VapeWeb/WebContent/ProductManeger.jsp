@@ -16,8 +16,8 @@
 		<input type = "text" name = "price">
 		<input type = "text" name = "stock">
 		<input type = "text" name = "producttype">
-		<input type = "file" name="file" id="imgname" accept="image/*">
-		<input type = "file" name="file" id="detailedimagepath" accept="image/*">
+		<input type = "file" name="imgname" accept="image/*">
+		<input type = "file" name="detailedimgname" accept="image/*">
 		<input type = "submit">
 	</form>
 	

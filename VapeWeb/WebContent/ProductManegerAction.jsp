@@ -1,3 +1,7 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.Set"%>
+<%@page import="java.util.Map"%>
+<%@page import="DTO.Products"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="DAO.dao"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
@@ -14,6 +18,13 @@
 <body>
 	<%
 		dao DAO = new dao();
+		
+		Map<String, String[]> paraMeterMap = request.getParameterMap();
+		Set<String> paraMeterKey = paraMeterMap.keySet();
+		Iterator iter = paraMeterKey.iterator();
+		String detailimgpath = paraMeterMap.get("detailedimgname")[0];
+		products.setDetailedimagepath(detailimgpath);
+		
 		int result = DAO.insertProduct(products);
 		PrintWriter script = response.getWriter();
 		if(result == 1) {
