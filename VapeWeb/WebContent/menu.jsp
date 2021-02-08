@@ -95,6 +95,9 @@ div {text-align: center;}
             	<li class="nav-item">
                 	<a data-toggle="modal" href="#myModal" class="nav-link">관리자 권한 부여</a>
             	</li>
+               	<li class="nav-item">
+                	<a class="nav-link" href="ProductManeger.jsp">상품 등록</a>
+            	</li>
             	<%}%>
         	</ul>
     	</div>
