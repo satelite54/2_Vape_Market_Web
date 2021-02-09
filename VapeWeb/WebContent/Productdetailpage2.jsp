@@ -39,7 +39,7 @@
 <%@ include file="submenu.jsp" %>
 <body>
 <br><br><br><br><br><br>
-	<div class="container">
+
 		<div class="row">
 			<div class="col-md-5">
 				<img src="<%=request.getParameter("imgname")%>" style="width: 100%" />
@@ -70,46 +70,51 @@
 				</div>
 				<br><br><br><br><br><br>
 
-
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
-
-
-
-
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">  
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="#section1">상세정보</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#section2">상품후기</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#section3">Q&A</a>
-    </li>
- 
-  </ul>
-</nav>
-
-<div id="section1" class="container-fluid border border-success" style="padding-top:70px;padding-bottom:70px">
-  <h3>상세정보</h3>
-  <div class="imgbox">
-	<img src="<%=request.getParameter("Detailedimagepath")%>" style="width: 100%" />
-  </div>
+<div class="horizontal" stlye="height: 50%; width: 100%">
+	<div  class="horizontal" style="height: 50% width: 100%">
+		<div>
+			<div frameborder="0" id="iframeResult" name="iframeResult allowfullscreen="true">
+				
+						<body data-spy="scroll" data-target=".navbar" data-offset="50">
+																		
+						<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">  
+						  <ul class="navbar-nav">
+						    <li class="nav-item">
+						      <a class="nav-link" href="#section1">상세정보</a>
+						    </li>
+						    <li class="nav-item">
+						      <a class="nav-link" href="#section2">상품후기</a>
+						    </li>
+						    <li class="nav-item">
+						      <a class="nav-link" href="#section3">Q&A</a>
+						    </li>
+						 
+						  </ul>
+						</nav>
+						
+						<div id="section1" class="container-fluid border border-success" style="padding-top:70px;padding-bottom:70px">
+						  <h3>상세정보</h3>
+						  <div class="imgbox">
+							<img src="<%=request.getParameter("Detailedimagepath")%>" style="width: 100%" />
+						  </div>
+						</div>
+						<div id="section2" class="container-fluid border border-warning" style="padding-top:70px;padding-bottom:70px">
+						  <h1>상품후기</h1>
+						  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+						  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+						</div>
+						<div id="section3" class="container-fluid border border-secondary" style="padding-top:70px;padding-bottom:70px">
+						  <h1>Q&A</h1>
+						  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+						  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+						  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+						</div>
+						
+						</body>
+			</div>
+		</div>
+	</div>
 </div>
-<div id="section2" class="container-fluid border border-warning" style="padding-top:70px;padding-bottom:70px">
-  <h1>상품후기</h1>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-</div>
-<div id="section3" class="container-fluid border border-secondary" style="padding-top:70px;padding-bottom:70px">
-  <h1>Q&A</h1>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-</div>
-
-</body>
 <%@ include file="footer.jsp"%>
 		
 <script src="js/jquery-3.5.1.min.js"></script>
