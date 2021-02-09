@@ -87,38 +87,28 @@
     <li class="nav-item">
       <a class="nav-link" href="#section3">Q&A</a>
     </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link" href="#section4">Section 4</a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#section41">Link 1</a>
-        <a class="dropdown-item" href="#section42">Link 2</a>
-      </div>
-    </li>
+ 
   </ul>
 </nav>
 
-<div id="section1" class="container-fluid bg-success" style="padding-top:70px;padding-bottom:70px">
+<div id="section1" class="container-fluid border border-success" style="padding-top:70px;padding-bottom:70px">
   <h3>상세정보</h3>
   <div class="imgbox">
 	<img src="<%=request.getParameter("Detailedimagepath")%>" style="width: 100%" />
   </div>
 </div>
-<div id="section2" class="container-fluid bg-warning" style="padding-top:70px;padding-bottom:70px">
-  <h1>Section 2</h1>
+<div id="section2" class="container-fluid border border-warning" style="padding-top:70px;padding-bottom:70px">
+  <h1>상품후기</h1>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 </div>
-<div id="section3" class="container-fluid bg-secondary" style="padding-top:70px;padding-bottom:70px">
-  <h1>Section 3</h1>
+<div id="section3" class="container-fluid border border-secondary" style="padding-top:70px;padding-bottom:70px">
+  <h1>Q&A</h1>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 </div>
-<div id="section4" class="container-fluid bg-danger" style="padding-top:70px;padding-bottom:70px">
-  <h1>Section 4</h1>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-</div>
+
 </body>
 <%@ include file="footer.jsp"%>
 		
