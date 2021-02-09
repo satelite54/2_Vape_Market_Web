@@ -572,4 +572,36 @@ public class dao {
 		}
 		return -1;
 	}
+	
+	public int deleteProduct(String pname) {
+		String sql = "delete From Products where pname = ?";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, pname);
+			return pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	
+	public int UpdateProduct(Products products) {
+		String sql = "UPDATE SET products VALUES (?, ?, ?, ?, ?, ?, ? , ? , ?)";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, products.getPname());
+			pstmt.setString(2, products.getCode());
+			pstmt.setString(3, products.getManufacturer());
+			pstmt.setInt(4, products.getPrice());
+			pstmt.setInt(5, products.getStock());
+			pstmt.setString(6, products.getImgname());
+			pstmt.setString(7, "now()");
+			pstmt.setString(8, products.getProducttype());
+			pstmt.setString(9, products.getDetailedimagepath());
+			return pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
 }

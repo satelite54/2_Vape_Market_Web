@@ -18,7 +18,9 @@
 		<input type = "text" name = "producttype">
 		<input type = "file" name="imgname" accept="image/*">
 		<input type = "file" name="detailedimgname" accept="image/*">
-		<input type = "submit">
+		<input type = "submit" name="insert" value = "insert">
+		<input type = "submit" name="delete" value = "delete">
+		<input type = "submit" name="update" value = "update">
 	</form>
 	
 	<%@ include file="footer.jsp" %>
