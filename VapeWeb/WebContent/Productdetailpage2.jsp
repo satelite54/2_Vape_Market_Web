@@ -77,7 +77,7 @@
 				
 						<body data-spy="scroll" data-target=".navbar" data-offset="50">
 																		
-						<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">  
+						<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed">  
 						  <ul class="navbar-nav">
 						    <li class="nav-item">
 						      <a class="nav-link" href="#section1">상세정보</a>
