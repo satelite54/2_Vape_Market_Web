@@ -3,17 +3,17 @@
 -- users Table Create SQL
 CREATE TABLE users
 (
-    `id`        VARCHAR(500)    NOT NULL    COMMENT 'id', 
-    `name`      VARCHAR(500)    NOT NULL    COMMENT 'name', 
-    `pw`        VARCHAR(500)    NOT NULL    COMMENT 'pw', 
-    `adress`    VARCHAR(500)    NOT NULL    COMMENT 'zip', 
-    `street`    varchar(200)    NULL        COMMENT 'street', 
-    `building`  varchar(200)    NULL        COMMENT 'building', 
-    `tel`       VARCHAR(500)    NOT NULL    COMMENT 'mobile', 
-    `nickname`  VARCHAR(500)    NOT NULL    COMMENT 'nickname', 
-    `email`     VARCHAR(500)    NOT NULL    COMMENT 'email', 
-    `profile`   VARCHAR(500)    NOT NULL    COMMENT 'profile', 
-    `admin`     INT             NOT NULL    COMMENT 'admin', 
+    `id`        VARCHAR(500)    NOT NULL,
+    `name`      VARCHAR(500)    NOT NULL,
+    `pw`        VARCHAR(500)    NOT NULL,
+    `zip`    	 VARCHAR(500)    NOT NULL,
+    `street`    varchar(200)    NULL,
+    `building`  varchar(200)    NULL,
+    `tel`       VARCHAR(500)    NOT NULL,
+    `nickname`  VARCHAR(500)    NOT NULL,
+    `email`     VARCHAR(500)    NOT NULL,
+    `profile`   VARCHAR(500)    NOT NULL,
+    `admin`     INT             NOT NULL,
     PRIMARY KEY (id, nickname)
 );
 
@@ -23,15 +23,15 @@ ALTER TABLE users COMMENT 'users';
 -- users Table Create SQL
 CREATE TABLE product
 (
-    `pname`        VARCHAR(500)    NOT NULL    COMMENT 'pname', 
-    `pcode`        VARCHAR(500)    NOT NULL    COMMENT 'pcode', 
-    `manufacture`  VARCHAR(500)    NOT NULL    COMMENT 'manufacture', 
-    `price`        INT             NOT NULL    COMMENT 'price', 
-    `stock`        INT             NOT NULL    COMMENT 'stock', 
-    `img`          VARCHAR(500)    NOT NULL    COMMENT 'img', 
-    `detailimg`    VARCHAR(500)    NOT NULL    COMMENT 'detailimg', 
-    `content`      TEXT            NOT NULL    COMMENT 'content', 
-    `addate`       DATETIME        NOT NULL    COMMENT 'adddate', 
+    `pname`        VARCHAR(500)    NOT NULL,
+    `pcode`        VARCHAR(500)    NOT NULL,
+    `manufacture`  VARCHAR(500)    NOT NULL,
+    `price`        INT             NOT NULL,
+    `stock`        INT             NOT NULL,
+    `img`          VARCHAR(500)    NOT NULL,
+    `detailimg`    VARCHAR(500)    NOT NULL,
+    `content`      TEXT            NOT NULL,
+    `addate`       DATETIME        NOT NULL,
     PRIMARY KEY (pcode)
 );
 
@@ -41,16 +41,16 @@ ALTER TABLE product COMMENT 'product';
 -- users Table Create SQL
 CREATE TABLE board
 (
-    `num`       INT             NOT NULL    COMMENT 'num', 
-    `title`     VARCHAR(500)    NOT NULL    COMMENT 'title', 
-    `content`   VARCHAR(500)    NOT NULL    COMMENT 'content', 
-    `date`      TIMESTAMP       NOT NULL    COMMENT 'date', 
-    `id`        VARCHAR(500)    NOT NULL    COMMENT 'id', 
-    `nickname`  VARCHAR(500)    NOT NULL    COMMENT 'nickname', 
-    `profile`   VARCHAR(500)    NOT NULL    COMMENT 'profile', 
-    `hit`       INT             NOT NULL    COMMENT 'hit', 
-    `addfile`   VARCHAR(500)    NOT NULL    COMMENT 'addfile', 
-    `coment`    VARCHAR(500)    NOT NULL    COMMENT 'coment', 
+    `num`       INT             NOT NULL,
+    `title`     VARCHAR(500)    NOT NULL,
+    `content`   VARCHAR(500)    NOT NULL,, 
+    `date`      TIMESTAMP       NOT NULL,
+    `id`        VARCHAR(500)    NOT NULL,
+    `nickname`  VARCHAR(500)    NOT NULL,
+    `profile`   VARCHAR(500)    NOT NULL,
+    `hit`       INT             NOT NULL,
+    `addfile`   VARCHAR(500)    NOT NULL,
+    `coment`    VARCHAR(500)    NOT NULL,
     PRIMARY KEY (num)
 );
 
@@ -64,12 +64,12 @@ ALTER TABLE board
 -- users Table Create SQL
 CREATE TABLE review
 (
-    `pcode`     VARCHAR(500)    NOT NULL    COMMENT 'pcode', 
-    `id`        VARCHAR(500)    NOT NULL    COMMENT 'id', 
-    `nickname`  VARCHAR(500)    NOT NULL    COMMENT 'nickname', 
-    `profile`   VARCHAR(500)    NOT NULL    COMMENT 'profile', 
-    `review`    VARCHAR(500)    NOT NULL    COMMENT 'review', 
-    `admin`     INT             NOT NULL    COMMENT 'admin'
+    `pcode`     VARCHAR(500)    NOT NULL,
+    `id`        VARCHAR(500)    NOT NULL,
+    `nickname`  VARCHAR(500)    NOT NULL,
+    `profile`   VARCHAR(500)    NOT NULL, 
+    `review`    VARCHAR(500)    NOT NULL,
+    `admin`     INT             NOT NULL,
 );
 
 ALTER TABLE review COMMENT 'review';
@@ -86,11 +86,11 @@ ALTER TABLE review
 -- users Table Create SQL
 CREATE TABLE comment
 (
-    `id`        VARCHAR(500)    NOT NULL    COMMENT 'id', 
-    `profile`   VARCHAR(500)    NULL        COMMENT 'profile', 
-    `BNum`      INT             NULL        COMMENT 'BNum', 
-    `coment`    VARCHAR(500)    NULL        COMMENT 'coment', 
-    `nickname`  VARCHAR(500)    NULL        COMMENT 'nickname'
+    `id`        VARCHAR(500)    NOT NULL,
+    `profile`   VARCHAR(500)    NULL,
+    `BNum`      INT             NULL,
+    `coment`    VARCHAR(500)    NULL,
+    `nickname`  VARCHAR(500)    NULL,
 );
 
 ALTER TABLE comment COMMENT 'comment';
@@ -107,9 +107,9 @@ ALTER TABLE comment
 -- users Table Create SQL
 CREATE TABLE orders
 (
-    `cardId`  varchar(200)    NOT NULL    COMMENT 'cartId', 
-    `Odate`   datetime        NOT NULL    COMMENT 'Odate', 
-    `id`      VARCHAR(45)     NOT NULL    COMMENT 'id', 
+    `cardId`  varchar(200)    NOT NULL,
+    `Odate`   datetime        NOT NULL,
+    `id`      VARCHAR(45)     NOT NULL,
     PRIMARY KEY (cardId)
 );
 
