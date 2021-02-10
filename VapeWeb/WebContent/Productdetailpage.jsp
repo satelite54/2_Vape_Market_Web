@@ -43,7 +43,7 @@
 					session.setAttribute("price", price);
 				%>
 
-			  <form class="form-inline " aSction="myshopping.jsp">
+			  <form class="form-inline " action="myshopping.jsp">
 			  	<button class="btn bg-dark text-white btn-outline-white my-2 my-sm-0 {background-color: #223a6b !important;}" type="submit" value="Submit">장바구니</button>
 				<input type="text" name=countresult value=1>
 				<input type=button value="증가" onClick="javascript:this.form.countresult.value++;">
