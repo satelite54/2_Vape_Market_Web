@@ -180,6 +180,7 @@ public class dao {
 	public void viewsCount(int BNum) {
 		String sql = "UPDATE board SET views = views +1 WHERE BNum = ?";
 		try {
+			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, BNum);
 			pstmt.executeUpdate();
@@ -519,27 +520,6 @@ public class dao {
 		}return null;
 	}   
 
-
-	// 회원수정 Page 회원정보를 수정하는 메소드
-	public void updateUser(Users user) {
-		String SQL = "UPDATE SET USERS VALUES (?, ?, ?, ?, ?, ?, ? , ? , ?)";
-		try {
-			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, user.getId());
-			pstmt.setString(2, user.getPw());
-			pstmt.setString(3, user.getZip());
-			pstmt.setString(4, user.getStreet());
-			pstmt.setString(5, user.getBuilding());
-			pstmt.setString(6, user.getMobile());
-			pstmt.setInt(7, user.getAuthority());
-			pstmt.setString(8, user.getBirthday());
-			pstmt.setInt(9, user.getAdmin());
-			pstmt.executeUpdate();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}System.out.println("회원수정 Page 수정메소드 에러");
-	} 
-
 	// 회원수정 Page 회원정보를 삭제하는 메소드
 	public int deleteUser(HttpSession id) {
 		String sql = "Delete From USERS where id = ?";
@@ -586,7 +566,9 @@ public class dao {
 	}
 	
 	public int UpdateProduct(Products products) {
-		String sql = "UPDATE SET products VALUES (?, ?, ?, ?, ?, ?, ? , ? , ?)";
+		String sql = "update products set pname = ?, code = ?, manufacturer = ?, price = ?, stock = ?,"
+				+ "imgname = ?, adddate = now(), producttype = ?, detailedimgpath = ? where pname = ?";
+		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, products.getPname());
@@ -595,9 +577,9 @@ public class dao {
 			pstmt.setInt(4, products.getPrice());
 			pstmt.setInt(5, products.getStock());
 			pstmt.setString(6, products.getImgname());
-			pstmt.setString(7, "now()");
-			pstmt.setString(8, products.getProducttype());
-			pstmt.setString(9, products.getDetailedimagepath());
+			pstmt.setString(7, products.getProducttype());
+			pstmt.setString(8, products.getDetailedimagepath());
+			pstmt.setString(9, products.getPname());
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
