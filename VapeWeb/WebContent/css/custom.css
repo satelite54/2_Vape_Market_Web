@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@900&display=swap');
 
+/* submenu css */
 #submenu a{
 font-family: 'Gothic A1', sans-serif;
 font-style: italic;
@@ -27,8 +28,16 @@ hr{
     padding-right: 30px;
 }
 
-.tel{
-	
+/*--------------»ó¼¼ÆäÀÌÁöcss--------------*/
+ .parent { 
+        color:#b8064d;
+        position:relative;
+      }
+.me {
+  background-color: #f8e1eb;
+  position: sticky;
+  top: 0.1px;
+  right: 100px;
+  color:#b8064d;
 }
-/*--------------ë‚˜ì˜ì‡¼í•‘css--------------*/
-
+.child {background-color:yellow; color:black;}
