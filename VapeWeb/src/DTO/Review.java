@@ -1,37 +1,37 @@
 package DTO;
 
 public class Review {
-	private int BNum;
-	private String BTitle;
-	private String BContent;
-	private String BDate;
+	private int RNum;
+	private String RTitle;
+	private String RContent;
+	private String RDate;
 	private String id;
 	private int authority;
 	private int views;
 	
-	public int getBNum() {
-		return BNum;
+	public int getRNum() {
+		return RNum;
 	}
-	public void setBNum(int bNum) {
-		BNum = bNum;
+	public void setRNum(int rNum) {
+		RNum = rNum;
 	}
-	public String getBTitle() {
-		return BTitle;
+	public String getRTitle() {
+		return RTitle;
 	}
-	public void setBTitle(String bTitle) {
-		BTitle = bTitle;
+	public void setRTitle(String rTitle) {
+		RTitle = rTitle;
 	}
-	public String getBContent() {
-		return BContent;
+	public String getRContent() {
+		return RContent;
 	}
-	public void setBContent(String bContent) {
-		BContent = bContent;
+	public void setRContent(String rContent) {
+		RContent = rContent;
 	}
-	public String getBDate() {
-		return BDate;
+	public String getRDate() {
+		return RDate;
 	}
-	public void setBDate(String bDate) {
-		BDate = bDate;
+	public void setRDate(String rDate) {
+		RDate = rDate;
 	}
 	public String getId() {
 		return id;
