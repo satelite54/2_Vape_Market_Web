@@ -68,11 +68,12 @@ CREATE TABLE review
     `id`        VARCHAR(500)    NOT NULL,
     `nickname`  VARCHAR(500)    NOT NULL,
     `profile`   VARCHAR(500)    NOT NULL, 
+    `title`     VARCHAR(500)    NOT NULL,
     `review`    VARCHAR(500)    NOT NULL,
     `admin`     INT             NOT NULL,
 );
 
-ALTER TABLE review COMMENT 'review';
+ALTER TABLE review;
 
 ALTER TABLE review
     ADD CONSTRAINT FK_review_id_users_id FOREIGN KEY (id)

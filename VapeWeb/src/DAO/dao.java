@@ -17,6 +17,7 @@ import javax.websocket.Session;
 import DTO.Board;
 import DTO.Orders;
 import DTO.Products;
+import DTO.Review;
 import DTO.Users;
 
 public class dao {
@@ -168,7 +169,33 @@ public class dao {
 		}return null;
 }	
 	
+	// 리뷰 리스트를 불러오는 메소드
+	public ArrayList<Review> getReviewList(){
+		String sql = "Select * FROM board WHERE authority =1 order BY BNum DESC";
+		ArrayList<Review> list = new ArrayList<Review>();
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()){
+				Review review = new Review();
+				review.setBNum(rs.getInt(1));
+				review.setBTitle(rs.getString(2));
+				review.setBContent(rs.getString(3));
+				review.setBDate(rs.getString(4));
+				review.setId(rs.getString(5));
+				review.setAuthority(rs.getInt(6));
+				review.setViews(rs.getInt(7));
+				list.add(review);
+			}
+			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}return null;
+}	
 	
+	
+	
+		
 	
 	
 
