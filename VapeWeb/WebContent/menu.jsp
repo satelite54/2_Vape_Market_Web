@@ -12,6 +12,7 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@ page import="java.io.PrintWriter"%>
 <%@ page import="DTO.Board"%>
+
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
