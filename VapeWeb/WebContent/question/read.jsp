@@ -3,11 +3,11 @@
 <%@page import="question.QCommentBean"%>
 <%@page import="question.QuestionBean"%>
 <%@page import="question.UtilMgr"%>
-<%@page contentType="text/html; charset=EUC-KR"%>
+<%@page contentType="text/html; charset=UTF-8"%>
 <jsp:useBean id="mgr" class="question.QuestionMgr"/>
 <jsp:useBean id="cmgr" class="question.QCommentMgr"/>
 <%
-request.setCharacterEncoding("EUC-KR");
+request.setCharacterEncoding("UTF-8");
 		//read.jsp?nowPage=1&numPerPage=10&keyField=&keyWord=&num=3
 		String nowPage = request.getParameter("nowPage");	
 		String numPerPage = request.getParameter("numPerPage");	
@@ -24,11 +24,11 @@ request.setCharacterEncoding("EUC-KR");
 		cbean.setComment(request.getParameter("comment"));
 		cmgr.insertQComment(cbean);
 	}else if(flag.equals("del")){
-		//¿äÃ»ÇÑ ´ñ±Û »èÁ¦
+		//ìš”ì²­í•œ ëŒ“ê¸€ ì‚­ì œ
 		cmgr.deleteQComment(UtilMgr.parseInt(request, "cnum"));
 	}
 		}else{
-	//Á¶È¸¼ö Áõ°¡ : list.jsp °Ô½Ã¹° ÀĞ¾î¿È.
+	//ì¡°íšŒìˆ˜ ì¦ê°€ : list.jsp ê²Œì‹œë¬¼ ì½ì–´ì˜´.
 	mgr.upCount(num);
 		}
 		
@@ -41,7 +41,7 @@ request.setCharacterEncoding("EUC-KR");
 		int filesize = bean.getFilesize();
 		String ip = bean.getIp();
 		int count = bean.getCount();
-		//ÀĞ¾î¿Â °Ô½Ã¹°À» ¼öÁ¤ ¹× »èÁ¦¸¦ À§ÇØ ¼¼¼ÇÀúÀå
+		//ì½ì–´ì˜¨ ê²Œì‹œë¬¼ì„ ìˆ˜ì • ë° ì‚­ì œë¥¼ ìœ„í•´ ì„¸ì…˜ì €ì¥
 		session.setAttribute("bean", bean);
 %>
 <html>
@@ -59,7 +59,7 @@ request.setCharacterEncoding("EUC-KR");
 	}
 	function cInsert() {
 		if(document.cFrm.comment.value==""){
-			alert("´ñ±ÛÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
+			alert("ëŒ“ê¸€ì„ ì…ë ¥í•˜ì„¸ìš”.");
 			document.cFrm.comment.focus();
 			return;
 		}
@@ -76,23 +76,23 @@ request.setCharacterEncoding("EUC-KR");
 <br/><br/>
 <table align="center" width="600" cellspacing="3">
  <tr>
-  <td bgcolor="#9CA2EE" height="25" align="center">±ÛÀĞ±â</td>
+  <td bgcolor="#9CA2EE" height="25" align="center">ê¸€ì½ê¸°</td>
  </tr>
  <tr>
   <td colspan="2">
    <table cellpadding="3" cellspacing="0" width="100%"> 
     <tr> 
-  <td align="center" bgcolor="#DDDDDD" width="10%"> ÀÌ ¸§ </td>
+  <td align="center" bgcolor="#DDDDDD" width="10%"> ì´ ë¦„ </td>
   <td bgcolor="#FFFFE8"><%=name%></td>
-  <td align="center" bgcolor="#DDDDDD" width="10%"> µî·Ï³¯Â¥ </td>
+  <td align="center" bgcolor="#DDDDDD" width="10%"> ë“±ë¡ë‚ ì§œ </td>
   <td bgcolor="#FFFFE8"><%=regdate%></td>
  </tr>
  <tr> 
-    <td align="center" bgcolor="#DDDDDD"> Á¦ ¸ñ</td>
+    <td align="center" bgcolor="#DDDDDD"> ì œ ëª©</td>
     <td bgcolor="#FFFFE8" colspan="3"><%=subject%></td>
    </tr>
    <tr> 
-     <td align="center" bgcolor="#DDDDDD">Ã·ºÎÆÄÀÏ</td>
+     <td align="center" bgcolor="#DDDDDD">ì²¨ë¶€íŒŒì¼</td>
      <td bgcolor="#FFFFE8" colspan="3">
     	<%
     	if(filename!=null&&!filename.equals("")){
@@ -100,7 +100,7 @@ request.setCharacterEncoding("EUC-KR");
     		<a href="javascript:down('<%=filename%>')"><%=filename%></a>
     		<font color="blue">(<%=UtilMgr.intFormat(filesize)%>bytes)</font>
     	<%
-    	}else{out.println("Ã·ºÎµÈ ÆÄÀÏÀÌ ¾ø½À´Ï´Ù.");}
+    	}else{out.println("ì²¨ë¶€ëœ íŒŒì¼ì´ ì—†ìŠµë‹ˆë‹¤.");}
     	%>
      </td>
    </tr>
@@ -109,7 +109,7 @@ request.setCharacterEncoding("EUC-KR");
    </tr>
    <tr>
     <td colspan="4" align="right">
-     <%=ip%>·Î ºÎÅÍ ±ÛÀ» ³²±â¼Ì½À´Ï´Ù./  Á¶È¸¼ö  <%=count%>
+     <%=ip%>ë¡œ ë¶€í„° ê¸€ì„ ë‚¨ê¸°ì…¨ìŠµë‹ˆë‹¤./  ì¡°íšŒìˆ˜  <%=count%>
     </td>
    </tr>
    </table>
@@ -117,20 +117,20 @@ request.setCharacterEncoding("EUC-KR");
  </tr>
  <tr>
   <td align="center" colspan="2">
-  <!-- ´ñ±Û ÀÔ·ÂÆû Start -->
+  <!-- ëŒ“ê¸€ ì…ë ¥í¼ Start -->
   <form method="post" name="cFrm">
 		<table>
 			<tr  align="center">
-				<td width="50">ÀÌ ¸§</td>
+				<td width="50">ì´ ë¦„</td>
 				<td align="left">
 					<input name="cName" size="10" value="aaa">
 				</td>
 			</tr>
 			<tr align="center">
-				<td>³» ¿ë</td>
+				<td>ë‚´ ìš©</td>
 				<td>
 				<input name="comment" size="50"> 
-				<input type="button" value="µî·Ï" onclick="cInsert()"></td>
+				<input type="button" value="ë“±ë¡" onclick="cInsert()"></td>
 			</tr>
 		</table>
 	 <input type="hidden" name="flag" value="insert">	
@@ -147,9 +147,9 @@ request.setCharacterEncoding("EUC-KR");
 	}
 	%>
 	</form>
-  <!-- ´ñ±Û ÀÔ·ÂÆû End -->
+  <!-- ëŒ“ê¸€ ì…ë ¥í¼ End -->
  <hr/>
- <!-- ´ñ±Û List Start -->
+ <!-- ëŒ“ê¸€ List Start -->
   <%
   Vector<QCommentBean> cvlist = cmgr.getQComment(num);
     		if(!cvlist.isEmpty()){
@@ -167,10 +167,10 @@ request.setCharacterEncoding("EUC-KR");
 			<td colspan="3" width="600"><b><%=cname%></b></td>
 		</tr>
 		<tr>
-			<td>´ñ±Û:<%=comment%></td>
+			<td>ëŒ“ê¸€:<%=comment%></td>
 			<td align="right"><%=cregdate%></td>
 			<td align="center" valign="middle">
-			<input type="button" value="»èÁ¦" onclick="cDel('<%=cnum%>')">
+			<input type="button" value="ì‚­ì œ" onclick="cDel('<%=cnum%>')">
 			</td>
 		</tr>
 		<tr>
@@ -180,13 +180,13 @@ request.setCharacterEncoding("EUC-KR");
 	 </table>	
  <hr/>
  <%} %>
- <!-- ´ñ±Û List End -->
+ <!-- ëŒ“ê¸€ List End -->
  
- [ <a href="javascript:list()" >¸®½ºÆ®</a> | 
- <a href="update.jsp?nowPage=<%=nowPage%>&num=<%=num%>&numPerPage=<%=numPerPage%>" >¼ö Á¤</a> |
- <a href="update2.jsp?nowPage=<%=nowPage%>&num=<%=num%>&numPerPage=<%=numPerPage%>" >¼ö Á¤2</a> |
- <a href="reply.jsp?nowPage=<%=nowPage%>&numPerPage=<%=numPerPage%>" >´ä º¯</a> |
- <a href="delete.jsp?nowPage=<%=nowPage%>&num=<%=num%>">»è Á¦</a> ]<br/>
+ [ <a href="javascript:list()" >ë¦¬ìŠ¤íŠ¸</a> | 
+ <a href="update.jsp?nowPage=<%=nowPage%>&num=<%=num%>&numPerPage=<%=numPerPage%>" >ìˆ˜ ì •</a> |
+ <a href="update2.jsp?nowPage=<%=nowPage%>&num=<%=num%>&numPerPage=<%=numPerPage%>" >ìˆ˜ ì •2</a> |
+ <a href="reply.jsp?nowPage=<%=nowPage%>&numPerPage=<%=numPerPage%>" >ë‹µ ë³€</a> |
+ <a href="delete.jsp?nowPage=<%=nowPage%>&num=<%=num%>">ì‚­ ì œ</a> ]<br/>
   </td>
  </tr>
 </table>
@@ -205,24 +205,3 @@ request.setCharacterEncoding("EUC-KR");
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
