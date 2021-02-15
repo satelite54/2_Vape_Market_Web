@@ -1,4 +1,4 @@
-package board;
+package question;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//post.jsp¿¡¼­ ÀÔ·ÂÇÑ °Ô½Ã¹° ÀúÀåÀ» À§ÇÑ ¼­ºí¸´
-@WebServlet("/board/boardPost")
-public class BoardPostServlet extends HttpServlet {
+//post.jspï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ô½Ã¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+@WebServlet("/question/questionPost")
+public class QuestionPostServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, 
 			HttpServletResponse response) 
 					throws ServletException, IOException {
 		request.setCharacterEncoding("EUC-KR");
-		BoardMgr mgr = new BoardMgr();
-		mgr.insertBoard(request);
+		QuestionMgr mgr = new QuestionMgr();
+		mgr.insertQuestion(request);
 
 		response.sendRedirect("list.jsp");
 	}

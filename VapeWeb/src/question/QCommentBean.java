@@ -1,6 +1,6 @@
-package board;
+package question;
 
-public class BCommentBean {
+public class QCommentBean {
 	
 	private int cnum;
 	private int num;

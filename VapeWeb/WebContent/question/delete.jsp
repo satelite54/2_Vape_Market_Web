@@ -1,28 +1,29 @@
 <!-- delete.jsp -->
-<%@page import="board.BoardBean"%>
-<%@page import="board.UtilMgr"%>
+<%@page import="question.QuestionBean"%>
+<%@page import="question.UtilMgr"%>
 <%@page contentType="text/html; charset=utf-8"%>
-<jsp:useBean id="mgr" class="board.BoardMgr"/>
+<jsp:useBean id="mgr" class="question.QuestionMgr"/>
 <html>
 <head>
 <%
-		request.setCharacterEncoding("utf-8");
+request.setCharacterEncoding("utf-8");
 		String nowPage = request.getParameter("nowPage");
 		int num = UtilMgr.parseInt(request, "num");
 		//비번을 입력을 받아서 삭제를 처리하는 기능
 		if(request.getParameter("pass")!=null){
-			BoardBean bean = (BoardBean)session.getAttribute("bean");
-			//delete.jsp에서 사용자가 입력한 비번
-			String inPass = request.getParameter("pass");
-			//db에 저장된 비번
-			String dbPass = bean.getPass();
-			if(inPass.equals(dbPass)){//==는 객체의 주소값 비교.
-				mgr.deleteBoard(num);
-				//원 게시물이 삭제되면 관려된 댓글 모두 삭제
+	QuestionBean bean = (QuestionBean)session.getAttribute("bean");
+	//delete.jsp에서 사용자가 입력한 비번
+	String inPass = request.getParameter("pass");
+	//db에 저장된 비번
+	String dbPass = bean.getPass();
+	if(inPass.equals(dbPass)){//==는 객체의 주소값 비교.
+		mgr.deleteQuestion(num);
+		//원 게시물이 삭제되면 관려된 댓글 모두 삭제
 
-				String url = "list.jsp?nowPage="+nowPage;
-				response.sendRedirect(url);
-			}else{%>
+		String url = "list.jsp?nowPage="+nowPage;
+		response.sendRedirect(url);
+	}else{
+%>
 			<script type="text/javascript">
 				alert("입력하신 비밀번호가 아닙니다.");
 				history.back();

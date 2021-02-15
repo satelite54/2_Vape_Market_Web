@@ -1,12 +1,12 @@
 <!-- list.jsp -->
-<%@page import="board.BoardBean"%>
+<%@page import="question.QuestionBean"%>
 <%@page import="java.util.Vector"%>
-<%@page import="board.UtilMgr"%>
+<%@page import="question.UtilMgr"%>
 <%@page contentType="text/html; charset=utf-8"%>
-<jsp:useBean id="mgr" class="board.BoardMgr"/>
-<jsp:useBean id="cmgr" class="board.BCommentMgr"/>
+<jsp:useBean id="mgr" class="question.QuestionMgr"/>
+<jsp:useBean id="cmgr" class="question.QCommentMgr"/>
 <%
-		request.setCharacterEncoding("utf-8");
+request.setCharacterEncoding("utf-8");
 		int totalRecord = 0;//총게시물수
 		int numPerPage = 10;//페이지당 레코드 개수(5,10,15,30)
 		int pagePerBlock = 15;//블럭당 페이지 개수
@@ -18,21 +18,21 @@
 		//요청된 numPerPage 처리
 		//요청이 있으면 처리가 되지만 그렇지 않으면 기본 10개 세팅이 된다.
 		if(request.getParameter("numPerPage")!=null){
-			numPerPage = UtilMgr.parseInt(request, "numPerPage");
+	numPerPage = UtilMgr.parseInt(request, "numPerPage");
 		}
 		
 		//검색에 필요한 변수
 		String keyField = "", keyWord = "";
 		//검색일때
 		if(request.getParameter("keyWord")!=null){
-			keyField = request.getParameter("keyField");
-			keyWord = request.getParameter("keyWord");
+	keyField = request.getParameter("keyField");
+	keyWord = request.getParameter("keyWord");
 		}
 		
 		//검색 후에 다시 처음화면 요청
 		if(request.getParameter("reload")!=null&&
-				request.getParameter("reload").equals("true")){
-			keyField = ""; keyWord = "";
+		request.getParameter("reload").equals("true")){
+	keyField = ""; keyWord = "";
 		}
 		
 		totalRecord = mgr.getTotalCount(keyField, keyWord);
@@ -40,7 +40,7 @@
 		
 		//nowPage 요청 처리
 		if(request.getParameter("nowPage")!=null){
-			nowPage = UtilMgr.parseInt(request, "nowPage");
+	nowPage = UtilMgr.parseInt(request, "nowPage");
 		}
 		
 		//sql문에 들어가는 start, cnt 선언
@@ -120,8 +120,8 @@
 	<tr>
 		<td align="center" colspan="2">
 		<%
-				Vector<BoardBean> vlist = 
-				mgr.getBoardList(keyField, keyWord, start, cnt);
+		Vector<QuestionBean> vlist = 
+				mgr.getQuestionList(keyField, keyWord, start, cnt);
 				int listSize = vlist.size();//브라우저 화면에 표시될 게시물 번호
 				if(vlist.isEmpty()){
 					out.println("등록된 게시물이 없습니다.");
@@ -136,9 +136,9 @@
 					<td width="100">조회수</td>
 				</tr>
 		<%
-				for(int i=0;i<numPerPage;i++){
+		for(int i=0;i<numPerPage;i++){
 					if(i==listSize) break;
-					BoardBean bean = vlist.get(i);
+					QuestionBean bean = vlist.get(i);
 					int num = bean.getNum();//게시물 번호
 					String subject = bean.getSubject();//제목
 					String name = bean.getName();//이름
@@ -147,7 +147,7 @@
 					int count = bean.getCount();//조회수
 					String filename = bean.getFilename();//첨부파일
 					//댓글 count
-					int bcount = cmgr.getBCommentCount(num);
+					int qcount = cmgr.getQCommentCount(num);
 		%>
 				<tr align="center">
 					<td><%=totalRecord-start-i%></td>
@@ -157,8 +157,8 @@
 						<%if(filename!=null&&!filename.equals("")){%>
 							<img src="img/icon_file.gif" align="middle">
 						<%}%>
-						<%if(bcount>0){%>
-							<font color="red">(<%=bcount%>)</font>
+						<%if(qcount>0){%>
+							<font color="red">(<%=qcount%>)</font>
 						<%}%>
 					</td>
 					<td><%=name%></td>
@@ -202,7 +202,7 @@
 		<!-- 페이징 및 블럭 End -->
 		</td>
 		<td align="right">
-			<a href="/VapeWeb/board/post.jsp">[글쓰기]</a>
+			<a href="/VapeWeb/question/post.jsp">[글쓰기]</a>
 		</td>
 	</tr>
 </table>

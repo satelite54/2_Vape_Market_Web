@@ -1,34 +1,34 @@
-package board;
+package question;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Vector;
 
-public class BCommentMgr {
+public class QCommentMgr {
 	
 	private DBConnectionMgr pool;
 	
-	public BCommentMgr() {
+	public QCommentMgr() {
 		pool = DBConnectionMgr.getInstance();
 	}
 	
 	
 	//Comment List
-	public Vector<BCommentBean> getBComment(int num){
+	public Vector<QCommentBean> getQComment(int num){
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = null;
-		 Vector<BCommentBean> vlist = new Vector<>();
+		 Vector<QCommentBean> vlist = new Vector<>();
 		try {
 			con = pool.getConnection();
-			sql = "select * from tblBComment where num=?";
+			sql = "select * from tblQComment where num=?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, num);
 			rs = pstmt.executeQuery();
 			while(rs.next()){
-				BCommentBean bean = new BCommentBean();
+				QCommentBean bean = new QCommentBean();
 				bean.setCnum(rs.getInt("cnum"));
 				bean.setName(rs.getString("name"));
 				bean.setComment(rs.getString("comment"));
@@ -45,13 +45,13 @@ public class BCommentMgr {
 	}
 
 	//Comment Insert
-	public void insertBComment(BCommentBean bean){
+	public void insertQComment(QCommentBean bean){
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = null;
 		try {
 			con = pool.getConnection();
-			sql = "insert tblBComment(name,comment,regdate,num) "
+			sql = "insert tblQComment(name,comment,regdate,num) "
 					+ "values(?,?,now(),?)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, bean.getName());
@@ -66,7 +66,7 @@ public class BCommentMgr {
 	}
 	
 	//Comment Count
-	public int getBCommentCount(int num){
+	public int getQCommentCount(int num){
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -74,7 +74,7 @@ public class BCommentMgr {
 		int count  = 0;
 		try {
 			con = pool.getConnection();
-			sql = "select count(num) from tblBComment where num=?";
+			sql = "select count(num) from tblQComment where num=?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, num);
 			rs = pstmt.executeQuery();
@@ -89,13 +89,13 @@ public class BCommentMgr {
 	}
 	
 	//Comment Delete
-	public void deleteBComment(int cnum){
+	public void deleteQComment(int cnum){
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = null;
 		try {
 			con = pool.getConnection();
-			sql = "delete from tblBComment where cnum=?";
+			sql = "delete from tblQComment where cnum=?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, cnum);
 			pstmt.executeUpdate();
@@ -107,13 +107,13 @@ public class BCommentMgr {
 	}
 	
 	//Comment All Delete
-	public void deleteAllBComment(int num){
+	public void deleteAllQComment(int num){
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = null;
 		try {
 			con = pool.getConnection();
-			sql = "delete from tblBComment where num=?";
+			sql = "delete from tblQComment where num=?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, num);
 			pstmt.executeUpdate();

@@ -1,13 +1,13 @@
 <!-- read.jsp -->
 <%@page import="java.util.Vector"%>
-<%@page import="board.BCommentBean"%>
-<%@page import="board.BoardBean"%>
-<%@page import="board.UtilMgr"%>
+<%@page import="question.QCommentBean"%>
+<%@page import="question.QuestionBean"%>
+<%@page import="question.UtilMgr"%>
 <%@page contentType="text/html; charset=EUC-KR"%>
-<jsp:useBean id="mgr" class="board.BoardMgr"/>
-<jsp:useBean id="cmgr" class="board.BCommentMgr"/>
+<jsp:useBean id="mgr" class="question.QuestionMgr"/>
+<jsp:useBean id="cmgr" class="question.QCommentMgr"/>
 <%
-		request.setCharacterEncoding("EUC-KR");
+request.setCharacterEncoding("EUC-KR");
 		//read.jsp?nowPage=1&numPerPage=10&keyField=&keyWord=&num=3
 		String nowPage = request.getParameter("nowPage");	
 		String numPerPage = request.getParameter("numPerPage");	
@@ -17,22 +17,22 @@
 		
 		String flag = request.getParameter("flag");
 		if(flag!=null){
-			if(flag.equals("insert")){
-				BCommentBean cbean = new BCommentBean();
-				cbean.setNum(num);
-				cbean.setName(request.getParameter("cName"));
-				cbean.setComment(request.getParameter("comment"));
-				cmgr.insertBComment(cbean);
-			}else if(flag.equals("del")){
-				//요청한 댓글 삭제
-				cmgr.deleteBComment(UtilMgr.parseInt(request, "cnum"));
-			}
+	if(flag.equals("insert")){
+		QCommentBean cbean = new QCommentBean();
+		cbean.setNum(num);
+		cbean.setName(request.getParameter("cName"));
+		cbean.setComment(request.getParameter("comment"));
+		cmgr.insertQComment(cbean);
+	}else if(flag.equals("del")){
+		//요청한 댓글 삭제
+		cmgr.deleteQComment(UtilMgr.parseInt(request, "cnum"));
+	}
 		}else{
-			//조회수 증가 : list.jsp 게시물 읽어옴.
-			mgr.upCount(num);
+	//조회수 증가 : list.jsp 게시물 읽어옴.
+	mgr.upCount(num);
 		}
 		
-		BoardBean bean = mgr.getBoard(num);
+		QuestionBean bean = mgr.getQuestion(num);
 		String name = bean.getName();
 		String subject = bean.getSubject();
 		String regdate = bean.getRegdate();
@@ -94,10 +94,14 @@
    <tr> 
      <td align="center" bgcolor="#DDDDDD">첨부파일</td>
      <td bgcolor="#FFFFE8" colspan="3">
-    	<%if(filename!=null&&!filename.equals("")){%>
+    	<%
+    	if(filename!=null&&!filename.equals("")){
+    	%>
     		<a href="javascript:down('<%=filename%>')"><%=filename%></a>
     		<font color="blue">(<%=UtilMgr.intFormat(filesize)%>bytes)</font>
-    	<%}else{out.println("첨부된 파일이 없습니다.");}%>
+    	<%
+    	}else{out.println("첨부된 파일이 없습니다.");}
+    	%>
      </td>
    </tr>
    <tr> 
@@ -134,27 +138,31 @@
 	 <input type="hidden" name="cnum">
     <input type="hidden" name="nowPage" value="<%=nowPage%>">
     <input type="hidden" name="numPerPage" value="<%=numPerPage%>">
-   <%if(!(keyWord==null||keyWord.equals(""))){ %>
+   <%
+   if(!(keyWord==null||keyWord.equals(""))){
+   %>
     <input type="hidden" name="keyField" value="<%=keyField%>">
     <input type="hidden" name="keyWord" value="<%=keyWord%>">
-	<%}%>
+	<%
+	}
+	%>
 	</form>
   <!-- 댓글 입력폼 End -->
  <hr/>
  <!-- 댓글 List Start -->
   <%
-  		Vector<BCommentBean> cvlist = cmgr.getBComment(num);
-  		if(!cvlist.isEmpty()){
+  Vector<QCommentBean> cvlist = cmgr.getQComment(num);
+    		if(!cvlist.isEmpty()){
   %>
   <table>	
 	 <%
-	 		for(int i=0;i<cvlist.size();i++){
-	 			BCommentBean cbean = cvlist.get(i);
-	 			int cnum = cbean.getCnum();
-	 			String cname = cbean.getName();
-	 			String comment = cbean.getComment();
-	 			String cregdate = cbean.getRegdate();
-	 %>
+		 for(int i=0;i<cvlist.size();i++){
+		 	 			QCommentBean cbean = cvlist.get(i);
+		 	 			int cnum = cbean.getCnum();
+		 	 			String cname = cbean.getName();
+		 	 			String comment = cbean.getComment();
+		 	 			String cregdate = cbean.getRegdate();
+		 %>
 	 	<tr>
 			<td colspan="3" width="600"><b><%=cname%></b></td>
 		</tr>

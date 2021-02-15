@@ -1,7 +1,7 @@
 <!-- reply.jsp -->
 <%@page contentType="text/html; charset=EUC-KR"%>
 <!-- read.jsp에서 원글을 session 저장 -->
-<jsp:useBean id="bean" scope="session" class="board.BoardBean"/>
+<jsp:useBean id="bean" scope="session" class="question.QuestionBean"/>
 <%
 		request.setCharacterEncoding("EUC-KR");
 		String nowPage = request.getParameter("nowPage");
@@ -22,7 +22,7 @@
    <td bgcolor="#CCCC00" height="21" align="center">답변하기</td>
   </tr>
 </table>
-<form method="post" action="boardReply" >
+<form method="post" action="questionReply" >
 <table width="600" cellpadding="7">
  <tr>
   <td>

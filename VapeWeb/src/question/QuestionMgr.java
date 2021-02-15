@@ -1,4 +1,4 @@
-package board;
+package question;
 
 import java.io.File;
 import java.sql.Connection;
@@ -13,28 +13,28 @@ import javax.servlet.http.HttpServletRequest;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-public class BoardMgr {
+public class QuestionMgr {
 	
 	private DBConnectionMgr pool;
 	public static final String SAVEFOLDER = "C:/Jsp/myapp/WebContent/board/fileupload/";
 	public static final String ENCTYPE = "EUC-KR";
 	public static int MAXSIZE = 10*1024*1024;
 
-	public BoardMgr() {
+	public QuestionMgr() {
 		pool = DBConnectionMgr.getInstance();
 	}
 	
-	//Board Insert : ÆÄÀÏ¾÷·Îµå, contentType, refÀÇ »ó´ëÀûÀÎ À§Ä¡°ª
-	public void insertBoard(HttpServletRequest req) {
+	//Question Insert : ï¿½ï¿½ï¿½Ï¾ï¿½ï¿½Îµï¿½, contentType, refï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½
+	public void insertQuestion(HttpServletRequest req) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = null;
 		try {
-			//////////ÆÄÀÏ¾÷·Îµå Æú´õ »ý¼º//////////////
+			//////////ï¿½ï¿½ï¿½Ï¾ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½//////////////
 			File dir = new File(SAVEFOLDER);
-			if(!dir.exists()) {//Æú´õ°¡ Á¸ÀçÇÏÁö ¾Ê´Â´Ù¸é
-				//mkdir:»óÀ§ Æú´õ°¡ ¾øÀ¸¸é »ý¼ººÒ°¡ 
-				//mkdirs:»óÀ§ Æú´õ°¡ ¾ø¾îµµ »ý¼º°¡´É
+			if(!dir.exists()) {//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Â´Ù¸ï¿½
+				//mkdir:ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ò°ï¿½ 
+				//mkdirs:ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½îµµ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				dir.mkdirs();
 			}
 			MultipartRequest multi = 
@@ -42,22 +42,22 @@ public class BoardMgr {
 							new DefaultFileRenamePolicy());
 			String filename = null;
 			int filesize = 0;
-			//¸ðµç °Ô½Ã¹°ÀÌ ÆÄÀÏ¾÷·Îµå¸¦ ÇÏ´Â°Å ¾Æ´Ï´Ù.
-			//»ç¿ëÀÚ°¡ ÆÄÀÏÀ» ¾÷·Îµå ÇÏ´Â °æ¿ì
+			//ï¿½ï¿½ï¿½ ï¿½Ô½Ã¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï¾ï¿½ï¿½Îµå¸¦ ï¿½Ï´Â°ï¿½ ï¿½Æ´Ï´ï¿½.
+			//ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Îµï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½
 			if(multi.getFilesystemName("filename")!=null) {
 				filename = multi.getFilesystemName("filename");
 				filesize = (int)multi.getFile("filename").length();
 			}
-			//°Ô½Ã¹° contentType : text, html
-			String content = multi.getParameter("content");//°Ô½Ã¹° ³»¿ë
+			//ï¿½Ô½Ã¹ï¿½ contentType : text, html
+			String content = multi.getParameter("content");//ï¿½Ô½Ã¹ï¿½ ï¿½ï¿½ï¿½ï¿½
 			String contentType = multi.getParameter("contentType");
 			if(contentType.equals("TEXT")) {
 				content = UtilMgr.replace(content, "<", "&lt;");
 			}
-			///´äº¯À» À§ÇÑ ref ¼³Á¤/////
+			///ï¿½äº¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ref ï¿½ï¿½ï¿½ï¿½/////
 			int ref = getMaxNum() + 1;
 			con = pool.getConnection();
-			sql = "insert tblBoard(name,content,subject,ref,pos,depth,";
+			sql = "insert tblQuestion(name,content,subject,ref,pos,depth,";
 			sql += "regdate,pass,count,ip,filename,filesize)";
 			sql += "values(?, ?, ?, ?, 0, 0, now(), ?, 0, ?, ?, ?)";
 			pstmt = con.prepareStatement(sql);
@@ -77,7 +77,7 @@ public class BoardMgr {
 		}
 	}
 	
-	//Board Max Num : ref¿¡ ÀúÀå¿¡ ÇÊ¿äÇÑ ±â´É
+	//Question Max Num : refï¿½ï¿½ ï¿½ï¿½ï¿½å¿¡ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	public int getMaxNum() {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -86,7 +86,7 @@ public class BoardMgr {
 		int maxNum = 0;
 		try {
 			con = pool.getConnection();
-			sql = "select max(num) from tblBoard";
+			sql = "select max(num) from tblQuestion";
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			if(rs.next()) maxNum = rs.getInt(1);
@@ -98,7 +98,7 @@ public class BoardMgr {
 		return maxNum;
 	}
 	
-	//Board Total Count : ÃÑ °Ô½Ã¹°¼ö
+	//Question Total Count : ï¿½ï¿½ ï¿½Ô½Ã¹ï¿½ï¿½ï¿½
 	public int getTotalCount(String keyField, String keyWord) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -108,12 +108,12 @@ public class BoardMgr {
 		try {
 			con = pool.getConnection();
 			if(keyWord.trim().equals("")||keyWord==null) {
-				//°Ë»öÀÌ ¾Æ´Ñ°æ¿ì
-				sql = "select count(*) from tblBoard";
+				//ï¿½Ë»ï¿½ï¿½ï¿½ ï¿½Æ´Ñ°ï¿½ï¿½
+				sql = "select count(*) from tblQuestion";
 				pstmt = con.prepareStatement(sql);
 			}else {
-				//°Ë»öÀÎ °æ¿ì
-				sql = "select count(*) from tblBoard where " 
+				//ï¿½Ë»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+				sql = "select count(*) from tblQuestion where " 
 				+ keyField +" like ?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, "%"+keyWord+"%");
@@ -128,29 +128,29 @@ public class BoardMgr {
 		return totalCount;
 	}
 	
-	//Board List : ÆäÀÌÁö´ç º¸¿©ÁÙ °¹¼ö¸¸ ¸®ÅÏ, °Ë»ö Æ÷ÇÔ.
-	//keyField : ¼±ÅÃ¿É¼Ç(name, subject, content)
-	//keyWord : °Ë»ö¾î
-	//start : ½ÃÀÛ¹øÈ£, cnt : ÇÑ ÆäÀÌÁö´ç °¡Á®¿Ã °Ô½Ã¹° °³¼ö 
-	public Vector<BoardBean> getBoardList(String keyField, 
+	//Question List : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½Ë»ï¿½ ï¿½ï¿½ï¿½ï¿½.
+	//keyField : ï¿½ï¿½ï¿½Ã¿É¼ï¿½(name, subject, content)
+	//keyWord : ï¿½Ë»ï¿½ï¿½ï¿½
+	//start : ï¿½ï¿½ï¿½Û¹ï¿½È£, cnt : ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô½Ã¹ï¿½ ï¿½ï¿½ï¿½ï¿½ 
+	public Vector<QuestionBean> getQuestionList(String keyField, 
 			String keyWord,int start, int cnt){
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = null;
-		Vector<BoardBean> vlist = new Vector<BoardBean>();
+		Vector<QuestionBean> vlist = new Vector<QuestionBean>();
 		try {
 			con = pool.getConnection();
 			if(keyWord.trim().equals("")||keyWord==null) {
-				//°Ë»öÀÌ ¾Æ´Ñ°æ¿ì
-				sql = "select * from tblBoard order by ref desc, pos "
+				//ï¿½Ë»ï¿½ï¿½ï¿½ ï¿½Æ´Ñ°ï¿½ï¿½
+				sql = "select * from tblQuestion order by ref desc, pos "
 						+ "limit ?,?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setInt(1, start);
 				pstmt.setInt(2, cnt);
 			}else {
-				//°Ë»öÀÎ °æ¿ì
-				sql = "select * from tblBoard where " + keyField 
+				//ï¿½Ë»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+				sql = "select * from tblQuestion where " + keyField 
 						+" like ? order by ref desc, pos limit ?,?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, "%"+keyWord+"%");
@@ -159,7 +159,7 @@ public class BoardMgr {
 			}
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
-				BoardBean bean = new BoardBean();
+				QuestionBean bean = new QuestionBean();
 				bean.setNum(rs.getInt("num"));
 				bean.setName(rs.getString("name"));
 				bean.setSubject(rs.getString("subject"));
@@ -179,16 +179,16 @@ public class BoardMgr {
 		return vlist;
 	}
 	
-	//Board Get : ÇÑ°³ÀÇ °Ô½Ã¹°, 13°³ ÄÃ·³ ¸ðµÎ ¸®ÅÏ
-	public BoardBean getBoard(int num) {
+	//Question Get : ï¿½Ñ°ï¿½ï¿½ï¿½ ï¿½Ô½Ã¹ï¿½, 13ï¿½ï¿½ ï¿½Ã·ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public QuestionBean getQuestion(int num) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = null;
-		BoardBean bean = new BoardBean();
+		QuestionBean bean = new QuestionBean();
 		try {
 			con = pool.getConnection();
-			sql = "select * from tblBoard where num = ?";
+			sql = "select * from tblQuestion where num = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, num);
 			rs = pstmt.executeQuery();
@@ -215,14 +215,14 @@ public class BoardMgr {
 		return bean;
 	}
 	
-	//Count Up : Á¶È¸¼ö Áõ°¡
+	//Count Up : ï¿½ï¿½È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public void upCount(int num) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = null;
 		try {
 			con = pool.getConnection();
-			sql = "update tblBoard set count = count +1 where num = ?";
+			sql = "update tblQuestion set count = count +1 where num = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, num);
 			pstmt.executeUpdate();
@@ -233,14 +233,14 @@ public class BoardMgr {
 		}
 	}
 	
-	//Board Delete : ¾÷·Îµå ÆÄÀÏ »èÁ¦
-	public void deleteBoard(int num) {
+	//Question Delete : ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public void deleteQuestion(int num) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = null;
 		try {
-			///////¾÷·Îµå ÆÄÀÏ »èÁ¦////////////////////
-			BoardBean bean = getBoard(num);
+			///////ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½////////////////////
+			QuestionBean bean = getQuestion(num);
 			String filename = bean.getFilename();
 			if(filename!=null&&!filename.equals("")) {
 				File f = new File(SAVEFOLDER+filename);
@@ -250,7 +250,7 @@ public class BoardMgr {
 			}
 			////////////////////////////////////
 			con = pool.getConnection();
-			sql = "delete from tblBoard where num=?";
+			sql = "delete from tblQuestion where num=?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, num);
 			pstmt.executeUpdate();
@@ -261,14 +261,14 @@ public class BoardMgr {
 		}
 	}
 	
-	//Board Update : name, subject, content 3°³¸¸ ¼öÁ¤
-	public void updateBoard(BoardBean bean) {
+	//Question Update : name, subject, content 3ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public void updateQuestion(QuestionBean bean) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = null;
 		try {
 			con = pool.getConnection();
-			sql = "update tblBoard set name=?, subject=?, content=? where num=?";
+			sql = "update tblQuestion set name=?, subject=?, content=? where num=?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, bean.getName());
 			pstmt.setString(2, bean.getSubject());
@@ -282,8 +282,8 @@ public class BoardMgr {
 		}
 	}
 	
-	//Board Update2 : ¾÷·Îµå ÆÄÀÏ ¼öÁ¤ Æ÷ÇÔ
-	public void updateBoard2(MultipartRequest multi) {
+	//Question Update2 : ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public void updateQuestion2(MultipartRequest multi) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = null;
@@ -295,8 +295,8 @@ public class BoardMgr {
 			String content = multi.getParameter("content");
 			String filename = multi.getFilesystemName("filename");
 			if(filename!=null&&!filename.equals("")) {
-				//¾÷·Îµå ÆÄÀÏ±îÁö ¼öÁ¤ : ±âÁ¸¿¡ ÆÄÀÏÀº »èÁ¦
-				BoardBean bean = getBoard(num);
+				//ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½Ï±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+				QuestionBean bean = getQuestion(num);
 				String tempfile = bean.getFilename();
 				if(tempfile!=null&&!tempfile.equals("")) {
 					File f = new File(SAVEFOLDER+tempfile);
@@ -305,7 +305,7 @@ public class BoardMgr {
 					}
 				}
 				int filesize = (int)multi.getFile("filename").length();
-				sql = "update tblBoard set name=?, subject=?, content=?, "
+				sql = "update tblQuestion set name=?, subject=?, content=?, "
 						+ "filename=?, filesize=? where num=?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, name);
@@ -315,7 +315,7 @@ public class BoardMgr {
 				pstmt.setInt(5, filesize);
 				pstmt.setInt(6, num);
 			}else {
-				sql = "update tblBoard set name=?, subject=?, content=? where num=?";
+				sql = "update tblQuestion set name=?, subject=?, content=? where num=?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, name);
 				pstmt.setString(2, subject);
@@ -330,23 +330,23 @@ public class BoardMgr {
 		}
 	}
 	
-	//Board Reply: ´äº¯±Û ÀúÀå
-	public void replyBoard(BoardBean bean) {
+	//Question Reply: ï¿½äº¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public void replyQuestion(QuestionBean bean) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = null;
 		try {
 			con = pool.getConnection();
-			sql = "insert tblBoard(name,content,subject,ref,pos,depth,regdate,"
+			sql = "insert tblQuestion(name,content,subject,ref,pos,depth,regdate,"
 					+ "pass,count,ip)values(?, ?, ?, ?, ?, ?, now(), ?, 0, ?)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, bean.getName());
 			pstmt.setString(2, bean.getContent());
 			pstmt.setString(3, bean.getSubject());
 			///////////////////////////////////
-			pstmt.setInt(4, bean.getRef());//¿ø±Û°ú µ¿ÀÏÇÑ Ref
-			pstmt.setInt(5, bean.getPos()+1);//¿ø±ÛÀÇ pos+1
-			pstmt.setInt(6, bean.getDepth()+1);//¿ø±ÛÀÇ depth+1
+			pstmt.setInt(4, bean.getRef());//ï¿½ï¿½ï¿½Û°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ref
+			pstmt.setInt(5, bean.getPos()+1);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ pos+1
+			pstmt.setInt(6, bean.getDepth()+1);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ depth+1
 			///////////////////////////////////
 			pstmt.setString(7, bean.getPass());
 			pstmt.setString(8, bean.getIp());
@@ -358,15 +358,15 @@ public class BoardMgr {
 		}
 	}
 	
-	//Board Reply Up : ´äº¯±Û À§Ä¡°ª Á¶Á¤ 
-	//´äº¯ÇÏ°íÀÚ´Â °Ô½Ã¹°ÀÇ pos °ªº¸´Ù Å« °ªµéÀ» 1¾¿ Áõ°¡
-	public void replyUpBoard(int ref, int pos) {
+	//Question Reply Up : ï¿½äº¯ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
+	//ï¿½äº¯ï¿½Ï°ï¿½ï¿½Ú´ï¿½ ï¿½Ô½Ã¹ï¿½ï¿½ï¿½ pos ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å« ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public void replyUpQuestion(int ref, int pos) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = null;
 		try {
 			con = pool.getConnection();
-			sql = "update tblBoard set pos=pos+1 where ref=? and pos>?";
+			sql = "update tblQuestion set pos=pos+1 where ref=? and pos>?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, ref);
 			pstmt.setInt(2, pos);
@@ -378,14 +378,14 @@ public class BoardMgr {
 		}
 	}
 	
-	//Post 1000 : ÆäÀÌÂ¡ ¹× ºí·° Ã³¸®¸¦ À§ÇØ °Ô½Ã¹° 1000°³ »ðÀÔ.
+	//Post 1000 : ï¿½ï¿½ï¿½ï¿½Â¡ ï¿½ï¿½ ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô½Ã¹ï¿½ 1000ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 	public void post1000(){
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = null;
 		try {
 			con = pool.getConnection();
-			sql = "insert tblBoard(name,content,subject,ref,pos,depth,regdate,pass,count,ip,filename,filesize)";
+			sql = "insert tblQuestion(name,content,subject,ref,pos,depth,regdate,pass,count,ip,filename,filesize)";
 			sql+="values('aaa', 'bbb', 'ccc', 0, 0, 0, now(), '1111',0, '127.0.0.1', null, 0);";
 			pstmt = con.prepareStatement(sql);
 			for (int i = 0; i < 1000; i++) {
@@ -399,9 +399,9 @@ public class BoardMgr {
 	}
 
 	public static void main(String[] args) {
-		BoardMgr mgr = new BoardMgr();
+		QuestionMgr mgr = new QuestionMgr();
 		mgr.post1000();
-		System.out.println("¼º°ø~~");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½~~");
 	}
 	
 }

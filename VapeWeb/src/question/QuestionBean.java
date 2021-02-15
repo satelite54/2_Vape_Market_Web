@@ -1,6 +1,6 @@
-package board;
+package question;
 
-public class BoardBean {
+public class QuestionBean {
 	
 	private int num;
 	private String name;        

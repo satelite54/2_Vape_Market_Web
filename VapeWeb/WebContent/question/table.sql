@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS tblBoard;
+DROP TABLE IF EXISTS tblQuestion;
 
-CREATE TABLE `tblBoard` (
+CREATE TABLE `tblQuestion` (
 	`num`               int(11)              NOT NULL  auto_increment  ,
 	`name`              varchar(20)                    ,
 	`subject`           varchar(50)                    ,
@@ -17,9 +17,9 @@ CREATE TABLE `tblBoard` (
 	PRIMARY KEY ( `num` )
 )COLLATE='euckr_korean_ci';
 
-DROP TABLE IF EXISTS tblBcomment;
+DROP TABLE IF EXISTS tblQcomment;
 
-CREATE TABLE `tblBcomment` (
+CREATE TABLE `tblQcomment` (
 	`cnum` INT(11) NOT NULL AUTO_INCREMENT,
 	`num` INT(11) NULL DEFAULT NULL,
 	`name` VARCHAR(20) NULL DEFAULT NULL,
@@ -28,5 +28,5 @@ CREATE TABLE `tblBcomment` (
 	PRIMARY KEY (`cnum`)
 )COLLATE='euckr_korean_ci';
 
-insert tblBoard(name,content,subject,ref,pos,depth,regdate,pass,count,ip,filename,filesize)
+insert tblQuestion(name,content,subject,ref,pos,depth,regdate,pass,count,ip,filename,filesize)
 values('aaa', 'bbb', 'ccc', 0, 0, 0, now(), '1111',0, '127.0.0.1', null, 0)

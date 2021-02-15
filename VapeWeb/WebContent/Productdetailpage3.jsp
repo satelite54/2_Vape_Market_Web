@@ -46,11 +46,11 @@ request.setCharacterEncoding("UTF-8");
 			<h4>판매가 : <%=request.getParameter("stock")%></h4>
 			<h4>상품코드 : <%=request.getParameter("code")%></h4>
 			<%
-				String pname = request.getParameter("pname");
-				String price = request.getParameter("price");
-				String dsadsa = request.getParameter("Detailedimagepath");
-				session.setAttribute("pname", pname);
-				session.setAttribute("price", price);
+			String pname = request.getParameter("pname");
+						String price = request.getParameter("price");
+						String dsadsa = request.getParameter("Detailedimagepath");
+						session.setAttribute("pname", pname);
+						session.setAttribute("price", price);
 			%>
 			<form class="form-inline " action="myshopping.jsp">
 			 	<button class="btn bg-dark text-white btn-outline-white my-2 my-sm-0 {background-color: #223a6b !important;}" type="submit" value="Submit">장바구니</button>
@@ -97,7 +97,7 @@ request.setCharacterEncoding("UTF-8");
 					
 					<div id="section3" class="container-fluid border border-secondary" style="padding-top:70px;padding-bottom:70px">
 						<h1>Q&A</h1>
-						<%@ include file="/board/list.jsp"%>
+						<%@ include file="question/list.jsp"%>
 						<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 						<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 						<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
@@ -108,17 +108,7 @@ request.setCharacterEncoding("UTF-8");
 <div align=center>
 <%@ include file="footer.jsp"%>
 </div>
-<%------------------- 게시판 ------------------%>
-<script type="text/javascript">
-	   function checkForm1() {
-	      if (${id==null}) {
-	         alert("로그인 해주세요.");
-	         return false;
-	      }
-	      location.href = "./communitywrite.jsp?id=${id}"
-	   }
-	</script>		
-<%------------------- 게시판 ------------------%>
+
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="css/bootstrap.min.css"></script>

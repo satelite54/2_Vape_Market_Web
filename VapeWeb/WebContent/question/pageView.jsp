@@ -1,5 +1,5 @@
 <!-- pageView.jsp -->
-<%@page import="board.UtilMgr"%>
+<%@page import="question.UtilMgr"%>
 <%@page contentType="text/html; charset=EUC-KR"%>
 <%
 		request.setCharacterEncoding("EUC-KR");

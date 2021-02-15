@@ -1,4 +1,4 @@
-package board;
+package question;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,47 +10,38 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/board/boardUpdate")
-public class BoardUpdateServlet extends HttpServlet {
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
+@WebServlet("/question/questionUpdate2")
+public class QuestionUpdateServlet2 extends HttpServlet {
 	protected void doPost(HttpServletRequest request, 
 			HttpServletResponse response) throws ServletException, IOException {
-		//¿äÃ»µÈ °ªµé¿¡ ´ëÇÑ ÀÎÄÚµù
 		request.setCharacterEncoding("EUC-KR");
-		//ÀÀ´ä¿¡ ´ëÇÑ ÇÑ±Û ÀÎÄÚµù
 		response.setContentType("text/html; charset=EUC-KR");
-		//¼¼¼Ç¿¡ bean°´Ã¼¸¦ read.jsp ÀúÀå.
 		HttpSession session = request.getSession();
-		BoardBean bean = (BoardBean)session.getAttribute("bean");
+		QuestionBean bean = (QuestionBean)session.getAttribute("bean");
 		String dbPass = bean.getPass();
-		String inPass = request.getParameter("pass");
+		//////////////////////////////////////////////////
+		MultipartRequest multi = 
+				new MultipartRequest(request,QuestionMgr.SAVEFOLDER,
+						QuestionMgr.MAXSIZE,QuestionMgr.ENCTYPE,
+						new DefaultFileRenamePolicy());
+		String inPass = multi.getParameter("pass");
 		if(dbPass.equals(inPass)) {
-			//ºñ¹øÀÌ °°Àº ¸é ¼öÁ¤ Ã³¸®
-			BoardMgr mgr = new BoardMgr();
-			bean.setName(request.getParameter("name"));
-			bean.setSubject(request.getParameter("subject"));
-			bean.setContent(request.getParameter("content"));
-			mgr.updateBoard(bean);
-			String nowPage = request.getParameter("nowPage");
-			String numPerPage = request.getParameter("numPerPage");
+			QuestionMgr mgr = new QuestionMgr();
+			mgr.updateQuestion2(multi);
+			String nowPage = multi.getParameter("nowPage");
+			String numPerPage = multi.getParameter("numPerPage");
 			response.sendRedirect("read.jsp?nowPage="+nowPage+
 					"&numPerPage="+numPerPage+
 					"&num="+bean.getNum());
 		}else {
-			//ºñ¹ø Æ²·È´Ù°í °æ°íÃ¢
 			PrintWriter out = response.getWriter();
 			out.println("<script>");
-			out.println("alert('ÀÔ·ÂÇÏ½Å ºñ¹Ð¹øÈ£°¡ ¾Æ´Õ´Ï´Ù.');");
+			out.println("alert('ï¿½Ô·ï¿½ï¿½Ï½ï¿½ ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ ï¿½Æ´Õ´Ï´ï¿½.');");
 			out.println("history.back();");
 			out.println("</script>");
 		}
 	}
 }
-
-
-
-
-
-
-
-
