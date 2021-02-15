@@ -73,10 +73,4 @@ public class crawling {
 		}
 		return productsInformation;
 	}
-	
-	public void stealCSS(String url) throws IOException { // CSS 파일 훔치기
-		Document doc = Jsoup.connect(url).get();
-		List<String> csshref = doc.select("link").eachAttr("href");
-		for(int i = 0; i < csshref.size())
-	}
 }
