@@ -97,7 +97,7 @@ request.setCharacterEncoding("UTF-8");
 					
 					<div id="section3" class="container-fluid border border-secondary" style="padding-top:70px;padding-bottom:70px">
 						<h1>Q&A</h1>
-						<%@ include file="question/list.jsp"%>
+						<%@ include file="question/list2.jsp"%>
 						<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 						<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 						<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>

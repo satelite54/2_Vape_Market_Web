@@ -4,17 +4,25 @@
 <title>JSP Board</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 </head>
-<body bgcolor="#FFFFCC">
+
+
+
+
+
+
+
+
+
+
+<body>
+
+
+
 <div align="center">
 <br/><br/>
-<table width="600" cellpadding="3">
-	<tr>
-		<td bgcolor="84F399" height="25" align="center">글쓰기</td>
-	</tr>
-</table>
-<br/>
-<form name="postFrm" method="post" action="boardPost" 
-enctype="multipart/form-data">
+
+<form name="postFrm" method="post" action="questionPost" enctype="multipart/form-data">
+
 <table width="600" cellpadding="3" align="center">
 	<tr>
 		<td align=center>
@@ -27,7 +35,7 @@ enctype="multipart/form-data">
 			<tr>
 				<td>제 목</td>
 				<td>
-				<input name="subject" size="50" maxlength="30"></td>
+				<input name="subject" value="Q: " size="50" maxlength="30"></td>
 			</tr>
 			<tr>
 				<td>내 용</td>
@@ -42,20 +50,13 @@ enctype="multipart/form-data">
      			<td>파일찾기</td> 
      			<td><input type="file" name="filename" size="50" maxlength="50"></td>
     		</tr>
- 			<tr>
- 				<td>내용타입</td>
- 				<td> HTML<input type=radio name="contentType" value="HTTP" >&nbsp;&nbsp;&nbsp;
-  			 	TEXT<input type=radio name="contentType" value="TEXT" checked>
-  			 	</td>
- 			</tr>
+
 			<tr>
 				<td colspan="2"><hr/></td>
 			</tr>
 			<tr>
 				<td colspan="2">
-					 <input type="submit" value="등록">
-					 <input type="reset" value="다시쓰기">
-					 <input type="button" value="리스트" onClick="javascript:location.href='Productdetailpage3.jsp'">
+					 <input type="submit" value="글등록">
 				</td>
 			</tr>
 		</table>
@@ -65,5 +66,8 @@ enctype="multipart/form-data">
 <input type="hidden" name="ip" value="<%=request.getRemoteAddr()%>">
 </form>
 </div>
+
+
+
 </body>
 </html>

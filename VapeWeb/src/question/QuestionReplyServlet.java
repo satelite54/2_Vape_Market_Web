@@ -15,7 +15,7 @@ public class QuestionReplyServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, 
 			HttpServletResponse response) 
 					throws ServletException, IOException {
-		request.setCharacterEncoding("EUC-KR");
+		request.setCharacterEncoding("UTF-8");
 		QuestionMgr mgr = new QuestionMgr();
 		QuestionBean reBean = new QuestionBean();
 		reBean.setName(request.getParameter("name"));

@@ -1,5 +1,8 @@
 eclipse.preferences.version=1
 encoding//WebContent/community.jsp=UTF-8
+encoding//WebContent/question=UTF-8
+encoding//WebContent/question/list2.jsp=UTF-8
+encoding//WebContent/question/post.jsp=UTF-8
 encoding//WebContent/updateAction.jsp=UTF-8
 encoding//src/DAO/dao.java=UTF-8
 encoding//src/DTO/Users.java=UTF-8

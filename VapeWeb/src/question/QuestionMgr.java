@@ -17,7 +17,7 @@ public class QuestionMgr {
 	
 	private DBConnectionMgr pool;
 	public static final String SAVEFOLDER = "C:/Jsp/myapp/WebContent/board/fileupload/";
-	public static final String ENCTYPE = "EUC-KR";
+	public static final String ENCTYPE = "utf-8";
 	public static int MAXSIZE = 10*1024*1024;
 
 	public QuestionMgr() {

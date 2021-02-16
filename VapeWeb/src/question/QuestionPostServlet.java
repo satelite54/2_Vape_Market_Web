@@ -9,24 +9,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//post.jsp���� �Է��� �Խù� ������ ���� ����
 @WebServlet("/question/questionPost")
 public class QuestionPostServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, 
 			HttpServletResponse response) 
 					throws ServletException, IOException {
-		request.setCharacterEncoding("EUC-KR");
+		request.setCharacterEncoding("UTF-8");
 		QuestionMgr mgr = new QuestionMgr();
 		mgr.insertQuestion(request);
 
 		response.sendRedirect("list.jsp");
 	}
 }
-
-
-
-
-
-
-

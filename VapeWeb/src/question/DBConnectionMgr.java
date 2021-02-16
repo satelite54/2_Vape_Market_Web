@@ -9,7 +9,7 @@ import java.util.Vector;
 public class DBConnectionMgr {
     private Vector connections = new Vector(10);
     private String _driver = "org.gjt.mm.mysql.Driver",
-    _url = "jdbc:mysql://127.0.0.1:3306/vape?useUnicode=true&characterEncoding=EUC_KR",
+    _url = "jdbc:mysql://127.0.0.1:3306/vape?useUnicode=true&characterEncoding=utf8",
     _user = "root",
     _password = "1234";
     

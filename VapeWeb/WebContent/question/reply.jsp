@@ -1,5 +1,5 @@
 <!-- reply.jsp -->
-<%@page contentType="text/html; charset=UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <!-- read.jsp에서 원글을 session 저장 -->
 <jsp:useBean id="bean" scope="session" class="question.QuestionBean"/>
 <%
@@ -14,6 +14,8 @@
 <title>JSPBoard</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 </head>
+
+
 <body bgcolor="#FFFFCC">
 <div align="center">
 <br><br>

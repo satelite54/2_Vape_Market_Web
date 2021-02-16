@@ -54,6 +54,7 @@ request.setCharacterEncoding("utf-8");
 		//현재블럭
 		nowBlock = (int)Math.ceil((double)nowPage/pagePerBlock);
 %>
+
 <html>
 <head>
 	<title>JSP Board</title>
@@ -91,15 +92,25 @@ request.setCharacterEncoding("utf-8");
 		document.readFrm.action = "question/read.jsp";
 		document.readFrm.submit();
 	}
+	function postDisplay() {
+		var e = document.getElementById("writeDiv");
+		if(e.style.display=='none')
+			e.style.display='block';
+		else
+			e.style.display='none';
+	}
 </script>
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
 <body bgcolor="#FFFFCC" >
 <div align="center"><br/>
+
 <h2>JSP Board</h2><br/>
+<div align="center">
 <table>
 	<tr>
 		<td width="600">
@@ -120,6 +131,7 @@ request.setCharacterEncoding("utf-8");
 		</td>
 	</tr>
 </table>
+
 <table>
 	<tr>
 		<td align="center" colspan="2">
@@ -206,10 +218,60 @@ request.setCharacterEncoding("utf-8");
 		<!-- 페이징 및 블럭 End -->
 		</td>
 		<td align="right">
-			<a href="/VapeWeb/question/post.jsp">[글쓰기]</a>
+			<a style="color:blue;" href="javascript:postDisplay()">[글쓰기]</a>
 		</td>
 	</tr>
 </table>
+</div>
+
+<div id="writeDiv" align="center">
+<br/><br/>
+
+<form name="postFrm" method="post" action="questionPost" enctype="multipart/form-data">
+
+<table width="600" cellpadding="3" align="center">
+	<tr>
+		<td align=center>
+		<table align="center">
+			<tr>
+				<td width="10%">성 명</td>
+				<td width="90%">
+				<input name="name" size="10" maxlength="8"></td>
+			</tr>
+			<tr>
+				<td>제 목</td>
+				<td>
+				<input name="subject" value="Q: " size="50" maxlength="30"></td>
+			</tr>
+			<tr>
+				<td>내 용</td>
+				<td><textarea name="content" rows="10" cols="50"></textarea></td>
+			</tr>
+			<tr>
+				<td>비밀 번호</td>
+				<td><input type="password" name="pass" size="15" maxlength="15" value="1234"></td>
+			</tr>
+			<tr>
+			 <tr>
+     			<td>파일찾기</td> 
+     			<td><input type="file" name="filename" size="50" maxlength="50"></td>
+    		</tr>
+
+			<tr>
+				<td colspan="2"><hr/></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					 <input type="submit" value="글등록">
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+<input type="hidden" name="ip" value="<%=request.getRemoteAddr()%>">
+</form>
+</div>
 
 
 <form name="listFrm" method="post">
@@ -225,7 +287,9 @@ request.setCharacterEncoding("utf-8");
 	<input type="hidden" name="num">
 </form>
 </div>
+
 </body>
+
 </html>
 
 

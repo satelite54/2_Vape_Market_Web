@@ -15,7 +15,7 @@ CREATE TABLE `tblQuestion` (
 	`filename`         varchar(30)                    ,
 	`filesize`           int(11)                        ,
 	PRIMARY KEY ( `num` )
-)COLLATE='euckr_korean_ci';
+)COLLATE='utf8_general_ci';
 
 DROP TABLE IF EXISTS tblQcomment;
 
@@ -26,7 +26,7 @@ CREATE TABLE `tblQcomment` (
 	`comment` VARCHAR(200) NULL DEFAULT NULL,
 	`regdate` DATE NULL DEFAULT NULL,
 	PRIMARY KEY (`cnum`)
-)COLLATE='euckr_korean_ci';
+)COLLATE='utf8_general_ci';
 
 insert tblQuestion(name,content,subject,ref,pos,depth,regdate,pass,count,ip,filename,filesize)
 values('aaa', 'bbb', 'ccc', 0, 0, 0, now(), '1111',0, '127.0.0.1', null, 0)
