@@ -330,15 +330,9 @@ public class dao {
 	/* 태헌형님 */
 
 	public List<Products> makeProductsList(String sqlQuery) {
-		String sql = sqlQuery;
-		if(sql == null || sql == "") {
-			sql = "select * from products";
-		} else {
-			sql = sqlQuery;
-		}
 		List<Products> list = new ArrayList<Products>();
 		try {
-			pstmt = conn.prepareStatement(sql);
+			pstmt = conn.prepareStatement(sqlQuery);
 			rs = pstmt.executeQuery();
 
 			while(rs.next()) {
@@ -359,7 +353,7 @@ public class dao {
 		}
 		return list;
 	}
-
+	
 	public List<String> makecategoryList() {
 		String sql = "select distinct producttype from products";
 		List<String> list = new ArrayList<String>();

@@ -10,14 +10,6 @@
 <%! String hardware = "hardware";
 	String liquid = "liquid";
 	String coil = "coil";
-	int nforhardware = 1;
-	int nforliquid = 2;
-	int nforcoil = 3;
-	
-	String Menuhardware_sql = "select * from products where producttype = 'hardware'";
-	String Menuliquid_sql = "select * from products where producttype = 'liquid'";
-	String Menucoil_sql = "select * from products where producttype = 'coil'";
-	
 	%>
 <br>
 
@@ -25,24 +17,22 @@
 <hr>
 
 <div class="d-flex justify-content-around">
-  <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=hardware%>','<%=nforhardware%>','<%="aaa"%>')">하드웨어</a></div>
-  <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=liquid%>','<%=nforliquid%>','<%="aaa"%>')">원본액상</a></div>
-  <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=coil%>','<%=nforcoil%>','<%="aaa"%>')">코일</a></div>
+  <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=hardware%>')">하드웨어</a></div>
+  <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=liquid%>')">원본액상</a></div>
+  <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=coil%>')">코일</a></div>
   <div id="submenu"><a href="community.jsp">커뮤니티</a></div>
        
 </div>
 <hr>
 <form name="frm">
 	<input type="hidden" name="producttype">
-	<input type="hidden" name="orderbyint">
-	<input type="hidden" name="sqlQuery">
 </form>
 <%
 	String id2 = (String)session.getAttribute("id");
 %>
 
 <script type="text/javascript">
-   function checkForm(producttype,orderbyint,sqlQuery) {
+   function checkForm(producttype) {
       if (${id==null}) {
          alert("로그인 해주세요.");
          location.href = "login.jsp";
@@ -50,9 +40,7 @@
     	  //alert("id가 들어왔음");
     	  f=document.frm;
     	  f.producttype.value=producttype;
-    	  f.orderbyint.value=orderbyint;
-    	  f.sqlQuery.value=sqlQuery;
-    	  f.action = "Productsalespage.jsp";
+    	  f.action = "ProductListSort";
     	  f.submit();
       }
    }
