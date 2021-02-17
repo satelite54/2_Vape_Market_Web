@@ -57,7 +57,7 @@ request.setCharacterEncoding("utf-8");
 
 <html>
 <head>
-	<title>JSP Board</title>
+
 <link href="style.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
 	function check() {
@@ -108,8 +108,6 @@ request.setCharacterEncoding("utf-8");
 
 <body bgcolor="#FFFFCC" >
 <div align="center"><br/>
-
-<h2>JSP Board</h2><br/>
 <div align="center">
 <table>
 	<tr>
@@ -227,7 +225,7 @@ request.setCharacterEncoding("utf-8");
 <div id="writeDiv" align="center">
 <br/><br/>
 
-<form name="postFrm" method="post" action="questionPost" enctype="multipart/form-data">
+<form name="postFrm" method="post" action="<%=request.getContextPath()+"/question/questionPost"%>" enctype="multipart/form-data">
 
 <table width="600" cellpadding="3" align="center">
 	<tr>
@@ -291,14 +289,5 @@ request.setCharacterEncoding("utf-8");
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
 
 

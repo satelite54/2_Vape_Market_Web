@@ -50,10 +50,6 @@ public class QuestionMgr {
 			}
 			//�Խù� contentType : text, html
 			String content = multi.getParameter("content");//�Խù� ����
-			String contentType = multi.getParameter("contentType");
-			if(contentType.equals("TEXT")) {
-				content = UtilMgr.replace(content, "<", "&lt;");
-			}
 			///�亯�� ���� ref ����/////
 			int ref = getMaxNum() + 1;
 			con = pool.getConnection();

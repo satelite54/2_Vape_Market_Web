@@ -76,7 +76,6 @@ request.setCharacterEncoding("UTF-8");
 				    <li class="nav-item">
 				      <a class="nav-link" href="#section3">Q&A</a>
 				    </li>
-				 
 				  </ul>
 				</nav>
 		</p>
@@ -98,13 +97,11 @@ request.setCharacterEncoding("UTF-8");
 					<div id="section3" class="container-fluid border border-secondary" style="padding-top:70px;padding-bottom:70px">
 						<h1>Q&A</h1>
 						<%@ include file="question/list2.jsp"%>
-						<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-						<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-						<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 					</div>
-					
-   				 </div>
-				</body>
+			</body>
+	 </div>   				 
+			
+
 <div align=center>
 <%@ include file="footer.jsp"%>
 </div>
