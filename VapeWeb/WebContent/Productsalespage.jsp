@@ -57,6 +57,8 @@ header {
 		String strProducttype = request.getParameter("Producttype");
 		String strSortmethod = request.getParameter("Sortmethod");
 		String strSearch = request.getParameter("Search");
+		if(strSearch == null)
+			strSearch = "";
 		String strPage = request.getParameter("Page");
 		if(strPage == null)
 			strPage = "1";
@@ -169,32 +171,5 @@ header {
 			</div>
 		</div>
 	</div>
-	
-	<form name="frm">
-		<input type="hidden" name="Producttype">
-		<input type="hidden" name="Sortmethod">
-		<input type="hidden" name="Search">
-		<input type="hidden" name="Page">
-	</form>
-	<script type="text/javascript">
-   function checkForm(Producttype, Sortmethod, Search, Page) {
-      if (${id==null}) {
-         alert("로그인 해주세요.");
-         location.href = "login.jsp";
-      } else if (${id != null}) {
-    	  //alert("id가 들어왔음");
-    	  f=document.frm;
-    	  f.Producttype.value=Producttype;
-    	  f.Sortmethod.value=Sortmethod;
-    	  
-    	  
-    	  f.Search.value=Search;
-    	  f.Page.value=Page;
-    	  f.action = "ProductListSort";
-    	  f.submit();
-      }
-   }
-</script>
-	
 </body>
 </html>

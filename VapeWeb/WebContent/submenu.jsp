@@ -17,22 +17,26 @@
 <hr>
 
 <div class="d-flex justify-content-around">
-  <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=hardware%>')">하드웨어</a></div>
-  <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=liquid%>')">원본액상</a></div>
-  <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=coil%>')">코일</a></div>
+  <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=hardware%>','<%=1%>', '<%=" "%>', '<%=1%>')">하드웨어</a></div>
+  <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=liquid%>','<%=1%>', '<%=" "%>', '<%=1%>')">원본액상</a></div>
+  <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=coil%>','<%=1%>', '<%=" "%>', '<%=1%>')">코일</a></div>
   <div id="submenu"><a href="community.jsp">커뮤니티</a></div>
        
 </div>
 <hr>
-<form name="frm">
-	<input type="hidden" name="Producttype">
-</form>
 <%
 	String id2 = (String)session.getAttribute("id");
 %>
 
+	<form name="frm">
+		<input type="hidden" name="Producttype">
+		<input type="hidden" name="Sortmethod">
+		<input type="hidden" name="Search">
+		<input type="hidden" name="Page">
+	</form>
+	
 <script type="text/javascript">
-   function checkForm(Producttype) {
+   function checkForm(Producttype, Sortmethod, Search, Page) {
       if (${id==null}) {
          alert("로그인 해주세요.");
          location.href = "login.jsp";
@@ -40,6 +44,10 @@
     	  //alert("id가 들어왔음");
     	  f=document.frm;
     	  f.Producttype.value=Producttype;
+    	  f.Sortmethod.value=Sortmethod;
+    	  
+    	  f.Search.value=Search;
+    	  f.Page.value=Page;
     	  f.action = "ProductListSort";
     	  f.submit();
       }

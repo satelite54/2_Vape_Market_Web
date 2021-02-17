@@ -35,6 +35,10 @@ public class ProductListSort extends HttpServlet {
 		String producttype = request.getParameter("Producttype");
 		String Sortmethod = request.getParameter("Sortmethod");
 		String Search = request.getParameter("Search");
+		String Page = request.getParameter("Page");
+		if(Page == null) {
+			Page = "1";
+		}
 		List<Products> products = makeProductList(Sortmethod, producttype, Search);
 		session.setAttribute("products", products);
 		response.sendRedirect("Productsalespage.jsp?Producttype="+producttype+"&Sortmethod="+Sortmethod+"&Search="+Search);
@@ -60,9 +64,14 @@ public class ProductListSort extends HttpServlet {
 		if(Sortmethod == null) {
 			Sortmethod = "";
 		}
+		if(Search == null) {
+			Search =" ";
+		}
 		String WhereProducttype = " and producttype"+" like "+"'%"+ producttype +"%'";
 		String whereProducttype1 = " where producttype"+" like "+"'%"+ producttype +"%'";
-		if(Search != null) {
+		if(Search != "") {
+				if(Search == " ")
+					Search = "";
 			switch (Sortmethod) {
 				case "1": {
 					products = DAO.makeProductsList("select * from products where pname like '%"+ Search +"%'"+ WhereProducttype + OrderBy1);
@@ -74,11 +83,11 @@ public class ProductListSort extends HttpServlet {
 					return products;
 				}
 				case "3": {
-					products = DAO.makeProductsList("select *from products where pname like '%'"+ Search+ "%'"+ WhereProducttype +OrderBy3);
+					products = DAO.makeProductsList("select * from products where pname like '%'"+ Search+ "%'"+ WhereProducttype +OrderBy3);
 					return products;
 				}
 				default : {
-					products = DAO.makeProductsList("select *from products where pname like '%'"+ Search+ "%'"+ WhereProducttype);
+					products = DAO.makeProductsList("select * from products where pname like '%'"+ Search+ "%'"+ WhereProducttype);
 					return products;
 				}
 			}
@@ -89,11 +98,11 @@ public class ProductListSort extends HttpServlet {
 					return products;
 				}
 				case "2": {
-					products = DAO.makeProductsList("select * from products order by"+ whereProducttype1 + OrderBy2);
+					products = DAO.makeProductsList("select * from products"+ whereProducttype1 + OrderBy2);
 					return products;
 				}
 				case "3": {
-					products = DAO.makeProductsList("select * from products order by"+ whereProducttype1 + OrderBy3);
+					products = DAO.makeProductsList("select * from products"+ whereProducttype1 + OrderBy3);
 					return products;
 				}
 				default : {
