@@ -25,21 +25,21 @@
 </div>
 <hr>
 <form name="frm">
-	<input type="hidden" name="producttype">
+	<input type="hidden" name="Producttype">
 </form>
 <%
 	String id2 = (String)session.getAttribute("id");
 %>
 
 <script type="text/javascript">
-   function checkForm(producttype) {
+   function checkForm(Producttype) {
       if (${id==null}) {
          alert("로그인 해주세요.");
          location.href = "login.jsp";
       } else if (${id != null}) {
     	  //alert("id가 들어왔음");
     	  f=document.frm;
-    	  f.producttype.value=producttype;
+    	  f.Producttype.value=Producttype;
     	  f.action = "ProductListSort";
     	  f.submit();
       }

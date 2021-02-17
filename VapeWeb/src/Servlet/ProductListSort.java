@@ -32,12 +32,12 @@ public class ProductListSort extends HttpServlet {
     // 1 낮은 가격 2 높은가격  3 신상품
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		String producttype = request.getParameter("producttype");
-		String Sortmethod = request.getParameter("orderbyint");
+		String producttype = request.getParameter("Producttype");
+		String Sortmethod = request.getParameter("Sortmethod");
 		String Search = request.getParameter("Search");
 		List<Products> products = makeProductList(Sortmethod, producttype, Search);
 		session.setAttribute("products", products);
-		response.sendRedirect("Productsalespage.jsp");
+		response.sendRedirect("Productsalespage.jsp?Producttype="+producttype+"&Sortmethod="+Sortmethod+"&Search="+Search);
 	}
 
 	/**
