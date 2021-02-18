@@ -36,12 +36,17 @@ public class ProductListSort extends HttpServlet {
 		String Sortmethod = request.getParameter("Sortmethod");
 		String Search = request.getParameter("Search");
 		String Page = request.getParameter("Page");
+		String NowPageNum = request.getParameter("NowPageNum");
 		if(Page == null) {
 			Page = "1";
 		}
+		if(NowPageNum == null) {
+			NowPageNum = "1";
+		}
 		List<Products> products = makeProductList(Sortmethod, producttype, Search);
+		Page = String.valueOf(products.size()/10 + 1);
 		session.setAttribute("products", products);
-		response.sendRedirect("Productsalespage.jsp?Producttype="+producttype+"&Sortmethod="+Sortmethod+"&Search="+Search);
+		response.sendRedirect("Productsalespage.jsp?Producttype="+producttype+"&Sortmethod="+Sortmethod+"&Search="+Search +"&Page="+Page +"&NowPageNum="+NowPageNum);
 	}
 
 	/**
@@ -67,6 +72,8 @@ public class ProductListSort extends HttpServlet {
 		if(Search == null) {
 			Search =" ";
 		}
+		if(producttype.equals("Common"))
+			producttype = "";
 		String WhereProducttype = " and producttype"+" like "+"'%"+ producttype +"%'";
 		String whereProducttype1 = " where producttype"+" like "+"'%"+ producttype +"%'";
 		if(Search != "") {
@@ -83,11 +90,11 @@ public class ProductListSort extends HttpServlet {
 					return products;
 				}
 				case "3": {
-					products = DAO.makeProductsList("select * from products where pname like '%'"+ Search+ "%'"+ WhereProducttype +OrderBy3);
+					products = DAO.makeProductsList("select * from products where pname like '%"+ Search+ "%'"+ WhereProducttype +OrderBy3);
 					return products;
 				}
 				default : {
-					products = DAO.makeProductsList("select * from products where pname like '%'"+ Search+ "%'"+ WhereProducttype);
+					products = DAO.makeProductsList("select * from products where pname like '%"+ Search+ "%'"+ WhereProducttype);
 					return products;
 				}
 			}

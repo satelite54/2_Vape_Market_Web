@@ -54,6 +54,7 @@ header {
 
 	<%
 		List<Products> products = (List<Products>) session.getAttribute("products");
+		int ntotalProductsCnt = products.size();
 		String strProducttype = request.getParameter("Producttype");
 		String strSortmethod = request.getParameter("Sortmethod");
 		String strSearch = request.getParameter("Search");
@@ -62,11 +63,31 @@ header {
 		String strPage = request.getParameter("Page");
 		if(strPage == null)
 			strPage = "1";
-		int nPageNum = Integer.parseInt(strPage);
+		
+		String NowPageNum = request.getParameter("NowPageNum");
+		int ListSize = products.size();
+		if(NowPageNum != null) {
+			int nNowPageNum = Integer.parseInt(NowPageNum);
+			int FirstIdx = 10 * (nNowPageNum - 1);
+			products = products.subList(FirstIdx, ListSize);
+		} else {
+			products = products.subList(0, ListSize - 1);
+			NowPageNum = "1";
+		}
 	%>
 	<div id="wrap"></div>
 	<div id="container">
 		<div id="contents">
+			<div class="xans-element- xans-product xans-product-menupackage ">
+				<div class="xans-element- xans-product xans-product-headcategory path "><h3>현재 위치</h3>
+					<ol>
+						<li class="first"><a href="/">home</a></li>
+	 		            <li class=""><a href="#" onclick="javascript:checkForm('<%=strProducttype%>', '1', '<%=strSearch%>', '<%=strPage%>')"><%=strProducttype%></a></li>
+	 			        <li class="displaynone"><a href="/product/list.html"></a></li>
+	           		    <li class="displaynone"><strong><a href="/product/list.html"></a></strong></li>
+	      		    </ol>
+				</div>
+			</div>
 			<div class="xans-element- xans-product xans-product-normalpackage ">
 				<div class="xans-element- xans-product xans-product-normalmenu ">
 					<div class="title" id="Product_ListMenu"></div>
@@ -92,9 +113,9 @@ header {
 							alt="상품비교"></a>
 					</p>
 					<ul id="type">
-						<li><a href="#" onclick="javascript:checkForm('<%=strProducttype%>', '1', '<%=strSearch%>', '<%=strPage%>')">낮은가격</a></li>
-						<li><a href="#" onclick="javascript:checkForm('<%=strProducttype%>', '2', '<%=strSearch%>', '<%=strPage%>')">높은가격</a></li>
-						<li><a href="#" onclick="javascript:checkForm('<%=strProducttype%>', '3', '<%=strSearch%>', '<%=strPage%>')">신상품</a></li>
+						<li><a href="#" onclick="javascript:checkForm('<%=strProducttype%>', '1', '<%=strSearch%>', '<%=strPage%>', '<%=NowPageNum%>')">낮은가격</a></li>
+						<li><a href="#" onclick="javascript:checkForm('<%=strProducttype%>', '2', '<%=strSearch%>', '<%=strPage%>', '<%=NowPageNum%>')">높은가격</a></li>
+						<li><a href="#" onclick="javascript:checkForm('<%=strProducttype%>', '3', '<%=strSearch%>', '<%=strPage%>', '<%=NowPageNum%>')">신상품</a></li>
 					</ul>
 					<p class="prdCount">
 						등록 제품 : <strong><%=products.size()%></strong> 개
@@ -144,7 +165,7 @@ header {
 				</div>
 				<div class="xans-element- xans-product xans-product-normalpaging">
 					<p>
-						<a href="#none"><img
+						<a href=""><img
 							src="//img.echosting.cafe24.com/design/skin/fashion013/btn_page_first.gif"
 							alt="첫 페이지"></a>
 					</p>
@@ -154,11 +175,15 @@ header {
 							alt="이전 페이지"></a>
 					</p>
 					<ol>
-						<li class="xans-record-"><a href="?cate_no=4&amp;page=1"
-							class="this">1</a></li>
+						<%for(int i = 1; i <= ntotalProductsCnt / 10 + 1; i++) {
+							
+						%>
+						<li class="xans-record-"><a href="#" onclick="javascript:checkForm('<%=strProducttype%>', '<%=strSortmethod%>', '<%=strSearch%>', '<%=strPage%>', '<%=NowPageNum%>')"
+							class="this"><%=i%></a></li>
+						<%}%>
 					</ol>
 					<p>
-						<a href="?cate_no=4&amp;page=2"><img
+						<a href="Productsalespage.jsp&?NowSelectPage="><img
 							src="//img.echosting.cafe24.com/design/skin/fashion013/btn_page_next.gif"
 							alt="다음 페이지"></a>
 					</p>
