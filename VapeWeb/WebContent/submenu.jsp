@@ -28,6 +28,7 @@
   <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=liquid%>','<%=nforliquid%>','<%="aaa"%>')">원본액상</a></div>
   <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=coil%>','<%=nforcoil%>','<%="aaa"%>')">코일</a></div>
   <div id="submenu"><a href="community.jsp">커뮤니티</a></div>
+  <div id="submenu"><a href="news.jsp">뉴스</a></div>
        
 </div>
 <hr>
