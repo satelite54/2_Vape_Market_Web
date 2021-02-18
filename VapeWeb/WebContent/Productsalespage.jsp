@@ -66,13 +66,12 @@ header {
 		
 		String NowPageNum = request.getParameter("NowPageNum");
 		int ListSize = products.size();
-		if(NowPageNum != null) {
+		if(NowPageNum.equals("1")) {
+			products = products.subList(0, 10);
+		} else {
 			int nNowPageNum = Integer.parseInt(NowPageNum);
 			int FirstIdx = 10 * (nNowPageNum - 1);
 			products = products.subList(FirstIdx, ListSize);
-		} else {
-			products = products.subList(0, ListSize - 1);
-			NowPageNum = "1";
 		}
 	%>
 	<div id="wrap"></div>
@@ -81,8 +80,8 @@ header {
 			<div class="xans-element- xans-product xans-product-menupackage ">
 				<div class="xans-element- xans-product xans-product-headcategory path "><h3>현재 위치</h3>
 					<ol>
-						<li class="first"><a href="/">home</a></li>
-	 		            <li class=""><a href="#" onclick="javascript:checkForm('<%=strProducttype%>', '1', '<%=strSearch%>', '<%=strPage%>')"><%=strProducttype%></a></li>
+						<li class="first"><a href="main.jsp" style="color: black; text-decoration: none; font-size: 20px;">home</a></li>
+	 		            <li class=""><a href="#" style="color: black; text-decoration: none; font-size: 20px;" onclick="javascript:checkForm('<%=strProducttype%>', '1', '<%=strSearch%>', '<%=strPage%>', '<%=NowPageNum%>')"><%=strProducttype%></a></li>
 	 			        <li class="displaynone"><a href="/product/list.html"></a></li>
 	           		    <li class="displaynone"><strong><a href="/product/list.html"></a></strong></li>
 	      		    </ol>
@@ -118,7 +117,7 @@ header {
 						<li><a href="#" onclick="javascript:checkForm('<%=strProducttype%>', '3', '<%=strSearch%>', '<%=strPage%>', '<%=NowPageNum%>')">신상품</a></li>
 					</ul>
 					<p class="prdCount">
-						등록 제품 : <strong><%=products.size()%></strong> 개
+						등록 제품 : <strong><%=ntotalProductsCnt%></strong> 개
 					</p>
 				</div>
 				<div class="xans-element- xans-product xans-product-normalpackage ">
@@ -165,30 +164,49 @@ header {
 				</div>
 				<div class="xans-element- xans-product xans-product-normalpaging">
 					<p>
-						<a href=""><img
+						<a href="#" onclick="javascript:checkForm('<%=strProducttype%>', '<%=strSortmethod%>', '<%=strSearch%>', '<%=strPage%>', '<%=1%>')"><img
 							src="//img.echosting.cafe24.com/design/skin/fashion013/btn_page_first.gif"
 							alt="첫 페이지"></a>
 					</p>
-					<p>
-						<a href="#none"><img
+					<p><%int PreviousPageNum = Integer.parseInt(NowPageNum);
+						PreviousPageNum--;
+						if(PreviousPageNum == 0)
+							PreviousPageNum = 1;
+					%>
+						<a href="#" onclick="javascript:checkForm('<%=strProducttype%>', '<%=strSortmethod%>', '<%=strSearch%>', '<%=strPage%>', '<%=PreviousPageNum%>')"><img
 							src="//img.echosting.cafe24.com/design/skin/fashion013/btn_page_prev.gif"
 							alt="이전 페이지"></a>
 					</p>
 					<ol>
-						<%for(int i = 1; i <= ntotalProductsCnt / 10 + 1; i++) {
+						<%
+							int finalPageNum = ntotalProductsCnt / 10 + 1;
+						for(int i = 1; i <= finalPageNum; i++) {
 							
+							if(i == Integer.parseInt(NowPageNum)){
+								
 						%>
-						<li class="xans-record-"><a href="#" onclick="javascript:checkForm('<%=strProducttype%>', '<%=strSortmethod%>', '<%=strSearch%>', '<%=strPage%>', '<%=NowPageNum%>')"
-							class="this"><%=i%></a></li>
-						<%}%>
+						<li class="xans-record-"><strong><a href="#" onclick="javascript:checkForm('<%=strProducttype%>', '<%=strSortmethod%>', '<%=strSearch%>', '<%=strPage%>', '<%=i%>')"
+							class="this"><%=i%></a></strong></li>
+						<%	} else {
+							%>
+							<li class="xans-record-"><a href="#" onclick="javascript:checkForm('<%=strProducttype%>', '<%=strSortmethod%>', '<%=strSearch%>', '<%=strPage%>', '<%=i%>')"
+								class="this"><%=i%></a></li>
+							<%
+							}
+						}
+						%>
 					</ol>
-					<p>
-						<a href="Productsalespage.jsp&?NowSelectPage="><img
+					<p><%int NextPageNum = Integer.parseInt(NowPageNum);
+							NextPageNum++;
+							if(NextPageNum > finalPageNum)
+								NextPageNum = finalPageNum;
+					%>
+						<a href="#" onclick="javascript:checkForm('<%=strProducttype%>', '<%=strSortmethod%>', '<%=strSearch%>', '<%=strPage%>', '<%=NextPageNum%>')"><img
 							src="//img.echosting.cafe24.com/design/skin/fashion013/btn_page_next.gif"
 							alt="다음 페이지"></a>
 					</p>
 					<p>
-						<a href="?cate_no=4&amp;page=3"><img
+						<a href="#" onclick="javascript:checkForm('<%=strProducttype%>', '<%=strSortmethod%>', '<%=strSearch%>', '<%=strPage%>', '<%=finalPageNum%>')"><img
 							src="//img.echosting.cafe24.com/design/skin/fashion013/btn_page_last.gif"
 							alt="마지막 페이지"></a>
 					</p>

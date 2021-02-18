@@ -17,9 +17,9 @@
 <hr>
 
 <div class="d-flex justify-content-around">
-  <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=hardware%>','<%=1%>', '<%=" "%>', '<%=1%>')">하드웨어</a></div>
-  <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=liquid%>','<%=1%>', '<%=" "%>', '<%=1%>')">원본액상</a></div>
-  <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=coil%>','<%=1%>', '<%=" "%>', '<%=1%>')">코일</a></div>
+  <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=hardware%>','<%=1%>', '<%=" "%>', '<%=1%>' , '<%=1%>')">하드웨어</a></div>
+  <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=liquid%>','<%=1%>', '<%=" "%>', '<%=1%>' , '<%=1%>')">원본액상</a></div>
+  <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=coil%>','<%=1%>', '<%=" "%>', '<%=1%>' , '<%=1%>')">코일</a></div>
   <div id="submenu"><a href="community.jsp">커뮤니티</a></div>
        
 </div>
@@ -33,10 +33,11 @@
 		<input type="hidden" name="Sortmethod">
 		<input type="hidden" name="Search">
 		<input type="hidden" name="Page">
+		<input type="hidden" name="NowPageNum">
 	</form>
 	
 <script type="text/javascript">
-   function checkForm(Producttype, Sortmethod, Search, Page) {
+   function checkForm(Producttype, Sortmethod, Search, Page, NowPageNum) {
       if (${id==null}) {
          alert("로그인 해주세요.");
          location.href = "login.jsp";
@@ -45,9 +46,9 @@
     	  f=document.frm;
     	  f.Producttype.value=Producttype;
     	  f.Sortmethod.value=Sortmethod;
-    	  
     	  f.Search.value=Search;
     	  f.Page.value=Page;
+    	  f.NowPageNum.value=NowPageNum;
     	  f.action = "ProductListSort";
     	  f.submit();
       }
