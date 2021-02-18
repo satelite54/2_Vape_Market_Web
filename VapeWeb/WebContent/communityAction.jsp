@@ -7,25 +7,28 @@
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.Date"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@ page import="DAO.dao"%>
-
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <title>JASET VAPE</title>
 </head>
 <body>
 	<%
-	String id = "WOOJ";
+	request.setCharacterEncoding("UTF-8");
+	%>	
+	<%
+	request.setCharacterEncoding("UTF-8");
+	String id =(String)session.getAttribute("id");
 	String BTitle = request.getParameter("BTitle");
 	String BContent = request.getParameter("BContent");
 	dao DAO = new dao();
 	DAO.write(BTitle, BContent, id);
-	DAO.closeAll();
-	response.sendRedirect("communityenter.jsp");
+	int BNum = DAO.getBNum() - 1;
+	response.sendRedirect("communityenter.jsp?BNum=" + BNum);
 	%>
 
 

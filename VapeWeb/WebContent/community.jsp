@@ -7,14 +7,13 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@ page import="java.io.PrintWriter"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@ page import="DAO.dao"%>
 <%@ page import="DTO.Board"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <title>JASET VAPE</title>
 
@@ -24,13 +23,17 @@ dao DAO = new dao();
 %>
 
 </head>
+	<%
+	request.setCharacterEncoding("UTF-8");
+	%>	
 <body>
-	<%@ include file="menu.jsp"%>
-	<%@ include file="submenu.jsp"%>
+<%@ include file="menu.jsp" %>
+<%@ include file="submenu.jsp" %>
+
+	
 	<script type="text/javascript">
 
 </script>
-
 
 	<div class="container">
 		<table class="table border-dark rounded">
@@ -63,7 +66,7 @@ dao DAO = new dao();
 					<td><%=list.get(i).getBNum()%></td>
 					<td><a href="communityenter.jsp?BNum=<%=list.get(i).getBNum() %>"><%= list.get(i).getBTitle()%></a></td>
 					<td><%=list.get(i).getId()%></td>
-					<td><%=list.get(i).getBDate()%></td>
+					<td><%=list.get(i).getBDate().substring(0,16)%></td>
 					<td><%= list.get(i).getViews()%></td>
 				</tr>
 				<%
@@ -83,11 +86,10 @@ dao DAO = new dao();
 					aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
 				</a></li>
 				<%
-					
 					NowPageNumber++;
-					if(NowPageNumber > list.size() / 10 + 1)
-						NowPageNumber = list.size() / 10 + 1;
-					for(int i = 1; i <= list.size() / 10 + 1; i++) {
+					if(NowPageNumber > (list.size() - 1) / 10 + 1)
+						NowPageNumber = (list.size() - 1) / 10 + 1;
+					for(int i = 1; i <= (list.size() - 1) / 10 + 1; i++) {
 						
 				%>
 				<li class="page-item"><a class="page-link" href="community.jsp?cnl=<%=i%>"><%=i%></a></li>				
@@ -99,10 +101,20 @@ dao DAO = new dao();
 				</a></li>
 			</ul>
 		</nav>
-		<a href="communitywrite.jsp"class="btn btn-success float-right">글쓰기</a>
+		<a href="#" onclick="checkForm1(); return false;" class="btn btn-success float-right">글쓰기</a>			
+		
+		
 	</div>
-
-
+	<%@ include file="footer.jsp" %>
+	<script type="text/javascript">
+	   function checkForm1() {
+	      if (${id==null}) {
+	         alert("로그인 해주세요.");
+	         return false;
+	      }
+	      location.href = "./communitywrite.jsp?id=${id}"
+	   }
+	</script>
 	<script src="css/bootstrap.min.css"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
 </body>

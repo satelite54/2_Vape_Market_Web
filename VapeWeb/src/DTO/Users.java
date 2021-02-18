@@ -8,7 +8,9 @@ public class Users {
 	private String building;
 	private String mobile;
 	private int authority;
-	private int birthday;
+	private String birthday;
+	private int admin;
+	
 	
 	
 	public String getId() {
@@ -53,10 +55,21 @@ public class Users {
 	public void setAuthority(int authority) {
 		this.authority = authority;
 	}
-	public int getBirthday() {
+	public String getBirthday() {
 		return birthday;
 	}
-	public void setBirthday(int birthday) {
+	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
+	public int getAdmin() {
+		return admin;
+	}
+	public void setAdmin(int admin) {
+		this.admin = admin;
+	}
+	
+	
+	
+	
 }
+	
