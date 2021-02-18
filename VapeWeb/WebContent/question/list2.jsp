@@ -45,6 +45,7 @@ request.setCharacterEncoding("utf-8");
 %>
 <link href="style.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
+
 	function check() {
 	}
 	function pageing(page) {
@@ -196,7 +197,7 @@ request.setCharacterEncoding("utf-8");
 	</table>
 
 
-<div id="writeDiv" align="center">
+<div id="writeDiv" align="center" style="display: none;">
 <br/><br/>
 <form name="postFrm" method="post" action="<%=request.getContextPath()+"/question/questionPost"%>" enctype="multipart/form-data">
 	<table width="600" cellpadding="3" align="center">
@@ -254,3 +255,5 @@ request.setCharacterEncoding("utf-8");
 		<input type="hidden" name="num">
 	</form>
 </div>
+
+
