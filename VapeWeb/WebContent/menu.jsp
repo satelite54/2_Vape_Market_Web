@@ -136,6 +136,7 @@ div {text-align: center;}
   <input type="hidden" name="Producttype" value="Common">
   <input type="hidden" name="Page" value="1">
   <input type="hidden" name="Sortmethod" value="1">
+  <input type="hidden" name="NowPageNum" value="1">
   <button class="btn bg-dark text-white btn-outline-white my-2 my-sm-0 {background-color: #223a6b !important;} float-right" type="submit">Search</button>
   </form>
  </div>

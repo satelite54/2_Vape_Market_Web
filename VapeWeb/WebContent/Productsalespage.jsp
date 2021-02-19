@@ -67,7 +67,8 @@ header {
 		String NowPageNum = request.getParameter("NowPageNum");
 		int ListSize = products.size();
 		if(NowPageNum.equals("1")) {
-			products = products.subList(0, 10);
+			if(products.size() > 10)
+				products = products.subList(0, 10);
 		} else {
 			int nNowPageNum = Integer.parseInt(NowPageNum);
 			int FirstIdx = 10 * (nNowPageNum - 1);

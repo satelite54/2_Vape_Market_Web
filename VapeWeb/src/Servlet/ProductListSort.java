@@ -43,6 +43,14 @@ public class ProductListSort extends HttpServlet {
 		if(NowPageNum == null) {
 			NowPageNum = "1";
 		}
+		
+		List<Products> checkproducts = (List<Products>) session.getAttribute("products");
+		if(checkproducts != null) {
+			if(!checkproducts.isEmpty() && Search.equals("???") && producttype.equals("Common")) {
+				response.sendRedirect("Productsalespage.jsp?Producttype="+producttype+"&Sortmethod="+Sortmethod+"&Search="+Search +"&Page="+Page +"&NowPageNum="+NowPageNum);
+				return;
+			}
+		}
 		List<Products> products = makeProductList(Sortmethod, producttype, Search);
 		Page = String.valueOf(products.size()/10 + 1);
 		session.setAttribute("products", products);
@@ -69,7 +77,7 @@ public class ProductListSort extends HttpServlet {
 		if(Sortmethod == null) {
 			Sortmethod = "";
 		}
-		if(Search == null) {
+		if(Search == null || Search == "???") {
 			Search =" ";
 		}
 		if(producttype.equals("Common"))

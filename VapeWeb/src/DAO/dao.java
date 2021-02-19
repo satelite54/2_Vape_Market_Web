@@ -332,6 +332,7 @@ public class dao {
 	public List<Products> makeProductsList(String sqlQuery) {
 		List<Products> list = new ArrayList<Products>();
 		try {
+			
 			pstmt = conn.prepareStatement(sqlQuery);
 			rs = pstmt.executeQuery();
 
