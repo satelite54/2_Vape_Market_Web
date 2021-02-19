@@ -75,7 +75,7 @@ header {
 			products = products.subList(FirstIdx, ListSize);
 		}
 	%>
-	<div id="wrap"></div>
+	<div id="wrap">
 	<div id="container">
 		<div id="contents">
 			<div class="xans-element- xans-product xans-product-menupackage ">
@@ -214,6 +214,7 @@ header {
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 </body>
 </html>
