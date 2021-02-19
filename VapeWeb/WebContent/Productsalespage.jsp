@@ -126,10 +126,21 @@ header {
 						<ul class="prdList column5">
 							<%
 								for (int i = 0; i < products.size(); i++) {
+									String Imgname = products.get(i).getImgname();
+									String Detailedimagepath = products.get(i).getDetailedimagepath();
+									String Code = products.get(i).getCode();
+									String Manufacturer = products.get(i).getManufacturer();
+									String Pname = products.get(i).getPname();
+									String producttype = products.get(i).getProducttype();
+									String Adddate = products.get(i).getAdddate().toString();
+									String Price = String.valueOf(products.get(i).getPrice());
 							%>
 							<li id="anchorBoxId_2379" class="item xans-record-">
 								<div class="box">
-									<a href="  " name="anchorBoxName_2379"><img
+									<a href="Productdetailpage.jsp?Imgname=<%=Imgname%>
+									&DetailImgName=<%=Detailedimagepath%>&Code=<%=Code%>
+									&Manufacturer=<%=Manufacturer%>&Pname=<%=Pname%>
+									&producttype=<%=producttype%>&Price=<%=Price%>" name="anchorBoxName_2379"><img
 										src="img/<%=products.get(i).getImgname()%>" alt=""
 										class="thumb"></a>
 									<p class="name">

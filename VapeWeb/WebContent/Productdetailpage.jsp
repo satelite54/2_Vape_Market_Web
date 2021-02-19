@@ -19,12 +19,13 @@
 </style>
 </head>
 <%
-	/* 	String id = "";
-id = (String)session.getAttribute("id");
-
-if(id == null || id.equals("")) {
-response.sendRedirect("login.jsp");
-} */
+	String Pname = request.getParameter("Pname");
+	String Detailedimagepath = request.getParameter("Detailedimagepath");
+	String Code = request.getParameter("Code");
+	String Manufacturer = request.getParameter("Manufacturer");
+	String Imgname = request.getParameter("Imgname");
+	String producttype = request.getParameter("producttype");
+	String Price = request.getParameter("Price");
 %>
 
 
@@ -64,7 +65,7 @@ $jointbuy_page = /product/jointbuy.html
 					<div class="xans-element- xans-product xans-product-image imgArea">
 						<div class="keyImg ">
 							<a href="#none" alt="P0000JUA"><img
-								src="//www.thevapor.co.kr/web/product/big/202101/80e8f2cad0294864c3d3b73d3a69d7ae.jpg"
+								src="img/<%=Imgname%>"
 								alt="" class="BigImage "><span id="zoomMouseGiude"
 								style="display: block; position: relative; width: 170px; margin: 0px auto;"></span></a>
 						</div>
@@ -73,8 +74,7 @@ $jointbuy_page = /product/jointbuy.html
 					<!-- 상세정보 내역 -->
 					<div class="infoArea">
 						<h3>
-							[P0000JUA] [입호흡/Fantasy Juice] 아이스 망고 30ml - Ice Mango 9.8mg/ml
-							(원본액상) <span> <img
+							<%=Pname%> <span> <img
 								src="//img.echosting.cafe24.com/design/common/icon_sett04.gif"
 								alt="적립금">
 							</span>
@@ -92,12 +92,11 @@ $jointbuy_page = /product/jointbuy.html
 								<tbody>
 									<tr class=" xans-record-">
 										<th><span style="font-size: 16px; color: #555555;">상품명</span></th>
-										<td><span style="font-size: 16px; color: #555555;">[입호흡/Fantasy
-												Juice] 아이스 망고 30ml - Ice Mango 9.8mg/ml (원본액상)</span></td>
+										<td><span style="font-size: 16px; color: #555555;"><%=Pname%></span></td>
 									</tr>
 									<tr class=" xans-record-">
 										<th><span style="font-size: 12px; color: #555555;">제조사</span></th>
-										<td><span style="font-size: 12px; color: #555555;">솔트액상</span></td>
+										<td><span style="font-size: 12px; color: #555555;"><%=Manufacturer%></span></td>
 									</tr>
 									<tr class=" xans-record-">
 										<th><span style="font-size: 12px; color: #555555;">원산지</span></th>
@@ -109,24 +108,13 @@ $jointbuy_page = /product/jointbuy.html
 											style="font-size: 12px; color: #008BCC; font-weight: bold;">판매가</span></th>
 										<td><span
 											style="font-size: 12px; color: #008BCC; font-weight: bold;"><strong
-												id="span_product_price_text">32,000원</strong><input
+												id="span_product_price_text"><%=Price%></strong><input
 												id="product_price" name="product_price" value=""
 												type="hidden"></span></td>
 									</tr>
 									<tr class=" xans-record-">
-										<th><span style="font-size: 12px; color: #555555;">적립금</span></th>
-										<td><span style="font-size: 12px; color: #555555;"><span
-												id="span_mileage_text">20원</span></span></td>
-									</tr>
-									<tr class=" xans-record-">
 										<th><span style="font-size: 12px; color: #555555;">상품코드</span></th>
-										<td><span style="font-size: 12px; color: #555555;">P0000JUA</span></td>
-									</tr>
-
-									<tr class=" xans-record-">
-
-										<td><span style="font-size: 12px; color: 555555;"><div
-													style="float: left;"></div></span></td>
+										<td><span style="font-size: 12px; color: #555555;"><%=Code%></span></td>
 									</tr>
 									<tr class=" xans-record-">
 										<th><span style="font-size: 12px; color: #555555;">결제수단</span></th>
@@ -302,13 +290,7 @@ $jointbuy_page = /product/jointbuy.html
 								<br>
 							</div>
 							<p style="text-align: center;">
-								<img src="//thevapor.co.kr/web/upload/originaldetail.jpg">
-							</p>
-							<p>
-								<br>
-							</p>
-							<p style="text-align: center;">
-								<img src="//thevapor.co.kr/web/upload/legal.jpg">
+								<img src="img/<%=Detailedimagepath%>">
 							</p>
 						</div>
 					</div>
