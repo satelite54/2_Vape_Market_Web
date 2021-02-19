@@ -1,4 +1,4 @@
-package crawl;
+package DAO;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,28 +11,26 @@ import org.jsoup.select.Elements;
 
 public class crawling {
 	public List<String[]> theVaporProducts() throws IOException {
-		//ì²˜ìŒ ì ‘ì†í•  ì‚¬ì´íŠ¸
+		//Ã³À½ Á¢¼ÓÇÒ »çÀÌÆ®
 		String url1 = "http://www.thevapor.co.kr";
 		Document doc1 = Jsoup.connect(url1).get();
 		List<String> el1 = doc1.getElementsByClass("xans-record-").select("a").eachAttr("href");
-		System.out.println(el1);
 		
-		//ì¹´í…Œê³ ë¦¬ 5ê°œëŠ” ì¼ë‹¨ ì œì™¸(ë¡œê·¸ì¸í•´ì•¼ í¬ë¡¤ë§ ê°€ëŠ¥)
+		//Ä«Å×°í¸® 5°³´Â ÀÏ´Ü Á¦¿Ü(·Î±×ÀÎÇØ¾ß Å©·Ñ¸µ °¡´É)
 		int categorySize = el1.size();
 		for(int i = 0; i < categorySize; i++) {
 			el1.remove(0);
-			if(i == 4) {// ë³´ë“œ ê²Œì‹œíŒ ëª©ë¡ ì¼ë‹¨ ì‚­ì œ í•œ í›„ íƒˆì¶œ
+			if(i == 4) {// º¸µå °Ô½ÃÆÇ ¸ñ·Ï ÀÏ´Ü »èÁ¦ ÇÑ ÈÄ Å»Ãâ
 				el1.remove(el1.size() - 1);
 				break;
 			}
 		}
-		//ì–»ì—ˆì„ ë•Œ ì›¹ì‚¬ì´íŠ¸ ì£¼ì†Œ ë„£ëŠ” forë¬¸
+		//¾ò¾úÀ» ¶§ À¥»çÀÌÆ® ÁÖ¼Ò ³Ö´Â for¹®
 		String[] strAry = new String[el1.size()];
 		for(int i = 0; i < el1.size(); i++) {
 			strAry[i] = url1 + el1.get(i);
-			System.out.println(strAry[i]);
 		};
-		//ì¹´í…Œê³ ë¦¬ë§ˆë‹¤ ìƒí’ˆ ëª©ë¡ í¬ë¡¤ë§
+		//Ä«Å×°í¸®¸¶´Ù »óÇ° ¸ñ·Ï Å©·Ñ¸µ
 		int n = strAry.length;
 		List<String[]> productsInformation = new ArrayList<String[]>();
 		while(n --> 0) {
@@ -57,7 +55,7 @@ public class crawling {
 			}
 			
 			
-			for (int i = 0; i < listTk.size(); i++) { // ìƒì„¸í˜ì´ì§€ ì¶œë ¥í•˜ëŠ” ë¶€ë¶„ Listë‚˜ ë‹¤ë¥¸ ë°©ë²•ìœ¼ë¡œ ë°ì´í„°ë¥¼ ë‹´ì•„ì•¼í•¨
+			for (int i = 0; i < listTk.size(); i++) { // »ó¼¼ÆäÀÌÁö Ãâ·ÂÇÏ´Â ºÎºĞ List³ª ´Ù¸¥ ¹æ¹ıÀ¸·Î µ¥ÀÌÅÍ¸¦ ´ã¾Æ¾ßÇÔ
 				Document doc3 = Jsoup.connect(listTk.get(i)).get();
 				Elements pElements = doc3.select("div.infoArea").select("div.xans-product-detaildesign")
 									.select("tr.xans-record-").select("td");
@@ -71,7 +69,6 @@ public class crawling {
 				}
 				strArr[cntpData] = pImg;
 				productsInformation.add(strArr);
-				System.out.println(strArr.length);
 			}
 		}
 		return productsInformation;

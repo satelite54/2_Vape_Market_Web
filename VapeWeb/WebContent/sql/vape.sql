@@ -1,3 +1,4 @@
+create database vape;
 -- --------------------------------------------------------
 -- 호스트:                          127.0.0.1
 -- 서버 버전:                        5.7.21-log - MySQL Community Server (GPL)
@@ -11,11 +12,13 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
+USE vape;
+DROP DATABASE vape;
 CREATE DATAbase vape;
 
 -- vape 데이터베이스 구조 내보내기
-
+DROP DATABASE IF EXISTS `vape`;
+CREATE DATABASE IF NOT EXISTS `vape` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `vape`;
 
 -- 테이블 vape.board 구조 내보내기

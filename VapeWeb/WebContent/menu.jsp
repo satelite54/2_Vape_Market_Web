@@ -12,6 +12,7 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@ page import="java.io.PrintWriter"%>
 <%@ page import="DTO.Board"%>
+
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -95,6 +96,9 @@ div {text-align: center;}
             	<li class="nav-item">
                 	<a data-toggle="modal" href="#myModal" class="nav-link">관리자 권한 부여</a>
             	</li>
+               	<li class="nav-item">
+                	<a class="nav-link" href="ProductManeger.jsp">상품 등록</a>
+            	</li>
             	<%}%>
         	</ul>
     	</div>
@@ -127,7 +131,12 @@ div {text-align: center;}
 <div ><a href="main.jsp"><img src="<c:url value="/img/logo.png"/>"/></a></div>
 
   <div class="item1">
-  <form onsubmit="return checkForm2();" class="form-inline" action="Productsalespage.jsp"><input class="form-control mr-sm-2 " name="search" type="search" placeholder="Search" aria-label="Search">
+  <form onsubmit="return checkForm2();" class="form-inline" action="ProductListSort">
+  <input class="form-control mr-sm-2 " name="Search" type="search" placeholder="Search" aria-label="Search">
+  <input type="hidden" name="Producttype" value="Common">
+  <input type="hidden" name="Page" value="1">
+  <input type="hidden" name="Sortmethod" value="1">
+  <input type="hidden" name="NowPageNum" value="1">
   <button class="btn bg-dark text-white btn-outline-white my-2 my-sm-0 {background-color: #223a6b !important;} float-right" type="submit">Search</button>
   </form>
  </div>
