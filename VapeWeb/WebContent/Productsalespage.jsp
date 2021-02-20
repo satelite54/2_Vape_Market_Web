@@ -141,7 +141,7 @@ header {
 									&DetailImgName=<%=Detailedimagepath%>&Code=<%=Code%>
 									&Manufacturer=<%=Manufacturer%>&Pname=<%=Pname%>
 									&producttype=<%=producttype%>&Price=<%=Price%>" name="anchorBoxName_2379"><img
-										src="img/<%=products.get(i).getImgname()%>" alt=""
+										src="img/<%=Imgname%>" alt=""
 										class="thumb"></a>
 									<p class="name">
 										<a

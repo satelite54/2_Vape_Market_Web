@@ -20,7 +20,7 @@
 </head>
 <%
 	String Pname = request.getParameter("Pname");
-	String Detailedimagepath = request.getParameter("Detailedimagepath");
+	String DetailImgName = request.getParameter("DetailImgName");
 	String Code = request.getParameter("Code");
 	String Manufacturer = request.getParameter("Manufacturer");
 	String Imgname = request.getParameter("Imgname");
@@ -262,7 +262,6 @@ $jointbuy_page = /product/jointbuy.html
 					<div id="prdDetail">
 
 						<div class="cont">
-
 							<p style="text-align: center;">
 								<span style="font-size: 32px;"></span>
 							</p>
@@ -289,9 +288,9 @@ $jointbuy_page = /product/jointbuy.html
 							<div>
 								<br>
 							</div>
-							<p style="text-align: center;">
-								<img src="img/<%=Detailedimagepath%>">
-							</p>
+								<p style="text-align: center;">
+									<img style="width: 100%;" src="img/<%=DetailImgName%>" alt="<%=DetailImgName%>">
+								</p>
 						</div>
 					</div>
 					<!-- //상품상세정보 -->
