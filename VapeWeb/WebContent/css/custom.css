@@ -28,9 +28,9 @@ hr{
     padding-right: 30px;
 }
 
-/*--------------상세페이지css--------------*/
+/*--------------detailpage navbar css--------------*/
  .parent { 
-        color:#b8064d;
+        color:#223a6b;
         position:relative;
       }
 .me {
@@ -38,6 +38,6 @@ hr{
   position: sticky;
   top: 0.1px;
   right: 100px;
-  color:#b8064d;
+  color:#223a6b;
 }
-.child {background-color:yellow; color:black;}
+.child {color:#223a6b;}

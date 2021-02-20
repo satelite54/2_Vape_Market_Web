@@ -37,7 +37,7 @@
 			<div class="carousel-caption d-none d-md-block">
 			    <h5>JASET VAPE만의 특별함</h5>
 			    <p>타사와는 비교안되는 퀄리티를 추구합니다.</p>
-			</div>
+			</div> 
     </div>
    
     <div class="carousel-item">

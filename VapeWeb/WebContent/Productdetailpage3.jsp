@@ -28,7 +28,14 @@
 <%
 request.setCharacterEncoding("UTF-8");
 %>	
-
+<style>
+#mynav .nav-link {
+  color: #BCBDC1 !important;
+}
+#mynav .nav-link.active {
+  color: #2E74FF !important;
+}
+</style>
 </head>
 <%@ include file="menu.jsp" %>
 <%@ include file="submenu.jsp" %>
@@ -61,40 +68,39 @@ request.setCharacterEncoding("UTF-8");
 		</div>			
 	</div>
 <br><br><br><br><br><br>
+
 	<div class="parent">
 		<div class="me">
         <p class="child">
         	<body data-spy="scroll" data-target=".navbar" data-offset="50">																
-				<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed">  
+				<nav id="mynav" class="navbar navbar-expand-sm bg-dark navbar-dark fixed py-2">  
 				  <ul class="navbar-nav">
 				    <li class="nav-item">
-				      <a class="nav-link" href="#section1">상세정보</a>
+				      <h2><a class="nav-link px-5" href="#section1">상세정보</a></h2>
 				    </li>
 				    <li class="nav-item">
-				      <a class="nav-link" href="#section2">상품후기</a>
+				      <h2><a class="nav-link px-5" href="#section2">상품후기</a></h2>
 				    </li>
 				    <li class="nav-item">
-				      <a class="nav-link" href="#section3">Q&A</a>
+				      <h2><a class="nav-link px-5" href="#section3">Q&A</a></h2>
 				    </li>
 				  </ul>
 				</nav>
 		</p>
 		</div>
-					<div id="section1" class="container-fluid border border-success" style="padding-top:70px;padding-bottom:70px">
+					<div id="section1" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
 						<h1>상세정보</h1>
 						<div class="imgbox">
 							<img src="<%=request.getParameter("Detailedimagepath")%>" style="width: 100%" />
 						</div>
 					</div>
 					
-					<div id="section2" class="container-fluid border border-warning" style="padding-top:70px;padding-bottom:70px">
+					<div id="section2" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
 						<h1>상품후기</h1>
 						<%@ include file="review.jsp" %>
-						<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-						<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 					</div>
 					
-					<div id="section3" class="container-fluid center border border-secondary" style="padding-top:70px;padding-bottom:70px">
+					<div id="section3" class="container-fluid center" style="padding-top:70px;padding-bottom:70px">
 						<h1>Q&A</h1>
 						<%@ include file="question/list2.jsp"%>
 					</div>
