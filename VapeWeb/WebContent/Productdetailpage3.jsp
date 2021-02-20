@@ -36,12 +36,13 @@ request.setCharacterEncoding("UTF-8");
   color: #2E74FF !important;
 }
 </style>
+<link rel="stylesheet" href="css/custom.css">
 </head>
 <%@ include file="menu.jsp" %>
 <%@ include file="submenu.jsp" %>
 <br><br><br><br><br><br>
 <body>
-	<link rel="stylesheet" href="css/custom.css">
+	
 	<div class="row">
 		<div class="col-md-5">
 			<img src="<%=request.getParameter("imgname")%>" style="width: 100%" />
@@ -68,50 +69,48 @@ request.setCharacterEncoding("UTF-8");
 		</div>			
 	</div>
 <br><br><br><br><br><br>
-
-	<div class="parent">
-		<div class="me">
-        <p class="child">
-        	<body data-spy="scroll" data-target=".navbar" data-offset="50">																
-				<nav id="mynav" class="navbar navbar-expand-sm bg-dark navbar-dark fixed py-2">  
-				  <ul class="navbar-nav">
-				    <li class="nav-item">
-				      <h2><a class="nav-link px-5" href="#section1">상세정보</a></h2>
-				    </li>
-				    <li class="nav-item">
-				      <h2><a class="nav-link px-5" href="#section2">상품후기</a></h2>
-				    </li>
-				    <li class="nav-item">
-				      <h2><a class="nav-link px-5" href="#section3">Q&A</a></h2>
-				    </li>
-				  </ul>
-				</nav>
-		</p>
-		</div>
-					<div id="section1" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
-						<h1>상세정보</h1>
-						<div class="imgbox">
-							<img src="<%=request.getParameter("Detailedimagepath")%>" style="width: 100%" />
-						</div>
-					</div>
-					
-					<div id="section2" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
-						<h1>상품후기</h1>
-						<%@ include file="review.jsp" %>
-					</div>
-					
-					<div id="section3" class="container-fluid center" style="padding-top:70px;padding-bottom:70px">
-						<h1>Q&A</h1>
-						<%@ include file="question/list2.jsp"%>
-					</div>
-			</body>
-	 </div>   				 
+	
+<div class="parent">
+	<body data-spy="scroll" data-target=".navbar" data-offset="50">		
+		<div class="me">	
+	        	<p class="child">														
+					<nav id="mynav" class="navbar navbar-expand-sm bg-dark navbar-dark fixed py-2">  
+					  <ul class="navbar-nav">
+					    <li class="nav-item">
+					      <h2><a class="nav-link px-5" href="#section1">상세정보</a></h2>
+					    </li>
+					    <li class="nav-item">
+					      <h2><a class="nav-link px-5" href="#section2">상품후기</a></h2>
+					    </li>
+					    <li class="nav-item">
+					      <h2><a class="nav-link px-5" href="#section3">Q&A</a></h2>
+					    </li>
+					  </ul>
+					</nav>
+				</p>
+			</div>
+		
+			<div id="section1" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
+				<h1 style="color#223a6b;">상세정보</h1>
+				<div class="imgbox">
+					<img src="<%=request.getParameter("Detailedimagepath")%>" style="width: 100%" />
+				</div>
+			</div>
 			
-
+			<div id="section2" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
+				<h1 style="color#223a6b;">상품후기</h1>
+				<%@ include file="review.jsp" %>
+			</div>
+			
+			<div id="section3" class="container-fluid center" style="padding-top:70px;padding-bottom:70px">
+				<h1 style="color#223a6b;">Q&A</h1>
+				<%@ include file="question/list2.jsp"%>
+			</div>
+		</body>
+ </div>   				 
 <div align=center>
 <%@ include file="footer.jsp"%>
 </div>
-
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="css/bootstrap.min.css"></script>
