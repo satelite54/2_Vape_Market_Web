@@ -1,3 +1,4 @@
+<%@page import="java.util.stream.Stream"%>
 <%@page import="java.net.URL"%>
 <%@page import="java.util.Arrays"%>
 <%@page import="etc.*"%>
@@ -51,20 +52,26 @@ header {
 <body>
 	<%@ include file="menu.jsp"%>
 	<%@ include file="submenu.jsp"%>
-
+	
+	<%! public void CollectNull(String strSearch, String strPage
+			, String NowPageNum) {
+			if(strSearch == null)
+				strSearch = "";
+			if(strPage == null)
+				strPage = "1";
+			if(NowPageNum == null)
+				NowPageNum = "1";
+		}
+		%>
 	<%
 		List<Products> products = (List<Products>) session.getAttribute("products");
 		int ntotalProductsCnt = products.size();
 		String strProducttype = request.getParameter("Producttype");
 		String strSortmethod = request.getParameter("Sortmethod");
 		String strSearch = request.getParameter("Search");
-		if(strSearch == null)
-			strSearch = "";
-		String strPage = request.getParameter("Page");
-		if(strPage == null)
-			strPage = "1";
-		
+		String strPage = request.getParameter("Page");		
 		String NowPageNum = request.getParameter("NowPageNum");
+		CollectNull(strSearch, strPage, NowPageNum);
 		int ListSize = products.size();
 		if(NowPageNum.equals("1")) {
 			if(products.size() > 10)
@@ -74,6 +81,7 @@ header {
 			int FirstIdx = 10 * (nNowPageNum - 1);
 			products = products.subList(FirstIdx, ListSize);
 		}
+		
 	%>
 	<div id="wrap">
 	<div id="container">
