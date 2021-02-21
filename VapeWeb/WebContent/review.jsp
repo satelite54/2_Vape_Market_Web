@@ -110,7 +110,7 @@ dao DAO = new dao();
 	         alert("로그인 해주세요.");
 	         return false;
 	      }
-	      location.href = "./communitywrite.jsp?id=${id}"
+	      location.href = "./reviewWrite.jsp?id=${id}"
 	   }
 	</script>
 	<script src="css/bootstrap.min.css"></script>

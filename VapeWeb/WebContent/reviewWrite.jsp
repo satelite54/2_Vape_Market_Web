@@ -7,6 +7,7 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <title>JASET VAPE</title>
+<script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
 </head>
 <body>
 <%@ include file="menu.jsp" %>
@@ -32,7 +33,7 @@
 	  		<form action="communityAction.jsp" method="post">
 	  			<input type="text" class="form-control mb-3" name="BTitle" placeholder="글제목" maxlength="50" required>
 	  			<input type="hidden" name="BNum" value="<%=BNum%>">
-	  			<textarea class="form-control mb-3" name="BContent" style="height: 350px" placeholder="글내용" maxlength="2048" required></textarea>
+	  			<textarea class="form-control mb-3" name="BContent" id="editor" style="height: 350px" placeholder="글내용" maxlength="2048" required></textarea>
 	  			<div class="row">
 					<input type="submit" value="등록" class="btn btn-success ml-auto mr-3">
 				</div>
@@ -42,8 +43,15 @@
 	</div>
 
 
-
+	
 	<%@ include file="footer.jsp" %>
+	  <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
 	<script src="css/bootstrap.min.css"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
 </body>
