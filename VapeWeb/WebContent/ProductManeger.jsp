@@ -9,7 +9,7 @@
 <body>
 	<%@ include file="menu.jsp" %>
 	<%@ include file="submenu.jsp" %>
-	<form action="ProductManegerAction.jsp" method="post">
+	<form action="PMAction" method="post">
 		<input type = "text" name = "pname">
 		<input type = "text" name = "code">
 		<input type = "text" name = "manufacturer">

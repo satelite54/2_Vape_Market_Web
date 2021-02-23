@@ -1,23 +1,51 @@
-<%@page import="java.util.Iterator"%>
-<%@page import="java.util.Set"%>
-<%@page import="java.util.Map"%>
-<%@page import="DTO.Products"%>
-<%@page import="java.io.PrintWriter"%>
-<%@page import="DAO.dao"%>
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-<% request.setCharacterEncoding("UTF-8");%>
-<jsp:useBean id="products" class="DTO.Products" scope="page"/>
-<jsp:setProperty name ="products" property="*"/>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<%
+package Servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import DAO.dao;
+import DTO.Products;
+
+/**
+ * Servlet implementation class ProductManegerAction
+ */
+@WebServlet("/PMAction")
+public class ProductManegerAction extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ProductManegerAction() {
+        super();
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=utf-8");
+		
 		dao DAO = new dao();
+		
+		Products products = new Products();
 		
 		Map<String, String[]> paraMeterMap = request.getParameterMap();
 		Set<String> paraMeterKey = paraMeterMap.keySet();
@@ -26,10 +54,22 @@
 		for(int i = 0; iter.hasNext(); i++) {
 			strAry[i] = (String) iter.next();
 		}
-		
-		String detailimgpath = paraMeterMap.get("detailedimgname")[0];
-		products.setDetailedimagepath(detailimgpath);
-		
+		String pname = paraMeterMap.get("pname")[0];
+		String code = paraMeterMap.get("code")[0];
+		String manufacturer= paraMeterMap.get("manufacturer")[0];
+		String price= paraMeterMap.get("price")[0];
+		String stock= paraMeterMap.get("stock")[0];
+		String producttype= paraMeterMap.get("producttype")[0];
+		String imgname = paraMeterMap.get("imgname")[0];
+		String detailedimgname= paraMeterMap.get("detailedimgname")[0];
+		products.setDetailedimagepath(detailedimgname);
+		products.setPname(pname);
+		products.setPrice(Integer.parseInt(price));
+		products.setCode(code);
+		products.setImgname(imgname);
+		products.setProducttype(producttype);
+		products.setStock(Integer.parseInt(stock));
+		products.setManufacturer(manufacturer);
 		
 		int parameterSize = paraMeterMap.size();
 		switch(strAry[parameterSize - 1]) {
@@ -82,6 +122,6 @@
 				break;
 			}
 		}	
-	%>
-</body>
-</html>
+	}
+
+}

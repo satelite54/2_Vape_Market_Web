@@ -18,17 +18,6 @@
 }
 </style>
 </head>
-<%
-	String Pname = request.getParameter("Pname");
-String DetailImgName = request.getParameter("DetailImgName");
-String Code = request.getParameter("Code");
-String Manufacturer = request.getParameter("Manufacturer");
-String Imgname = request.getParameter("Imgname");
-String producttype = request.getParameter("producttype");
-String Price = request.getParameter("Price");
-%>
-
-
 <body id="main">
 	<%@ include file="menu.jsp"%>
 	<%@ include file="submenu.jsp"%>
@@ -68,7 +57,7 @@ $jointbuy_page = /product/jointbuy.html
 					<!-- 이미지 영역 -->
 					<div class="xans-element- xans-product xans-product-image imgArea">
 						<div class="keyImg ">
-							<a href="#none" alt="P0000JUA"><img src="img/<%=Imgname%>"
+							<a href="#none" alt="P0000JUA"><img src="img/${Imgname}"
 								alt="" class="BigImage "><span id="zoomMouseGiude"
 								style="display: block; position: relative; width: 170px; margin: 0px auto;"></span></a>
 						</div>
@@ -77,7 +66,7 @@ $jointbuy_page = /product/jointbuy.html
 					<!-- 상세정보 내역 -->
 					<div class="infoArea">
 						<h3>
-							<%=Pname%>
+							${Pname}
 							<span> <img
 								src="//img.echosting.cafe24.com/design/common/icon_sett04.gif"
 								alt="적립금">
@@ -96,11 +85,11 @@ $jointbuy_page = /product/jointbuy.html
 								<tbody>
 									<tr class=" xans-record-">
 										<th><span style="font-size: 16px; color: #555555;">상품명</span></th>
-										<td><span style="font-size: 16px; color: #555555;"><%=Pname%></span></td>
+										<td><span style="font-size: 16px; color: #555555;">${Pname}</span></td>
 									</tr>
 									<tr class=" xans-record-">
 										<th><span style="font-size: 12px; color: #555555;">제조사</span></th>
-										<td><span style="font-size: 12px; color: #555555;"><%=Manufacturer%></span></td>
+										<td><span style="font-size: 12px; color: #555555;">${Manufacturer}</span></td>
 									</tr>
 									<tr class=" xans-record-">
 										<th><span style="font-size: 12px; color: #555555;">원산지</span></th>
@@ -112,13 +101,13 @@ $jointbuy_page = /product/jointbuy.html
 											style="font-size: 12px; color: #008BCC; font-weight: bold;">판매가</span></th>
 										<td><span
 											style="font-size: 12px; color: #008BCC; font-weight: bold;"><strong
-												id="span_product_price_text"><%=Price%></strong>
+												id="span_product_price_text">${Price}</strong>
 												<input id="product_price" name="product_price" value=""
 												type="hidden"></span></td>
 									</tr>
 									<tr class=" xans-record-">
 										<th><span style="font-size: 12px; color: #555555;">상품코드</span></th>
-										<td><span style="font-size: 12px; color: #555555;"><%=Code%></span></td>
+										<td><span style="font-size: 12px; color: #555555;">${Code}</span></td>
 									</tr>
 									<tr class=" xans-record-">
 										<th><span style="font-size: 12px; color: #555555;">결제수단</span></th>
@@ -308,8 +297,8 @@ $jointbuy_page = /product/jointbuy.html
 								<br>
 							</div>
 							<p style="text-align: center;">
-								<img style="width: 100%;" src="img/<%=DetailImgName%>"
-									alt="<%=DetailImgName%>">
+								<img style="width: 100%;" src="img/${DetailImgName}"
+									alt="${DetailImgName}">
 							</p>
 						</div>
 					</div>
@@ -364,16 +353,16 @@ $jointbuy_page = /product/jointbuy.html
 		</div>
 	</div>
 	<script type="text/javascript">
-   function checkForm3() {
-      if (${id == null}) {
-    	 alert("로그인 해주세요.");
-    	 location.href ="http://localhost/VapeWeb/login.jsp";
-    	 return false;
-      } else {
-    	 var product = document.getElementsByClassName("xans-record-")
-		location.href ="PData?product="+product;
-      }
-   }
+	   function checkForm3() {
+	      if (${id == null}) {
+	    	 alert("로그인 해주세요.");
+	    	 location.href ="http://localhost/VapeWeb/login.jsp";
+	    	 return false;
+	      } else {
+	    	 var product = document.getElementsByClassName("xans-record-")
+			location.href ="PData?product="+product;
+	      }
+	   }
 	</script>
 	<%@ include file="footer.jsp"%>
 	<script src="js/jquery-3.5.1.min.js"></script>
