@@ -21,7 +21,7 @@
   <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=liquid%>','<%=1%>', '<%=" "%>', '<%=1%>' , '<%=1%>')">원본액상</a></div>
   <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=coil%>','<%=1%>', '<%=" "%>', '<%=1%>' , '<%=1%>')">코일</a></div>
   <div id="submenu"><a href="community.jsp">커뮤니티</a></div>
-  <div id="submenu"><a href="news.jsp">뉴스</a></div>
+  <div id="submenu"><a href="nN">뉴스</a></div>
        
 </div>
 <hr>

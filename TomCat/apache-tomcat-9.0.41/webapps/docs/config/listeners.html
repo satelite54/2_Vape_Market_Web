@@ -581,9 +581,9 @@
   -Dcom.sun.management.jmxremote.ssl=false
   -Dcom.sun.management.jmxremote.registry.ssl=false</code></pre></div>
     <p>$CATALINA_BASE/conf/login.config containing your choice of JAAS LoginModule implementation, for example:</p>
-  <div class="codeBox"><pre><code>  Tomcat { /* should match to the com.sun.management.jmxremote.login.config property */
+  <div class="codeBox"><pre><code>  Tomcat { 
 
-    /* for illustration purposes only */
+    
     com.sun.security.auth.module.LdapLoginModule REQUIRED
       userProvider="ldap://ldap-svr/ou=people,dc=example,dc=com"
       userFilter="(&amp;(uid={USERNAME})(objectClass=inetOrgPerson))"
