@@ -5,9 +5,16 @@ public class News {
 	String title;
 	String href;
 	String content;
+	String imgsrc;
 	
 	public String getTitle() {
 		return title;
+	}
+	public String getImgsrc() {
+		return imgsrc;
+	}
+	public void setImgsrc(String imgsrc) {
+		this.imgsrc = imgsrc;
 	}
 	public void setTitle(String title) {
 		this.title = title;
