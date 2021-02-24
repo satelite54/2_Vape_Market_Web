@@ -25,12 +25,12 @@
 	%>
 	
 	<%
-	String BTitle = request.getParameter("BTitle");
-	String BContent= request.getParameter("BContent");
-	int BNum = Integer.parseInt(request.getParameter("BNum"));
+	String RTitle = request.getParameter("RTitle");
+	String RContent= request.getParameter("RContent");
+	int RNum = Integer.parseInt(request.getParameter("RNum"));
 	
-	DAO.updateBoard(BTitle, BContent, BNum);
-	response.sendRedirect("communityenter.jsp");
+	DAO.updateReview(RTitle, RContent, RNum);
+	response.sendRedirect("reviewView.jsp");
 	%>
 
 
