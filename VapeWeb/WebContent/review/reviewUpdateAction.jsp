@@ -9,7 +9,6 @@
 <%@page import="java.sql.Date"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>
 <%@ page import="DAO.dao"%>
-<%@ include file="menu.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>

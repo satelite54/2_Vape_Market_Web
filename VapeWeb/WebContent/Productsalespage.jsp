@@ -203,7 +203,7 @@ header {
 			%>
 			<div class="col-md-3">
 				<a
-					href="Productdetailpage3.jsp?pname=${pageScope.pname}&code=${pageScope.code}&manufacturer=${pageScope.manufacturer}
+					href="Productdetailpage.jsp?pname=${pageScope.pname}&code=${pageScope.code}&manufacturer=${pageScope.manufacturer}
 					&price=${pageScope.price}&stock=${pageScope.stock}&imgname=${pageContext.request.contextPath}/img/${pageScope.imgname}
 					&adddate=${pageScope.adddate}&producttype=${pageScope.producttype}&Detailedimagepath=${pageContext.request.contextPath}/img/${pageScope.Detailedimagepath}
 					"><img
@@ -219,7 +219,7 @@ header {
 			%>
 			<div class="col-md-3">
 				<a
-					href="Productdetailpage3.jsp?pname=${pageScope.pname}&code=${pageScope.code}&manufacturer=${pageScope.manufacturer}&price=${pageScope.price}&stock=${pageScope.stock}&imgname=${pageContext.request.contextPath}/img/${pageScope.imgname}&adddate=${pageScope.adddate}&producttype=${pageScope.producttype}&Detailedimagepath=${pageContext.request.contextPath}/img/${pageScope.Detailedimagepath}"><img
+					href="Productdetailpage.jsp?pname=${pageScope.pname}&code=${pageScope.code}&manufacturer=${pageScope.manufacturer}&price=${pageScope.price}&stock=${pageScope.stock}&imgname=${pageContext.request.contextPath}/img/${pageScope.imgname}&adddate=${pageScope.adddate}&producttype=${pageScope.producttype}&Detailedimagepath=${pageContext.request.contextPath}/img/${pageScope.Detailedimagepath}"><img
 					src="${pageContext.request.contextPath}/img/${pageScope.imgname}"
 					style="width: 100%"></a>
 				<h3><%=product.getPname()%></h3>
@@ -233,7 +233,7 @@ header {
 			%>
 			<div class="col-md-3">
 				<a
-					href="Productdetailpage3.jsp?pname=${pageScope.pname}&code=${pageScope.code}&manufacturer=${pageScope.manufacturer}&price=${pageScope.price}&stock=${pageScope.stock}
+					href="Productdetailpage.jsp?pname=${pageScope.pname}&code=${pageScope.code}&manufacturer=${pageScope.manufacturer}&price=${pageScope.price}&stock=${pageScope.stock}
 					&imgname=${pageContext.request.contextPath}/img/${pageScope.imgname}&adddate=${pageScope.adddate}&producttype=${pageScope.producttype}&Detailedimagepath=${pageScope.Detailedimagepath}"><img
 					src="${pageContext.request.contextPath}/img/${pageScope.imgname}"
 					style="width: 100%"></a>

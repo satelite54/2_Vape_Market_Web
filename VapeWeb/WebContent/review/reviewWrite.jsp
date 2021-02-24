@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@ page import="DAO.dao"%>
 <!DOCTYPE html>
@@ -10,8 +9,7 @@
 <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
 </head>
 <body>
-<%@ include file="menu.jsp" %>
-<%@ include file="submenu.jsp" %>
+
 	<%
 	request.setCharacterEncoding("UTF-8");
 	%>
@@ -42,9 +40,6 @@
 	  </div>
 	</div>
 
-
-	
-	<%@ include file="footer.jsp" %>
 	  <script>
         ClassicEditor
             .create( document.querySelector( '#editor' ) )
