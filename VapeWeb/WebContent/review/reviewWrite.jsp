@@ -10,8 +10,9 @@
 </head>
 <body>
 	<%
+		dao DAO1 = new dao();
 		int RNum = 0;
-	    dao DAO1 = new dao();
+	    
 	%>
 	<div class="container mt-3">
 	  <div class="card">
@@ -22,7 +23,7 @@
 	  	<div class="card-body" style="height:500px;">
 	  		<form action="reviewAction.jsp" method="post">
 	  			<input type="text" class="form-control mb-3" name="RTitle" placeholder="글제목" maxlength="50" required>
-	  			<input type="hidden" name="RNum" value="<%=DAO1.getRNum()%>">
+	  			<%-- <input type="hidden" name="RNum" value="<%=DAO1.getRNum()%>"> --%>
 	  			<textarea class="form-control mb-3" name="RContent" id="editor" style="height: 350px important!" placeholder="글내용" maxlength="2048" required></textarea>
 	  			<br>
 	  			<div class="row">
