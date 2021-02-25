@@ -18,6 +18,19 @@ CREATE DATAbase vape;
 
 USE `vape`;
 
+-- 테이블 vape.review 구조 내보내기
+CREATE TABLE IF NOT EXISTS `review` (
+  `RNum` int(11) NOT NULL,
+  `RTitle` varchar(1000) NOT NULL,
+  `RContent` varchar(3000) NOT NULL,
+  `RDate` datetime NOT NULL,
+  `id` varchar(1000) NOT NULL,
+  `authority` int(11) NOT NULL,
+  `views` int(11) DEFAULT '0',
+  PRIMARY KEY (`RNum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 -- 테이블 vape.board 구조 내보내기
 DROP TABLE IF EXISTS `board`;
 CREATE TABLE IF NOT EXISTS `board` (

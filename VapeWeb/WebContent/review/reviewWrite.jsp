@@ -15,11 +15,11 @@
 	%>
 	<%! 
 	dao DAO = new dao(); 
-	int BNum = 0;
+	int RNum = 0;
 	%>
 	
 	<%
-		BNum = DAO.getBNum();
+		RNum = DAO.getRNum();
 	%>
 
 	<div class="container mt-3">
@@ -28,12 +28,12 @@
 	  		글쓰기 양식
 	  	</div>
 	  	<div class="card-body" style="height:500px;">
-	  		<form action="communityAction.jsp" method="post">
-	  			<input type="text" class="form-control mb-3" name="BTitle" placeholder="글제목" maxlength="50" required>
-	  			<input type="hidden" name="BNum" value="<%=BNum%>">
-	  			<textarea class="form-control mb-3" name="BContent" id="editor" style="height: 350px" placeholder="글내용" maxlength="2048" required></textarea>
+	  		<form action="reviewAction.jsp" method="post">
+	  			<input type="text" class="form-control mb-3" name="RTitle" placeholder="글제목" maxlength="50" required>
+	  			<input type="hidden" name="RNum" value="<%=RNum%>">
+	  			<textarea class="form-control mb-3" name="RContent" id="editor" style="height: 350px" placeholder="글내용" maxlength="2048" required></textarea>
 	  			<div class="row">
-					<input type="submit" value="등록" class="btn btn-success ml-auto mr-3">
+					<input type="submit" value="등록" class="btn btn-dark ml-auto mr-3">
 				</div>
 	  		</form>
 	  	</div>

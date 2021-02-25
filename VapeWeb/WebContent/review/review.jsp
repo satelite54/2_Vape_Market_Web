@@ -62,7 +62,7 @@ dao DAO = new dao();
 						
 				<tr>
 					<td><%=list.get(i).getRNum()%></td>
-					<td><a href="communityenter.jsp?RNum=<%=list.get(i).getRNum() %>"><%= list.get(i).getRTitle()%></a></td>
+					<td><a href="reviewView.jsp?RNum=<%=list.get(i).getRNum() %>"><%= list.get(i).getRTitle()%></a></td>
 					<td><%=list.get(i).getId()%></td>
 					<td><%=list.get(i).getRDate().substring(0,16)%></td>
 					<td><%= list.get(i).getViews()%></td>
@@ -80,7 +80,7 @@ dao DAO = new dao();
 						PreviousPageNumber = 1;
 					}
 				%>
-				<li class="page-item"><a class="page-link" href="community.jsp?cnl=<%=PreviousPageNumber%>"
+				<li class="page-item"><a class="page-link" href="review.jsp?cnl=<%=PreviousPageNumber%>"
 					aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
 				</a></li>
 				<%
@@ -90,16 +90,16 @@ dao DAO = new dao();
 					for(int i = 1; i <= (list.size() - 1) / 10 + 1; i++) {
 						
 				%>
-				<li class="page-item"><a class="page-link" href="community.jsp?cnl=<%=i%>"><%=i%></a></li>				
+				<li class="page-item"><a class="page-link" href="review.jsp?cnl=<%=i%>"><%=i%></a></li>				
 				<%
 					}
 				%>
-				<li class="page-item"><a class="page-link" href="community.jsp?cnl=<%=NowPageNumber%>"
+				<li class="page-item"><a class="page-link" href="review.jsp?cnl=<%=NowPageNumber%>"
 					aria-label="Next"> <span aria-hidden="true">&raquo;</span>
 				</a></li>
 			</ul>
 		</nav>
-		<a href="#" onclick="checkForm1(); return false;" class="btn btn-success float-right">글쓰기</a>			
+		<a href="#" onclick="checkForm1(); return false;" class="btn btn-dark float-right">글쓰기</a>			
 		
 		
 	</div>
@@ -110,7 +110,7 @@ dao DAO = new dao();
 	         alert("로그인 해주세요.");
 	         return false;
 	      }
-	      location.href = "./reviewWrite.jsp?id=${id}"
+	      location.href = "review/reviewWrite.jsp?id=${id}"
 	   }
 	</script>
 	<script src="css/bootstrap.min.css"></script>

@@ -1,6 +1,6 @@
 <%@page import="DTO.Users"%>
 <%@page import="java.io.PrintWriter"%>
-<%@page import="DTO.Board"%>
+<%@page import="DTO.Review"%>
 <%@page import="DAO.dao"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <!DOCTYPE html>
@@ -16,30 +16,30 @@
 	request.setCharacterEncoding("UTF-8");
 	%>	
 	<%!
-		Board board = new Board();	
+		Review review = new Review();	
 		dao DAO = new dao();
 		
-		int BNum = 0;
+		int RNum = 0;
 	%>
 		<%
 			if(request.getParameter("displayEdit") == null) {
 				
 			}
 		
-			if (request.getParameter("BNum") != null){
-		 	BNum = Integer.parseInt(request.getParameter("BNum"));
-		 	System.out.println(BNum) ;
+			if (request.getParameter("RNum") != null){
+		 	RNum = Integer.parseInt(request.getParameter("RNum"));
+		 	System.out.println(RNum) ;
 		 }
 
-		 if (BNum == 0) {
+		 if (RNum == 0) {
 			 PrintWriter script = response.getWriter();
 			 script.println("<script>");
 			 script.println("alert('유효하지 않은 글 입니다.')");
-			 script.println("<location.href = 'community.jsp'");
+			 script.println("<location.href = 'review.jsp'");
 			 script.println("</script>");
 		 }
 		Users user = new Users();
-		board = DAO.getBoard(BNum);
+		review = DAO.getReview(RNum);
 		int admin = DAO.getadmin((String) session.getAttribute("id"));
 	%>
 	
@@ -52,22 +52,22 @@
 			<div class="col-sm-2">조회수</div>
 		</div>
 		<div class="row border boder-dark rounded mt-1">
-			<div class="col-sm-2"><%= board.getBNum() %></div>
-			<div class="col-sm-4"><%= board.getBTitle() %></div>
-			<div class="col-sm-2"><%= board.getId() %></div>
-			<div class="col-sm-2"><%= board.getBDate().substring(0,16) %></div>
-			<div class="col-sm-2"><%= board.getViews() %></div>
+			<div class="col-sm-2"><%= review.getRNum() %></div>
+			<div class="col-sm-4"><%= review.getRTitle() %></div>
+			<div class="col-sm-2"><%= review.getId() %></div>
+			<div class="col-sm-2"><%= review.getRDate().substring(0,16) %></div>
+			<div class="col-sm-2"><%= review.getViews() %></div>
 		</div>
 			<div class="card-body text-dark border boder-dark rounded mt-3 mb-5">
-				<p class="card-text text-left" style="height:350px"><%= board.getBContent() %></p>
+				<p class="card-text text-left" style="height:350px"><%= review.getRContent() %></p>
  			</div>
  			<div>
-		 				<a href="community.jsp" class="btn btn-primary float-right mt-3" style="margin-right:5px;">글목록</a>
+		 				<a href="review.jsp" class="btn btn-primary float-right mt-3" style="margin-right:5px;">글목록</a>
 		 				<%	String strid = (String) session.getAttribute("id");
-		 					if(board.getId().equals(strid) || admin == 1 ) {
+		 					if(review.getId().equals(strid) || admin == 1 ) {
 		 				%>
-	 					<a href="communityDeleteAction.jsp?BNum=<%= board.getBNum() %>" class="btn btn-danger float-right mt-3" style="margin-right:5px; onclick="return confirm('글을 삭제하시겠습니까?');"">삭제</a>
-	 					<a href="communityUpdate.jsp?BNum=<%=board.getBNum()%>&BTitle=<%=board.getBTitle()%>&BContent=<%=board.getBContent()%>" class="btn btn-warning float-right mt-3" style="margin-right:5px;">수정</a>
+	 					<a href="reviewDeleteAction.jsp?RNum=<%= review.getRNum() %>" class="btn btn-danger float-right mt-3" style="margin-right:5px; onclick="return confirm('글을 삭제하시겠습니까?');"">삭제</a>
+	 					<a href="reviewUpdate.jsp?RNum=<%=review.getRNum()%>&RTitle=<%=review.getRTitle()%>&RContent=<%=review.getRContent()%>" class="btn btn-warning float-right mt-3" style="margin-right:5px;">수정</a>
 						<%
 							}
 		 				%>
@@ -91,7 +91,7 @@ function checkForm() {
       alert("로그인 해주세요.");
       return false;
    }
-   location.href = "./communitywrite.jsp?id=${id}"
+   location.href = "./reviewWrite.jsp?id=${id}"
 }
 
 </script>
