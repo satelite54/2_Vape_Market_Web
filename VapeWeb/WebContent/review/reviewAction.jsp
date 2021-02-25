@@ -28,7 +28,7 @@
 	dao DAO = new dao();
 	DAO.write(RTitle, RContent, id);
 	int RNum = DAO.getRNum() - 1;
-	response.sendRedirect("reviewView.jsp?RNum=" + RNum);
+	response.sendRedirect("review/reviewView.jsp?RNum=" + RNum);
 	%>
 
 

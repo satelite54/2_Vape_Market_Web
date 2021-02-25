@@ -35,7 +35,7 @@
 			 PrintWriter script = response.getWriter();
 			 script.println("<script>");
 			 script.println("alert('유효하지 않은 글 입니다.')");
-			 script.println("<location.href = 'review.jsp'");
+			 script.println("<location.href = 'review/review.jsp'");
 			 script.println("</script>");
 		 }
 		Users user = new Users();
@@ -62,12 +62,12 @@
 				<p class="card-text text-left" style="height:350px"><%= review.getRContent() %></p>
  			</div>
  			<div>
-		 				<a href="review.jsp" class="btn btn-primary float-right mt-3" style="margin-right:5px;">글목록</a>
+		 				<a href="review/review.jsp" class="btn btn-primary float-right mt-3" style="margin-right:5px;">글목록</a>
 		 				<%	String strid = (String) session.getAttribute("id");
 		 					if(review.getId().equals(strid) || admin == 1 ) {
 		 				%>
-	 					<a href="reviewDeleteAction.jsp?RNum=<%= review.getRNum() %>" class="btn btn-danger float-right mt-3" style="margin-right:5px; onclick="return confirm('글을 삭제하시겠습니까?');"">삭제</a>
-	 					<a href="reviewUpdate.jsp?RNum=<%=review.getRNum()%>&RTitle=<%=review.getRTitle()%>&RContent=<%=review.getRContent()%>" class="btn btn-warning float-right mt-3" style="margin-right:5px;">수정</a>
+	 					<a href="review/reviewDeleteAction.jsp?RNum=<%= review.getRNum() %>" class="btn btn-danger float-right mt-3" style="margin-right:5px; onclick="return confirm('글을 삭제하시겠습니까?');"">삭제</a>
+	 					<a href="review/reviewUpdate.jsp?RNum=<%=review.getRNum()%>&RTitle=<%=review.getRTitle()%>&RContent=<%=review.getRContent()%>" class="btn btn-warning float-right mt-3" style="margin-right:5px;">수정</a>
 						<%
 							}
 		 				%>
@@ -91,7 +91,7 @@ function checkForm() {
       alert("로그인 해주세요.");
       return false;
    }
-   location.href = "./reviewWrite.jsp?id=${id}"
+   location.href = "review/reviewWrite.jsp?id=${id}"
 }
 
 </script>

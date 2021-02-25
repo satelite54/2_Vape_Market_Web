@@ -9,15 +9,9 @@
 <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
 </head>
 <body>
-
-	<%
-	request.setCharacterEncoding("UTF-8");
-	%>
 	<%! 
-	dao DAO = new dao(); 
 	int RNum = 0;
 	%>
-	
 	<%
 		RNum = DAO.getRNum();
 	%>
@@ -25,7 +19,7 @@
 	<div class="container mt-3">
 	  <div class="card">
 	  	<div class="card-header" style="background-color: black; color: white;">
-	  		글쓰기 양식
+	  		후기를 작성해주세요!
 	  	</div>
 	  	<div class="card-body" style="height:500px;">
 	  		<form action="reviewAction.jsp" method="post">
