@@ -22,13 +22,13 @@
 	request.setCharacterEncoding("UTF-8");
 	%>	
 	<%!
-	int BNum = 0;
+	int RNum = 0;
 	dao DAO = new dao();
 	%>
 	<%
-	BNum = Integer.parseInt(request.getParameter("BNum"));
-	System.out.println("BNum = " + BNum);
-	DAO.deleteBoard(BNum);
+	RNum = Integer.parseInt(request.getParameter("RNum"));
+	System.out.println("RNum = " + RNum);
+	DAO.deleteReview(RNum);
 	response.sendRedirect("community.jsp");
 	%>
 
