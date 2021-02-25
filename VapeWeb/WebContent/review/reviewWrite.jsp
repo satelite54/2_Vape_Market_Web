@@ -6,13 +6,11 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <title>JASET VAPE</title>
-<script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
+<!-- <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script> -->
 </head>
 <body>
 	<%
 		int RNum = 0;
-/* 	    if(request.getParameter("RNum")!=null)
-	    	RNum = Integer.parseInt(request.getParameter("RNum")); */
 	    dao DAO1 = new dao();
 	%>
 	<div class="container mt-3">
@@ -20,6 +18,7 @@
 	  	<div class="card-header" style="background-color: black; color: white;">
 	  		후기를 작성해주세요!
 	  	</div>
+	  	
 	  	<div class="card-body" style="height:500px;">
 	  		<form action="reviewAction.jsp" method="post">
 	  			<input type="text" class="form-control mb-3" name="RTitle" placeholder="글제목" maxlength="50" required>
@@ -34,13 +33,13 @@
 	  </div>
 	</div>
 
-	  <script>
+<!-- 	  <script>
         ClassicEditor
             .create( document.querySelector( '#editor' ) )
             .catch( error => {
                 console.error( error );
             } );
-    </script>
+    </script> -->
 	<script src="css/bootstrap.min.css"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
 </body>

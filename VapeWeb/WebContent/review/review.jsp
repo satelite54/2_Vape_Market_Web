@@ -109,9 +109,6 @@
 <br><br><br>
 
 <div id="reviewDiv" align="center" style="display: none;">
-<%-- <jsp:include page="reviewWrite.jsp">
-	<jsp:param value="<%=DAO.getRNum()%>" name="RNum"/>
-</jsp:include> --%>
 <%@ include file="reviewWrite.jsp" %>
 </div>
 		
