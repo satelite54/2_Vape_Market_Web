@@ -22,8 +22,8 @@ public class naver2 {
 			List<String> title = doc.getElementsByClass("news_tit").eachText();
 			List<String> href = doc.getElementsByClass("news_tit").eachAttr("href");
 			List<String> contents = doc.getElementsByClass("api_txt_lines dsc_txt_wrap").eachText();
-//			List<String> imgsrc = doc.getElementsByClass("thumb api_get").tagName("img").eachAttr("src");
-			List<String> imgsrc = doc.getElementsByClass("news_tit").tagName("a").tagName("img").eachAttr("src");
+			List<String> imgsrc = doc.getElementsByClass("thumb api_get").tagName("img").eachAttr("src");
+//			List<String> imgsrc = doc.getElementsByClass("news_tit").tagName("a").tagName("img").eachAttr("src");
 			System.out.println(title);
 			System.out.println(href);
 			System.out.println(contents);

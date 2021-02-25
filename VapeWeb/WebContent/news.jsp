@@ -14,22 +14,34 @@ Naver.newsNaver();
 %>
 
 <body>
-
-	<div class="row row-cols-1 row-cols-md-3 g-4">
-		<div class="col">
-			<div class="card h-50">
-				<c:forEach var="news" items="${newsList}" varStatus="vs">
-					<a href="${news.href}"><img src="${news.imgsrc}" class="card-img-top"
-						alt="..."></a>
-					<div class="card-body">
-						<h5 class="card-title">${news.title}</h5>
-						<p class="card-text">${news.content}</p>
+	<c:forEach var="news" items="${newsList}" varStatus="vs">
+			<div class="card" style="
+			  	width: 280px;
+			  	height: 300px;
+				display: flex;
+				position: relative;
+				float: left;
+				margin-left: 20px;
+				margin-bottom: 50px;
+			">
+				<img src="..." class="card-img-top" alt="...">
+				<div class="card-body">
+					<div>
+					<p class="card-title" style="width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; text-align: center; margin-left: 35px; margin-bottom: 5px">
+						<a href="${news.href}">${news.title}</a>
+					</p>
 					</div>
-				</c:forEach>
+					<div style="
+					position: relative;
+					">
+					<p class="card-text" style="width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; text-align: center; margin-left: 35px; margin-bottom: 5px">
+						<a href="${news.href}">${news.content}</a>
+					</p>
+					</div>
+					<a href="${news.href}" class="btn btn-primary">본문보기</a>
+				</div>
 			</div>
-		</div>
-	</div>
-
+	</c:forEach>
 
 
 	<!--  
