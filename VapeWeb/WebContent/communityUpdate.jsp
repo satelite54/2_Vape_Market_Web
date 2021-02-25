@@ -1,6 +1,6 @@
 
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-<%@ page import="DAO.dao"%>
+<%@ page import="DAO.Dao"%>
 <!DOCTYPE html>
 <html>
 <head>

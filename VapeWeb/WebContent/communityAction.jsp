@@ -8,7 +8,7 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.Date"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-<%@ page import="DAO.dao"%>
+<%@ page import="DAO.Dao"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,15 +21,15 @@
 	request.setCharacterEncoding("UTF-8");
 	%>	
 	<%
-	request.setCharacterEncoding("UTF-8");
-	String id =(String)session.getAttribute("id");
-	String BTitle = request.getParameter("BTitle");
-	String BContent = request.getParameter("BContent");
-	dao DAO = new dao();
-	DAO.write(BTitle, BContent, id);
-	int BNum = DAO.getBNum() - 1;
-	response.sendRedirect("communityenter.jsp?BNum=" + BNum);
-	%>
+		request.setCharacterEncoding("UTF-8");
+			String id =(String)session.getAttribute("id");
+			String BTitle = request.getParameter("BTitle");
+			String BContent = request.getParameter("BContent");
+			Dao DAO = new Dao();
+			DAO.write(BTitle, BContent, id);
+			int BNum = DAO.getBNum() - 1;
+			response.sendRedirect("communityenter.jsp?BNum=" + BNum);
+		%>
 
 
 

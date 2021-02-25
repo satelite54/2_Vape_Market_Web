@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import DAO.dao;
+import DAO.Dao;
 import DTO.Products;
 
 /**
@@ -43,7 +43,7 @@ public class ProductManegerAction extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
 		
-		dao DAO = new dao();
+		Dao DAO = new Dao();
 		
 		Products products = new Products();
 		

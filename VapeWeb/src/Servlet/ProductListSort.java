@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import DAO.dao;
+import DAO.Dao;
 import DTO.Products;
 
 /**
@@ -66,7 +66,7 @@ public class ProductListSort extends HttpServlet {
 	
 	public List<Products> makeProductList(String Sortmethod, String producttype, String Search) {
 		List<Products> products = new ArrayList<Products>();
-		dao DAO = new dao();
+		Dao DAO = new Dao();
 		
 		String OrderBy1 = " order by price asc";
 		String OrderBy2 = " order by price desc";

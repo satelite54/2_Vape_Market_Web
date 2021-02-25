@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page import="java.io.PrintWriter"%>
-<%@page import="DAO.dao"%>
+<%@page import="DAO.Dao"%>
 <%@page import="com.mysql.fabric.Response"%>
 <%@page import="java.awt.dnd.DropTargetListener"%>
 <%@page import="java.util.ArrayList"%>
@@ -96,7 +96,7 @@ div {text-align: center;}
                 	<a data-toggle="modal" href="#myModal" class="nav-link">관리자 권한 부여</a>
             	</li>
                	<li class="nav-item">
-                	<a class="nav-link" href="ProductManeger.jsp">상품 등록</a>
+                	<a class="nav-link" href="UList">관리</a>
             	</li>
             	<%}%>
         	</ul>

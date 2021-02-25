@@ -1,7 +1,7 @@
 <%@page import="DTO.Users"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="DTO.Board"%>
-<%@page import="DAO.dao"%>
+<%@page import="DAO.Dao"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <!DOCTYPE html>
 <html>
@@ -16,12 +16,10 @@
 	<%
 	request.setCharacterEncoding("UTF-8");
 	%>	
-	<%!
-		Board board = new Board();	
-		dao DAO = new dao();
+	<%!Board board = new Board();	
+		Dao DAO = new Dao();
 		
-		int BNum = 0;
-	%>
+		int BNum = 0;%>
 		<%
 			if(request.getParameter("displayEdit") == null) {
 				

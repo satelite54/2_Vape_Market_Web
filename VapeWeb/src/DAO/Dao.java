@@ -19,13 +19,13 @@ import DTO.Orders;
 import DTO.Products;
 import DTO.Users;
 
-public class dao {
+public class Dao {
 
 	private Connection conn;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 
-	public dao() {
+	public Dao() {
 		try {
 			String url = "jdbc:mysql://localhost:3306/vape?useSSL=false&useUnicode=true&characterEncoding=utf8";
 			String user = "root";
@@ -582,5 +582,29 @@ public class dao {
 		return -1;
 	}
 	
-	
+	// 모든 유저 List 구해옴
+	public List<Users> getAllUserList(){
+		String sql = "Select * FROM users";
+		List<Users> AllUsersList = new ArrayList<Users>();
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()){
+				Users users = new Users();
+				users.setId(rs.getString(1));
+				users.setPw(rs.getString(2));
+				users.setZip(rs.getString(3));
+				users.setStreet(rs.getString(4));
+				users.setBuilding(rs.getString(5));
+				users.setMobile(rs.getString(6));
+				users.setAuthority(rs.getInt(7));
+				users.setBirthday(rs.getString(8));
+				users.setAdmin(rs.getInt(9));
+				AllUsersList.add(users);
+			}return AllUsersList;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}return null;
+	}   
 }

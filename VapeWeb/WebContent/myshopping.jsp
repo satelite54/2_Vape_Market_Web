@@ -1,5 +1,5 @@
 <%@page import="DTO.Orders"%>
-<%@page import="DAO.dao"%>
+<%@page import="DAO.Dao"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.net.URLDecoder"%>
@@ -11,7 +11,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
 <%
-	request.setCharacterEncoding("UTF-8");
+request.setCharacterEncoding("UTF-8");
 	String cartID = session.getId();
 	 String idx = (String)session.getAttribute("id");
 
@@ -29,7 +29,7 @@
 	 
 	 for(int i = listSize - 1; i >= 0; i--) {
 		 if(list.get(i) == null)
-			 list.remove(i);
+	 list.remove(i);
 	 }
 	 
 	 session.setAttribute("list", list);
@@ -44,14 +44,14 @@
 	}
 	if(temp.equals("0")) {
 		for(int i = list.size() - 1; i >= 0; i--) {
-			list.remove(i);
+	list.remove(i);
 		}
 		session.setAttribute("list", list);
 	}
 	int Deletenumber = 0;
 	
-	dao DAO = new dao();
-	%>
+	Dao DAO = new Dao();
+%>
 
 <html>
 
