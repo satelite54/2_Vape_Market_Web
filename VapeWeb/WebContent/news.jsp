@@ -16,25 +16,26 @@ Naver.newsNaver();
 <body>
 	<c:forEach var="news" items="${newsList}" varStatus="vs">
 			<div class="card" style="
-			  	width: 280px;
+			  	width: 400px;
 			  	height: 300px;
-				display: flex;
-				position: relative;
-				float: left;
-				margin-left: 20px;
-				margin-bottom: 50px;
+			  	text-align:center;
+			  	position:static;
+				display:inline-flex;
+				align-items:center;
+				justify-content: center
+				
 			">
 				<img src="..." class="card-img-top" alt="...">
 				<div class="card-body">
 					<div>
-					<p class="card-title" style="width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; text-align: center; margin-left: 35px; margin-bottom: 5px">
+					<p class="card-title" style="width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; text-align: center; margin-left: 35px; margin-bottom: 5px">
 						<a href="${news.href}">${news.title}</a>
 					</p>
 					</div>
 					<div style="
 					position: relative;
 					">
-					<p class="card-text" style="width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; text-align: center; margin-left: 35px; margin-bottom: 5px">
+					<p class="card-text" style="width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; text-align: center; margin-left: 35px; margin-bottom: 5px">
 						<a href="${news.href}">${news.content}</a>
 					</p>
 					</div>
