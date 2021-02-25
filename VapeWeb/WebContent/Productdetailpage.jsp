@@ -104,7 +104,7 @@ request.setCharacterEncoding("UTF-8");
 			
 			<div id="section3" class="container-fluid center" style="padding-top:70px;padding-bottom:70px">
 				<h1 style="color#223a6b;">Q&A</h1>
-				<%@ include file="question/list2.jsp"%>
+				<%@ include file="question/list.jsp"%>
 			</div>
 		</body>
  </div>   				 

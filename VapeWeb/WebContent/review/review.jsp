@@ -7,7 +7,7 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@ page import="java.io.PrintWriter"%>
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<%@ page pageEncoding="utf-8" %>
 <%@ page import="DAO.dao"%>
 <%@ page import="DTO.Review"%>
 <!DOCTYPE html>
@@ -17,9 +17,9 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <title>JASET VAPE</title>
 
-<%!
-Review review = new Review();
-dao DAO = new dao();
+<%
+	Review review = new Review();
+	dao DAO = new dao();
 %>
 
 </head>
@@ -29,8 +29,14 @@ dao DAO = new dao();
 <body>
 
 	
-	<script type="text/javascript">
-
+<script type="text/javascript">
+	function reviewDisplay() {
+		var e = document.getElementById("reviewDiv");
+		if(e.style.display=='none')
+			e.style.display='block';
+		else
+			e.style.display='none';
+	}
 </script>
 
 <div class="container">
@@ -99,10 +105,16 @@ dao DAO = new dao();
 				</a></li>
 			</ul>
 		</nav>
-		<a href="#" onclick="checkForm1(); return false;" class="btn btn-dark float-right">글쓰기</a>			
-<div>
-<%@ include file="reviewWrite.jsp"%>
-</div>		
+		<a href="javascript:reviewDisplay()" class="btn btn-dark float-right">글쓰기</a>			
+<br><br><br>
+
+<div id="reviewDiv" align="center" style="display: none;">
+<%-- <jsp:include page="reviewWrite.jsp">
+	<jsp:param value="<%=DAO.getRNum()%>" name="RNum"/>
+</jsp:include> --%>
+<%@ include file="reviewWrite.jsp" %>
+</div>
+		
 </div>
 
 	<script type="text/javascript">

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<%@ page pageEncoding="utf-8" %>
 <%@ page import="DAO.dao"%>
 <!DOCTYPE html>
 <html>
@@ -9,13 +9,12 @@
 <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
 </head>
 <body>
-	<%! 
-	int RNum = 0;
-	%>
 	<%
-		RNum = DAO.getRNum();
+		int RNum = 0;
+/* 	    if(request.getParameter("RNum")!=null)
+	    	RNum = Integer.parseInt(request.getParameter("RNum")); */
+	    dao DAO1 = new dao();
 	%>
-
 	<div class="container mt-3">
 	  <div class="card">
 	  	<div class="card-header" style="background-color: black; color: white;">
@@ -24,8 +23,9 @@
 	  	<div class="card-body" style="height:500px;">
 	  		<form action="reviewAction.jsp" method="post">
 	  			<input type="text" class="form-control mb-3" name="RTitle" placeholder="글제목" maxlength="50" required>
-	  			<input type="hidden" name="RNum" value="<%=RNum%>">
-	  			<textarea class="form-control mb-3" name="RContent" id="editor" style="height: 350px" placeholder="글내용" maxlength="2048" required></textarea>
+	  			<input type="hidden" name="RNum" value="<%=DAO1.getRNum()%>">
+	  			<textarea class="form-control mb-3" name="RContent" id="editor" style="height: 350px important!" placeholder="글내용" maxlength="2048" required></textarea>
+	  			<br>
 	  			<div class="row">
 					<input type="submit" value="등록" class="btn btn-dark ml-auto mr-3">
 				</div>
