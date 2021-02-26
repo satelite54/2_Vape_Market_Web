@@ -28,7 +28,7 @@
 		</form>
 	</div>
 	
-	<form action="UList" method="post">	
+	<form action="DUser" method="post">	
 		<div>
 			<table class="table table-sm boder-dark">
 			  <thead>
@@ -49,7 +49,7 @@
 			      <td>김태헌</td>
 			      <td>${User.mobile}</td>
 			      <td>${User.zip} ${User.street} ${User.building}</td>
-			      <td><input type="checkbox" name="UserCheck"></td>
+			      <td><input type="checkbox" name="UserCheck" value="${User.id}"></td>
 			    </tr>
 			   </c:forEach>
 			  </tbody>

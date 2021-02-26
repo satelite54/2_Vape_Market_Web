@@ -529,6 +529,19 @@ public class Dao {
 		return -1;
 	}
 	
+	public void deleteUser(String[] checkBoxId) {
+		for(int i = 0; i < checkBoxId.length; i++) {
+			String sql = "Delete From USERS where id = ?";
+			try {
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, checkBoxId[i]);
+				pstmt.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}System.out.println("회원수정 Page 삭제메소드 에러");
+		}
+	}
+	
 	public int insertProduct(Products products) {
 		String SQL = "insert into products VALUES (?, ?, ?, ?, ?, ?, now() , ? , ?)";
 		try {

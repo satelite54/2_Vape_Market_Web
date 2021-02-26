@@ -21,10 +21,7 @@
 <body id="main">
 	<%@ include file="menu.jsp"%>
 	<%@ include file="submenu.jsp"%>
-	<script type="text/javascript">
-			
-	</script>
-	
+
 	<hr class="layout">
 	<div id="wrap">
 		<div id="container">
@@ -49,15 +46,14 @@ $jointbuy_page = /product/jointbuy.html
 						<li class="displaynone "><a href="/product/list.html"></a></li>
 					</ol>
 				</div>
-
-
-
+<%-- 				<%System.out.println("pageContextImgname = " + pageContext.getAttributesScope("Imgname"));%>
+				<%System.out.println("pageContextImgname = " + pageContext.getAttributesScope("Imgname"));%> --%>
 				<!-- 상단 제품 정보  -->
 				<div class="xans-element- xans-product xans-product-detail ">
 					<!-- 이미지 영역 -->
 					<div class="xans-element- xans-product xans-product-image imgArea">
 						<div class="keyImg ">
-							<a href="#none" alt="P0000JUA"><img src="img/${pageScope.Imgname}"
+							<a href="#none" alt="P0000JUA"><img src="img/${param.Imgname}"
 								alt="" class="BigImage "><span id="zoomMouseGiude"
 								style="display: block; position: relative; width: 170px; margin: 0px auto;"></span></a>
 						</div>
@@ -66,7 +62,7 @@ $jointbuy_page = /product/jointbuy.html
 					<!-- 상세정보 내역 -->
 					<div class="infoArea">
 						<h3>
-							${Pname}
+							${param.Pname}
 							<span> <img
 								src="//img.echosting.cafe24.com/design/common/icon_sett04.gif"
 								alt="적립금">
@@ -74,6 +70,7 @@ $jointbuy_page = /product/jointbuy.html
 						</h3>
 
 						<p class="displaynone">() 해외배송 가능</p>
+
 
 						<div class="xans-element- xans-product xans-product-detaildesign">
 							<!--
@@ -85,11 +82,11 @@ $jointbuy_page = /product/jointbuy.html
 								<tbody>
 									<tr class=" xans-record-">
 										<th><span style="font-size: 16px; color: #555555;">상품명</span></th>
-										<td><span style="font-size: 16px; color: #555555;">${pageScope.Pname}</span></td>
+										<td><span style="font-size: 16px; color: #555555;">${param.Pname}</span></td>
 									</tr>
 									<tr class=" xans-record-">
 										<th><span style="font-size: 12px; color: #555555;">제조사</span></th>
-										<td><span style="font-size: 12px; color: #555555;">${pageScope.Manufacturer}</span></td>
+										<td><span style="font-size: 12px; color: #555555;">${param.Manufacturer}</span></td>
 									</tr>
 									<tr class=" xans-record-">
 										<th><span style="font-size: 12px; color: #555555;">원산지</span></th>
@@ -101,13 +98,13 @@ $jointbuy_page = /product/jointbuy.html
 											style="font-size: 12px; color: #008BCC; font-weight: bold;">판매가</span></th>
 										<td><span
 											style="font-size: 12px; color: #008BCC; font-weight: bold;"><strong
-												id="span_product_price_text">${pageScope.Price}</strong>
+												id="span_product_price_text">${param.Price}</strong>
 												<input id="product_price" name="product_price" value=""
 												type="hidden"></span></td>
 									</tr>
 									<tr class=" xans-record-">
 										<th><span style="font-size: 12px; color: #555555;">상품코드</span></th>
-										<td><span style="font-size: 12px; color: #555555;">${pageScope.Code}</span></td>
+										<td><span style="font-size: 12px; color: #555555;">${param.Code}</span></td>
 									</tr>
 									<tr class=" xans-record-">
 										<th><span style="font-size: 12px; color: #555555;">결제수단</span></th>
@@ -202,7 +199,7 @@ $jointbuy_page = /product/jointbuy.html
 													onClick="javascript:this.form.countresult.value--; javascript:transforValue();">
 											</form> 
 											<strong>총 상품금액</strong>(수량) : <span class="total">
-											<strong><em id="count"></em><em>원</em></strong></span>
+											<strong><em id="count">${param.Price}</em><em>원</em></strong></span>
 										</td>
 									</tr>
 								</tfoot>
@@ -297,8 +294,8 @@ $jointbuy_page = /product/jointbuy.html
 								<br>
 							</div>
 							<p style="text-align: center;">
-								<img style="width: 100%;" src="img/${pageScope.DetailImgName}"
-									alt="${pageScope.DetailImgName}">
+								<img style="width: 100%;" src="img/${param.DetailImgName}"
+									alt="${param.DetailImgName}">
 							</p>
 						</div>
 					</div>
