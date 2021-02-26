@@ -95,10 +95,6 @@ function checkForm() {
 }
 
 </script>
-
-
-
-
 	<script src="css/bootstrap.min.css"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
 </body>

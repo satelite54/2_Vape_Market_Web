@@ -28,7 +28,6 @@
 	String RTitle = request.getParameter("RTitle");
 	String RContent= request.getParameter("RContent");
 	int RNum = Integer.parseInt(request.getParameter("RNum"));
-	
 	DAO.updateReview(RTitle, RContent, RNum);
 	response.sendRedirect("reviewView.jsp");
 	%>
