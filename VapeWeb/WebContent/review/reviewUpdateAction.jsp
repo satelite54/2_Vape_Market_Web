@@ -30,7 +30,7 @@
 	int RNum = Integer.parseInt(request.getParameter("RNum"));
 	
 	DAO.updateReview(RTitle, RContent, RNum);
-	response.sendRedirect("review/reviewView.jsp");
+	response.sendRedirect("reviewView.jsp");
 	%>
 
 
