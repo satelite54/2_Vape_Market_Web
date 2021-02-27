@@ -20,9 +20,15 @@
 		<form method="post" action="joinAction.jsp">
 			<h3 style="text-align: center;">회원가입</h3>
 			<div class="form-group row">
+				<label class="col-sm-2">이름</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" name="name" maxlength="100">
+				</div>
+			</div>
+			<div class="form-group row">
 				<label class="col-sm-2">아이디</label>
 				<div class="col-sm-6">
-					<input type="text" class="form-control" name="id" maxlength="20">
+					<input type="text" class="form-control" name="id" maxlength="100">
 				</div>
 			</div>
 

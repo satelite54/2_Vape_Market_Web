@@ -150,6 +150,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `authority` int(11) NOT NULL,
   `birthday` varchar(1000) NOT NULL,
   `admin` int(11) NOT NULL,
+  `name` varchar(1000) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

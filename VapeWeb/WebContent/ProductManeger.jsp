@@ -46,7 +46,7 @@
 			    <tr>
 			      <th scope="row">${vs.count}</th>
 			      <td>${User.id}</td>
-			      <td>김태헌</td>
+			      <td>${User.name}</td>
 			      <td>${User.mobile}</td>
 			      <td>${User.zip} ${User.street} ${User.building}</td>
 			      <td><input type="checkbox" name="UserCheck" value="${User.id}"></td>

@@ -607,7 +607,7 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 	}
 
 	public int join(Users user) {
-		String SQL = "INSERT INTO USERS VALUES (?, ?, ?, ?, ?, ?, ? , ? , ?)";
+		String SQL = "INSERT INTO USERS VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, user.getId());
@@ -619,6 +619,7 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 			pstmt.setInt(7, user.getAuthority());
 			pstmt.setString(8, user.getBirthday());
 			pstmt.setInt(9, user.getAdmin());
+			pstmt.setString(10, user.getName());
 			return pstmt.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -724,7 +725,7 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 				pstmt.executeUpdate();
 			} catch (Exception e) {
 				e.printStackTrace();
-			}System.out.println("회원수정 Page 삭제메소드 에러");
+			};
 		}
 	}
 	
@@ -800,6 +801,7 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 				users.setAuthority(rs.getInt(7));
 				users.setBirthday(rs.getString(8));
 				users.setAdmin(rs.getInt(9));
+				users.setName(rs.getString(10));
 				AllUsersList.add(users);
 			}return AllUsersList;
 		} catch (Exception e) {
