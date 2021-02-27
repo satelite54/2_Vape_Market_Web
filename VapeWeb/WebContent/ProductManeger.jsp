@@ -28,7 +28,7 @@
 		</form>
 	</div>
 	
-	<form action="DUser" method="post">	
+	<form action="DUser" method="get">	
 		<div>
 			<table class="table table-sm boder-dark">
 			  <thead>

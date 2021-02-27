@@ -7,9 +7,9 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@ page import="java.io.PrintWriter"%>
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<%@ page pageEncoding="utf-8" %>
 <%@ page import="DAO.Dao"%>
-<%@ page import="DTO.Board"%>
+<%@ page import="DTO.Review"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,23 +17,29 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <title>JASET VAPE</title>
 
+<%
+	Review review = new Review();
+	Dao dao = new Dao();
+%>
 
 </head>
 	<%
 	request.setCharacterEncoding("UTF-8");
-	Board board = new Board();
-	Dao DAO = new Dao();
 	%>	
 <body>
-<%@ include file="menu.jsp" %>
-<%@ include file="submenu.jsp" %>
 
 	
-	<script type="text/javascript">
-
+<script type="text/javascript">
+	function reviewDisplay() {
+		var e = document.getElementById("reviewDiv");
+		if(e.style.display=='none')
+			e.style.display='block';
+		else
+			e.style.display='none';
+	}
 </script>
 
-	<div class="container">
+<div class="container">
 		<table class="table border-dark rounded">
 			<thead class="thead-dark">
 				<tr>
@@ -47,7 +53,7 @@
 			<tbody class="border">
 				<%
 				
-							ArrayList<Board> list = DAO.getList();
+							ArrayList<Review> list = dao.getReviewList();
 							String cnl = request.getParameter("cnl");
 							if(cnl == null) {
 								cnl = "1";
@@ -61,10 +67,10 @@
 						%>
 						
 				<tr>
-					<td><%=list.get(i).getBNum()%></td>
-					<td><a href="communityenter.jsp?BNum=<%=list.get(i).getBNum() %>"><%= list.get(i).getBTitle()%></a></td>
+					<td><%=list.get(i).getRNum()%></td>
+					<td><a href="review/reviewView.jsp?RNum=<%=list.get(i).getRNum() %>"><%= list.get(i).getRTitle()%></a></td>
 					<td><%=list.get(i).getId()%></td>
-					<td><%=list.get(i).getBDate().substring(0,16)%></td>
+					<td><%=list.get(i).getRDate().substring(0,16)%></td>
 					<td><%= list.get(i).getViews()%></td>
 				</tr>
 				<%
@@ -80,7 +86,7 @@
 						PreviousPageNumber = 1;
 					}
 				%>
-				<li class="page-item"><a class="page-link" href="community.jsp?cnl=<%=PreviousPageNumber%>"
+				<li class="page-item"><a class="page-link" href="review/review.jsp?cnl=<%=PreviousPageNumber%>"
 					aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
 				</a></li>
 				<%
@@ -90,27 +96,31 @@
 					for(int i = 1; i <= (list.size() - 1) / 10 + 1; i++) {
 						
 				%>
-				<li class="page-item"><a class="page-link" href="community.jsp?cnl=<%=i%>"><%=i%></a></li>				
+				<li class="page-item"><a class="page-link" href="review/review.jsp?cnl=<%=i%>"><%=i%></a></li>				
 				<%
 					}
 				%>
-				<li class="page-item"><a class="page-link" href="community.jsp?cnl=<%=NowPageNumber%>"
+				<li class="page-item"><a class="page-link" href="review/review.jsp?cnl=<%=NowPageNumber%>"
 					aria-label="Next"> <span aria-hidden="true">&raquo;</span>
 				</a></li>
 			</ul>
 		</nav>
-		<a href="#" onclick="checkForm1(); return false;" class="btn btn-success float-right">글쓰기</a>			
+		<a href="javascript:reviewDisplay()" class="btn btn-dark float-right">글쓰기</a>			
+<br><br><br>
+
+<div id="reviewDiv" align="center" style="display: none;">
+<%@ include file="reviewWrite.jsp" %>
+</div>
 		
-		
-	</div>
-	<%@ include file="footer.jsp" %>
+</div>
+
 	<script type="text/javascript">
 	   function checkForm1() {
 	      if (${id==null}) {
 	         alert("로그인 해주세요.");
 	         return false;
 	      }
-	      location.href = "./communitywrite.jsp?id=${id}"
+	      location.href = "review/reviewWrite.jsp?id=${id}"
 	   }
 	</script>
 	<script src="css/bootstrap.min.css"></script>

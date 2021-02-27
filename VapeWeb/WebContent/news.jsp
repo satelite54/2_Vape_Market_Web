@@ -7,15 +7,8 @@
 <%@ include file="submenu.jsp"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<%
-naver Naver = new naver();
-News news = new News();
-Naver.newsNaver(); // 뉴스 불러오는데 출력하는 부분 수정 필요함
-//리턴 잘함 서블릿으로 따로 빼서 처리해도 될듯
-%>
-
 <body>
-	<c:forEach var="news" items="${newsList}" varStatus="vs">
+	<c:forEach var="news" items="${NewsList}" varStatus="vs">
 			<div class="card" style="
 			  	width: 400px;
 			  	height: 300px;

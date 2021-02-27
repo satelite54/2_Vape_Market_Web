@@ -20,7 +20,6 @@
 <meta charset="UTF-8">
 </head>
 <body>
-<%!%>
 	<%
 	request.setCharacterEncoding("UTF-8");
 	%>	

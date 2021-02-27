@@ -293,10 +293,12 @@ $jointbuy_page = /product/jointbuy.html
 							<div>
 								<br>
 							</div>
+							<div id="section1" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
 							<p style="text-align: center;">
 								<img style="width: 100%;" src="img/${param.DetailImgName}"
 									alt="${param.DetailImgName}">
 							</p>
+							</div>
 						</div>
 					</div>
 					<!-- //상품상세정보 -->
@@ -319,33 +321,6 @@ $jointbuy_page = /product/jointbuy.html
 					<div id="prdQnA"></div>
 					<!-- //상품Q&A -->
 				</div>
-
-			</div>
-		</div>
-		<hr class="layout">
-		<div id="banner" style="top: 154px;"></div>
-
-		<div id="aside" style="top: 154px;">
-
-
-			<div class="xans-element- xans-layout xans-layout-productrecent"
-				style="">
-				<h2></h2>
-				<p class="btn"></p>
-				<ul>
-					<li class="xans-record-"><a
-						href="/product/detail.html?product_no=6604&amp;cate_no=12&amp;display_group=1">
-
-					</a></li>
-					<li class="xans-record-"><a
-						href="/product/detail.html?product_no=34&amp;cate_no=61&amp;display_group=1">
-
-					</a></li>
-				</ul>
-				<p class="btn"></p>
-			</div>
-
-
 			<p class="banner"></p>
 		</div>
 	</div>
@@ -361,6 +336,41 @@ $jointbuy_page = /product/jointbuy.html
 	      }
 	   }
 	</script>
+<br><br><br><br><br><br>
+<div class="parent">
+	<body data-spy="scroll" data-target=".navbar" data-offset="50">		
+		<div class="me">	
+	        	<p class="child">														
+					<nav id="mynav" class="navbar navbar-expand-sm bg-dark navbar-dark fixed py-2">  
+					  <ul class="navbar-nav">
+					    <li class="nav-item">
+					      <h2><a class="nav-link px-5" href="#section1">상세정보</a></h2>
+					    </li>
+					    <li class="nav-item">
+					      <h2><a class="nav-link px-5" href="#section2">상품후기</a></h2>
+					    </li>
+					    <li class="nav-item">
+					      <h2><a class="nav-link px-5" href="#section3">Q&A</a></h2>
+					    </li>
+					  </ul>
+					</nav>
+				</p>
+			</div>
+		
+<!-- 			<div id="section1" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
+			</div> -->
+			
+			<div id="section2" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
+				<h1 style="color#223a6b;">상품후기</h1>
+				<%@ include file="/review/review.jsp" %>
+			</div>
+			
+			<div id="section3" class="container-fluid center" style="padding-top:70px;padding-bottom:70px">
+				<h1 style="color#223a6b;">Q&A</h1>
+				<%@ include file="question/list.jsp"%>
+			</div>
+		</body>
+ </div>   				 
 	<%@ include file="footer.jsp"%>
 </body>
 </html>
