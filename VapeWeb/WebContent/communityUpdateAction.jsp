@@ -8,7 +8,7 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.Date"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>
-<%@ page import="DAO.dao"%>
+<%@ page import="DAO.Dao"%>
 <%@ include file="menu.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -21,9 +21,7 @@
 	<%
 	request.setCharacterEncoding("UTF-8");
 	%>	
-	<%!
-		dao DAO = new dao();
-	%>
+	<%!Dao DAO = new Dao();%>
 	
 	<%
 	String BTitle = request.getParameter("BTitle");

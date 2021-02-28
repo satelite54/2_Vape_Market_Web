@@ -8,7 +8,7 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@ page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-<%@ page import="DAO.dao"%>
+<%@ page import="DAO.Dao"%>
 <%@ page import="DTO.Board"%>
 <!DOCTYPE html>
 <html>
@@ -17,14 +17,12 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <title>JASET VAPE</title>
 
-<%!
-Board board = new Board();
-dao DAO = new dao();
-%>
 
 </head>
 	<%
 	request.setCharacterEncoding("UTF-8");
+	Board board = new Board();
+	Dao DAO = new Dao();
 	%>	
 <body>
 <%@ include file="menu.jsp" %>

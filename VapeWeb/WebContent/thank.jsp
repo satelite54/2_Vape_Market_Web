@@ -1,6 +1,6 @@
 <%@page import="DTO.Orders"%>
 <%@page import="java.text.SimpleDateFormat"%>
-<%@page import="DAO.dao"%>
+<%@page import="DAO.Dao"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.net.URLDecoder"%>
@@ -22,11 +22,9 @@
 <body>
 
 <%@ include file="menu.jsp" %>
-<%!
-dao DAO = new dao();
+<%!Dao DAO = new Dao();
 String Date = DAO.getDate();
-Orders orders = new Orders();
-%>
+Orders orders = new Orders();%>
 
 <%	
 String cartID = session.getId();

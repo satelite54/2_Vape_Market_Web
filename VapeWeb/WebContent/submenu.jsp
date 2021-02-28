@@ -21,8 +21,7 @@
   <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=liquid%>','<%=1%>', '<%=" "%>', '<%=1%>' , '<%=1%>')">원본액상</a></div>
   <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=coil%>','<%=1%>', '<%=" "%>', '<%=1%>' , '<%=1%>')">코일</a></div>
   <div id="submenu"><a href="community.jsp">커뮤니티</a></div>
-  <div id="submenu"><a href="nN">뉴스</a></div>
-       
+  <div id="submenu"><a href="#" onclick="javascript:NewPageMove()">뉴스</a></div>
 </div>
 <hr>
 <%
@@ -35,6 +34,10 @@
 		<input type="hidden" name="Search">
 		<input type="hidden" name="Page">
 		<input type="hidden" name="NowPageNum">
+	</form>
+	
+	<form name="frmforNews">
+		
 	</form>
 	
 <script type="text/javascript">
@@ -51,6 +54,18 @@
     	  f.Page.value=Page;
     	  f.NowPageNum.value=NowPageNum;
     	  f.action = "ProductListSort";
+    	  f.submit();
+      }
+   }
+</script>
+<script type="text/javascript">
+   function NewPageMove() {
+      if (${id==null}) {
+         alert("로그인 해주세요.");
+         location.href = "login.jsp";
+      } else if (${id != null}) {
+    	  f=document.frmforNews;
+    	  f.action = "NewsCrawl";
     	  f.submit();
       }
    }

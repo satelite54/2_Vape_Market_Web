@@ -1,6 +1,6 @@
 
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-<%@ page import="DAO.dao"%>
+<%@ page import="DAO.Dao"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,10 +14,8 @@
 	<%
 	request.setCharacterEncoding("UTF-8");
 	%>
-	<%! 
-	dao DAO = new dao(); 
-	int BNum = 0;
-	%>
+	<%!Dao DAO = new Dao(); 
+	int BNum = 0;%>
 	
 	<%
 		BNum = DAO.getBNum();

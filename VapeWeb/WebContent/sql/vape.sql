@@ -1,4 +1,4 @@
-create database vape;
+DROP DATABASE IF exists vape;
 -- --------------------------------------------------------
 -- 호스트:                          127.0.0.1
 -- 서버 버전:                        5.7.21-log - MySQL Community Server (GPL)
@@ -12,12 +12,10 @@ create database vape;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-USE vape;
-DROP DATABASE vape;
-CREATE DATAbase vape;
+
 
 -- vape 데이터베이스 구조 내보내기
-DROP DATABASE IF EXISTS `vape`;
+
 CREATE DATABASE IF NOT EXISTS `vape` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `vape`;
 
@@ -138,41 +136,7 @@ INSERT IGNORE INTO `products` (`pname`, `code`, `manufacturer`, `price`, `stock`
 	('피쉬본', 'A006PRK', '더베이퍼', 14400, 130, 'a6.jpg', '2021-02-05 11:46:28', 'hardware', 'a6d.png');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 
--- 테이블 vape.tblpollitem 구조 내보내기
-DROP TABLE IF EXISTS `tblpollitem`;
-CREATE TABLE IF NOT EXISTS `tblpollitem` (
-  `listnum` int(11) NOT NULL,
-  `itemnum` smallint(6) NOT NULL DEFAULT '0',
-  `item` varchar(50) NOT NULL,
-  `count` int(11) DEFAULT NULL,
-  PRIMARY KEY (`listnum`,`itemnum`)
-) ENGINE=InnoDB DEFAULT CHARSET=euckr;
 
--- 테이블 데이터 vape.tblpollitem:~2 rows (대략적) 내보내기
-/*!40000 ALTER TABLE `tblpollitem` DISABLE KEYS */;
-INSERT IGNORE INTO `tblpollitem` (`listnum`, `itemnum`, `item`, `count`) VALUES
-	(1, 0, 'JAVA', 0),
-	(1, 1, '안드로이드', 0);
-/*!40000 ALTER TABLE `tblpollitem` ENABLE KEYS */;
-
--- 테이블 vape.tblpolllist 구조 내보내기
-DROP TABLE IF EXISTS `tblpolllist`;
-CREATE TABLE IF NOT EXISTS `tblpolllist` (
-  `num` int(11) NOT NULL AUTO_INCREMENT,
-  `question` varchar(200) NOT NULL,
-  `sdate` date DEFAULT NULL,
-  `edate` date DEFAULT NULL,
-  `wdate` date DEFAULT NULL,
-  `type` smallint(6) DEFAULT '1',
-  `active` smallint(6) DEFAULT '1',
-  PRIMARY KEY (`num`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=euckr;
-
--- 테이블 데이터 vape.tblpolllist:~0 rows (대략적) 내보내기
-/*!40000 ALTER TABLE `tblpolllist` DISABLE KEYS */;
-INSERT IGNORE INTO `tblpolllist` (`num`, `question`, `sdate`, `edate`, `wdate`, `type`, `active`) VALUES
-	(1, '취업하고 싶은 분야는', '2020-01-01', '2020-01-01', '2021-02-02', 1, 1);
-/*!40000 ALTER TABLE `tblpolllist` ENABLE KEYS */;
 
 -- 테이블 vape.users 구조 내보내기
 DROP TABLE IF EXISTS `users`;
@@ -186,6 +150,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `authority` int(11) NOT NULL,
   `birthday` varchar(1000) NOT NULL,
   `admin` int(11) NOT NULL,
+  `name` varchar(1000) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -204,3 +169,47 @@ INSERT IGNORE INTO `users` (`id`, `pw`, `zip`, `street`, `building`, `mobile`, `
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
+
+CREATE TABLE IF NOT EXISTS review (
+  RNum int(11) NOT NULL,
+  RTitle varchar(1000) NOT NULL,
+  RContent varchar(3000) NOT NULL,
+  RDate datetime NOT NULL,
+  id varchar(1000) NOT NULL,
+  authority int(11) NOT NULL,
+  views int(11) DEFAULT '0',
+  PRIMARY KEY (RNum)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS tblQuestion;
+
+CREATE TABLE `tblQuestion` (
+	`num`               int(11)              NOT NULL  auto_increment  ,
+	`name`              varchar(20)                    ,
+	`subject`           varchar(50)                    ,
+	`content`           text                                ,
+	`pos`                smallint(7) unsigned           ,
+	`ref`               smallint(7)                    ,
+	`depth`             smallint(7) unsigned           ,
+	`regdate`          date                           ,
+	`pass`              varchar(15)                    ,
+	`ip`                  varchar(15)                    ,
+	`count`             smallint(7) unsigned           ,
+	`filename`         varchar(30)                    ,
+	`filesize`           int(11)                        ,
+	PRIMARY KEY ( `num` )
+)COLLATE='utf8_general_ci';
+
+DROP TABLE IF EXISTS tblQcomment;
+
+CREATE TABLE `tblQcomment` (
+	`cnum` INT(11) NOT NULL AUTO_INCREMENT,
+	`num` INT(11) NULL DEFAULT NULL,
+	`name` VARCHAR(20) NULL DEFAULT NULL,
+	`comment` VARCHAR(200) NULL DEFAULT NULL,
+	`regdate` DATE NULL DEFAULT NULL,
+	PRIMARY KEY (`cnum`)
+)COLLATE='utf8_general_ci';
+
+insert tblQuestion(name,content,subject,ref,pos,depth,regdate,pass,count,ip,filename,filesize)
+values('aaa', 'bbb', 'ccc', 0, 0, 0, now(), '1111',0, '127.0.0.1', null, 0)

@@ -15,11 +15,11 @@
 <body>
 	 <%
 	 request.setCharacterEncoding("UTF-8");
-	 dao DAO = new dao();
-	Users user = new Users();
-	user = DAO.getUserList(session);
-	PrintWriter pw = response.getWriter();
-%>
+	 	 Dao DAO = new Dao();
+	 	Users user = new Users();
+	 	user = DAO.getUserList(session);
+	 	PrintWriter pw = response.getWriter();
+	 %>
 	<%@ include file="menu.jsp"%>
 	<%@ include file="submenu.jsp"%>
 <div class="container mt-4" style="max-width: 350px;">

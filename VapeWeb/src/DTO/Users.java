@@ -1,6 +1,7 @@
 package DTO;
 
 public class Users {
+	private String name;
 	private String id;
 	private String pw;
 	private String zip;
@@ -66,6 +67,12 @@ public class Users {
 	}
 	public void setAdmin(int admin) {
 		this.admin = admin;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	

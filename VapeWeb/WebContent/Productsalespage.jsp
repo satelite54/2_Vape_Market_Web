@@ -1,16 +1,18 @@
+<%@page import="java.util.stream.Stream"%>
 <%@page import="java.net.URL"%>
 <%@page import="java.util.Arrays"%>
 <%@page import="etc.*"%>
 <%@page import="DTO.Products"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
-<%@page import="DAO.dao"%>
+<%@page import="DAO.Dao"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.Map"%>
 <%@page import="java.util.Set"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.net.URLEncoder"%>
-<%@page import="DAO.dao"%>
+<%@page import="DAO.Dao"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8" trimDirectiveWhitespaces="true"%>
 <%@ page import="java.sql.*"%>
@@ -51,20 +53,26 @@ header {
 <body>
 	<%@ include file="menu.jsp"%>
 	<%@ include file="submenu.jsp"%>
-
+	
+	<%! public void CollectNull(String strSearch, String strPage
+			, String NowPageNum) {
+			if(strSearch == null)
+				strSearch = "";
+			if(strPage == null)
+				strPage = "1";
+			if(NowPageNum == null)
+				NowPageNum = "1";
+		}
+		%>
 	<%
 		List<Products> products = (List<Products>) session.getAttribute("products");
 		int ntotalProductsCnt = products.size();
 		String strProducttype = request.getParameter("Producttype");
 		String strSortmethod = request.getParameter("Sortmethod");
 		String strSearch = request.getParameter("Search");
-		if(strSearch == null)
-			strSearch = "";
-		String strPage = request.getParameter("Page");
-		if(strPage == null)
-			strPage = "1";
-		
+		String strPage = request.getParameter("Page");		
 		String NowPageNum = request.getParameter("NowPageNum");
+		CollectNull(strSearch, strPage, NowPageNum);
 		int ListSize = products.size();
 		if(NowPageNum.equals("1")) {
 			if(products.size() > 10)
@@ -74,6 +82,7 @@ header {
 			int FirstIdx = 10 * (nNowPageNum - 1);
 			products = products.subList(FirstIdx, ListSize);
 		}
+		
 	%>
 	<div id="wrap">
 	<div id="container">
@@ -141,7 +150,7 @@ header {
 									&DetailImgName=<%=Detailedimagepath%>&Code=<%=Code%>
 									&Manufacturer=<%=Manufacturer%>&Pname=<%=Pname%>
 									&producttype=<%=producttype%>&Price=<%=Price%>" name="anchorBoxName_2379"><img
-										src="img/<%=products.get(i).getImgname()%>" alt=""
+										src="img/<%=Imgname%>" alt=""
 										class="thumb"></a>
 									<p class="name">
 										<a
