@@ -4,4 +4,17 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  
+     <servlet>
+        <description>Controller</description>
+        <display-name>LocationController</display-name>
+        <servlet-name>LocationController</servlet-name>
+        <servlet-class>Servlet.Location.LocationController</servlet-class>
+    </servlet>
+
+     <servlet-mapping>
+        <servlet-name>LocationController</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+    
 </web-app>
