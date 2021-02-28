@@ -4,18 +4,12 @@
 <head>
 <meta charset="utf-8">
 <title>JASET VAPE</title>
-<link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
 	<%-- index.jsp --%>  
 	<script>
-		location.href = "main.jsp"	
+		location.href = "LC.do"
+		<%request.set%>
 	</script>
-	
-	
-	 
-	 
- <script src="css/bootstrap.min.css"></script>
- <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

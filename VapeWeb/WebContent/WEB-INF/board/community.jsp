@@ -8,8 +8,8 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@ page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-<%@ page import="DAO.Dao"%>
 <%@ page import="DTO.Board"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,14 +19,9 @@
 
 
 </head>
-	<%
-	request.setCharacterEncoding("UTF-8");
-	Board board = new Board();
-	Dao DAO = new Dao();
-	%>	
 <body>
-<%@ include file="menu.jsp" %>
-<%@ include file="submenu.jsp" %>
+<%@ include file="../sub/menu.jsp" %>
+<%@ include file="../sub/submenu.jsp" %>
 
 	
 	<script type="text/javascript">
@@ -45,65 +40,30 @@
 				</tr>
 			</thead>
 			<tbody class="border">
-				<%
-				
-							ArrayList<Board> list = DAO.getList();
-							String cnl = request.getParameter("cnl");
-							if(cnl == null) {
-								cnl = "1";
-							}
-							// !(CntIndex > (pageSelectectedIndex * 15 - 15) && CntIndex <= pageSelectectedIndex * 15)
-							int NowPageNumber = Integer.parseInt(cnl);
-							
-							for (int i = 0; i < list.size(); i++) {
-  								if((i <= (NowPageNumber * 10 - 10) - 1 || i > NowPageNumber * 10 - 1))
-									continue;
-						%>
-						
+				<c:forEach items="list"> 
 				<tr>
-					<td><%=list.get(i).getBNum()%></td>
-					<td><a href="communityenter.jsp?BNum=<%=list.get(i).getBNum() %>"><%= list.get(i).getBTitle()%></a></td>
-					<td><%=list.get(i).getId()%></td>
-					<td><%=list.get(i).getBDate().substring(0,16)%></td>
-					<td><%= list.get(i).getViews()%></td>
+					<td>{$list.BNum}</td>
+					<td>{$list.BTitle}</td>
+					<td>{$list.id}</td>
+					<td>{$list.BDate}</td>
+					<td>{$list.views}</td>
 				</tr>
-				<%
-							}
-						%>
+				</c:forEach>
 			</tbody>
 		</table>
 		<nav aria-label="Page navigation example">
 			<ul class="pagination" style="justify-content: center;">
-				<%
-					int PreviousPageNumber = NowPageNumber - 1; 
-					if(PreviousPageNumber < 1) {
-						PreviousPageNumber = 1;
-					}
-				%>
-				<li class="page-item"><a class="page-link" href="community.jsp?cnl=<%=PreviousPageNumber%>"
+				<li class="page-item"><a class="page-link" href="community.jsp?cnl=#"
 					aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
 				</a></li>
-				<%
-					NowPageNumber++;
-					if(NowPageNumber > (list.size() - 1) / 10 + 1)
-						NowPageNumber = (list.size() - 1) / 10 + 1;
-					for(int i = 1; i <= (list.size() - 1) / 10 + 1; i++) {
-						
-				%>
-				<li class="page-item"><a class="page-link" href="community.jsp?cnl=<%=i%>"><%=i%></a></li>				
-				<%
-					}
-				%>
-				<li class="page-item"><a class="page-link" href="community.jsp?cnl=<%=NowPageNumber%>"
-					aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-				</a></li>
+				<li class="page-item"><a class="page-link" href="community.jsp?cnl=#"></a></li>				
 			</ul>
 		</nav>
 		<a href="#" onclick="checkForm1(); return false;" class="btn btn-success float-right">글쓰기</a>			
 		
 		
 	</div>
-	<%@ include file="footer.jsp" %>
+	<%@ include file="../sub/footer.jsp" %>
 	<script type="text/javascript">
 	   function checkForm1() {
 	      if (${id==null}) {

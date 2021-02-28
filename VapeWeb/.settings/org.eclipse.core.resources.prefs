@@ -1,7 +1,7 @@
 eclipse.preferences.version=1
-encoding//WebContent/Productdetailpage.jsp=UTF-8
-encoding//WebContent/community.jsp=UTF-8
-encoding//WebContent/updateAction.jsp=UTF-8
+encoding//WebContent/WEB-INF/board/community.jsp=UTF-8
+encoding//WebContent/WEB-INF/product/Productdetailpage.jsp=UTF-8
+encoding//WebContent/WEB-INF/user/updateAction.jsp=UTF-8
 encoding//src/DAO/Dao.java=UTF-8
 encoding//src/DAO/crawling.java=MS949
 encoding//src/DTO/Users.java=UTF-8
