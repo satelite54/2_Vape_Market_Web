@@ -1,4 +1,4 @@
-package Servlet;
+package Servlet.Action;
 
 import java.io.IOException;
 import java.io.PrintWriter;

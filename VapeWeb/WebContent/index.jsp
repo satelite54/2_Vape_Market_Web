@@ -13,5 +13,6 @@
 	</script>
 	  <%-- 
 	<%response.sendRedirect("LC.do/main.jsp");%> --%>	
+		
 </body>
 </html>
