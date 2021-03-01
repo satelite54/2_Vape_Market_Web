@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -35,12 +34,34 @@ public class LocationController extends HttpServlet {
 		Location location = null;
 
 		String sub =  "/WEB-INF/sub/";
-		String board = "";
-		String product = "";
-		String user = "";
+		String board = "/WebContent/WEB-INF/board";
+		String product = "/WebContent/WEB-INF/product";
+		String user = "/WebContent/WEB-INF/user";
+		String question = "/WebContent/WEB-INF/question";
+		String review = "/WebContent/WEB-INF/review";
 		
 		try {// 화면전환
 			switch (command) {
+				case "main.do": {
+					forward= new LocationForward();
+					forward.setRedirect(false);
+					forward.setNextPath(sub + "main.jsp");
+				}
+				case "community.do": {
+					forward= new LocationForward();
+					forward.setRedirect(false);
+					forward.setNextPath(b + "main.jsp");
+				}
+				case "main.do": {
+					forward= new LocationForward();
+					forward.setRedirect(false);
+					forward.setNextPath(sub + "main.jsp");
+				}
+				case "main.do": {
+					forward= new LocationForward();
+					forward.setRedirect(false);
+					forward.setNextPath(sub + "main.jsp");
+				}
 				case "main.do": {
 					forward= new LocationForward();
 					forward.setRedirect(false);
