@@ -31,7 +31,8 @@ div {text-align: center;}
     float: right;
 }
 </style>
-	<%
+
+<%
 		String id = null;
 		if	(session.getAttribute("id") != null) {
 		id = (String) session.getAttribute("id");
@@ -39,72 +40,71 @@ div {text-align: center;}
 	%>
     <%
     	if(id == null) {
-   	%>		
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">  
-   		<div class="d-flex flex-grow-1"> 
-        	<div class="w-100 text-right">
-            	<button class="navbar-toggler" type="button" data-toggle="collapse" >
-                	<span class="navbar-toggler-icon"></span>
-            	</button>
-        	</div>
-    	</div>  
+   	%>	
+<nav class="navbar navbar-expand-md navbar-dark bg-dark text-right">
+  
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-	    <div class="collapse navbar-collapse flex-grow-1 text-right">
-    	    <ul class="navbar-nav ml-auto flex-nowrap">
-        	    <li class="nav-item active">
-            	    <a class="nav-link" href="login.jsp">로그인</a>
-            	</li>
-            	<li class="nav-item">
-                	<a class="nav-link" href="join.jsp">회원가입</a>
-	            </li>
-    	        <li class="nav-item">
-        	        <a class="nav-link" href="myshopping.jsp" onclick="checkForm(); return false;">나의 쇼핑</a>
-	            </li>
-    	    </ul>
-    	</div>
-	</nav>
-	<%
-    	} else {
-    %>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">  
-   	<div class="d-flex flex-grow-1"> 
-        	<div class="w-100 text-right">
-            	<button class="navbar-toggler" type="button" data-toggle="collapse" >
-                	<span class="navbar-toggler-icon"></span>
-            	</button>
-        	</div>
-    	</div>  
+  <div class="collapse navbar-collapse text-right" id="navbarNav">
+    <ul class="navbar-nav ml-auto w-100 justify-content-end">
+      <li class="nav-item active">
+        <a class="nav-link" href="login.jsp">로그인<span class="sr-only">(current)</span></a>
+      </li>
 
-	    <div class="collapse navbar-collapse flex-grow-1 text-right">
-    	    <ul class="navbar-nav ml-auto flex-nowrap">
-        	    <li class="nav-item active">
-            	  <a class="nav-link" href="logout.jsp"><%="["+id+"]님 "+"환영합니다." %> 로그아웃</a>
-            	</li>
-            	<li class="nav-item">
-                	<a class="nav-link" href="update.jsp">회원수정</a>
-            	</li>
-            	<li class="nav-item">
-                	<a class="nav-link" href="myshopping.jsp">나의 쇼핑</a>
-            	</li>
-            	<%
-            		String admin = (String) session.getAttribute("admin");
-            		if(admin == null)
-            			admin = "0";
-            		if(admin.equals("1")) {
-            	%>
-            	<li class="nav-item">
-                	<a data-toggle="modal" href="#myModal" class="nav-link">관리자 권한 부여</a>
-            	</li>
-               	<li class="nav-item">
-                	<a class="nav-link" href="UList">관리</a>
-            	</li>
-            	<%}%>
-        	</ul>
-    	</div>
-	</nav>
-    <% 	
-    	}
-	%>
+      <li class="nav-item">
+        <a class="nav-link" href="join.jsp">회원가입</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="myshopping.jsp" onclick="checkForm(); return false;">나의 쇼핑</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+<%
+   	} else {
+%>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark text-right">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto w-100 justify-content-end">
+      <li class="nav-item active">
+        <a class="nav-link" href="logout.jsp"><%="["+id+"]님 "+"환영합니다." %> 로그아웃<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="update.jsp">회원수정</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="myshopping.jsp">나의 쇼핑</a>
+      </li>
+
+<%
+	String admin = (String) session.getAttribute("admin");
+	if(admin == null)
+		admin = "0";
+	if(admin.equals("1")) {
+%>
+	<li class="nav-item">
+	  <a data-toggle="modal" class="nav-link" href="#myModal">관리자 권한 부여</a>
+	</li>
+	<li class="nav-item">
+       	<a class="nav-link" href="UList">관리</a>
+   	</li>
+   	<%}%>
+    </ul>
+  </div>
+</nav>
+<%
+	}
+%>
+	
+
+	
   <form action="setadmin.jsp" method ="post">
 	  <div class="modal fade" id="myModal" role="dialog"> <!-- 사용자 지정 부분① : id명 -->
 	    <div class="modal-dialog">

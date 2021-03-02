@@ -17,6 +17,7 @@
 	height: 1px !important;
 }
 </style>
+<link rel="stylesheet" href="css/custom.css">
 </head>
 <body id="main">
 	<%@ include file="menu.jsp"%>
@@ -264,42 +265,7 @@ $jointbuy_page = /product/jointbuy.html
 					<!-- 관련상품 -->
 
 					<!-- //관련상품 -->
-					<div id="prdDetail">
-
-						<div class="cont">
-							<p style="text-align: center;">
-								<span style="font-size: 32px;"></span>
-							</p>
-							<p style="text-align: center;"></p>
-							<p style="text-align: center;"></p>
-							<p style="text-align: center;">
-								<span style="font-size: 16px;"><br></span>
-							</p>
-							<p style="text-align: center;">
-								<font color="#ff0000"><span style="font-size: 16px;"><b></b></span></font>
-							</p>
-							<p style="text-align: center;">
-								<span style="font-size: 12pt;"><br></span>
-							</p>
-							<p style="text-align: center;"></p>
-							<div class="menu-A-exp"
-								style="text-align: center; font-family: &amp; amp; amp; quot; Noto Sans&amp;amp; amp; quot; , &amp; amp; amp; quot; Nanum Gothic&amp;amp; amp; quot; , &amp; amp; amp; quot; Malgun Gothic&amp;amp; amp; quot; , sans-serif; font-size: 14px; color: rgb(119, 119, 119); line-height: 22px; letter-spacing: -0.03em;"></div>
-							<p style="text-align: center;">
-								<b style="font-size: 16px;"></b>
-							</p>
-							<p style="text-align: center;">
-								<span style="font-size: 16px;"><br></span>
-							</p>
-							<div>
-								<br>
-							</div>
-							<div id="section1" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
-							<p style="text-align: center;">
-								<img style="width: 100%;" src="img/${param.DetailImgName}"
-									alt="${param.DetailImgName}">
-							</p>
-							</div>
-						</div>
+					
 					</div>
 					<!-- //상품상세정보 -->
 					<!-- 상품결제정보 -->
@@ -336,7 +302,7 @@ $jointbuy_page = /product/jointbuy.html
 	      }
 	   }
 	</script>
-<br><br><br><br><br><br>
+
 <div class="parent">
 	<body data-spy="scroll" data-target=".navbar" data-offset="50">		
 		<div class="me">	
@@ -345,6 +311,7 @@ $jointbuy_page = /product/jointbuy.html
 					  <ul class="navbar-nav">
 					    <li class="nav-item">
 					      <h2><a class="nav-link px-5" href="#section1">상세정보</a></h2>
+					      
 					    </li>
 					    <li class="nav-item">
 					      <h2><a class="nav-link px-5" href="#section2">상품후기</a></h2>
@@ -359,7 +326,12 @@ $jointbuy_page = /product/jointbuy.html
 		
 <!-- 			<div id="section1" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
 			</div> -->
-			
+			<div id="section1" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
+							<p style="text-align: center;">
+								<img style="width: 100%;" src="img/${param.DetailImgName}"
+									alt="${param.DetailImgName}">
+							</p>
+							</div>
 			<div id="section2" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
 				<h1 style="color#223a6b;">상품후기</h1>
 				<%@ include file="/review/review.jsp" %>
