@@ -8,7 +8,7 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@ page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-<%@ page import="DAO.dao"%>
+<%@ page import="DAO.Dao"%>
 <%@ page import="DTO.Review"%>
 <!DOCTYPE html>
 <html>
@@ -17,10 +17,8 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <title>JASET VAPE</title>
 
-<%!
-Review review = new Review();
-dao DAO = new dao();
-%>
+<%!Review review = new Review();
+Dao DAO = new Dao();%>
 
 </head>
 	<%

@@ -1,5 +1,6 @@
 <%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 
 <head>
@@ -8,13 +9,16 @@
 	<title>JASET VAPE</title>
 	<%
 	request.setCharacterEncoding("UTF-8");
+	String Sub_Menu = "menu.do";
+	String Sub_Submenu = "submenu.do";
+	String Sub_Footer = "footer.do";
 	%>	
 	
 </head>
 
 <body>
-<%@ include file="menu.jsp" %>
-<%@ include file="submenu.jsp" %>
+<%@ include file="menu.do" %>
+<%@ include file="submenu.do" %>
 	
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 		  <ol class="carousel-indicators">
@@ -63,11 +67,12 @@
 
 
 
-<%@ include file="footer.jsp"%>
 		
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="css/bootstrap.min.css"></script>
+
+<%@ include file="footer.do" %>
 
 </body>
 

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import DAO.dao;
+import DAO.Dao;
 
 	
 
@@ -26,7 +26,7 @@ import DAO.dao;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		dao DAO = new dao();
+		Dao DAO = new Dao();
 		request.setAttribute("list", DAO.getList());
 		RequestDispatcher dis = request.getRequestDispatcher("community.jsp");
 		dis.forward(request, response);

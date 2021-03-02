@@ -20,13 +20,13 @@ import DTO.Products;
 import DTO.Users;
 import DTO.Review;
 
-public class dao {
+public class Dao {
 
 	private Connection conn;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 
-	public dao() {
+	public Dao() {
 		try {
 			String url = "jdbc:mysql://localhost:3306/vape?useSSL=false&useUnicode=true&characterEncoding=utf8";
 			String user = "root";

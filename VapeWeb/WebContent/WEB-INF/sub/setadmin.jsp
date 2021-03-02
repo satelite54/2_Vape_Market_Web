@@ -1,5 +1,5 @@
 <%@page import="java.io.PrintWriter"%>
-<%@ page import="DAO.Dao"%>
+<%@ page import="DAO.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>

@@ -2,7 +2,7 @@
 <%@page import="java.util.Date"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page import="java.io.PrintWriter"%>
-<%@page import="DAO.dao"%>
+<%@page import="DAO.Dao"%>
 <%@page import="com.mysql.fabric.Response"%>
 <%@page import="java.awt.dnd.DropTargetListener"%>
 <%@page import="java.util.ArrayList"%>
