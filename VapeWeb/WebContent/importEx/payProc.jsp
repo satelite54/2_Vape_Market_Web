@@ -3,7 +3,7 @@
          request.setCharacterEncoding("UTF-8");
 	     String name = (String)request.getParameter("name");
 	     String email = (String)request.getParameter("email");
-	     String phone = (String)request.getParameter("phone");
+	     String mobile = (String)request.getParameter("mobile");
 	     String address = (String)request.getParameter("address");
 	     String stotalPrice = (String)request.getParameter("totalPrice");
 	     int totalPrice = Integer.parseInt(stotalPrice);
@@ -31,7 +31,7 @@
             amount : <%=totalPrice%>,
             buyer_email : '<%=email%>',
             buyer_name : '<%=name%>',
-            buyer_tel : '<%=phone%>',
+            buyer_tel : '<%=mobile%>',
             buyer_addr : '<%=address%>',
             buyer_postcode : '123-456',
             m_redirect_url : 'http://www.naver.com'
