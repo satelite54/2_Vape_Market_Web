@@ -151,12 +151,13 @@ CREATE TABLE IF NOT EXISTS `users` (
   `birthday` varchar(1000) NOT NULL,
   `admin` int(11) NOT NULL,
   `name` varchar(1000) NOT NULL,
+  `email` varchar(1000) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- 테이블 데이터 vape.users:~6 rows (대략적) 내보내기
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT IGNORE INTO `users` (`id`, `pw`, `zip`, `street`, `building`, `mobile`, `authority`, `birthday`, `admin`) VALUES
+INSERT IGNORE INTO `users` (`id`, `pw`, `zip`, `street`, `building`, `mobile`, `authority`, `birthday`, `admin`,`name`,`email`) VALUES
 	('1', '1', '08275', 'ãìë©ãë§ãããë§ã', '1', '07081155222', 1, '1994-09-25', 0),
 	('321321321', '32132132', '321321321', '321321321', '321321321', '321321321', 0, '321321321', 0),
 	('dw', 'dw', 'dw', 'dw', 'dw', 'dw', 0, 'dw', 0),

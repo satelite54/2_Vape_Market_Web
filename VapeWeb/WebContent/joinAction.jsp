@@ -8,6 +8,7 @@ request.setCharacterEncoding("UTF-8");
 <jsp:setProperty name="user" property="id" />
 <jsp:setProperty name="user" property="name" />
 <jsp:setProperty name="user" property="pw" />
+<jsp:setProperty name="user" property="email" />
 <jsp:setProperty name="user" property="birthday" />
 <jsp:setProperty name="user" property="zip" />
 <jsp:setProperty name="user" property="street" />
@@ -36,7 +37,7 @@ request.setCharacterEncoding("UTF-8");
 		script.println("location.href = 'main.jsp'");
 		script.println("</script>");
 			}
-			if (user.getName() == null || user.getId() == null || user.getPw() == null || user.getZip() == null || user.getStreet() == null || user.getBuilding() == null || user.getMobile() == null || user.getBirthday() == null) {
+			if (user.getName() == null || user.getId() == null || user.getPw() == null || user.getEmail() == null || user.getZip() == null || user.getStreet() == null || user.getBuilding() == null || user.getMobile() == null || user.getBirthday() == null) {
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("alert('입력이 안 된 사항이 있습니다.')");

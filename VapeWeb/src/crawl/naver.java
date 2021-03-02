@@ -25,6 +25,7 @@ public class naver {
 			List<String> title = doc.getElementsByClass("news_tit").eachText();
 			List<String> href = doc.getElementsByClass("news_tit").eachAttr("href");
 			List<String> contents = doc.getElementsByClass("api_txt_lines dsc_txt_wrap").eachText();
+			List<String> imgsrc = doc.getElementsByClass("thumb api_get").tagName("img").eachAttr("src");
 //			List<String> imgsrc = doc.getElementsByClass("news_tit").tagName("a").tagName("img").eachAttr("src");
 //			List<String> imgsrc = doc.getElementsByClass("thumb api_get").tagName("img").eachAttr("src"); // 이미지를 글어오는 줄
 			for (int i = 0; i < title.size(); i++) {
@@ -32,7 +33,7 @@ public class naver {
 				news.setTitle(title.get(i));
 				news.setHref(href.get(i));
 				news.setContent((String) contents.get(i).subSequence(0, 100));
-//				news.setImgsrc(imgsrc.get(i));	이미지를 긁어와서 리스트에 추가시켜주는 항목
+				news.setImgsrc(imgsrc.get(i));	//이미지를 긁어와서 리스트에 추가시켜주는 항목
 				newsList.add(news);
 			}
 		}

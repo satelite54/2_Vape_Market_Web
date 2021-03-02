@@ -1,12 +1,21 @@
 <%@page import="DTO.Users"%>
 <%@page import="java.util.Date"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+	
+	
+	
+	
+	
+
 <html>
 
 <head>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/custom.css">
+<%@ include file="menu.jsp"%>
+<%@ include file="submenu.jsp"%>
 
 <title>JASET VAPE</title>
 
@@ -20,8 +29,7 @@
 	 	user = DAO.getUserList(session);
 	 	PrintWriter pw = response.getWriter();
 	 %>
-	<%@ include file="menu.jsp"%>
-	<%@ include file="submenu.jsp"%>
+	
 <div class="container mt-4" style="max-width: 350px;">
 	<form name="frm" method="post" action="updateAction.jsp" onsubmit="return PleaseSendUTF8();" accept-charset="UTF-8">
 
@@ -48,6 +56,8 @@
 		<button type="submit" name="leave" class="btn btn-primary mt">회원탈퇴</button>
 	</form>
 </div>
+
+
 
 	<script type="text/javascript">
 		function PleaseSendUTF8() {

@@ -53,6 +53,8 @@ request.setCharacterEncoding("UTF-8");
 	Dao DAO = new Dao();
 %>
 
+
+	
 <html>
 
 <head>
@@ -128,9 +130,9 @@ request.setCharacterEncoding("UTF-8");
 					<th>가격</th>
 				</tr>
 					<%
-						int total = 0;
+						int totalPrice = 0;
 						for(int i = 0; i < list.size()/3; i++) {
-							total += Integer.parseInt(list.get(2 + i * 3));
+							totalPrice += Integer.parseInt(list.get(2 + i * 3));
 					%>
 					<tr>
 					 	<td><%=list.get(0 + i * 3)%></td>
@@ -143,7 +145,7 @@ request.setCharacterEncoding("UTF-8");
 		
 		<div id="cart">
 		<hr>
-		<p>Total: <%=total%>
+		<p>Total: <%=totalPrice%>
 		</div>
 		<div class="row">
 			<table width="100%">
