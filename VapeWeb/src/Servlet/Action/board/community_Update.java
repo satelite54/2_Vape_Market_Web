@@ -1,4 +1,4 @@
-package Servlet.Action;
+package Servlet.Action.board;
 
 import java.io.IOException;
 
@@ -12,35 +12,39 @@ import javax.servlet.http.HttpSession;
 
 import DAO.Dao;
 
-	
 
-	@WebServlet({ "/board" })
-	public class Board extends HttpServlet {
+
+	@WebServlet("/comminity_Update.at")
+	public class community_Update extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	HttpSession session;
-	
-	public Board() {
+
+	public community_Update() {
 		super();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		Dao DAO = new Dao();
-		request.setAttribute("list", DAO.getList());
-		RequestDispatcher dis = request.getRequestDispatcher("community.jsp");
-		dis.forward(request, response);
-		
-		
+
+		doPost(request, response);
+
+
+
 
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doGet(request, response);
+		Dao DAO = new Dao();
+
+
+		String BTitle = request.getParameter("BTitle");
+		String BContent= request.getParameter("BContent");
+		int BNum = Integer.parseInt(request.getParameter("BNum"));
+
+		DAO.updateBoard(BTitle, BContent, BNum);
+		response.sendRedirect("communityenter.jsp");
 	}
-
-	/************************************************************************************************************************/
-
 
 }

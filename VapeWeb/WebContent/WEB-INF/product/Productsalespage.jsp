@@ -51,9 +51,9 @@ header {
 </head>
 
 <body>
-	<%@ include file="menu.jsp"%>
-	<%@ include file="submenu.jsp"%>
-	
+<jsp:include page="../sub/menu.jsp" flush="true"/>
+<jsp:include page="../sub/submenu.jsp" flush="true"/>
+
 	<%! public void CollectNull(String strSearch, String strPage
 			, String NowPageNum) {
 			if(strSearch == null)
@@ -70,7 +70,7 @@ header {
 		String strProducttype = request.getParameter("Producttype");
 		String strSortmethod = request.getParameter("Sortmethod");
 		String strSearch = request.getParameter("Search");
-		String strPage = request.getParameter("Page");		
+		String strPage = request.getParameter("Page");
 		String NowPageNum = request.getParameter("NowPageNum");
 		CollectNull(strSearch, strPage, NowPageNum);
 		int ListSize = products.size();
@@ -82,7 +82,7 @@ header {
 			int FirstIdx = 10 * (nNowPageNum - 1);
 			products = products.subList(FirstIdx, ListSize);
 		}
-		
+
 	%>
 	<div id="wrap">
 	<div id="container">
@@ -202,9 +202,9 @@ header {
 						<%
 							int finalPageNum = ntotalProductsCnt / 10 + 1;
 						for(int i = 1; i <= finalPageNum; i++) {
-							
+
 							if(i == Integer.parseInt(NowPageNum)){
-								
+
 						%>
 						<li class="xans-record-"><strong><a href="#" onclick="javascript:checkForm('<%=strProducttype%>', '<%=strSortmethod%>', '<%=strSearch%>', '<%=strPage%>', '<%=i%>')"
 							class="this"><%=i%></a></strong></li>
@@ -237,4 +237,5 @@ header {
 	</div>
 	</div>
 </body>
+	<jsp:include page="../sub/footer.jsp" flush="true"/>
 </html>

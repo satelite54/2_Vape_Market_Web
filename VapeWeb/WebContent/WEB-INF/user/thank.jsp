@@ -21,7 +21,8 @@
 
 <body>
 
-<%@ include file="menu.jsp" %>
+<jsp:include page="../sub/menu.jsp" flush="true"/>
+<jsp:include page="../sub/submenu.jsp" flush="true"/>
 <%!Dao DAO = new Dao();
 String Date = DAO.getDate();
 Orders orders = new Orders();%>
@@ -38,10 +39,10 @@ DAO.upDateOrder(id, session);
 	<h2 class="alert alert-info">구매해 주셔서 감사합니다!</h2>
 	<p>	주문은	<%=	Date %> 에 배달예정입니다.!!	<p>	Order# :<%	out.println(cartID);%>		
 		<div class="container">
-			<p>	<a href="Productsalespage.jsp?fromShop=<%=1%>&producttype=<%="hardware"%>&sqlQuery=<%="select * from products where producttype = 'hardware'"%>&orderbyint=<%=1%>&pageSelectedIndx=<%=1%>" class="btn btn-dark"> &laquo; 쇼핑더하기</a>		
+			<p>	<a href="Productsalespage.do?fromShop=<%=1%>&producttype=<%="hardware"%>&sqlQuery=<%="select * from products where producttype = 'hardware'"%>&orderbyint=<%=1%>&pageSelectedIndx=<%=1%>" class="btn btn-dark"> &laquo; 쇼핑더하기</a>		
 		</div>
 </div>
-<%@ include file="footer.jsp" %>
+<jsp:include page="../sub/footer.jsp" flush="true"/>
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="css/bootstrap.min.css"></script>

@@ -1,4 +1,4 @@
-package Servlet.Action;
+package Servlet.Location;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,31 +7,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import DAO.Dao;
-
-/**
- * Servlet implementation class DeleteUser
- */
-@WebServlet("/DUser")
-public class DeleteUser extends HttpServlet {
+//@WebServlet("/*.action")
+public class LocationActionController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public DeleteUser() {
-
+    public LocationActionController() {
+        super();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String[] userCheckBox = request.getParameterValues("UserCheck");
-		delete(userCheckBox);
-		response.sendRedirect("UList");
+		doPost(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		doProcess(request, response);
 	}
 
-	private void delete(String[] userCheckBox) {
-		Dao dao = new Dao();
-		dao.deleteUser(userCheckBox);
+	public void doProcess(HttpServletRequest request , HttpServletResponse response) throws ServletException , IOException{
+
 	}
+
 }

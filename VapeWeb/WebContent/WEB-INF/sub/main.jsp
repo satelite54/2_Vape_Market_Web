@@ -9,16 +9,15 @@
 	<title>JASET VAPE</title>
 	<%
 	request.setCharacterEncoding("UTF-8");
-	String Sub_Menu = "menu.do";
-	String Sub_Submenu = "submenu.do";
-	String Sub_Footer = "footer.do";
 	%>	
 	
 </head>
 
 <body>
-<%@ include file="menu.do" %>
-<%@ include file="submenu.do" %>
+<jsp:include page="./menu.jsp" flush="true"/>
+<jsp:include page="./submenu.jsp" flush="true"/>
+<%-- <%@ include file="menu.jsp" %> --%>
+<%-- <%@ include file="submenu.jsp" %> --%>
 	
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 		  <ol class="carousel-indicators">
@@ -72,8 +71,8 @@
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="css/bootstrap.min.css"></script>
 
-<%@ include file="footer.do" %>
-
+<%-- <%@ include file="footer.jsp" %> --%>
+<jsp:include page="./footer.jsp" flush="true"/>
 </body>
 
 </html>

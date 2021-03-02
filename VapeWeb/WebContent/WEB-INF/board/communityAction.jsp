@@ -20,16 +20,7 @@
 	<%
 	request.setCharacterEncoding("UTF-8");
 	%>	
-	<%
-		request.setCharacterEncoding("UTF-8");
-			String id =(String)session.getAttribute("id");
-			String BTitle = request.getParameter("BTitle");
-			String BContent = request.getParameter("BContent");
-			Dao DAO = new Dao();
-			DAO.write(BTitle, BContent, id);
-			int BNum = DAO.getBNum() - 1;
-			response.sendRedirect("communityenter.jsp?BNum=" + BNum);
-		%>
+	
 
 
 

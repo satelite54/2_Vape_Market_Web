@@ -2,6 +2,7 @@
 <%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 
 <head>
@@ -13,37 +14,30 @@
 </head>
 
 <body>
-	 <%
-	 request.setCharacterEncoding("UTF-8");
-	 	 Dao DAO = new Dao();
-	 	Users user = new Users();
-	 	user = DAO.getUserList(session);
-	 	PrintWriter pw = response.getWriter();
-	 %>
-	<%@ include file="menu.jsp"%>
-	<%@ include file="submenu.jsp"%>
+<jsp:include page="../sub/menu.jsp" flush="true"/>
+<jsp:include page="../sub/submenu.jsp" flush="true"/>
 <div class="container mt-4" style="max-width: 350px;">
-	<form name="frm" method="post" action="updateAction.jsp" onsubmit="return PleaseSendUTF8();" accept-charset="UTF-8">
-
+	<form name="frm" method="post" action="./updateAction.jsp" onsubmit="return PleaseSendUTF8();" accept-charset="UTF-8">
+			<c:forEach var="list" items="${AllUsersList}">
 			<h2 style="text-align: center;">회원수정</h2>
-			<label style="float: left; margin-top: 5px;">아이디</label> 
-			<input type="text" class="form-control" name="id" maxlength="20" readonly value="<%=user.getId()%>">
-			<label style="float: left; margin-top: 5px;">비밀번호</label> 
-			<input type="password" class="form-control" name="pw" maxlength="20"> 
-			<label style="float: left; margin-top: 5px;">주소</label> 
-			<input type="text"class="form-control" placeholder="우편번호" name="zip" maxlength="20" style="margin-top: 5px;" value="<%=user.getZip()%>">
-			<input type="text"class="form-control" placeholder="도로명" name="street" maxlength="100"style="margin-top: 5px;" value="<%=user.getStreet()%>"> 
-			<input type="text"class="form-control" placeholder="건물명" name="building"	maxlength="100"style="margin-top: 5px;" value="<%=user.getBuilding()%>"> 
+			<label style="float: left; margin-top: 5px;">아이디</label>
+			<input type="text" class="form-control" name="id" maxlength="20" readonly value="${list.id}">
+			<label style="float: left; margin-top: 5px;">비밀번호</label>
+			<input type="password" class="form-control" name="pw" maxlength="20">
+			<label style="float: left; margin-top: 5px;">주소</label>
+			<input type="text"class="form-control" placeholder="우편번호" name="zip" maxlength="20" style="margin-top: 5px;" value="${list.zip}">
+			<input type="text"class="form-control" placeholder="도로명" name="street" maxlength="100"style="margin-top: 5px;" value="${list.street}">
+			<input type="text"class="form-control" placeholder="건물명" name="building"	maxlength="100"style="margin-top: 5px;" value="${list.building}">
 			<label style="float: left; margin-top: 5px;">핸드폰 번호</label>
-			<input type="tel" class="form-control" name="mobile" maxlength="11" value="<%=user.getMobile()%>">
-			<label style="float: left; margin-top: 5px;">생년월일</label> 
-			<input type="date"class="form-control" name="birthday" maxlength="20" min="1920-01-01" value="<%=user.getBirthday()%>">
+			<input type="tel" class="form-control" name="mobile" maxlength="11" value="${list.mobile}">
+			<label style="float: left; margin-top: 5px;">생년월일</label>
+			<input type="date"class="form-control" name="birthday" maxlength="20" min="1920-01-01" value="${list.birthday}">
 			<button type="submit" class="btn btn-primary mt-3">수정하기</button>
 			<input type="hidden" name="admin" value="0">
 			<input type="hidden" name="authority" value="1">
-
+			</c:forEach>
 	</form>
-	
+
 	<form name="frm" action="deleteAction.jsp" onsubmit="return confirm('탈퇴하시겠습니까?');">
 		<button type="submit" name="leave" class="btn btn-primary mt">회원탈퇴</button>
 	</form>
@@ -75,10 +69,10 @@
 	}
 /* 	delete.onclick() = confirm("계정을 삭제하시겠습니까??");
 	 */
-	
+
 	</script> -->
-	
-	<%@ include file="footer.jsp" %>
+
+	<jsp:include page="../sub/footer.jsp" flush="true"/>
 	<script src="js/jquery-3.5.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="css/bootstrap.min.css"></script>

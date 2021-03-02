@@ -13,8 +13,8 @@
 
 <body>
 
-	<%@ include file="menu.jsp"%>
-	<%@ include file="submenu.jsp"%>
+<jsp:include page="../sub/menu.jsp" flush="true"/>
+<jsp:include page="../sub/submenu.jsp" flush="true"/>
 
 	<div class="container">
 		<form method="post" action="joinAction.jsp">
@@ -171,7 +171,7 @@
 			</div>
 		</form>
 	</div>
-	<%@ include file="footer.jsp"%>
+	<jsp:include page="../sub/footer.jsp" flush="true"/>
 	<script type="text/javascript">
 		function sendit() {
 			location.href = "http://localhost/VapeWeb/main.jsp";

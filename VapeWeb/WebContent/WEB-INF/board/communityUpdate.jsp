@@ -9,28 +9,28 @@
 <title>JASET VAPE</title>
 </head>
 <body>
-<%@ include file="menu.jsp" %>
-<%@ include file="submenu.jsp" %>
+<jsp:include page="../sub/menu.jsp" flush="true"/>
+<jsp:include page="../sub/submenu.jsp" flush="true"/>
 	<%
 	request.setCharacterEncoding("UTF-8");
-	%>	
+	%>
 	<%!
 		int BNum = 0;
 		String BTitle = null;
 		String BContent = null;
 	%>
-	
+
 	<%
 	int BNum = Integer.parseInt(request.getParameter("BNum"));
 	String BTitle = request.getParameter("BTitle");
 	String BContent = request.getParameter("BContent");
-	
+
 	System.out.println(BNum);
 	System.out.println(BTitle);
 	System.out.println(BContent);
-	
+
 	%>
-	
+
 	<div class="container mt-3">
 	  <div class="card">
 	  	<div class="card-header" style="background-color: black; color: white;">
@@ -51,7 +51,7 @@
 
 
 
-	<%@ include file="footer.jsp" %>
+	<jsp:include page="../sub/footer.jsp" flush="true"/>
 	<script src="css/bootstrap.min.css"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
 </body>

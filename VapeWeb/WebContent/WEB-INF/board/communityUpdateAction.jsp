@@ -9,7 +9,6 @@
 <%@page import="java.sql.Date"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>
 <%@ page import="DAO.Dao"%>
-<%@ include file="menu.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,16 +19,8 @@
 <body>
 	<%
 	request.setCharacterEncoding("UTF-8");
-	%>	
-	<%!Dao DAO = new Dao();%>
+	%>
 	
-	<%
-	String BTitle = request.getParameter("BTitle");
-	String BContent= request.getParameter("BContent");
-	int BNum = Integer.parseInt(request.getParameter("BNum"));
-	
-	DAO.updateBoard(BTitle, BContent, BNum);
-	response.sendRedirect("communityenter.jsp");
 	%>
 
 

@@ -6,14 +6,11 @@
 <title>JASET VAPE</title>
 </head>
 <body>
-	<%-- index.jsp --%>
-	
+
 	<script>
-		location.href = 'main.do'
+		location.href = "main.do"
 	</script>
-	  <%-- 
-	<%response.sendRedirect("LC.do/main.jsp");%> --%>	
-		
+
 </body>
 </html>
 

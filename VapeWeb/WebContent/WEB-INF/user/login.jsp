@@ -4,21 +4,21 @@
 
 <head>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/custom.css">	
+	<link rel="stylesheet" href="css/custom.css">
 	<title>JASET VAPE</title>
-	
+
 </head>
 
 <body>
 
-<%@ include file="menu.jsp" %>
-<%@ include file="submenu.jsp" %>
+<jsp:include page="../sub/menu.jsp" flush="true"/>
+<jsp:include page="../sub/submenu.jsp" flush="true"/>
 
  	<div class="under19Recommend">
  		<img class="rounded mx-auto d-block" src="${pageContext.request.contextPath}/img/adult.jpg" alt="이 정보내용은 청소년 유해매체물로서 정보통신망 이용촉진법 및 정보보호 등에 관한 법률 및 청소년 보호법의 규정에 의하여 19세 미만의 청소년은 사용할 수 없습니다">
 	</div>
 	<div class="container mt-5" style="max-width: 800px;">
-		 <form method="post" action="loginAction.jsp">
+		 <form method="post" action="loginAction.do">
  		 <div class="mb-3 row">
    			<label for="inputID" class="col-sm-4 col-form-label">아이디</label>
    		 		<div class="col-sm-6">
@@ -33,21 +33,15 @@
   		</div>
   			<button type="submit" class="btn btn-primary">로그인</button>
   		</form>
-	</div>   
-
-
- 
+	</div>
 
 
 
+<jsp:include page="../sub/footer.jsp" flush="true"/>
 
-
-							
-<%@ include file="footer.jsp" %>		
-<script src="js/jquery-3.5.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="css/bootstrap.min.css"></script>
 
 </body>
-
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/bootstrap.min.js"/></script>
+<script src="css/bootstrap.min.css"/></script>
 </html>

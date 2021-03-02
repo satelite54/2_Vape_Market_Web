@@ -19,8 +19,8 @@
 </style>
 </head>
 <body id="main">
-	<%@ include file="menu.jsp"%>
-	<%@ include file="submenu.jsp"%>
+<jsp:include page="../sub/menu.jsp" flush="true" />
+<jsp:include page="../sub/submenu.jsp" flush="true" />
 
 	<hr class="layout">
 	<div id="wrap">
@@ -189,7 +189,7 @@ $jointbuy_page = /product/jointbuy.html
 								<tfoot>
 									<tr>
 										<td colspan="3">
-											<form class="form-inline " action="myshopping.jsp">
+											<form class="form-inline " action="myshopping.do">
 												<button
 													class="btn bg-dark text-white btn-outline-white my-2 my-sm-0 {background-color: #223a6b !important;}"
 													type="submit" value="Submit">장바구니</button>
@@ -197,7 +197,7 @@ $jointbuy_page = /product/jointbuy.html
 												<input type=button value="증가" onClick="javascript:this.form.countresult.value++; javascript:transforValue();">
 												<input type=button value="감소"
 													onClick="javascript:this.form.countresult.value--; javascript:transforValue();">
-											</form> 
+											</form>
 											<strong>총 상품금액</strong>(수량) : <span class="total">
 											<strong><em id="count">${param.Price}</em><em>원</em></strong></span>
 										</td>
@@ -328,7 +328,7 @@ $jointbuy_page = /product/jointbuy.html
 	   function checkForm3() {
 	      if (${id == null}) {
 	    	 alert("로그인 해주세요.");
-	    	 location.href ="http://localhost/VapeWeb/login.jsp";
+	    	 location.href ="http://localhost/VapeWeb/login.do";
 	    	 return false;
 	      } else {
 	    	 var product = document.getElementsByClassName("xans-record-")
@@ -338,10 +338,10 @@ $jointbuy_page = /product/jointbuy.html
 	</script>
 <br><br><br><br><br><br>
 <div class="parent">
-	<body data-spy="scroll" data-target=".navbar" data-offset="50">		
-		<div class="me">	
-	        	<p class="child">														
-					<nav id="mynav" class="navbar navbar-expand-sm bg-dark navbar-dark fixed py-2">  
+	<body data-spy="scroll" data-target=".navbar" data-offset="50">
+		<div class="me">
+	        	<p class="child">
+					<nav id="mynav" class="navbar navbar-expand-sm bg-dark navbar-dark fixed py-2">
 					  <ul class="navbar-nav">
 					    <li class="nav-item">
 					      <h2><a class="nav-link px-5" href="#section1">상세정보</a></h2>
@@ -356,21 +356,21 @@ $jointbuy_page = /product/jointbuy.html
 					</nav>
 				</p>
 			</div>
-		
+
 <!-- 			<div id="section1" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
 			</div> -->
-			
+
 			<div id="section2" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
 				<h1 style="color#223a6b;">상품후기</h1>
-				<%@ include file="/review/review.jsp" %>
+				<jsp:include page="../review/review.jsp" flush="false"/>
 			</div>
-			
+
 			<div id="section3" class="container-fluid center" style="padding-top:70px;padding-bottom:70px">
 				<h1 style="color#223a6b;">Q&A</h1>
-				<%@ include file="question/list.jsp"%>
+				<jsp:include page="../question/list.jsp" flush="false"/>
 			</div>
 		</body>
- </div>   				 
-	<%@ include file="footer.jsp"%>
+ </div>
+<jsp:include page="../sub/footer.jsp" flush="true">
 </body>
 </html>

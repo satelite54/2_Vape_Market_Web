@@ -9,9 +9,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%@ include file="menu.jsp" %>
-	<%@ include file="submenu.jsp" %>
-	
+	<jsp:include page="../sub/menu.jsp" flush="true"/>
+	<jsp:include page="../sub/submenu.jsp" flush="true"/>
+
 	<div>
 		<form action="PMAction" method="post">
 			<input type = "text" name = "pname">
@@ -27,8 +27,8 @@
 			<input type = "submit" name="update" value = "update">
 		</form>
 	</div>
-	
-	<form action="DUser" method="get">	
+
+	<form action="DUser" method="get">
 		<div>
 			<table class="table table-sm boder-dark">
 			  <thead>
@@ -57,10 +57,10 @@
 		</div>
 		<input type="submit" class="btn btn-danger" style="float: right;" value="삭제">
 	</form>
-	
-	
-	
-		
-	<%@ include file="footer.jsp" %>
+
+
+
+
+	<jsp:include page="../sub/footer.jsp" flush="true"/>
 </body>
 </html>

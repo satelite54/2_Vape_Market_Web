@@ -8,11 +8,12 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/bootstrap.min.css">
+<jsp:include page="../sub/menu.jsp" flush="true" />
+<jsp:include page="../sub/submenu.jsp" flush="true" />
 <title>JASET VAPE</title>
 </head>
 <body>
-<%@ include file="menu.jsp" %>
-<%@ include file="submenu.jsp" %>
+
 	<%
 	request.setCharacterEncoding("UTF-8");
 	%>	
@@ -100,5 +101,6 @@ function checkForm() {
 
 	<script src="css/bootstrap.min.css"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
+	<jsp:include page="footer.do" flush="true"/>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <%@page import="org.apache.tomcat.util.buf.Utf8Encoder"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
-<link rel="stylesheet" href="css/custom.css">	
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<link rel="stylesheet" href="css/custom.css">
 <%-- <%
 	//로그인과정에서 저장된 세션 id를 가져온다. 없으면 null값.
 	String sessionId = (String) session.getAttribute("sessionId");
@@ -35,16 +35,16 @@
 		<input type="hidden" name="Page">
 		<input type="hidden" name="NowPageNum">
 	</form>
-	
+
 	<form name="frmforNews">
-		
+
 	</form>
-	
+
 <script type="text/javascript">
    function checkForm(Producttype, Sortmethod, Search, Page, NowPageNum) {
       if (${id==null}) {
          alert("로그인 해주세요.");
-         location.href = "login.jsp";
+         location.href = "login.do";
       } else if (${id != null}) {
     	  //alert("id가 들어왔음");
     	  f=document.frm;
@@ -65,7 +65,7 @@
          location.href = "login.do";
       } else if (${id != null}) {
     	  f=document.frmforNews;
-    	  f.action = "NewsCrawl";
+    	  f.action = "news.do";
     	  f.submit();
       }
    }

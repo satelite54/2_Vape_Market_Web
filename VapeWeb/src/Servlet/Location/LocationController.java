@@ -4,9 +4,14 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import Action.user.LoginAction;
+import Action.user.LogoutAction;
+import Action.user.UserlistAction;
 
 //@WebServlet("*.do")
 public class LocationController extends HttpServlet {
@@ -41,7 +46,7 @@ public class LocationController extends HttpServlet {
 		String user = "/WEB-INF/user/";
 		String question = "/WEB-INF/question/";
 		String review = "/WEB-INF/review/";
-		
+
 		try {// 화면전환
 			switch (command) {
 				case "main.do": {
@@ -50,10 +55,10 @@ public class LocationController extends HttpServlet {
 					forward.setNextPath(sub + "main.jsp");
 					break;
 				}
-				case "header.do": {
+				case "submenu.do": {
 					forward= new LocationForward();
 					forward.setRedirect(false);
-					forward.setNextPath(sub + "header.jsp");
+					forward.setNextPath(sub + "submenu.jsp");
 					break;
 				}
 				case "footer.do": {
@@ -74,13 +79,13 @@ public class LocationController extends HttpServlet {
 					forward.setNextPath(sub + "news.jsp");
 					break;
 				}
-				case "Productsalespage.do": {
+				case "productsalespage.do": {
 					forward= new LocationForward();
 					forward.setRedirect(false);
 					forward.setNextPath(product + "Productsalespage.jsp");
 					break;
 				}
-				case "Productdetailpage.do": {
+				case "productdetailpage.do": {
 					forward= new LocationForward();
 					forward.setRedirect(false);
 					forward.setNextPath(product + "Productdetailpage.jsp");
@@ -140,7 +145,7 @@ public class LocationController extends HttpServlet {
 					forward.setNextPath(user + "myshopping.jsp");
 					break;
 				}
-				case "update.do": {
+				case "update2.do": {
 					forward= new LocationForward();
 					forward.setRedirect(false);
 					forward.setNextPath(user + "update.jsp");
@@ -152,12 +157,28 @@ public class LocationController extends HttpServlet {
 					forward.setNextPath(user + "thank.jsp");
 					break;
 				}
-				
-				
+				case "loginAction.do": { // 액션쪽 필수 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+					location = new LoginAction();// 액션쪽 필수 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+					forward = location.execute(request, response);// 액션쪽 필수 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+					break;
+				}
+				case "logoutAction.do": { // 액션쪽 필수 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+					location = new LogoutAction();// 액션쪽 필수 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+					forward = location.execute(request, response);// 액션쪽 필수 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+					break;
+				}
+				case "update.do":{
+					location = new UserlistAction();
+					forward = location.execute(request, response);
+					break;
+				}
+				//
+
+
 				default:
 					break;
 			}
-			
+
 			// 화면이동
 			if(forward != null) {
 				if(forward.isRedirect()) {
@@ -167,7 +188,7 @@ public class LocationController extends HttpServlet {
 					dispatcher.forward(request, response);
 				}
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

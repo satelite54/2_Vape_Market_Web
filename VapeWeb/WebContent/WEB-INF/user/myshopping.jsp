@@ -110,8 +110,8 @@ request.setCharacterEncoding("UTF-8");
 
 <body>
 
-<%@ include file="menu.jsp" %>
-<%@ include file="submenu.jsp" %>
+<jsp:include page="../sub/menu.jsp" flush="true"/>
+<jsp:include page="../sub/submenu.jsp" flush="true"/>
 
 <br><br><br><br>
 <div id="pointer"><p style="color:white; font-size: x-large;">나의 쇼핑</div>
@@ -194,7 +194,7 @@ request.setCharacterEncoding("UTF-8");
 	
 
 </body>
-<%@ include file="footer.jsp" %>		
+<jsp:include page="../sub/footer.jsp" flush="true"/>		
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="css/bootstrap.min.css"></script>

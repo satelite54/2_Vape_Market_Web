@@ -1,5 +1,5 @@
 <%@page import="DTO.News"%>
-<%@page import="crawl.naver"%>
+<%@page import="Servlet.Action.crawl.naver"%>
 <%@page import="org.apache.naming.HandlerRef"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
@@ -17,18 +17,18 @@
 				display:inline-flex;
 				align-items:center;
 				justify-content: center
-				
+
 			">
 				<img src="..." class="card-img-top" alt="...">
 				<div class="card-body">
 					<div>
-					<p class="card-title" 
+					<p class="card-title"
 					style="width:100px;
 					overflow:hidden;
 					text-overflow:ellipsis;
-					white-space:nowrap; 
-					text-align: center; 
-					margin-left: 35px; 
+					white-space:nowrap;
+					text-align: center;
+					margin-left: 35px;
 					margin-bottom: 5px">
 						<a href="${news.href}">${news.title}</a>
 					</p>
@@ -36,13 +36,13 @@
 					<div style="
 					position: relative;
 					">
-					<p class="card-text" 
+					<p class="card-text"
 					style="width:100px;
 					overflow:hidden;
 					text-overflow:ellipsis;
-					white-space:nowrap; 
-					text-align: center; 
-					margin-left: 35px; 
+					white-space:nowrap;
+					text-align: center;
+					margin-left: 35px;
 					margin-bottom: 5px">
 						<a href="${news.href}">${news.content}</a>
 					</p>
@@ -53,7 +53,7 @@
 	</c:forEach>
 
 
-	<!--  
+	<!--
 	<div>
 		<table class="table">
   <thead>
@@ -63,16 +63,16 @@
     </tr>
   </thead>
   <tbody>
-  
+
     <tr>
       <th scope="row">${vs.count}</th>
       <td><a href="${news.href}">${news.title}</a></td>
       <td><a href="#">${news.content}</a></td>
     </tr>
-    
+
   </tbody>
 </table>
-	
+
 	</div>
 	-->
 </body>

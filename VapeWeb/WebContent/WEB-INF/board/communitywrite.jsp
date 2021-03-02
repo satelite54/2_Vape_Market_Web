@@ -9,8 +9,9 @@
 <title>JASET VAPE</title>
 </head>
 <body>
-<%@ include file="menu.jsp" %>
-<%@ include file="submenu.jsp" %>
+<jsp:include page="../sub/menu.jsp" flush="true" />
+<jsp:include page="../sub/submenu.jsp" flush="true" />
+
 	<%
 	request.setCharacterEncoding("UTF-8");
 	%>
@@ -27,7 +28,7 @@
 	  		글쓰기 양식
 	  	</div>
 	  	<div class="card-body" style="height:500px;">
-	  		<form action="communityAction.jsp" method="post">
+	  		<form action="./communityAction.jsp" method="post">
 	  			<input type="text" class="form-control mb-3" name="BTitle" placeholder="글제목" maxlength="50" required>
 	  			<input type="hidden" name="BNum" value="<%=BNum%>">
 	  			<textarea class="form-control mb-3" name="BContent" style="height: 350px" placeholder="글내용" maxlength="2048" required></textarea>
@@ -41,7 +42,7 @@
 
 
 
-	<%@ include file="footer.jsp" %>
+	<jsp:include page="../sub/footer.jsp" flush="true">
 	<script src="css/bootstrap.min.css"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
 </body>

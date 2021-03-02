@@ -16,7 +16,16 @@
     "webpack": {
       
     },
+    "complete_strings": {
+      
+    },
     "browser-extension": {
+      
+    },
+    "yui3": {
+      
+    },
+    "snabbt": {
       
     },
     "bootstrap": {

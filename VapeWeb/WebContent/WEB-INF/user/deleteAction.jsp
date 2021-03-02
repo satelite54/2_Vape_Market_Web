@@ -22,7 +22,7 @@
 <body>
 	<%
 	request.setCharacterEncoding("UTF-8");
-	%>	
+	%>
 <%
 	// 알러트 창 띄운 다음 메인 홈페이지 이동
 		Dao userDAO = new Dao();
@@ -33,13 +33,13 @@
 			session.invalidate();
 			pw.println("alert('회원탈퇴가 완료되었습니다.')");
 			pw.println("location.href = 'main.jsp'");
-			pw.println("</script>");	
+			pw.println("</script>");
 		} else if(Updateresult == 0) {
 			pw.println("<script>");
 			pw.println("alert('회원탈퇴에 실패했습니다. 잠시 후 시도해 주세요.')");
 			pw.println("location.href = 'main.jsp'");
 			pw.println("</script>");
-		
+
 			/*
 			var con_test = confirm("어떤 값이 나올까요. 확인을 눌러보세요.");
 			if(con_test == true){
@@ -47,14 +47,14 @@
 			}
 			else if(con_test == false){
 			  document.write("취소를 누르셨군요.");
-			}	
-			
-			
+			}
+
+
 			*/
 		}
 	%>
 
-	
+
 
 
 

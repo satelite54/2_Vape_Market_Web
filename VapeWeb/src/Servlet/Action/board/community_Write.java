@@ -1,6 +1,7 @@
-package Servlet.Action;
+package Servlet.Action.board;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,34 +11,29 @@ import javax.servlet.http.HttpSession;
 
 import DAO.Dao;
 
-/**
- * Servlet implementation class reviewAction
- */
-@WebServlet("/reviewAction")
-public class reviewAction extends HttpServlet {
+@WebServlet("/community_Wrtie.at")
+public class community_Write extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public reviewAction() {
+
+    public community_Write() {
         super();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.doPost(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 	}
-	
-	private void doProcess(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		HttpSession session = request.getSession();
+
+	public void doProcess(HttpServletRequest request , HttpServletResponse response , HttpSession session) throws ServletException , IOException{
+
 		String id =(String)session.getAttribute("id");
-		String RTitle = request.getParameter("RTitle");
-		String RContent = request.getParameter("RContent");
-		DAO.Dao dao = new Dao();
-		dao.writeReview(RTitle, RContent, id);
-		int RNum = dao.getRNum() - 1;
-		response.sendRedirect("Productdetailpage.do?RNum=" + RNum);
+		String BTitle = request.getParameter("BTitle");
+		String BContent = request.getParameter("BContent");
+		Dao dao = new Dao();
+		dao.write(BTitle, BContent, id);
+		int BNum = dao.getBNum() - 1;
+		response.sendRedirect("communityenter.jsp?BNum=" + BNum);
 	}
 
 }

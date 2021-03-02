@@ -1,4 +1,4 @@
-package Servlet.Action;
+package Servlet.Action.product;
 
 import java.io.IOException;
 import java.util.ArrayList;
