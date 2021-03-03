@@ -51,40 +51,11 @@ public class Dao {
 		}
 	}
 
-	// 페이지네이션 10개식 끊어서 보여주는 메소드
-	public boolean nextPage(int pageNumber) {
-		String SQL = "SELECT * FROM Board WHERE BNum < ? and Authority = 1 ORDER BY BNum DESC LIMIT 10";
-		ArrayList<Board> list = new ArrayList<Board>();
-		try {
-			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			pstmt.setInt(1, getNext() - (pageNumber - 1) * 10);
-			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				return true;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return false;
-	}
-
-	//1을 출력해주는 메소드
-	public int getNext() {
-		String SQL = "SELECT BNum FROM Board ORDER BY BNum DESC";
-		try {
-			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				return rs.getInt(1) + 1;
-			}
-			return 1;// 첫 번째 게시물인 경우
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return -1; // 데이터베이스 오류
-	}
 
 
+
+
+	// 게시판 작성시 최신번호를 가져오는 메소드
 	public int getBNum() {
 		int BNum = 0;
 		String sql = "select max(BNum) from board";
@@ -101,50 +72,30 @@ public class Dao {
 		return BNum;
 	}
 
-	// 금일 날짜를 불러오는 메소드.
-	public String getDate() {
-		String sql = "select now();";
-		PreparedStatement pstmt = null;
-		try {
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-
-			if (rs.next()) {
-				return rs.getString(1);
-			}
-		} catch (Exception e) {
-		}
-		return "";
-	}
 
 
 
 	// 글을 쓰는 메소드
 	public void write(String BTitle, String BContent, String id) {
 		PreparedStatement pstmt = null;
-		String sql = "insert into board(BNum, BTitle, BContent, BDate, id, authority, views) values (?,?,?,?,?,?,?)";
+		String sql = "insert into board(BNum, BTitle, BContent, BDate, id, authority, views) values (?,?,?,now(),?,1,0)";
 		try {
-			int authority = 1;
-			int views = 0;
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, getBNum());
 			pstmt.setString(2, BTitle);
 			pstmt.setString(3, BContent);
-			pstmt.setString(4, getDate());
-			pstmt.setString(5, id);
-			pstmt.setInt(6, authority);
-			pstmt.setInt(7, views);
+			pstmt.setString(4, id);
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("쓰기 데이터 전송에러");
 			e.printStackTrace();
 		}
 	}
-	
-	
+
+
 	public void writeReview(String RTitle, String RContent, String id) {
 		PreparedStatement pstmt = null;
-		String sql = "insert into review(RNum, RTitle, RContent, RDate, id, authority, views) values (?,?,?,?,?,?,?)";
+		String sql = "insert into review(RNum, RTitle, RContent, RDate, id, authority, views) values (?,?,?,now(),?,1,0)";
 		try {
 			int authority = 1;
 			int views = 0;
@@ -152,10 +103,7 @@ public class Dao {
 			pstmt.setInt(1, getRNum());
 			pstmt.setString(2, RTitle);
 			pstmt.setString(3, RContent);
-			pstmt.setString(4, getDate());
-			pstmt.setString(5, id);
-			pstmt.setInt(6, authority);
-			pstmt.setInt(7, views);
+			pstmt.setString(4, id);
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("쓰기 데이터 전송에러");
@@ -188,7 +136,7 @@ public class Dao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}return null;
-	}	
+	}
 
 
 
@@ -202,7 +150,7 @@ public class Dao {
 	public void viewsCount(int BNum) {
 		String sql = "UPDATE board SET views = views +1 WHERE BNum = ?";
 		try {
-			
+
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, BNum);
 			pstmt.executeUpdate();
@@ -261,13 +209,13 @@ public class Dao {
 			pstmt.setString(1,BTitle);
 			pstmt.setString(2,BContent);
 			pstmt.setInt(3, BNum);
-			return pstmt.executeUpdate(); 
+			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}return -1;
 	}
-	
-	
+
+
 /*======================================= 아영님 ===============================================*/
 //페이지네이션 10개식 끊어서 보여주는 메소드
 public boolean nextReviewPage(int pageNumber) {
@@ -275,7 +223,7 @@ public boolean nextReviewPage(int pageNumber) {
 	ArrayList<Review> list = new ArrayList<Review>();
 	try {
 		PreparedStatement pstmt = conn.prepareStatement(SQL);
-		pstmt.setInt(1, getNext() - (pageNumber - 1) * 10);
+		pstmt.setInt(1, getRNum() + 1 - (pageNumber - 1) * 10);
 		rs = pstmt.executeQuery();
 		if (rs.next()) {
 			return true;
@@ -373,7 +321,7 @@ public ArrayList<Review> getReviewList(){
 		} catch (Exception e) {
 			e.printStackTrace();
 		}return null;
-}	
+}
 	// 조회수를 증가시키는 메소드
 public void reviewViewsCount(int RNum) {
 	String sql = "UPDATE review SET views = views +1 WHERE RNum = ?";
@@ -420,7 +368,7 @@ public void deleteReview(int RNum) {
 	} catch (SQLException e) {
 		e.printStackTrace();
 	}
-	
+
 }
 // 글 수정 메소드
 public int updateReview(String RTitle,String RContent,int RNum) {
@@ -430,7 +378,7 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 		pstmt.setString(1,RTitle);
 		pstmt.setString(2,RContent);
 		pstmt.setInt(3, RNum);
-		return pstmt.executeUpdate(); 
+		return pstmt.executeUpdate();
 	} catch (Exception e) {
 		e.printStackTrace();
 	}return -1;
@@ -476,7 +424,7 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
-			ResultSet rs =pstmt.executeQuery(); 
+			ResultSet rs =pstmt.executeQuery();
 			while(rs.next()) {
 				Orders orders = new Orders();
 				orders.setCartID(rs.getString(1));
@@ -518,7 +466,7 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 	public List<Products> makeProductsList(String sqlQuery) {
 		List<Products> list = new ArrayList<Products>();
 		try {
-			
+
 			pstmt = conn.prepareStatement(sqlQuery);
 			rs = pstmt.executeQuery();
 
@@ -540,7 +488,7 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 		}
 		return list;
 	}
-	
+
 	public List<String> makecategoryList() {
 		String sql = "select distinct producttype from products";
 		List<String> list = new ArrayList<String>();
@@ -627,8 +575,8 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 		return -1; // 데이터 베이스 오류
 	}
 	public int set_update(Users user, HttpSession session) {
-		String SQL = "UPDATE USERS SET ID = ? ,Pw = ?, Zip = ? ,Street = ?,Building = ? ,Mobile = ?, Authority = ?  ,Birthday =? , Admin = ? where id = ?";
-		try {					
+		String SQL = "UPDATE USERS SET ID = ? ,Pw = ?, Zip = ? ,Street = ?,Building = ? ,Mobile = ?, Authority = ?  ,Birthday =? , Admin = ? ,Name = ? , Email = ? where id = ?";
+		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, user.getId());
 			pstmt.setString(2, user.getPw());
@@ -639,12 +587,23 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 			pstmt.setInt(7, user.getAuthority());
 			pstmt.setString(8, user.getBirthday());
 			pstmt.setInt(9, user.getAdmin());
-			pstmt.setString(10,(String)session.getAttribute("id"));
+			pstmt.setString(10, user.getName());
+			pstmt.setString(11, user.getEmail());
+			pstmt.setString(12,(String)session.getAttribute("id"));
 			return pstmt.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();
+			return -1; // 데이터 베이스 오류
+		}finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
 		}
-		return -1; // 데이터 베이스 오류
+
 	}
 
 	public int setadmin(String modalid) {
@@ -654,7 +613,6 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 			pstmt.setString(1, modalid);
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
-			// TODO: handle exception
 		}
 		return -1;
 	}
@@ -696,11 +654,13 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 				users.setAuthority(rs.getInt(7));
 				users.setBirthday(rs.getString(8));
 				users.setAdmin(rs.getInt(9));
+				users.setName(rs.getString(10));
+				users.setEmail(rs.getString(11));
 			}return users;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}return null;
-	}   
+	}
 
 	// 회원수정 Page 회원정보를 삭제하는 메소드
 	public int deleteUser(HttpSession id) {
@@ -715,7 +675,7 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 
 		return -1;
 	}
-	
+
 	public void deleteUser(String[] checkBoxId) {
 		for(int i = 0; i < checkBoxId.length; i++) {
 			String sql = "Delete From USERS where id = ?";
@@ -728,7 +688,7 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 			};
 		}
 	}
-	
+
 	public int insertProduct(Products products) {
 		String SQL = "insert into products VALUES (?, ?, ?, ?, ?, ?, now() , ? , ?)";
 		try {
@@ -747,7 +707,7 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 		}
 		return -1;
 	}
-	
+
 	public int deleteProduct(String pname) {
 		String sql = "delete From Products where pname = ?";
 		try {
@@ -759,11 +719,11 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 		}
 		return -1;
 	}
-	
+
 	public int UpdateProduct(Products products) {
 		String sql = "update products set pname = ?, code = ?, manufacturer = ?, price = ?, stock = ?,"
 				+ "imgname = ?, adddate = now(), producttype = ?, detailedimgpath = ? where pname = ?";
-		
+
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, products.getPname());
@@ -781,7 +741,7 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 		}
 		return -1;
 	}
-	
+
 	// 모든 유저 List 구해옴
 	public List<Users> getAllUserList(){
 		String sql = "Select * FROM users";
@@ -789,7 +749,7 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			
+
 			while (rs.next()){
 				Users users = new Users();
 				users.setId(rs.getString(1));
@@ -807,5 +767,5 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}return null;
-	}   
+	}
 }

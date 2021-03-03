@@ -1,63 +1,12 @@
-<%@page import="DTO.Orders"%>
-<%@page import="DAO.Dao"%>
-<%@page import="java.util.List"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.net.URLDecoder"%>
-<%@page import="java.util.Date"%>
-<%@page import="java.util.Iterator"%>
-<%@page import="java.util.Map"%>
-<%@page import="java.util.Set"%>
-<%@page import="java.util.HashMap"%>
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-
-<%
-request.setCharacterEncoding("UTF-8");
-	String cartID = session.getId();
-	 String idx = (String)session.getAttribute("id");
-
-	 
-	 List<String> list = (List<String>) session.getAttribute("list");
-	 if(list == null) {
-		 list = new ArrayList<String>();
-	 }
-
-	 list.add((String)session.getAttribute("pname"));
-	 list.add(request.getParameter("countresult"));
-	 list.add((String)session.getAttribute("price"));
-	 
-	 int listSize = list.size();
-	 
-	 for(int i = listSize - 1; i >= 0; i--) {
-		 if(list.get(i) == null)
-	 list.remove(i);
-	 }
-	 
-	 session.setAttribute("list", list);
-	 
-	 
-	 // 장바구니 비우기 관련
-	boolean Deleteflag = false;
-	String temp = request.getParameter("id");
-	
-	if(temp == null) {
-		temp = "1";
-	}
-	if(temp.equals("0")) {
-		for(int i = list.size() - 1; i >= 0; i--) {
-	list.remove(i);
-		}
-		session.setAttribute("list", list);
-	}
-	int Deletenumber = 0;
-	
-	Dao DAO = new Dao();
-%>
+<%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib  prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <html>
 
 <head>
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/custom.css">	
+<link rel="stylesheet" href="css/custom.css">
 <title>JASET VAPE</title>
 	<style>
 		#pointer {
@@ -127,33 +76,28 @@ request.setCharacterEncoding("UTF-8");
 					<th>수량</th>
 					<th>가격</th>
 				</tr>
-					<%
-						for(int i = 0; i < list.size()/3; i++) {
-					%>
+					<c:forEach var="product" items="${sessionScope.list}" varStatus="vs">
 					<tr>
-					 	<td><%=list.get(0 + i * 3)%></td>
-					 	<td><%=list.get(1 + i * 3)%></td>
-					 	<td><%=list.get(2 + i * 3)%></td>
+						<td>${product[0 + vs.count * 3]}</td>
+						<td>${product[1 + vs.count * 3]}</td>
+						<td>${product[2 + vs.count * 3]}</td>
 					 </tr>
-				 	<%}%>
+					</c:forEach>
 			</table>
 		</div>
-		
+
 		<div id="cart">
 		<hr>
-		<p>Total: <%=list.size()/3%>
+		<p>Total: ${fn:length(sessionScope.list)/3}
 		</div>
 		<div class="row">
 			<table width="100%">
 				<tr>
-					<td align="center"><a href="./myshopping.jsp?id=<%=Deletenumber%>" class="btn btn-danger text-white">카트 비우기</a></td>
-					<%
-						if(list.size() != 0) {
-					%>
-					<td align="center"><a onclick="return emtpyCheck();" href="thank.jsp?cartId=<%=cartID%>"  class="btn btn-dark">주문하기 </a></td>
-					<%
-						}
-					%>
+					<td align="center"><a href="./myshopping.do?id=${requestScope.Deletenumber}" class="btn btn-danger text-white">카트 비우기</a></td>
+
+					<c:if test="${fn:length(sessionScope.list) != 0}">
+						<td align="center"><a onclick="return emtpyCheck();" href="thank.do?cartId=${CartID}"  class="btn btn-dark">주문하기 </a></td>
+					</c:if>
 				</tr>
 			</table>
 		</div>
@@ -170,31 +114,26 @@ request.setCharacterEncoding("UTF-8");
 
 		</div>
 		<div>
-			<table class="table table-hover">			
+			<table class="table table-hover">
 			<tr>
 				<th class="text-center">주문번호</th>
 				<th class="text-center">주문날짜</th>
 				<th class="text-center">배송일</th>
 			</tr>
-		<%
-			ArrayList <Orders> Olist = DAO.getOrderList(id);
-			for(int  i = 0 ; i < Olist.size();i++){		
-		%>
-			<tr>
-				<td style="text-align:center"><%= Olist.get(i).getCartID() %></td>				
-				<td style="text-align:center"><%= Olist.get(i).getOdate() %></td>				
-				<td style="text-align:center"><%= Olist.get(i).getLaterDate() %></td>
-				<% %>				
-			</tr>
-			<%} %>
+
+			<c:forEach var="Order" items="${requestScope.Olist}">
+				<td style="text-align:center">${Order.cartID}</td>
+				<td style="text-align:center">${Order.Odate}%></td>
+				<td style="text-align:center">${Order.LaterDate}</td>
+			</c:forEach>
 			</table>
-						
+
 		</div>
 	</div>
-	
+
 
 </body>
-<jsp:include page="../sub/footer.jsp" flush="true"/>		
+<jsp:include page="../sub/footer.jsp" flush="true"/>
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="css/bootstrap.min.css"></script>

@@ -51,8 +51,8 @@ header {
 </head>
 
 <body>
-<jsp:include page="../sub/menu.jsp" flush="true"/>
-<jsp:include page="../sub/submenu.jsp" flush="true"/>
+	<%@ include file="../sub/menu.jsp"%>
+	<%@ include file="../sub/submenu.jsp"%>
 
 	<%! public void CollectNull(String strSearch, String strPage
 			, String NowPageNum) {
@@ -236,6 +236,6 @@ header {
 		</div>
 	</div>
 	</div>
+	<%@ include file="../sub/footer.jsp"%>
 </body>
-	<jsp:include page="../sub/footer.jsp" flush="true"/>
 </html>

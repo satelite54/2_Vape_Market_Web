@@ -1,4 +1,4 @@
-package Servlet.Action.product;
+package Servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -21,7 +21,7 @@ import DTO.Products;
 @WebServlet("/PMAction")
 public class ProductManegerAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -42,11 +42,11 @@ public class ProductManegerAction extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
-		
+
 		Dao DAO = new Dao();
-		
+
 		Products products = new Products();
-		
+
 		Map<String, String[]> paraMeterMap = request.getParameterMap();
 		Set<String> paraMeterKey = paraMeterMap.keySet();
 		Iterator iter = paraMeterKey.iterator();
@@ -70,7 +70,7 @@ public class ProductManegerAction extends HttpServlet {
 		products.setProducttype(producttype);
 		products.setStock(Integer.parseInt(stock));
 		products.setManufacturer(manufacturer);
-		
+
 		int parameterSize = paraMeterMap.size();
 		switch(strAry[parameterSize - 1]) {
 			case "insert": {
@@ -121,7 +121,7 @@ public class ProductManegerAction extends HttpServlet {
 				}
 				break;
 			}
-		}	
+		}
 	}
 
 }

@@ -20,7 +20,7 @@
   <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=hardware%>','<%=1%>', '<%=" "%>', '<%=1%>' , '<%=1%>')">하드웨어</a></div>
   <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=liquid%>','<%=1%>', '<%=" "%>', '<%=1%>' , '<%=1%>')">원본액상</a></div>
   <div id="submenu"><a href="#" onclick="javascript:checkForm('<%=coil%>','<%=1%>', '<%=" "%>', '<%=1%>' , '<%=1%>')">코일</a></div>
-  <div id="submenu"><a href="community.do">커뮤니티</a></div>
+  <div id="submenu"><a href="communityListAction.do?page=1">커뮤니티</a></div>
   <div id="submenu"><a href="#" onclick="javascript:NewPageMove()">뉴스</a></div>
 </div>
 <hr>
@@ -53,7 +53,7 @@
     	  f.Search.value=Search;
     	  f.Page.value=Page;
     	  f.NowPageNum.value=NowPageNum;
-    	  f.action = "ProductListSort";
+    	  f.action = "productdetailpageAction.do";
     	  f.submit();
       }
    }

@@ -6,7 +6,7 @@ public class Order {
 	private String Onumber;
 	private Date Odate;
 	private Date delivery;
-	
+
 	public String getOnumber() {
 		return Onumber;
 	}

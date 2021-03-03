@@ -1,4 +1,4 @@
-package Servlet.Action.product;
+package Action.product;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ import DTO.Products;
 @WebServlet("/ProductListSort")
 public class ProductListSort extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -43,7 +43,7 @@ public class ProductListSort extends HttpServlet {
 		if(NowPageNum == null) {
 			NowPageNum = "1";
 		}
-		
+
 		List<Products> checkproducts = (List<Products>) session.getAttribute("products");
 		if(checkproducts != null) {
 			if(!checkproducts.isEmpty() && Search.equals("???") && producttype.equals("Common")) {
@@ -61,13 +61,13 @@ public class ProductListSort extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 	}
-	
+
 	public List<Products> makeProductList(String Sortmethod, String producttype, String Search) {
 		List<Products> products = new ArrayList<Products>();
 		Dao DAO = new Dao();
-		
+
 		String OrderBy1 = " order by price asc";
 		String OrderBy2 = " order by price desc";
 		String OrderBy3 = " order by adddate asc";

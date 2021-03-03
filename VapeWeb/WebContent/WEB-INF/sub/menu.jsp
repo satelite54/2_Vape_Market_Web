@@ -81,7 +81,7 @@ div {text-align: center;}
             	  <a class="nav-link" href="logoutAction.do"><%="["+id+"]님 "+"환영합니다." %> 로그아웃</a>
             	</li>
             	<li class="nav-item">
-                	<a class="nav-link" href="update.do">회원수정</a>
+                	<a class="nav-link" href="userlistAction.do">회원수정</a>
             	</li>
             	<li class="nav-item">
                 	<a class="nav-link" href="myshopping.do">나의 쇼핑</a>
@@ -105,7 +105,7 @@ div {text-align: center;}
     <%
     	}
 	%>
-  <form action="setadmin.jsp" method ="post">
+  <form action="setauthorityAction.do" method ="post">
 	  <div class="modal fade" id="myModal" role="dialog"> <!-- 사용자 지정 부분① : id명 -->
 	    <div class="modal-dialog">
 	      <!-- Modal content-->
@@ -130,7 +130,7 @@ div {text-align: center;}
 <div ><a href="main.do"><img src="<c:url value="/img/logo.png"/>"/></a></div>
 
   <div class="item1">
-  <form onsubmit="return checkForm2();" class="form-inline" action="ProductListSort">
+  <form onsubmit="return checkForm2();" class="form-inline" action="productdetailpageAction.do">
   <input class="form-control mr-sm-2 " name="Search" type="search" placeholder="Search" aria-label="Search">
   <input type="hidden" name="Producttype" value="Common">
   <input type="hidden" name="Page" value="1">

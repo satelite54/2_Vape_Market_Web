@@ -10,7 +10,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ page import="DTO.Board"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,24 +38,34 @@
 				</tr>
 			</thead>
 			<tbody class="border">
-				<c:forEach var="bbs" items="list">
+				<c:forEach var="bbs" items="${BoardList}" begin="${requestScope.page.blockStartNum}" end="${requestScope.page.blockLastNum}">
 					<tr>
 						<td>${bbs.BNum}</td>
 						<td>${bbs.BTitle}</td>
 						<td>${bbs.id}</td>
 						<td>${bbs.BDate}</td>
-						<td>${bbs.view}</td>
+						<td>${bbs.views}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 		<nav aria-label="Page navigation example">
 			<ul class="pagination" style="justify-content: center;">
-				<li class="page-item"><a class="page-link"
-					href="community.jsp?cnl=#" aria-label="Previous"> <span
-						aria-hidden="true">&laquo;</span></a></li>
-				<li class="page-item"><a class="page-link"
-					href="community.jsp?cnl=#"></a></li>
+				<li class="page-item">
+					<a class="page-link" href="communityListAction.do?page=${param.page - 1}" aria-label="Previous">
+						<span aria-hidden="true"> &laquo;</span>
+					</a>
+				</li>
+				<c:forEach var="Page" begin="1" end="${requestScope.page.lastPageNum}" varStatus="vs">
+					<li class="page-item">
+						<a class="page-link" href="communityListAction.do?page=${vs.count}">${vs.count}</a>
+					</li>
+				</c:forEach>
+				<li class="page-item">
+					<a class="page-link" href="communityListAction.do?page=${param.page + 1}"aria-label="Next">
+						<span aria-hidden="true"> &raquo; </span>
+					</a>
+				</li>
 			</ul>
 		</nav>
 		<a href="#" onclick="checkForm1(); return false;"

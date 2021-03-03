@@ -1,4 +1,4 @@
-package Servlet.Action.board;
+package Action.board;
 
 import java.io.IOException;
 

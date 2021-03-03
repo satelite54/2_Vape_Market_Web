@@ -1,4 +1,4 @@
-package Servlet.Action.crawl;
+package Action.crawl;
 
 import java.io.IOException;
 import java.util.ArrayList;

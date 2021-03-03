@@ -8,7 +8,7 @@ public class Board {
 	private String id;
 	private int authority;
 	private int views;
-	
+
 	public int getBNum() {
 		return BNum;
 	}
@@ -51,6 +51,11 @@ public class Board {
 	public void setViews(int views) {
 		this.views = views;
 	}
+	@Override
+	public String toString() {
+		return "Board [BNum=" + BNum + ", BTitle=" + BTitle + ", BContent=" + BContent + ", BDate=" + BDate + ", id="
+				+ id + ", authority=" + authority + ", views=" + views + "]";
+	}
+
 }
 
-	

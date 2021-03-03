@@ -9,8 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Action.admin.SetAuthorityAction;
+import Action.board.community_List;
+import Action.product.ProductListSortAction;
+import Action.user.DeleteAction;
 import Action.user.LoginAction;
 import Action.user.LogoutAction;
+import Action.user.UpdateAction;
 import Action.user.UserlistAction;
 
 //@WebServlet("*.do")
@@ -145,7 +150,7 @@ public class LocationController extends HttpServlet {
 					forward.setNextPath(user + "myshopping.jsp");
 					break;
 				}
-				case "update2.do": {
+				case "update.do": {
 					forward= new LocationForward();
 					forward.setRedirect(false);
 					forward.setNextPath(user + "update.jsp");
@@ -167,18 +172,44 @@ public class LocationController extends HttpServlet {
 					forward = location.execute(request, response);// 액션쪽 필수 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 					break;
 				}
-				case "update.do":{
+				case "userlistAction.do":{
 					location = new UserlistAction();
 					forward = location.execute(request, response);
 					break;
 				}
+				case "updateAction.do":{
+					location = new UpdateAction();
+					forward = location.execute(request, response);
+					break;
+				}
+				case "deleteAction.do":{
+					location = new DeleteAction();
+					forward = location.execute(request, response);
+					break;
+				}
+				case "setauthorityAction.do":{
+					location = new SetAuthorityAction();
+					forward = location.execute(request, response);
+					break;
+				}
+				case "productdetailpageAction.do":{
+					location = new ProductListSortAction();
+					forward = location.execute(request, response);
+					break;
+				}
+
+				case "communityListAction.do": {
+					location = new community_List();
+					forward = location.execute(request, response);
+					break;
+				}
+
 				//
 
 
 				default:
 					break;
 			}
-
 			// 화면이동
 			if(forward != null) {
 				if(forward.isRedirect()) {

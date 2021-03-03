@@ -12,20 +12,28 @@ import DTO.Users;
 import Servlet.Location.Location;
 import Servlet.Location.LocationForward;
 
-public class UserlistAction implements Location {
+public class DeleteAction implements Location {
 
 	@Override
 	public LocationForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-	Dao dao = new Dao();
-	HttpSession session = request.getSession();
 		LocationForward forward = new LocationForward();
-		Users user = dao.getUserList(session);
-		request.setAttribute("userList", dao.getUserList(session));
-		forward.setNextPath("update.do");
+		Dao dao = new Dao();
+		HttpSession session;
+		session = request.getSession();
+
+		String[] strTemp = request.getParameterValues("UserCheck");
+
+		if (strTemp == null) {
+			dao.deleteUser(session);
+			session.invalidate();
+		} else {
+			dao.deleteUser(strTemp);
+		}
+
+		forward.setNextPath("main.do");
 		forward.isRedirect();
 		forward.setRedirect(false);
 		return forward;
 	}
-
 
 }
