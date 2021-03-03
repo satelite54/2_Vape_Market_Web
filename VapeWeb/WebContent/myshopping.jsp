@@ -13,7 +13,7 @@
 
 <%
 request.setCharacterEncoding("UTF-8");
-	String cartID = session.getId();
+	 String cartID = session.getId();
 	 String idx = (String)session.getAttribute("id");
 
 	 
@@ -21,11 +21,16 @@ request.setCharacterEncoding("UTF-8");
 	 if(list == null) {
 		 list = new ArrayList<String>();
 	 }
-
-	 list.add((String)session.getAttribute("pname"));
-	 list.add(request.getParameter("countresult"));
-	 list.add((String)session.getAttribute("price"));
 	 
+	 System.out.println(request.getHeader("REFERER"));
+	 
+	 if(request.getParameter("countresult") != null) {
+		 if(request.getHeader("REFERER").contains("Productdetailpage")) {
+			 list.add((String)session.getAttribute("pname"));
+			 list.add(request.getParameter("countresult"));
+			 list.add((String)session.getAttribute("price"));
+		}
+	 }
 	 int listSize = list.size();
 	 
 	 for(int i = listSize - 1; i >= 0; i--) {

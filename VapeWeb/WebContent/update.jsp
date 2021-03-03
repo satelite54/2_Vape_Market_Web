@@ -14,14 +14,14 @@
 <head>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/custom.css">
-<%@ include file="menu.jsp"%>
-<%@ include file="submenu.jsp"%>
 
 <title>JASET VAPE</title>
 
 </head>
 
 <body>
+	<%@ include file="menu.jsp"%>
+	<%@ include file="submenu.jsp"%>
 	 <%
 	 request.setCharacterEncoding("UTF-8");
 	 	 Dao DAO = new Dao();

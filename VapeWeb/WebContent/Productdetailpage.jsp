@@ -11,15 +11,12 @@
 <link rel="stylesheet" type="text/css" href="css/theVapor.css">
 <link rel="stylesheet" type="text/css" href="css/theVapordetail.css">
 <style type="text/css">
-
 <%
-	String Pname= request.getParameter("Pname");
-	String Price= request.getParameter("Price");
+	String Pname = request.getParameter("Pname");
+	String Price = request.getParameter("Price");
 	session.setAttribute("pname", Pname);
 	session.setAttribute("price", Price);
-%>
-
-#prdDetailContentLazy img[src=""], #prdDetailContentLazy img:not([src])
+%> #prdDetailContentLazy img[src=""], #prdDetailContentLazy img:not([src])
 	{
 	visibility: hidden !important;
 	height: 1px !important;
@@ -30,7 +27,7 @@
 <body id="main">
 	<%@ include file="menu.jsp"%>
 	<%@ include file="submenu.jsp"%>
-
+	
 	<hr class="layout">
 	<div id="wrap">
 		<div id="container">
@@ -53,15 +50,15 @@
 					<!-- 이미지 영역 -->
 					<div class="xans-element- xans-product xans-product-image imgArea">
 						<div class="keyImg ">
-							<a href="#none" alt="P0000JUA"><img src="img/${param.Imgname}"
-								alt="" class="BigImage "><span id="zoomMouseGiude"
+							<a href="#none" alt="P0000JUA"><img
+								src="img/${param.Imgname}" alt="" class="BigImage "><span
+								id="zoomMouseGiude"
 								style="display: block; position: relative; width: 170px; margin: 0px auto;"></span></a>
 						</div>
 					</div>
 					<div class="infoArea">
 						<h3>
-							${param.Pname}
-							<span> <img
+							${param.Pname} <span> <img
 								src="//img.echosting.cafe24.com/design/common/icon_sett04.gif"
 								alt="적립금">
 							</span>
@@ -93,8 +90,8 @@
 											style="font-size: 12px; color: #008BCC; font-weight: bold;">판매가</span></th>
 										<td><span
 											style="font-size: 12px; color: #008BCC; font-weight: bold;"><strong
-												id="span_product_price_text">${param.Price}</strong>
-												<input id="product_price" name="product_price" value=""
+												id="span_product_price_text">${param.Price}</strong> <input
+												id="product_price" name="product_price" value=""
 												type="hidden"></span></td>
 									</tr>
 									<tr class=" xans-record-">
@@ -116,7 +113,7 @@
 
 						<div id="totalProducts" class="">
 
-					
+
 							<table border="1" summary="">
 								<caption>상품 목록</caption>
 								<colgroup>
@@ -140,12 +137,12 @@
 													class="btn bg-dark text-white btn-outline-white my-2 my-sm-0 {background-color: #223a6b !important;}"
 													type="submit" value="Submit">장바구니</button>
 												<input id="productCnt" type="text" name=countresult value=1>
-												<input type=button value="증가" onClick="javascript:this.form.countresult.value++; javascript:transforValue();">
+												<input type=button value="증가"
+													onClick="javascript:this.form.countresult.value++; javascript:transforValue();">
 												<input type=button value="감소"
 													onClick="javascript:this.form.countresult.value--; javascript:transforValue();">
-											</form> 
-											<strong>총 상품금액</strong>(수량) : <span class="total">
-											<strong><em id="count">${param.Price}</em><em>원</em></strong></span>
+											</form> <strong>총 상품금액</strong>(수량) : <span class="total"> <strong><em
+													id="count">${param.Price}</em><em>원</em></strong></span>
 										</td>
 									</tr>
 								</tfoot>
@@ -158,7 +155,7 @@
  								document.getElementById("count").innerHTML = productCnt * document.getElementById("span_product_price_text").innerHTML;
 							}
 						</script>
-					
+
 						<div class="xans-element- xans-myshop xans-myshop-benefit">
 							<p class="myThumb">
 								<img
@@ -184,10 +181,11 @@
 					</div>
 				</div>
 
-				
+
+			</div>
 		</div>
-	</div>
-	<script type="text/javascript">
+		
+		<script type="text/javascript">
 	   function checkForm3() {
 	      if (${id == null}) {
 	    	 alert("로그인 해주세요.");
@@ -200,46 +198,56 @@
 	   }
 	</script>
 
-<div class="parent">
-	<body data-spy="scroll" data-target=".navbar" data-offset="50">		
-		<div class="me">	
-	        	<p class="child">														
-					<nav id="mynav" class="navbar navbar-expand-sm bg-dark navbar-dark fixed py-2">  
-					  <ul class="navbar-nav">
-					    <li class="nav-item">
-					      <h2><a class="nav-link px-5" href="#section1">상세정보</a></h2>
-					      
-					    </li>
-					    <li class="nav-item">
-					      <h2><a class="nav-link px-5" href="#section2">상품후기</a></h2>
-					    </li>
-					    <li class="nav-item">
-					      <h2><a class="nav-link px-5" href="#section3">Q&A</a></h2>
-					    </li>
-					  </ul>
-					</nav>
-				</p>
-			</div>
-		
-<!-- 			<div id="section1" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
+		<div class="parent">
+			<body data-spy="scroll" data-target=".navbar" data-offset="50">
+				<div class="me">
+					<p class="child">
+						<nav id="mynav"
+							class="navbar navbar-expand-sm bg-dark navbar-dark fixed py-2">
+							<ul class="navbar-nav">
+								<li class="nav-item">
+									<h2>
+										<a class="nav-link px-5" href="#section1">상세정보</a>
+									</h2>
+
+								</li>
+								<li class="nav-item">
+									<h2>
+										<a class="nav-link px-5" href="#section2">상품후기</a>
+									</h2>
+								</li>
+								<li class="nav-item">
+									<h2>
+										<a class="nav-link px-5" href="#section3">Q&A</a>
+									</h2>
+								</li>
+							</ul>
+						</nav>
+					</p>
+				</div>
+
+				<!-- 			<div id="section1" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
 			</div> -->
-			<div id="section1" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
-							<p style="text-align: center;">
-								<img style="width: 100%;" src="img/${param.DetailImgName}"
-									alt="${param.DetailImgName}">
-							</p>
-							</div>
-			<div id="section2" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
-				<h1 style="color#223a6b;">상품후기</h1>
-				<%@ include file="/review/review.jsp" %>
-			</div>
-			
-			<div id="section3" class="container-fluid center" style="padding-top:70px;padding-bottom:70px">
-				<h1 style="color#223a6b;">Q&A</h1>
-				<%@ include file="question/list.jsp"%>
-			</div>
-		</body>
- </div>   				 
-	<%@ include file="footer.jsp"%>
+				<div id="section1" class="container-fluid"
+					style="padding-top: 70px; padding-bottom: 70px">
+					<p style="text-align: center;">
+						<img style="width: 100%;" src="img/${param.DetailImgName}"
+							alt="${param.DetailImgName}">
+					</p>
+				</div>
+				<div id="section2" class="container-fluid"
+					style="padding-top: 70px; padding-bottom: 70px">
+					<h1 style="">상품후기</h1>
+					<%@ include file="/review/review.jsp"%>
+				</div>
+
+				<div id="section3" class="container-fluid center"
+					style="padding-top: 70px; padding-bottom: 70px">
+					<h1 style="">Q&A</h1>
+					<%@ include file="question/list.jsp"%>
+				</div>
+			</body>
+		</div>
+		<%@ include file="footer.jsp"%>
 </body>
 </html>

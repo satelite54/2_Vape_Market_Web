@@ -27,12 +27,6 @@
 <body>
 <%@ include file="menu.jsp" %>
 <%@ include file="submenu.jsp" %>
-
-	
-	<script type="text/javascript">
-
-</script>
-
 	<div class="container">
 		<table class="table border-dark rounded">
 			<thead class="thead-dark">
