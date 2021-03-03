@@ -68,7 +68,7 @@
 						
 				<tr>
 					<td><%=list.get(i).getRNum()%></td>
-					<td><a href="review/reviewView.jsp?RNum=<%=list.get(i).getRNum() %>"><%= list.get(i).getRTitle()%></a></td>
+					<td><a href="review/reviewView.jsp?RNum=<%=list.get(i).getRNum() %>" target="popup"onclick="window.open('review/reviewView.jsp?RNum=<%=list.get(i).getRNum() %>','popup','width=600,height=600'); return false;"><%= list.get(i).getRTitle()%></a></td>
 					<td><%=list.get(i).getId()%></td>
 					<td><%=list.get(i).getRDate().substring(0,16)%></td>
 					<td><%= list.get(i).getViews()%></td>
