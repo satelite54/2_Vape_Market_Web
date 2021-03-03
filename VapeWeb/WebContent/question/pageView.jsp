@@ -23,7 +23,7 @@
 %>
 <html>
 <head>
-	<title>페이징 & 블럭 처리 테스트</title>
+	<title>JASET VAPE Q&A</title>
 </head>
 <link href="style.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">

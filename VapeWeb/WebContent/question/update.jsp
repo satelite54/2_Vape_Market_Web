@@ -11,7 +11,7 @@
 %>
 <html>
 <head>
-<title>JSP Board</title>
+<title>JASET VAPE Q&A</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 <script>
 	function check() {

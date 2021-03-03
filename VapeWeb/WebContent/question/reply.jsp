@@ -11,7 +11,7 @@
 %>
 <html>
 <head>
-<title>JSPBoard</title>
+<title>JASET VAPE Q&A</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 
