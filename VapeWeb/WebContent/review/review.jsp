@@ -15,6 +15,11 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <title>JASET VAPE</title>
 
 <%
@@ -39,45 +44,45 @@
 	}
 </script>
 
-<div class="container">
-		<table class="table border-dark rounded">
-			<thead class="thead-dark">
+	<div class="container">
+		<table class="table">
+			<thead class="text-light" style="background-color:#223a6b;">
 				<tr>
-					<th scope="col">번호</th>
-					<th scope="col">글 제목</th>
-					<th scope="col">작성자</th>
-					<th scope="col">작성일</th>
-					<th scope="col">조회수</th>
+					<th class="text-center">번호</th>
+					<th class="text-center">글 제목</th>
+					<th class="text-center">작성자</th>
+					<th class="text-center">작성일</th>
+					<th class="text-center">조회수</th>
 				</tr>
 			</thead>
 			<tbody class="border">
 				<%
 				
-							ArrayList<Review> list = dao.getReviewList();
-							String cnl = request.getParameter("cnl");
-							if(cnl == null) {
-								cnl = "1";
-							}
-							// !(CntIndex > (pageSelectectedIndex * 15 - 15) && CntIndex <= pageSelectectedIndex * 15)
-							int NowPageNumber = Integer.parseInt(cnl);
-							
-							for (int i = 0; i < list.size(); i++) {
-  								if((i <= (NowPageNumber * 10 - 10) - 1 || i > NowPageNumber * 10 - 1))
-									continue;
-						%>
-						
+					ArrayList<Review> list = dao.getReviewList();
+					String cnl = request.getParameter("cnl");
+					if(cnl == null) {
+						cnl = "1";
+					}
+					// !(CntIndex > (pageSelectectedIndex * 15 - 15) && CntIndex <= pageSelectectedIndex * 15)
+					int NowPageNumber = Integer.parseInt(cnl);
+					
+					for (int i = 0; i < list.size(); i++) {
+								if((i <= (NowPageNumber * 10 - 10) - 1 || i > NowPageNumber * 10 - 1))
+							continue;
+				%>	
 				<tr>
 					<td><%=list.get(i).getRNum()%></td>
 					<td><a href="review/reviewView.jsp?RNum=<%=list.get(i).getRNum() %>" target="popup"onclick="window.open('review/reviewView.jsp?RNum=<%=list.get(i).getRNum() %>','popup','width=600,height=600'); return false;"><%= list.get(i).getRTitle()%></a></td>
 					<td><%=list.get(i).getId()%></td>
 					<td><%=list.get(i).getRDate().substring(0,16)%></td>
-					<td><%= list.get(i).getViews()%></td>
+					<td><%=list.get(i).getViews()%></td>
 				</tr>
 				<%
-							}
-						%>
+					}
+				%>
 			</tbody>
 		</table>
+	</div>
 		<nav aria-label="Page navigation example">
 			<ul class="pagination" style="justify-content: center;">
 				<%
@@ -111,19 +116,17 @@
 <div id="reviewDiv" align="center" style="display: none;">
 <%@ include file="reviewWrite.jsp" %>
 </div>
-		
-</div>
 
-	<script type="text/javascript">
-	   function checkForm1() {
-	      if (${id==null}) {
-	         alert("로그인 해주세요.");
-	         return false;
-	      }
-	      location.href = "review/reviewWrite.jsp?id=${id}"
-	   }
-	</script>
-	<script src="css/bootstrap.min.css"></script>
-	<script src="js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+   function checkForm1() {
+      if (${id==null}) {
+         alert("로그인 해주세요.");
+         return false;
+      }
+      location.href = "review/reviewWrite.jsp?id=${id}"
+   }
+</script>
+<script src="css/bootstrap.min.css"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

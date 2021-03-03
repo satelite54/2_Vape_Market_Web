@@ -48,14 +48,14 @@
 <div class="container">
   <h2 style="color:#223a6b; font-style: italic;">JASET VAPE</h2>
   <p style="color:#223a6b;">소중한 후기 감사합니다!</p>
-  <table class="table">
+  <table class="table" style="text-align: center;">
     <thead class="text-light" style="background-color:#223a6b;">
       <tr>
-        <th>번호<th>
-        <th>제목</th>
-        <th>작성자</th>
-        <th>작성일</th>
-        <th>조회수</th>
+      	<th>번호</th>
+      	<th>제목</th>
+      	<th>작성자</th>
+      	<th>작성일</th>
+      	<th>조회수</th>
       </tr>
     </thead>
     <tbody>
@@ -64,7 +64,7 @@
         <td><%=review.getRTitle()%></td>
         <td><%=review.getId()%></td>
         <td><%=review.getRDate().substring(0,16)%></td>
-        <td><%= review.getViews() %></td>
+        <td><%=review.getViews()%></td>
       </tr>      
     </tbody>
   </table>
@@ -75,8 +75,8 @@
 	<%	String strid = (String) session.getAttribute("id");
 		if(review.getId().equals(strid) || admin == 1 ) {
 	%>
-		<a href="reviewDeleteAction.jsp?RNum=<%= review.getRNum() %>" class="btn btn-dark float-right mt-3" style="margin-right:5px;" onclick="return confirm('글을 삭제하시겠습니까?');">삭제</a>
-		<a href="reviewUpdate.jsp?RNum=<%=review.getRNum()%>&RTitle=<%=review.getRTitle()%>&RContent=<%=review.getRContent()%>" class="btn btn-dark float-right mt-3" style="margin-right:5px;">수정</a>
+		<a href="reviewDeleteAction.jsp?RNum=<%= review.getRNum() %>" class="btn float-right mt-3" style="margin-right:5px; background-color:#223a6b; color:white;" onclick="return confirm('글을 삭제하시겠습니까?');">삭제</a>
+		<a href="reviewUpdate.jsp?RNum=<%=review.getRNum()%>&RTitle=<%=review.getRTitle()%>&RContent=<%=review.getRContent()%>" class="btn float-right mt-3" style="margin-right:5px; background-color:#223a6b; color:white;">수정</a>
 	<%
 	}
 	%>
