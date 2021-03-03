@@ -42,11 +42,13 @@
 	
 <script type="text/javascript">
    function checkForm(Producttype, Sortmethod, Search, Page, NowPageNum) {
+	   //
       if (${id==null}) {
          alert("로그인 해주세요.");
          location.href = "login.jsp";
       } else if (${id != null}) {
     	  //alert("id가 들어왔음");
+    	  //alert(Producttype);
     	  f=document.frm;
     	  f.Producttype.value=Producttype;
     	  f.Sortmethod.value=Sortmethod;

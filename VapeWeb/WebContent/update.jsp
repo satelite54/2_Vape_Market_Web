@@ -31,7 +31,7 @@
 	 %>
 	
 <div class="container mt-4" style="max-width: 350px;">
-	<form name="frm" method="post" action="updateAction.jsp" onsubmit="return PleaseSendUTF8();" accept-charset="UTF-8">
+	<form name="update" method="post" action="updateAction.jsp" onsubmit="return PleaseSendUTF8();" accept-charset="UTF-8">
 
 			<h2 style="text-align: center;">회원수정</h2>
 			<label style="float: left; margin-top: 5px;">이름</label> 
@@ -56,7 +56,7 @@
 
 	</form>
 	
-	<form name="frm" action="deleteAction.jsp" onsubmit="return confirm('탈퇴하시겠습니까?');">
+	<form name="Delete" action="deleteAction.jsp" onsubmit="return confirm('탈퇴하시겠습니까?');">
 		<button type="submit" name="leave" class="btn btn-dark mt">회원탈퇴</button>
 	</form>
 </div>
