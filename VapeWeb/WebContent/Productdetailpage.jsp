@@ -46,8 +46,8 @@ $jointbuy_page = /product/jointbuy.html
 						<li class="displaynone "><a href="/product/list.html"></a></li>
 					</ol>
 				</div>
-<%-- 				<%System.out.println("pageContextImgname = " + pageContext.getAttributesScope("Imgname"));%>
-				<%System.out.println("pageContextImgname = " + pageContext.getAttributesScope("Imgname"));%> --%>
+ 				<%System.out.println("pageContextImgname = " + pageContext.getAttributesScope("Imgname"));%>
+				<%System.out.println("pageContextImgname = " + pageContext.getAttributesScope("Imgname"));%>
 				<!-- 상단 제품 정보  -->
 				<div class="xans-element- xans-product xans-product-detail ">
 					<!-- 이미지 영역 -->
@@ -323,6 +323,7 @@ $jointbuy_page = /product/jointbuy.html
 				</div>
 			<p class="banner"></p>
 		</div>
+	</div>
 	</div>
 	<script type="text/javascript">
 	   function checkForm3() {

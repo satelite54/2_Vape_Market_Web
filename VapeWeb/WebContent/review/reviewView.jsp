@@ -59,7 +59,7 @@
 			<div class="col-sm-2"><%= review.getViews() %></div>
 		</div>
 			<div class="card-body text-dark border boder-dark rounded mt-3 mb-5">
-				<p class="card-text text-left" style="height:350px"><%= review.getRContent() %></p>
+				<p class="card-text text-left" style="height:350px"><%= review.getRContent()%></p>
  			</div>
  			<div>
 		 				<a href="review.jsp" class="btn btn-primary float-right mt-3" style="margin-right:5px;">글목록</a>

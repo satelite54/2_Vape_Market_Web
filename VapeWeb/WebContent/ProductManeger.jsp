@@ -50,6 +50,18 @@
 					<input type="text" class="form-control" name="producttype">
 				</div>
 			</div>
+			<div class="mb-3 row">
+				<label for="ProductID" class="col-sm-4 col-form-label">상품 대표 이미지</label>
+				<div class="col-sm-6">
+					<input type="file" name="imgname" accept="image/*">
+				</div>
+			</div>
+			<div class="mb-3 row">
+				<label for="ProductID" class="col-sm-4 col-form-label">상품 상세 이미지</label>
+				<div class="col-sm-6">
+					<input type="file" name="detailedimgname" accept="image/*"> 
+				</div>
+			</div>
 			<input type="submit" name="insert" value="삽입" class="btn btn-primary"> 
 			<input type="submit" name="delete" value="삭제" class="btn btn-primary">
 			<input type="submit" name="update" value="수정" class="btn btn-primary"> 
@@ -88,10 +100,6 @@
 			value="삭제">
 		</div>
 	</form>
-
-
-
-
 	<%@ include file="footer.jsp"%>
 </body>
 </html>

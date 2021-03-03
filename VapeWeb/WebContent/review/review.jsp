@@ -53,6 +53,7 @@
 			<tbody class="border">
 				<%
 				
+				
 							ArrayList<Review> list = dao.getReviewList();
 							String cnl = request.getParameter("cnl");
 							if(cnl == null) {
@@ -68,7 +69,7 @@
 						
 				<tr>
 					<td><%=list.get(i).getRNum()%></td>
-					<td><a href="review/reviewView.jsp?RNum=<%=list.get(i).getRNum() %>"><%= list.get(i).getRTitle()%></a></td>
+					<td><a href="review/reviewView.jsp?RNum=<%=list.get(i).getRNum()%>"><%= list.get(i).getRTitle()%></a></td>
 					<td><%=list.get(i).getId()%></td>
 					<td><%=list.get(i).getRDate().substring(0,16)%></td>
 					<td><%= list.get(i).getViews()%></td>
@@ -94,7 +95,6 @@
 					if(NowPageNumber > (list.size() - 1) / 10 + 1)
 						NowPageNumber = (list.size() - 1) / 10 + 1;
 					for(int i = 1; i <= (list.size() - 1) / 10 + 1; i++) {
-						
 				%>
 				<li class="page-item"><a class="page-link" href="review/review.jsp?cnl=<%=i%>"><%=i%></a></li>				
 				<%
@@ -111,9 +111,7 @@
 <div id="reviewDiv" align="center" style="display: none;">
 <%@ include file="reviewWrite.jsp" %>
 </div>
-		
 </div>
-
 	<script type="text/javascript">
 	   function checkForm1() {
 	      if (${id==null}) {
