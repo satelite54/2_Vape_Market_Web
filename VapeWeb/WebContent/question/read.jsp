@@ -46,8 +46,7 @@ request.setCharacterEncoding("UTF-8");
 %>
 <html>
 <head>
-<title>JSP Board</title>
-<link href="style.css" rel="stylesheet" type="text/css">
+<title>JASET VAPE Q&A</title>
 <script type="text/javascript">
 	function down(filename) {
 		document.downFrm.filename.value=filename;
@@ -71,58 +70,55 @@ request.setCharacterEncoding("UTF-8");
 		document.cFrm.submit();
 	}
 </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 <br/><br/>
-<table align="center" width="600" cellspacing="3">
- <tr>
-  <td bgcolor="#9CA2EE" height="25" align="center">글읽기</td>
- </tr>
- <tr>
-  <td colspan="2">
-   <table cellpadding="3" cellspacing="0" width="100%"> 
-    <tr> 
-  <td align="center" bgcolor="#DDDDDD" width="10%"> 이 름 </td>
-  <td bgcolor="#FFFFE8"><%=name%></td>
-  <td align="center" bgcolor="#DDDDDD" width="10%"> 등록날짜 </td>
-  <td bgcolor="#FFFFE8"><%=regdate%></td>
- </tr>
- <tr> 
-    <td align="center" bgcolor="#DDDDDD"> 제 목</td>
-    <td bgcolor="#FFFFE8" colspan="3"><%=subject%></td>
-   </tr>
-   <tr> 
-     <td align="center" bgcolor="#DDDDDD">첨부파일</td>
-     <td bgcolor="#FFFFE8" colspan="3">
-    	<%
-    	if(filename!=null&&!filename.equals("")){
-    	%>
-    		<a href="javascript:down('<%=filename%>')"><%=filename%></a>
-    		<font color="blue">(<%=UtilMgr.intFormat(filesize)%>bytes)</font>
-    	<%
-    	}else{out.println("첨부된 파일이 없습니다.");}
-    	%>
-     </td>
-   </tr>
-   <tr> 
-    <td colspan="4"><br/><pre><%=content%></pre><br/></td>
-   </tr>
-   <tr>
-    <td colspan="4" align="right">
-     <%=ip%>로 부터 글을 남기셨습니다./  조회수  <%=count%>
-    </td>
-   </tr>
-   </table>
-  </td>
- </tr>
- <tr>
-  <td align="center" colspan="2">
- [<a href="update.jsp?nowPage=<%=nowPage%>&num=<%=num%>&numPerPage=<%=numPerPage%>" >수 정</a> |
- <a href="reply.jsp?nowPage=<%=nowPage%>&numPerPage=<%=numPerPage%>" >답 변</a> |
- <a href="delete.jsp?nowPage=<%=nowPage%>&num=<%=num%>">삭 제</a> ]<br/>
-  </td>
- </tr>
-</table>
+<div class="container">
+<h2 style="color:#223a6b; font-style: italic;">JASET VAPE</h2>
+  <p style="color:#223a6b;">Q&A</p>
+  <table class="table" style="text-align: center;">
+    <thead class="text-light" style="background-color:#223a6b;">
+      <tr>
+      	<th>이름</th>
+      	<th>등록날짜</th>
+      	<th>제목</th>
+      	<th>첨부파일</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="color:#223a6b;">
+        <td><%=name%></td>
+        <td><%=regdate%></td>
+        <td><%=subject%></td>
+        <td>
+	        <%
+	    	if(filename!=null&&!filename.equals("")){
+	    	%>
+	    		<a href="javascript:down('<%=filename%>')"><%=filename%></a>
+	    		<font color="blue">(<%=UtilMgr.intFormat(filesize)%>bytes)</font>
+	    	<%
+	    	}else{out.println("첨부된 파일이 없습니다.");}
+	    	%>
+    	</td>
+      </tr>      
+    </tbody>
+  </table>
+	<div class="card-body text-dark border boder-dark rounded mt-3 mb-5">
+		<p class="card-text text-left" style="height:350px"><%=content%></p>
+	</div>
+	<p><%=ip%>로 부터 글을 남기셨습니다./  조회수  <%=count%>
+	<a href="update.jsp?nowPage=<%=nowPage%>&num=<%=num%>&numPerPage=<%=numPerPage%>" class="btn float-right mt-3" style="margin-right:5px; background-color:#223a6b; color:white;">수정</a>
+	<a href="reply.jsp?nowPage=<%=nowPage%>&numPerPage=<%=numPerPage%>" class="btn float-right mt-3" style="margin-right:5px; background-color:#223a6b; color:white;">답변</a>
+	<a href="delete.jsp?nowPage=<%=nowPage%>&num=<%=num%>" class="btn float-right mt-3" style="margin-right:5px; background-color:#223a6b; color:white;" onclick="return confirm('글을 삭제하시겠습니까?');">삭제</a>
+</div>
+
 <form method="post" name="downFrm" action="download.jsp">
 	<input type="hidden" name="filename">
 </form>
