@@ -39,7 +39,14 @@
 						maxlength="20">
 				</div>
 			</div>
-
+			
+			<div class="form-group row">
+				<label class="col-sm-2">이메일</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" name="email"
+						maxlength="100">
+				</div>
+			</div>
 			<div class="form-group row">
 				<label class="col-sm-2">주소</label>
 				<div class="col-sm-3">

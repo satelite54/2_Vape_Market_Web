@@ -1,3 +1,4 @@
+<%@page import="DTO.Users"%>
 <%@page import="DTO.Orders"%>
 <%@page import="DAO.Dao"%>
 <%@page import="java.util.List"%>
@@ -53,6 +54,8 @@ request.setCharacterEncoding("UTF-8");
 	Dao DAO = new Dao();
 %>
 
+
+	
 <html>
 
 <head>
@@ -128,7 +131,9 @@ request.setCharacterEncoding("UTF-8");
 					<th>가격</th>
 				</tr>
 					<%
+						int totalPrice = 0;
 						for(int i = 0; i < list.size()/3; i++) {
+							totalPrice += Integer.parseInt(list.get(2 + i * 3));
 					%>
 					<tr>
 					 	<td><%=list.get(0 + i * 3)%></td>
@@ -141,22 +146,33 @@ request.setCharacterEncoding("UTF-8");
 		
 		<div id="cart">
 		<hr>
-		<p>Total: <%=list.size()/3%>
+		<p>Total: <%=totalPrice%>
 		</div>
-		<div class="row">
-			<table width="100%">
-				<tr>
-					<td align="center"><a href="./myshopping.jsp?id=<%=Deletenumber%>" class="btn btn-danger text-white">카트 비우기</a></td>
-					<%
-						if(list.size() != 0) {
-					%>
-					<td align="center"><a onclick="return emtpyCheck();" href="thank.jsp?cartId=<%=cartID%>"  class="btn btn-dark">주문하기 </a></td>
-					<%
-						}
-					%>
-				</tr>
-			</table>
-		</div>
+		<% 
+			Users User = DAO.getUserList(session);
+		%>
+		<form action="importEx/payProc.jsp" method="post">
+			<input type="hidden" class="form-control" name="name" maxlength="20" readonly value="<%=User.getName()%>">
+			<input type="hidden" class="form-control"  name="email" maxlength="20" style="margin-top: 5px;" value="<%=User.getEmail()%>">
+			<input type="hidden" class="form-control" name="mobile" maxlength="11" value="<%= User.getMobile() %>">
+			<input type="hidden" class="form-control"  name="address" style="margin-top: 5px;" value="<%= User.getBuilding() + " " + User.getStreet()%>"> 
+			<input type="hidden" class="form-control"  name="totalPrice" style="margin-top: 5px;" value="<%=totalPrice%>"> 
+			<input type="hidden" class="form-control"  name="zip" style="margin-top: 5px;" value="<%= User.getZip()%>"> 
+			<div class="row">
+				<table width="100%">
+					<tr>
+						<td align="center"><a href="./myshopping.jsp?id=<%=Deletenumber%>" class="btn btn-danger text-white">카트 비우기</a></td>
+						<%
+							if(list.size() != 0) {
+						%>
+							<td align="center"><input type="submit" class="btn btn-dark" value="주문하기"></td>
+						<%
+							}
+						%>
+					</tr>
+				</table>
+			</div>
+		</form>
 	</div>
 <br>
 <div id="submenu"><p>주문목록</div>

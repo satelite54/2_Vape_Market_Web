@@ -9,15 +9,17 @@ request.setCharacterEncoding("UTF-8");
 <%@ page import="DAO.Dao"%>
 <%@ page import="DTO.Users" %>
 <jsp:useBean id="user" class="DTO.Users" scope="page"/>
-<jsp:setProperty name="user" property="id" />
-<jsp:setProperty name="user" property="pw" />
-<jsp:setProperty name="user" property="birthday" />
-<jsp:setProperty name="user" property="zip" />
-<jsp:setProperty name="user" property="street" />
-<jsp:setProperty name="user" property="building" />
-<jsp:setProperty name="user" property="mobile" />
-<jsp:setProperty name="user" property="admin" />
-<jsp:setProperty name="user" property="authority" />
+<jsp:setProperty name="user" property="id"/>
+<jsp:setProperty name="user" property="pw"/>
+<jsp:setProperty name="user" property="birthday"/>
+<jsp:setProperty name="user" property="zip"/>
+<jsp:setProperty name="user" property="street"/>
+<jsp:setProperty name="user" property="building"/>
+<jsp:setProperty name="user" property="mobile"/>
+<jsp:setProperty name="user" property="admin"/>
+<jsp:setProperty name="user" property="authority"/>
+<jsp:setProperty name="user" property="name"/>
+<jsp:setProperty name="user" property="email"/>
 
 <html>
 <head>

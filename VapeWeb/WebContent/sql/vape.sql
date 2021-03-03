@@ -151,18 +151,19 @@ CREATE TABLE IF NOT EXISTS `users` (
   `birthday` varchar(1000) NOT NULL,
   `admin` int(11) NOT NULL,
   `name` varchar(1000) NOT NULL,
+  `email` varchar(1000) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- 테이블 데이터 vape.users:~6 rows (대략적) 내보내기
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT IGNORE INTO `users` (`id`, `pw`, `zip`, `street`, `building`, `mobile`, `authority`, `birthday`, `admin`) VALUES
-	('1', '1', '08275', 'ãìë©ãë§ãããë§ã', '1', '07081155222', 1, '1994-09-25', 0),
-	('321321321', '32132132', '321321321', '321321321', '321321321', '321321321', 0, '321321321', 0),
-	('dw', 'dw', 'dw', 'dw', 'dw', 'dw', 0, 'dw', 0),
-	('dwadwadwadwa', 'dwadwadwadwa', 'dwadwadwa', 'dwadwadwadwa', 'dwadwadwa', 'dwadwadwa', 0, 'dwadwadwa', 0),
-	('satelite54', 'rhkdwo9079@', '48532', '부산 남구 홍곡로 360', '112동 1703호', '07081155222', 0, '1994-09-25', 1),
-	('WOOJ', '1', '1', '1', '1', '1', 0, '1994-09-25', 0);
+INSERT IGNORE INTO `users` (`id`, `pw`, `zip`, `street`, `building`, `mobile`, `authority`, `birthday`, `admin`,`name`,`email`) VALUES
+	('1', '1', '08275', 'ãìë©ãë§ãããë§ã', '1', '07081155222', 1, '1994-09-25', 0,'박아영','ahyoungpark93@gmail.com'),
+	('321321321', '32132132', '321321321', '321321321', '321321321', '321321321', 0, '321321321', 0,'이영아','random1@gmail.com'),
+	('dw', 'dw', 'dw', 'dw', 'dw', 'dw', 0, 'dw', 0,'정재우','jaewoo6214010@gmail.com'),
+	('dwadwadwadwa', 'dwadwadwadwa', 'dwadwadwa', 'dwadwadwadwa', 'dwadwadwa', 'dwadwadwa', 0, 'dwadwadwa', 0,'최영이','random2@gmail.com'),
+	('satelite54', 'rhkdwo9079@', '48532', '부산 남구 홍곡로 360', '112동 1703호', '07081155222', 0, '1994-09-25', 1,'김태헌','satelite12@naver.com'),
+	('WOOJ', '1', '1', '1', '1', '1', 0, '1994-09-25', 0,'김이영','random2@gmail.com');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

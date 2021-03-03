@@ -4,6 +4,7 @@ public class Users {
 	private String name;
 	private String id;
 	private String pw;
+	private String email;
 	private String zip;
 	private String street;
 	private String building;
@@ -25,6 +26,12 @@ public class Users {
 	}
 	public void setPw(String pw) {
 		this.pw = pw;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getZip() {
 		return zip;
