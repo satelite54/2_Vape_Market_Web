@@ -32,7 +32,6 @@
 	<%@ include file="submenu.jsp"%>
 
 	<hr class="layout">
-	<div id="wrap">
 		<div id="container">
 			<p id="kvMain"></p>
 
@@ -207,8 +206,7 @@
 					<nav id="mynav" class="navbar navbar-expand-sm bg-dark navbar-dark fixed py-2">  
 					  <ul class="navbar-nav">
 					    <li class="nav-item">
-					      <h2><a class="nav-link px-5" href="#section1">상세정보</a></h2>
-					      
+					      <h2><a class="nav-link px-5" href="#section1">상세정보</a></h2> 
 					    </li>
 					    <li class="nav-item">
 					      <h2><a class="nav-link px-5" href="#section2">상품후기</a></h2>
@@ -220,21 +218,17 @@
 					</nav>
 				</p>
 			</div>
-		
-<!-- 			<div id="section1" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
-			</div> -->
 			<div id="section1" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
-							<p style="text-align: center;">
-								<img style="width: 100%;" src="img/${param.DetailImgName}"
-									alt="${param.DetailImgName}">
-							</p>
-							</div>
+				<p style="text-align: center;">
+					<img style="width: 100%;" src="img/${param.DetailImgName}"
+						alt="${param.DetailImgName}">
+				</p>
+			</div>
 			<div id="section2" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
 				<h1 style="color#223a6b;">상품후기</h1>
 				<br><br><br>
 				<%@ include file="/review/review.jsp" %>
 			</div>
-			
 			<div id="section3" class="container-fluid center" style="padding-top:70px;padding-bottom:70px">
 				<h1 style="color#223a6b;">Q&A</h1>
 				<%@ include file="question/list.jsp"%>
