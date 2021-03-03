@@ -72,7 +72,7 @@ request.setCharacterEncoding("UTF-8");
 	}
 </script>
 </head>
-<body bgcolor="#FFFFCC">
+<body>
 <br/><br/>
 <table align="center" width="600" cellspacing="3">
  <tr>
@@ -117,73 +117,7 @@ request.setCharacterEncoding("UTF-8");
  </tr>
  <tr>
   <td align="center" colspan="2">
-  <!-- 댓글 입력폼 Start -->
-  <form method="post" name="cFrm">
-		<table>
-			<tr  align="center">
-				<td width="50">이 름</td>
-				<td align="left">
-					<input name="cName" size="10" value="aaa">
-				</td>
-			</tr>
-			<tr align="center">
-				<td>내 용</td>
-				<td>
-				<input name="comment" size="50"> 
-				<input type="button" value="등록" onclick="cInsert()"></td>
-			</tr>
-		</table>
-	 <input type="hidden" name="flag" value="insert">	
-	 <input type="hidden" name="num" value="<%=num%>">
-	 <input type="hidden" name="cnum">
-    <input type="hidden" name="nowPage" value="<%=nowPage%>">
-    <input type="hidden" name="numPerPage" value="<%=numPerPage%>">
-   <%
-   if(!(keyWord==null||keyWord.equals(""))){
-   %>
-    <input type="hidden" name="keyField" value="<%=keyField%>">
-    <input type="hidden" name="keyWord" value="<%=keyWord%>">
-	<%
-	}
-	%>
-	</form>
-  <!-- 댓글 입력폼 End -->
- <hr/>
- <!-- 댓글 List Start -->
-  <%
-  Vector<QCommentBean> cvlist = cmgr.getQComment(num);
-    		if(!cvlist.isEmpty()){
-  %>
-  <table>	
-	 <%
-		 for(int i=0;i<cvlist.size();i++){
-		 	 			QCommentBean cbean = cvlist.get(i);
-		 	 			int cnum = cbean.getCnum();
-		 	 			String cname = cbean.getName();
-		 	 			String comment = cbean.getComment();
-		 	 			String cregdate = cbean.getRegdate();
-		 %>
-	 	<tr>
-			<td colspan="3" width="600"><b><%=cname%></b></td>
-		</tr>
-		<tr>
-			<td>댓글:<%=comment%></td>
-			<td align="right"><%=cregdate%></td>
-			<td align="center" valign="middle">
-			<input type="button" value="삭제" onclick="cDel('<%=cnum%>')">
-			</td>
-		</tr>
-		<tr>
-			<td colspan="3"><br/></td>
-		</tr>
-	 <%}//---for%>
-	 </table>	
- <hr/>
- <%} %>
- <!-- 댓글 List End -->
- 
- [ <a href="javascript:list()" >리스트</a> | 
- <a href="update.jsp?nowPage=<%=nowPage%>&num=<%=num%>&numPerPage=<%=numPerPage%>" >수 정</a> |
+ [<a href="update.jsp?nowPage=<%=nowPage%>&num=<%=num%>&numPerPage=<%=numPerPage%>" >수 정</a> |
  <a href="reply.jsp?nowPage=<%=nowPage%>&numPerPage=<%=numPerPage%>" >답 변</a> |
  <a href="delete.jsp?nowPage=<%=nowPage%>&num=<%=num%>">삭 제</a> ]<br/>
   </td>

@@ -141,8 +141,8 @@ request.setCharacterEncoding("utf-8");
 					<tr align="center">
 						<td><%=totalRecord-start-i%></td>
 						<td align="left">
-							<%for(int j=0;j<depth;j++){out.println("&nbsp;&nbsp;");} %>
-							<a href="javascript:read('<%=num%>')"><%=subject%></a>
+							<%for(int j=0;j<depth;j++){out.println("&nbsp;&nbsp;");} %> 	
+							<a href="question/read.jsp?<%=num%>" target="popup"onclick="window.open('question/read.jsp?num=<%=num%>','popup','width=600,height=600'); return false;"><%=subject%></a>
 							<%if(filename!=null&&!filename.equals("")){%>
 								<img src="img/icon_file.gif" align="middle">
 							<%}%>
@@ -255,3 +255,5 @@ request.setCharacterEncoding("utf-8");
 		<input type="hidden" name="num">
 	</form>
 </div>
+
+
