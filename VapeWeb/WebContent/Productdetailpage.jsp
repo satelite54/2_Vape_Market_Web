@@ -231,6 +231,7 @@
 							</div>
 			<div id="section2" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
 				<h1 style="color#223a6b;">상품후기</h1>
+				<br><br><br>
 				<%@ include file="/review/review.jsp" %>
 			</div>
 			
