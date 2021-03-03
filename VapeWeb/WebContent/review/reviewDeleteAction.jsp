@@ -29,7 +29,7 @@
 	RNum = Integer.parseInt(request.getParameter("RNum"));
 	System.out.println("RNum = " + RNum);
 	Dao.deleteReview(RNum);
-	response.sendRedirect("review/review.jsp");
+	response.sendRedirect("review.jsp");
 	%>
 
 
