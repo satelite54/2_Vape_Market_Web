@@ -5,8 +5,8 @@
 request.setCharacterEncoding("UTF-8");
 %>
 <jsp:useBean id="user" class="DTO.Users" scope="page" />
-<jsp:setProperty name="user" property="id" />
 <jsp:setProperty name="user" property="name" />
+<jsp:setProperty name="user" property="id" />
 <jsp:setProperty name="user" property="pw" />
 <jsp:setProperty name="user" property="email" />
 <jsp:setProperty name="user" property="birthday" />

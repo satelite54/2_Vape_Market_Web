@@ -607,7 +607,7 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 	}
 
 	public int join(Users user) {
-		String SQL = "INSERT INTO USERS VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String SQL = "INSERT INTO USERS VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, user.getId());
@@ -620,6 +620,7 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 			pstmt.setString(8, user.getBirthday());
 			pstmt.setInt(9, user.getAdmin());
 			pstmt.setString(10, user.getName());
+			pstmt.setString(11, user.getEmail());
 			return pstmt.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -627,7 +628,7 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 		return -1; // 데이터 베이스 오류
 	}
 	public int set_update(Users user, HttpSession session) {
-		String SQL = "UPDATE USERS SET ID = ? ,Pw = ?, Zip = ? ,Street = ?,Building = ? ,Mobile = ?, Authority = ?  ,Birthday =? , Admin = ? where id = ?";
+		String SQL = "UPDATE USERS SET ID = ? ,Pw = ?, Zip = ? ,Street = ?,Building = ? ,Mobile = ?, Authority = ?  ,Birthday =? , Admin = ? , Name = ? , Email = ? where id = ?";
 		try {					
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, user.getId());
@@ -639,7 +640,11 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 			pstmt.setInt(7, user.getAuthority());
 			pstmt.setString(8, user.getBirthday());
 			pstmt.setInt(9, user.getAdmin());
-			pstmt.setString(10,(String)session.getAttribute("id"));
+			pstmt.setInt(10, user.getAdmin());
+			pstmt.setString(11, user.getName());
+			pstmt.setString(12, user.getEmail());
+			pstmt.setString(12,(String)session.getAttribute("id"));
+			
 			return pstmt.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -696,6 +701,8 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 				users.setAuthority(rs.getInt(7));
 				users.setBirthday(rs.getString(8));
 				users.setAdmin(rs.getInt(9));
+				users.setName(rs.getString(10));
+				users.setEmail(rs.getString(11));
 			}return users;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -802,6 +809,7 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 				users.setBirthday(rs.getString(8));
 				users.setAdmin(rs.getInt(9));
 				users.setName(rs.getString(10));
+				users.setEmail(rs.getString(11));
 				AllUsersList.add(users);
 			}return AllUsersList;
 		} catch (Exception e) {
