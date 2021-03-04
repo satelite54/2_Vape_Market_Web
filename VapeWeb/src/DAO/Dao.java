@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javax.print.attribute.standard.PresentationDirection;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
@@ -30,7 +31,7 @@ public class Dao {
 		try {
 			String url = "jdbc:mysql://localhost:3306/vape?useSSL=false&useUnicode=true&characterEncoding=utf8";
 			String user = "root";
-			String password = "1234";
+			String password = "root";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(url, user, password);
 		} catch (Exception e) {
@@ -51,7 +52,7 @@ public class Dao {
 		}
 	}
 
-
+	
 
 
 
@@ -72,7 +73,36 @@ public class Dao {
 		return BNum;
 	}
 
-
+	// 존재하는 보드의 갯수를 가지고오는 메소드
+	
+	public int getBoardCnt() {
+		int boardCnt = 0;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT COUNT(BNum) FROM board WHERE authority = 1";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			if (rs.next()) {
+				boardCnt = rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return boardCnt;
+	}
+	
+	public List<Board> getboardList() {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from board where BNum < ? Authority = 1 order by desc limit 10";
+		
+		
+		
+		
+		return null;
+	}
 
 
 	// 글을 쓰는 메소드
@@ -214,6 +244,7 @@ public class Dao {
 			e.printStackTrace();
 		}return -1;
 	}
+	
 
 
 /*======================================= 아영님 ===============================================*/

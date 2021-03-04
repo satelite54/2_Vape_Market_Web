@@ -52,7 +52,7 @@
 		<nav aria-label="Page navigation example">
 			<ul class="pagination" style="justify-content: center;">
 				<li class="page-item">
-					<a class="page-link" href="communityListAction.do?page=${param.page - 1}" aria-label="Previous">
+					<a id="before" class="page-link" href="communityListAction.do?page=${param.page - 1}" aria-label="Previous">
 						<span aria-hidden="true"> &laquo;</span>
 					</a>
 				</li>
@@ -62,7 +62,7 @@
 					</li>
 				</c:forEach>
 				<li class="page-item">
-					<a class="page-link" href="communityListAction.do?page=${param.page + 1}"aria-label="Next">
+					<a id="next" class="page-link" href="communityListAction.do?page=${param.page + 1}"aria-label="Next">
 						<span aria-hidden="true"> &raquo; </span>
 					</a>
 				</li>
@@ -71,9 +71,18 @@
 		<a href="#" onclick="checkForm1(); return false;"
 			class="btn btn-success float-right">글쓰기</a>
 	</div>
+	<script type="text/javascript">
+
+	</script>
 	<jsp:include page="../sub/footer.jsp" flush="true"/>
+	<script type="text/javascript">
+		if (param.page == 1) {
+// 			Document().getElementById('before').removeAttribute('href');
+		}
+		
+	</script>
 	<script
-		type="text/javascript">function checkForm1() {if (${id==null}) {alert("로그인 해주세요.");return false;}location.href = "communityWrite.do?id=${id}"}</script>
+		type="text/javascript">function checkForm1() {if (${id==null}) {alert("로그인 해주세요.");return false;}location.href = "communityWrite.do?id=${id}"</script>
 	<script src="css/bootstrap.min.css"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
 </body>
