@@ -21,18 +21,16 @@ import Servlet.Location.LocationForward;
 			
 			int nowpage = 0;
 			String strPage = request.getParameter("page");
+			nowpage = Integer.parseInt(strPage);
 			if(strPage == null) {
-
-			} else {
-				nowpage = Integer.parseInt(strPage);
-				if(nowpage < 1)
-					nowpage = 1;
+				nowpage = 1 ;
 			}
+			
 			page.makeBlock(nowpage);
 			page.makeLastPageNum();
 
 			request.setAttribute("page", page);
-			request.setAttribute("BoardList", dao.getList());
+			request.setAttribute("BoardList", dao.getlimitBoardList(nowpage));
 
 			forward.setRedirect(false);
 			forward.setNextPath("community.do");

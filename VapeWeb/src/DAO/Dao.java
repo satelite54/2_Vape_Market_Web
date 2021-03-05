@@ -52,7 +52,37 @@ public class Dao {
 		}
 	}
 
-	
+	public List<Board> getlimitBoardList(int pageNum){
+		ArrayList<Board> getBoardLimit = new ArrayList<Board>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		if (pageNum != 0 && pageNum == 1) {
+			pageNum = getBNum();
+		}else {
+			pageNum = getBNum() - (pageNum * 10)+10;
+		}
+		
+		String sql  = "select * from board where bnum < "+pageNum+" and authority = 1 order by bnum desc limit 10";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				Board board = new Board();
+				board.setBNum(rs.getInt(1));
+				board.setBTitle(rs.getString(2));
+				board.setBContent(rs.getString(3));
+				board.setBDate(rs.getString(4));
+				board.setId(rs.getString(5));
+				board.setAuthority(rs.getInt(6));
+				board.setViews(rs.getInt(7));
+				getBoardLimit.add(board);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return getBoardLimit;
+	}
 
 
 
@@ -92,17 +122,6 @@ public class Dao {
 		return boardCnt;
 	}
 	
-	public List<Board> getboardList() {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String sql = "select * from board where BNum < ? Authority = 1 order by desc limit 10";
-		
-		
-		
-		
-		return null;
-	}
 
 
 	// 글을 쓰는 메소드

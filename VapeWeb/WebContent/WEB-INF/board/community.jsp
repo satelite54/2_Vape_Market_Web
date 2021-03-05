@@ -38,7 +38,7 @@
 				</tr>
 			</thead>
 			<tbody class="border">
-				<c:forEach var="bbs" items="${BoardList}" begin="${requestScope.page.blockStartNum}" end="${requestScope.page.blockLastNum}">
+				<c:forEach var="bbs" items="${BoardList}"><%-- begin="${requestScope.page.blockStartNum}" end="${requestScope.page.blockLastNum}" --%> >
 					<tr>
 						<td>${bbs.BNum}</td>
 						<td>${bbs.BTitle}</td>
