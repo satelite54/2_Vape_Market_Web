@@ -52,7 +52,7 @@
 		<nav aria-label="Page navigation example">
 			<ul class="pagination" style="justify-content: center;">
 				<li class="page-item">
-					<a id="before" class="page-link" href="communityListAction.do?page=${param.page - 1}" aria-label="Previous">
+					<a id="before" class="page-link" href="communityListAction.do?page=${requestScope.page.lastPageNum - 1}" aria-label="Previous">
 						<span aria-hidden="true"> &laquo;</span>
 					</a>
 				</li>
@@ -62,7 +62,7 @@
 					</li>
 				</c:forEach>
 				<li class="page-item">
-					<a id="next" class="page-link" href="communityListAction.do?page=${param.page + 1}"aria-label="Next">
+					<a id="next" class="page-link" href="communityListAction.do?page=${requestScope.page.lastPageNum}"aria-label="Next">
 						<span aria-hidden="true"> &raquo; </span>
 					</a>
 				</li>

@@ -30,6 +30,10 @@ public class Paging {
     // block을 생성
     // 현재 페이지가 속한 block의 시작 번호, 끝 번호를 계산
     public void makeBlock(int curPage){
+    	if(curPage < 1) {
+    		curPage = 1;
+    	}
+    	
         int blockNum = 0;
 
         blockNum = (int)Math.floor((curPage-1)/ pageCount);
