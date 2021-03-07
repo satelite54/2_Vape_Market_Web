@@ -52,7 +52,7 @@
 		<nav aria-label="Page navigation example">
 			<ul class="pagination" style="justify-content: center;">
 				<li class="page-item"><a id="before" class="page-link"
-					href="communityListAction.do?page=${requestScope.page.lastPageNum - 1}"
+					href="communityListAction.do?page=1"
 					aria-label="Previous"> <span aria-hidden="true"> &laquo;</span>
 				</a></li>
 				<c:forEach var="Page" begin="${requestScope.page.blockStartNum}" end="${requestScope.page.lastPageNum}" varStatus="vs">
@@ -61,7 +61,7 @@
 							</li>
 				</c:forEach>
 				<li class="page-item">
-				<a id="next" class="page-link" href="communityListAction.do?page=${requestScope.page.lastPageNum}" aria-label="Next"> <span aria-hidden="true"> &raquo; </span></a>
+				<a id="next" class="page-link" href="communityListAction.do?page=${requestScope.page.lastNum}" aria-label="Next"> <span aria-hidden="true"> &raquo; </span></a>
 				</li>
 			</ul>
 		</nav>
