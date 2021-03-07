@@ -21,11 +21,11 @@
 
 </head>
 <body>
-<jsp:include page="../sub/menu.jsp" flush="true" />
-<jsp:include page="../sub/submenu.jsp" flush="true" />
+	<jsp:include page="../sub/menu.jsp" flush="true" />
+	<jsp:include page="../sub/submenu.jsp" flush="true" />
 
 
-<script type="text/javascript"></script>
+	<script type="text/javascript"></script>
 	<div class="container">
 		<table class="table border-dark rounded">
 			<thead class="thead-dark">
@@ -38,7 +38,7 @@
 				</tr>
 			</thead>
 			<tbody class="border">
-				<c:forEach var="bbs" items="${BoardList}"><%-- begin="${requestScope.page.blockStartNum}" end="${requestScope.page.blockLastNum}" --%> >
+				<c:forEach var="bbs" items="${BoardList}">
 					<tr>
 						<td>${bbs.BNum}</td>
 						<td>${bbs.BTitle}</td>
@@ -51,20 +51,17 @@
 		</table>
 		<nav aria-label="Page navigation example">
 			<ul class="pagination" style="justify-content: center;">
-				<li class="page-item">
-					<a id="before" class="page-link" href="communityListAction.do?page=${requestScope.page.lastPageNum - 1}" aria-label="Previous">
-						<span aria-hidden="true"> &laquo;</span>
-					</a>
-				</li>
-				<c:forEach var="Page" begin="1" end="${requestScope.page.lastPageNum}" varStatus="vs">
+				<li class="page-item"><a id="before" class="page-link"
+					href="communityListAction.do?page=${requestScope.page.lastPageNum - 1}"
+					aria-label="Previous"> <span aria-hidden="true"> &laquo;</span>
+				</a></li>
+				<c:forEach var="Page" begin="${requestScope.page.blockStartNum}" end="${requestScope.page.lastPageNum}" varStatus="vs">
 					<li class="page-item">
-						<a class="page-link" href="communityListAction.do?page=${vs.count}">${vs.count}</a>
-					</li>
+							<a class="page-link" href="communityListAction.do?page=${requestScope.page.blockStartNum + vs.count - 1}">${requestScope.page.blockStartNum + vs.count - 1}</a>
+							</li>
 				</c:forEach>
 				<li class="page-item">
-					<a id="next" class="page-link" href="communityListAction.do?page=${requestScope.page.lastPageNum}"aria-label="Next">
-						<span aria-hidden="true"> &raquo; </span>
-					</a>
+				<a id="next" class="page-link" href="communityListAction.do?page=${requestScope.page.lastPageNum}" aria-label="Next"> <span aria-hidden="true"> &raquo; </span></a>
 				</li>
 			</ul>
 		</nav>
@@ -74,15 +71,14 @@
 	<script type="text/javascript">
 
 	</script>
-	<jsp:include page="../sub/footer.jsp" flush="true"/>
+	<jsp:include page="../sub/footer.jsp" flush="true" />
 	<script type="text/javascript">
 		if (param.page == 1) {
 // 			Document().getElementById('before').removeAttribute('href');
 		}
 		
 	</script>
-	<script
-		type="text/javascript">function checkForm1() {if (${id==null}) {alert("로그인 해주세요.");return false;}location.href = "communityWrite.do?id=${id}"</script>
+	<script type="text/javascript">function checkForm1() {if (${id==null}) {alert("로그인 해주세요.");return false;}location.href = "communityWrite.do?id=${id}"</script>
 	<script src="css/bootstrap.min.css"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
 </body>

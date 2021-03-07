@@ -27,7 +27,7 @@ import Servlet.Location.LocationForward;
 			}
 			
 			page.makeBlock(nowpage);
-			page.makeLastPageNum();
+			page.makeLastPageNum(nowpage);
 
 			request.setAttribute("page", page);
 			request.setAttribute("BoardList", dao.getlimitBoardList(nowpage));

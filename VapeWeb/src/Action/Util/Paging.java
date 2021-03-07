@@ -33,16 +33,21 @@ public class Paging {
     	if(curPage < 1) {
     		curPage = 1;
     	}
-    	
-        int blockNum = 0;
+    	if (curPage < 3) {
+    		blockStartNum = 1;
+		}else {
+			blockStartNum = curPage-2;
+		}
+        
 
-        blockNum = (int)Math.floor((curPage-1)/ pageCount);
-        blockStartNum = (pageCount * blockNum) + 1;
-        blockLastNum = blockStartNum + (pageCount-1);
-    }
+//        blockNum = (int)(Math.floor((curPage-1))/ pageCount);
+//        blockStartNum = (pageCount * blockNum) + 1;
+//        blockLastNum = blockStartNum + (pageCount-1);
+		}
+    
 
     // 총 페이지의 마지막 번호
-    public void makeLastPageNum() {
+    public void makeLastPageNum(int curPage) {
         Dao dao = new Dao();
         int total = dao.getBNum()-1;
 
@@ -52,8 +57,15 @@ public class Paging {
         else {
             lastPageNum = (int)Math.floor(total/pageCount) + 1;
         }
-    }
-
+        
+        if (curPage < 2) {
+	   		lastPageNum = 5;
+	   		
+        }else {
+			lastPageNum = curPage +2;
+		}}
+        	
+/*
     // 검색을 했을 때 총 페이지의 마지막 번호
     public void makeLastPageNum(String kwd) {
     	Dao dao = new Dao();
@@ -66,4 +78,9 @@ public class Paging {
             lastPageNum = (int)Math.floor(total/pageCount) + 1;
         }
     }
+    
+*/
+    
+    
 }
+    
