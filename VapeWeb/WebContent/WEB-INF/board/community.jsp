@@ -41,7 +41,7 @@
 				<c:forEach var="bbs" items="${BoardList}">
 					<tr>
 						<td>${bbs.BNum}</td>
-						<td>${bbs.BTitle}</td>
+						<td><a href="communityenter.do?BNum=${bbs.id}">${bbs.BTitle}</a></td>
 						<td>${bbs.id}</td>
 						<td>${bbs.BDate}</td>
 						<td>${bbs.views}</td>
