@@ -10,40 +10,33 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import DAO.Dao;
+import Servlet.Location.Location;
+import Servlet.Location.LocationForward;
 
 
 
-	@WebServlet("/comminity_Update.at")
-	public class community_Update extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	public class community_Update implements Location{
 
-	HttpSession session;
 
-	public community_Update() {
-		super();
+
+
+
+		@Override
+		public LocationForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+			LocationForward forward = new LocationForward();
+			request.getSession();
+			Dao dao = new Dao();
+			String BNum= request.getParameter("BNum");
+			String BTitle= request.getParameter("BTitle");
+			String BContent = request.getParameter("BContent");
+
+
+			dao.updateBoard(BTitle, BContent,Integer.parseInt(BNum));
+
+			forward.setRedirect(false);
+			forward.setNextPath("communityEnterAction.do");
+			return forward;
+		}
+
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		doPost(request, response);
-
-
-
-
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		Dao DAO = new Dao();
-
-
-		String BTitle = request.getParameter("BTitle");
-		String BContent= request.getParameter("BContent");
-		int BNum = Integer.parseInt(request.getParameter("BNum"));
-
-		DAO.updateBoard(BTitle, BContent, BNum);
-		response.sendRedirect("communityenter.jsp");
-	}
-
-}

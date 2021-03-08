@@ -31,7 +31,7 @@ public class Dao {
 		try {
 			String url = "jdbc:mysql://localhost:3306/vape?useSSL=false&useUnicode=true&characterEncoding=utf8";
 			String user = "root";
-			String password = "root";
+			String password = "1234";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(url, user, password);
 		} catch (Exception e) {
@@ -56,13 +56,13 @@ public class Dao {
 		ArrayList<Board> getBoardLimit = new ArrayList<Board>();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		
+
 		if (pageNum != 0 && pageNum == 1) {
 			pageNum = getBNum();
 		}else {
 			pageNum = getBNum() - (pageNum * 10)+10;
 		}
-		
+
 		String sql  = "select * from board where bnum < "+pageNum+" and authority = 1 order by bnum desc limit 10";
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -104,7 +104,7 @@ public class Dao {
 	}
 
 	// 존재하는 보드의 갯수를 가지고오는 메소드
-	
+
 	public int getBoardCnt() {
 		int boardCnt = 0;
 		Connection conn = null;
@@ -121,7 +121,7 @@ public class Dao {
 		}
 		return boardCnt;
 	}
-	
+
 
 
 	// 글을 쓰는 메소드
@@ -263,7 +263,7 @@ public class Dao {
 			e.printStackTrace();
 		}return -1;
 	}
-	
+
 
 
 /*======================================= 아영님 ===============================================*/

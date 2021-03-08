@@ -17,20 +17,21 @@ import Servlet.Location.LocationForward;
 
 			Dao dao = new Dao();
 			Paging page = new Paging();
-			
-			
+
+
 			int nowpage = 0;
 			String strPage = request.getParameter("page");
 			nowpage = Integer.parseInt(strPage);
 			if(strPage == null) {
 				nowpage = 1 ;
 			}
-			
+
 			page.makeBlock(nowpage);
 			page.makeLastPageNum(nowpage);
 
 			request.setAttribute("page", page);
 			request.setAttribute("BoardList", dao.getlimitBoardList(nowpage));
+			request.setAttribute("pageNum", strPage);
 
 			forward.setRedirect(false);
 			forward.setNextPath("community.do");

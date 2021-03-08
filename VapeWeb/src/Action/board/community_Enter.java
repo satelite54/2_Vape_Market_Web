@@ -2,6 +2,7 @@ package Action.board;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,18 +19,18 @@ public class community_Enter implements Location{
 public LocationForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 	LocationForward forward = new LocationForward();
 	HttpSession session = request.getSession();
-	
+
 	request.setCharacterEncoding("UTF-8");
-		
-	Board board = new Board();	
-		Dao DAO = new Dao();
-		
+
+		Board board = new Board();
+		Dao dao = new Dao();
+
 		int BNum = 0;
-		
+
 			if(request.getParameter("displayEdit") == null) {
-				
+
 			}
-		
+
 			if (request.getParameter("BNum") != null){
 		 	BNum = Integer.parseInt(request.getParameter("BNum"));
 		 	System.out.println(BNum) ;
@@ -42,12 +43,15 @@ public LocationForward execute(HttpServletRequest request, HttpServletResponse r
 			 script.println("<location.href = 'community.do'");
 			 script.println("</script>");
 		 }
-		Users user = new Users();
-		board = DAO.getBoard(BNum);
-		int admin = DAO.getadmin((String) session.getAttribute("id"));
-	
-	
-	
-	return null;
+
+
+		board = dao.getBoard(BNum);
+		request.setAttribute("board", board);
+		session.setAttribute("admin", String.valueOf(dao.getadmin((String) request.getAttribute("id"))));
+
+
+		forward.setRedirect(false);
+		forward.setNextPath("communityEnter.do");
+	return forward;
 }
 }

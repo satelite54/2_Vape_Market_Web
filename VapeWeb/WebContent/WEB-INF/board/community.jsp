@@ -41,7 +41,7 @@
 				<c:forEach var="bbs" items="${BoardList}">
 					<tr>
 						<td>${bbs.BNum}</td>
-						<td><a href="communityenter.do?BNum=${bbs.id}">${bbs.BTitle}</a></td>
+						<td><a href="communityEnterAction.do?pageNum=${pageNum}&BNum=${bbs.BNum}">${bbs.BTitle}</a></td>
 						<td>${bbs.id}</td>
 						<td>${bbs.BDate}</td>
 						<td>${bbs.views}</td>
@@ -56,9 +56,20 @@
 					aria-label="Previous"> <span aria-hidden="true"> &laquo;</span>
 				</a></li>
 				<c:forEach var="Page" begin="${requestScope.page.blockStartNum}" end="${requestScope.page.lastPageNum}" varStatus="vs">
-					<li class="page-item">
+
+					<c:choose>
+						<c:when test="${Page eq pageNum}">
+						<li class="page-item active">
 							<a class="page-link" href="communityListAction.do?page=${requestScope.page.blockStartNum + vs.count - 1}">${requestScope.page.blockStartNum + vs.count - 1}</a>
+						</li>
+						</c:when>
+						<c:otherwise>
+							<li class="page-item">
+								<a class="page-link" href="communityListAction.do?page=${requestScope.page.blockStartNum + vs.count - 1}">${requestScope.page.blockStartNum + vs.count - 1}</a>
 							</li>
+						</c:otherwise>
+
+					</c:choose>
 				</c:forEach>
 				<li class="page-item">
 				<a id="next" class="page-link" href="communityListAction.do?page=${requestScope.page.lastNum}" aria-label="Next"> <span aria-hidden="true"> &raquo; </span></a>
@@ -76,7 +87,7 @@
 		if (param.page == 1) {
 // 			Document().getElementById('before').removeAttribute('href');
 		}
-		
+
 	</script>
 	<script type="text/javascript">function checkForm1() {if (${id==null}) {alert("로그인 해주세요.");return false;}location.href = "communityWrite.do?id=${id}"</script>
 	<script src="css/bootstrap.min.css"></script>

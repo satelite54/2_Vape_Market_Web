@@ -6,10 +6,13 @@ public class Paging {
     private final static int pageCount = 10;
     private int blockStartNum = 0;
     private int blockLastNum = 0;
-    private int lastPageNum = 0;
-    private int lastNum = 0;
+    private int lastPageNum = 0; // 변수 기준으로 4개씩 끊기 위함
+    private int lastNum = 0; // 맨 뒷페이지로 보내주기 위함
 
-    public int getLastNum() {
+	public static int getPagecount() {
+		return pageCount;
+	}
+	public int getLastNum() {
 		return lastNum;
 	}
 	public void setLastNum(int lastNum) {
@@ -45,13 +48,13 @@ public class Paging {
 		}else {
 			blockStartNum = curPage-4;
 		}
-        
+
 
 //        blockNum = (int)(Math.floor((curPage-1))/ pageCount);
 //        blockStartNum = (pageCount * blockNum) + 1;
 //        blockLastNum = blockStartNum + (pageCount-1);
 		}
-    
+
 
     // 총 페이지의 마지막 번호
     public void makeLastPageNum(int curPage) {
@@ -66,16 +69,16 @@ public class Paging {
             lastPageNum = (int)Math.floor(total/pageCount) + 1;
             lastNum = (int)Math.floor(total/pageCount) + 1;
         }
-        
+
         if (curPage <= 4) {
 	   		lastPageNum = 5;
-	   		
+
         }else if (curPage <= lastPageNum-4) {
         	lastPageNum = curPage +4;
-			
+
 		}
         }
-        	
+
 /*
     // 검색을 했을 때 총 페이지의 마지막 번호
     public void makeLastPageNum(String kwd) {
@@ -89,9 +92,9 @@ public class Paging {
             lastPageNum = (int)Math.floor(total/pageCount) + 1;
         }
     }
-    
+
 */
-    
-    
+
+
 }
-    
+
