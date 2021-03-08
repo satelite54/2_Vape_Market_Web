@@ -10,16 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import javax.print.attribute.standard.PresentationDirection;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.websocket.Session;
 
 import DTO.Board;
 import DTO.Orders;
 import DTO.Products;
-import DTO.Users;
 import DTO.Review;
+import DTO.Users;
 
 public class Dao {
 
@@ -31,7 +28,7 @@ public class Dao {
 		try {
 			String url = "jdbc:mysql://localhost:3306/vape?useSSL=false&useUnicode=true&characterEncoding=utf8";
 			String user = "root";
-			String password = "1234";
+			String password = "root";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(url, user, password);
 		} catch (Exception e) {
@@ -58,9 +55,9 @@ public class Dao {
 		ResultSet rs = null;
 
 		if (pageNum != 0 && pageNum == 1) {
-			pageNum = getBNum();
+			pageNum = getBoardCnt();
 		}else {
-			pageNum = getBNum() - (pageNum * 10)+10;
+			pageNum = getBoardCnt() - (pageNum * 10)+10;
 		}
 
 		String sql  = "select * from board where bnum < "+pageNum+" and authority = 1 order by bnum desc limit 10";
@@ -106,26 +103,25 @@ public class Dao {
 	// 존재하는 보드의 갯수를 가지고오는 메소드
 
 	public int getBoardCnt() {
-		int boardCnt = 0;
-		Connection conn = null;
+		int BNum = 0;
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String sql = "SELECT COUNT(BNum) FROM board WHERE authority = 1";
+		String sql = "SELECT MAX(BNum) FROM board WHERE authority = 1";
 		try {
 			pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
 			if (rs.next()) {
-				boardCnt = rs.getInt(1);
+				BNum = rs.getInt(1);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return boardCnt;
+		return BNum;
 	}
 
 
 
 	// 글을 쓰는 메소드
-	public void write(String BTitle, String BContent, String id) {
+	public void boardWrite(String BTitle, String BContent, String id) {
 		PreparedStatement pstmt = null;
 		String sql = "insert into board(BNum, BTitle, BContent, BDate, id, authority, views) values (?,?,?,now(),?,1,0)";
 		try {

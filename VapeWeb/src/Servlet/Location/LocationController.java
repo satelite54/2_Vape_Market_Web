@@ -10,9 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Action.admin.SetAuthorityAction;
+import Action.board.community_Delete;
 import Action.board.community_Enter;
 import Action.board.community_List;
 import Action.board.community_Update;
+import Action.board.community_Write;
 import Action.product.ProductListSortAction;
 import Action.user.DeleteAction;
 import Action.user.LoginAction;
@@ -125,7 +127,7 @@ public class LocationController extends HttpServlet {
 				case "communityWrite.do": {
 					forward= new LocationForward();
 					forward.setRedirect(false);
-					forward.setNextPath(board + "communityWrite.jsp");
+					forward.setNextPath(board + "communitywrite.jsp");
 					break;
 				}
 				case "communityUpdate.do": {
@@ -215,9 +217,16 @@ public class LocationController extends HttpServlet {
 					forward = location.execute(request, response);
 					break;
 				}
-
-				//
-
+				case "communityWriteAction.do": {
+					location = new community_Write();
+					forward = location.execute(request, response);
+					break;
+				}
+				case "communityDeleteAction.do": {
+					location = new community_Delete();
+					forward = location.execute(request, response);
+					break;
+				}
 
 				default:
 					break;

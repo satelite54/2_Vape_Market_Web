@@ -39,7 +39,7 @@
 						<c:choose>
 							<c:when test="${board.id eq sessionScope.id || admin == 1}">
 		 						<a href="communityDeleteAction.do?BNum=${board.BNum}" class="btn btn-danger float-right mt-3" style=margin-right:5px; onclick="return confirm('글을 삭제하시겠습니까?')">삭제</a>
-		 						<a href="communityUpdate.do?BNum=${board.BNum}&BTitle=${board.BTitle}&BContent=${board.BContent}>" class="btn btn-warning float-right mt-3" style="margin-right:5px;">수정</a>
+		 						<a href="communityUpdate.do?BNum=${board.BNum}&BTitle=${board.BTitle}&BContent=${board.BContent}" class="btn btn-warning float-right mt-3" style="margin-right:5px;">수정</a>
 	 						</c:when>
 	 					</c:choose>
 		 	</div>
@@ -56,22 +56,9 @@ function DeleteForm(){
 		return true;
 	}
 }
-
-<script type="text/javascript">
-function checkForm() {
-   if (${id==null}) {
-      alert("로그인 해주세요.");
-      return false;
-   }
-   location.href = "./communitywrite.do?id=${id}"
-}
-
 </script>
 
-
-
-
-	<script src="css/bootstrap.min.css"></script>
-	<script src="js/bootstrap.bundle.min.js"></script>
+<script src="css/bootstrap.min.css"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

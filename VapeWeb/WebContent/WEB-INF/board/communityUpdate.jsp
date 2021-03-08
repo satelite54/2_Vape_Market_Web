@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@ page import="DAO.Dao"%>
 <!DOCTYPE html>
@@ -34,7 +33,5 @@
 
 
 	<jsp:include page="../sub/footer.jsp" flush="true"/>
-	<script src="css/bootstrap.min.css"></script>
-	<script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

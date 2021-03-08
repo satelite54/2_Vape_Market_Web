@@ -7,8 +7,7 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@ page import="java.io.PrintWriter"%>
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>
 <%@ page import="DTO.Board"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -76,21 +75,10 @@
 				</li>
 			</ul>
 		</nav>
-		<a href="#" onclick="checkForm1(); return false;"
-			class="btn btn-success float-right">글쓰기</a>
+		<a href="communityWrite.do"class="btn btn-success float-right">글쓰기</a>
 	</div>
-	<script type="text/javascript">
-
-	</script>
-	<jsp:include page="../sub/footer.jsp" flush="true" />
-	<script type="text/javascript">
-		if (param.page == 1) {
-// 			Document().getElementById('before').removeAttribute('href');
-		}
-
-	</script>
-	<script type="text/javascript">function checkForm1() {if (${id==null}) {alert("로그인 해주세요.");return false;}location.href = "communityWrite.do?id=${id}"</script>
-	<script src="css/bootstrap.min.css"></script>
-	<script src="js/bootstrap.bundle.min.js"></script>
 </body>
+
+	<jsp:include page="../sub/footer.jsp" flush="true" />
+	
 </html>

@@ -25,7 +25,7 @@ public class community_Delete implements Location{
 			DAO.deleteBoard(BNum);
 
 			forward.setRedirect(false);
-			forward.setNextPath("community.do");
+			forward.setNextPath("communityListAction.do?page=1");
 			return forward;
 		}
 
