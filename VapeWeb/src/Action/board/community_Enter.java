@@ -20,12 +20,12 @@ public LocationForward execute(HttpServletRequest request, HttpServletResponse r
 	LocationForward forward = new LocationForward();
 	HttpSession session = request.getSession();
 
-	request.setCharacterEncoding("UTF-8");
+//	request.setCharacterEncoding("UTF-8");
 
 		Board board = new Board();
 		Dao dao = new Dao();
 
-		int BNum = 0;
+		int BNum=0;
 
 			if(request.getParameter("displayEdit") == null) {
 
@@ -47,7 +47,7 @@ public LocationForward execute(HttpServletRequest request, HttpServletResponse r
 
 		board = dao.getBoard(BNum);
 		request.setAttribute("board", board);
-		session.setAttribute("admin", String.valueOf(dao.getadmin((String) request.getAttribute("id"))));
+		session.setAttribute("admin", String.valueOf(dao.getadmin((String) session.getAttribute("id"))));
 
 
 		forward.setRedirect(false);

@@ -59,7 +59,7 @@ public class Paging {
     // 총 페이지의 마지막 번호
     public void makeLastPageNum(int curPage) {
         Dao dao = new Dao();
-        int total = dao.getBNum()-1;
+        int total = dao.getBoardCnt();
 
         if( total % pageCount == 0 ) {
             lastPageNum = (int)Math.floor(total/pageCount);

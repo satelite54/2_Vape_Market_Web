@@ -18,21 +18,23 @@ public class community_Write implements Location {
 			LocationForward forward = new LocationForward();
 			HttpSession session;
 			session = request.getSession();
-			
-			
+
+
 			String id =(String)session.getAttribute("id");
 			String BTitle = request.getParameter("BTitle");
 			String BContent = request.getParameter("BContent");
-			
+
 			Dao dao = new Dao();
-			
+
 			dao.boardWrite(BTitle, BContent, id);
-			int BNum = (dao.getBNum()-1);
-			
+ 			int BNum = (dao.getBNum()-2);
+			String sBNum = Integer.toString(BNum);
+
+
 			forward.setRedirect(false);
-			forward.setNextPath("communityEnter.do?"+BNum);
+			forward.setNextPath("communityEnterAction.do?pageNum=1&BNum="+sBNum);
 			return forward;
 		}
-		
+
 	}
 

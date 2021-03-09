@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta http-equiv="Content-Type" charset="utf-8">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <title>JASET VAPE</title>
 </head>
@@ -13,7 +13,7 @@
 <jsp:include page="../sub/menu.jsp" flush="true" />
 <jsp:include page="../sub/submenu.jsp" flush="true" />
 
-	
+
 	<div class="container mt-3">
 	  <div class="card">
 	  	<div class="card-header" style="background-color: black; color: white;">
@@ -33,6 +33,6 @@
 
 
 
-	<jsp:include page="../sub/footer.jsp" flush="true">
+	<jsp:include page="../sub/footer.jsp" flush="true"/>
 </body>
 </html>

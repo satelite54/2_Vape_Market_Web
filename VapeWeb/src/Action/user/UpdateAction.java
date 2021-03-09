@@ -23,6 +23,7 @@ public class UpdateAction implements Location {
 
 		Dao userDAO = new Dao();
 		Users user = new Users();
+		int isAdmin = userDAO.getadmin(request.getParameter("id"));
 
 		user.setId(request.getParameter("id"));
 		user.setPw(request.getParameter("pw"));
@@ -31,7 +32,7 @@ public class UpdateAction implements Location {
 		user.setStreet(request.getParameter("street"));
 		user.setBuilding(request.getParameter("building"));
 		user.setMobile(request.getParameter("mobile"));
-		user.setAdmin(Integer.parseInt(request.getParameter("admin")));
+		user.setAdmin(isAdmin);
 		user.setAuthority(Integer.parseInt(request.getParameter("authority")));
 		user.setName(request.getParameter("name"));
 		user.setEmail(request.getParameter("email"));

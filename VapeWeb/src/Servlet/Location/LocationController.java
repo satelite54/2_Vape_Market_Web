@@ -127,7 +127,7 @@ public class LocationController extends HttpServlet {
 				case "communityWrite.do": {
 					forward= new LocationForward();
 					forward.setRedirect(false);
-					forward.setNextPath(board + "communitywrite.jsp");
+ 					forward.setNextPath(board + "communitywrite.jsp");
 					break;
 				}
 				case "communityUpdate.do": {
@@ -232,8 +232,8 @@ public class LocationController extends HttpServlet {
 					break;
 			}
 			// 화면이동
-			if(forward != null) {
-				if(forward.isRedirect()) {
+ 			if(forward != null) {
+ 				if(forward.isRedirect()) {
 					response.sendRedirect(forward.getNextPath());
 				} else {
 					RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getNextPath());

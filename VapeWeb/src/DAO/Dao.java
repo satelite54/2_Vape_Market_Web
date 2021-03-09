@@ -28,7 +28,7 @@ public class Dao {
 		try {
 			String url = "jdbc:mysql://localhost:3306/vape?useSSL=false&useUnicode=true&characterEncoding=utf8";
 			String user = "root";
-			String password = "root";
+			String password = "1234";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(url, user, password);
 		} catch (Exception e) {
@@ -135,7 +135,7 @@ public class Dao {
 			System.out.println("쓰기 데이터 전송에러");
 			e.printStackTrace();
 		}
-	}
+ 	}
 
 
 	public void writeReview(String RTitle, String RContent, String id) {
@@ -635,10 +635,11 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 			pstmt.setInt(9, user.getAdmin());
 			pstmt.setString(10, user.getName());
 			pstmt.setString(11, user.getEmail());
-			pstmt.setString(12,(String)session.getAttribute("id"));
+			pstmt.setString(12, user.getId());
 			return pstmt.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();
+			System.out.println("회원수정 액션 에러");
 			return -1; // 데이터 베이스 오류
 		}finally {
 			try {
