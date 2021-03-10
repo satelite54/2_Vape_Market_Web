@@ -9,11 +9,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%@ include file="menu.jsp"%>
-	<%@ include file="submenu.jsp"%>
+	<%@ include file="../sub/menu.jsp"%>
+	<%@ include file="../sub/submenu.jsp"%>
 
 	<div class="container mt-5" style="max-width: 800px;">
-		<form action="PMAction" method="post">
+		<form action="ProductIDUManegerAction.do" method="post">
 			<div class="mb-3 row">
 				<label for="ProductID" class="col-sm-4 col-form-label">상품명</label>
 				<div class="col-sm-6">
@@ -69,7 +69,7 @@
 	</div>
 	<br>
 	
-	<form action="DUser" method="get">
+	<form action="UserManegerDeleteAction.do" method="get">
 		<div class="container mt-5" style="max-width: 800px;">
 			<table class="table table-sm boder-dark">
 				<thead>
@@ -83,7 +83,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="User" items="${AllUsersList}" varStatus="vs">
+					<c:forEach var="User" items="${UserList}" varStatus="vs">
 						<tr>
 							<th scope="row">${vs.count}</th>
 							<td>${User.id}</td>
@@ -100,6 +100,6 @@
 			value="삭제">
 		</div>
 	</form>
-	<%@ include file="footer.jsp"%>
+	<%@ include file="../sub/footer.jsp"%>
 </body>
 </html>

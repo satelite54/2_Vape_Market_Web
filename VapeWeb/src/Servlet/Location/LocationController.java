@@ -9,7 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Action.admin.GetUserListAction;
+import Action.admin.ProductAction;
 import Action.admin.SetAuthorityAction;
+import Action.admin.UserDeleteAction;
 import Action.board.community_Delete;
 import Action.board.community_Enter;
 import Action.board.community_List;
@@ -227,7 +230,21 @@ public class LocationController extends HttpServlet {
 					forward = location.execute(request, response);
 					break;
 				}
-
+				case "ProductManegerAction.do": {
+					location = new GetUserListAction();
+					forward = location.execute(request, response);
+					break;
+				}
+				case "UserManegerDeleteAction.do" : {
+					location = new UserDeleteAction();
+					forward = location.execute(request, response);
+					break;
+				}
+				case "ProductIDUManegerAction.do" : {
+					location = new ProductAction();
+					forward = location.execute(request, response);
+					break;
+				}
 				default:
 					break;
 			}
