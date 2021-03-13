@@ -22,7 +22,6 @@ request.setCharacterEncoding("UTF-8");
 </head>
 
 <body>
-	<%
 	String id = null;
 			String pw = (String)session.getAttribute("pw");
 			String name = (String)session.getAttribute("name");
@@ -61,7 +60,6 @@ request.setCharacterEncoding("UTF-8");
 		}
 
 			}
-	%>
 
 </body>
 

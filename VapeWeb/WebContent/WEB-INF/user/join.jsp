@@ -17,7 +17,7 @@
 <jsp:include page="../sub/submenu.jsp" flush="true"/>
 
 	<div class="container">
-		<form method="post" action="joinAction.jsp">
+		<form method="post" action="userJoinAction.do">
 			<h3 style="text-align: center;">회원가입</h3>
 			<div class="form-group row">
 				<label class="col-sm-2">이름</label>
@@ -35,42 +35,36 @@
 			<div class="form-group row">
 				<label class="col-sm-2">비밀번호</label>
 				<div class="col-sm-4">
-					<input type="password" class="form-control" name="pw"
-						maxlength="20">
+					<input type="password" class="form-control" name="pw" maxlength="20">
 				</div>
 			</div>
 
 			<div class="form-group row">
 				<label class="col-sm-2">주소</label>
 				<div class="col-sm-3">
-					<input name="zip" class="form-control" type="text"
-						id="sample4_postcode" placeholder="우편번호">
+					<input name="zip" class="form-control" type="text" id="sample4_postcode" placeholder="우편번호">
 				</div>
 				<div class="col-sm-2">
-					<input type="button" class="form-control btn btn-dark"
-						onclick="sample4_execDaumPostcode()" value="찾기"><br>
+					<input type="button" class="form-control btn btn-dark" onclick="sample4_execDaumPostcode()" value="찾기">
+					<br>
 				</div>
 			</div>
 
 			<div class="form-group row">
 				<label class="col-sm-2"></label>
 				<div class="col-sm-6">
-					<input type="text" name="street" class="form-control"
-						id="sample4_roadAddress" placeholder="도로명주소"> <input
-						type="text" class="form-control" id="sample4_jibunAddress"
-						placeholder="지번주소" name="street" maxlength="100">
+					<input type="text" name="street" class="form-control" id="sample4_roadAddress" placeholder="도로명주소"> 
+					<input type="text" class="form-control" id="sample4_jibunAddress" placeholder="지번주소" name="street" maxlength="100">
 				</div>
 			</div>
 
 			<div class="form-group row">
 				<label class="col-sm-2"></label>
 				<div class="col-sm-4">
-					<input type="text" name="building" class="form-control"
-						id="sample4_detailAddress" placeholder="상세주소">
+					<input type="text" name="building" class="form-control"	id="sample4_detailAddress" placeholder="상세주소">
 				</div>
 				<div class="col-sm-2">
-					<input type="text" class="form-control" id="sample4_extraAddress"
-						placeholder="읍/면/동">
+					<input type="text" class="form-control" id="sample4_extraAddress" placeholder="읍/면/동">
 				</div>
 			</div>
 			<span id="guide" style="color: #999; display: none"></span>
@@ -174,7 +168,7 @@
 	<jsp:include page="../sub/footer.jsp" flush="true"/>
 	<script type="text/javascript">
 		function sendit() {
-			location.href = "http://localhost/VapeWeb/main.jsp";
+			location.href = "http://localhost/VapeWeb/main.do";
 		}
 	</script>
 

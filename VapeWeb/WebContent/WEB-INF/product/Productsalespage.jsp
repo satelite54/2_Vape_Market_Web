@@ -1,7 +1,6 @@
 <%@page import="java.util.stream.Stream"%>
 <%@page import="java.net.URL"%>
 <%@page import="java.util.Arrays"%>
-<%@page import="etc.*"%>
 <%@page import="DTO.Products"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>

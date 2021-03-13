@@ -20,6 +20,7 @@ import Action.board.community_Update;
 import Action.board.community_Write;
 import Action.product.ProductListSortAction;
 import Action.user.DeleteAction;
+import Action.user.JoinAction;
 import Action.user.LoginAction;
 import Action.user.LogoutAction;
 import Action.user.UpdateAction;
@@ -242,6 +243,11 @@ public class LocationController extends HttpServlet {
 				}
 				case "ProductIDUManegerAction.do" : {
 					location = new ProductAction();
+					forward = location.execute(request, response);
+					break;
+				}
+				case "userJoinAction.do" : {
+					location = new JoinAction();
 					forward = location.execute(request, response);
 					break;
 				}

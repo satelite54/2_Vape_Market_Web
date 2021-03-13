@@ -601,7 +601,7 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 	}
 
 	public int join(Users user) {
-		String SQL = "INSERT INTO USERS VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String SQL = "INSERT INTO USERS VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, user.getId());
@@ -614,6 +614,7 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 			pstmt.setString(8, user.getBirthday());
 			pstmt.setInt(9, user.getAdmin());
 			pstmt.setString(10, user.getName());
+			pstmt.setString(11, user.getEmail());
 			return pstmt.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();
