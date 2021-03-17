@@ -23,7 +23,7 @@ public class NewsCrawl extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		naver Naver = new naver();
+		NewsListAction Naver = new NewsListAction();
 		Naver.newsNaver();
 		request.setAttribute("NewsList", Naver.newsNaver());
 		RequestDispatcher dis= request.getRequestDispatcher("news.jsp");

@@ -65,7 +65,7 @@
          location.href = "login.do";
       } else if (${id != null}) {
     	  f=document.frmforNews;
-    	  f.action = "news.do";
+    	  f.action = "NewsListAction.do";
     	  f.submit();
       }
    }

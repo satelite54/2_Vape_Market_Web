@@ -14,11 +14,10 @@ import DTO.News;
 import Servlet.Location.Location;
 import Servlet.Location.LocationForward;
 
-public class naver implements Location {
+public class NewsListAction implements Location {
 	@Override
 	public LocationForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		LocationForward forward = new LocationForward();
-
 		List<News> newsList = new ArrayList<News>();
 		String search = "전자담배";
 		for (int j = 0; j < 1; j += 1) {
@@ -29,15 +28,17 @@ public class naver implements Location {
 			List<String> title = doc.getElementsByClass("news_tit").eachText();
 			List<String> href = doc.getElementsByClass("news_tit").eachAttr("href");
 			List<String> contents = doc.getElementsByClass("api_txt_lines dsc_txt_wrap").eachText();
+			
 			for (int i = 0; i < title.size(); i++) {
-				News news = new News();
+			    	News news = new News();
 				news.setTitle(title.get(i));
 				news.setHref(href.get(i));
 				news.setContent((String) contents.get(i).subSequence(0, 100));
 				newsList.add(news);
 			}
 		}
-		forward.setNextPath("newsList");
+		request.setAttribute("newsList", newsList);
+		forward.setNextPath("news.do");
 		forward.setRedirect(false);
 		return forward;
 	}

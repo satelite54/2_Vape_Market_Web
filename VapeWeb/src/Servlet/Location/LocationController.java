@@ -19,6 +19,7 @@ import Action.board.community_Enter;
 import Action.board.community_List;
 import Action.board.community_Update;
 import Action.board.community_Write;
+import Action.crawl.NewsListAction;
 import Action.product.ProductListSortAction;
 import Action.user.DeleteAction;
 import Action.user.JoinAction;
@@ -267,6 +268,11 @@ public class LocationController extends HttpServlet {
 					location = new QuestionAnserWriteAction();
 					forward = location.execute(request, response);
 					break;
+				}
+				case "NewsListAction.do" : {
+				    location = new NewsListAction();
+				    forward = location.execute(request, response);
+				    break;
 				}
 				default:
 					break;

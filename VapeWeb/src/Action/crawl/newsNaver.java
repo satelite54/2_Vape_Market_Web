@@ -22,7 +22,7 @@ public class newsNaver extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		naver Naver = new naver();
+		NewsListAction Naver = new NewsListAction();
 		List <News> newsList = Naver.newsNaver();
 		request.setAttribute("newsList", newsList);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("news.jsp");
