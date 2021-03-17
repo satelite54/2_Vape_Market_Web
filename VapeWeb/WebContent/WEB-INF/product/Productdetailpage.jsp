@@ -29,7 +29,6 @@
 	<%@ include file="../sub/submenu.jsp"%>
 
 	<hr class="layout">
-	<div id="wrap">
 		<div id="container">
 			<p id="kvMain"></p>
 
@@ -226,8 +225,6 @@
 					</p>
 				</div>
 
-				<!-- 			<div id="section1" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
-			</div> -->
 				<div id="section1" class="container-fluid"
 					style="padding-top: 70px; padding-bottom: 70px">
 					<p style="text-align: center;">
@@ -238,13 +235,14 @@
 				<div id="section2" class="container-fluid"
 					style="padding-top: 70px; padding-bottom: 70px">
 					<h1 style="">상품후기</h1>
+	                <br><br><br>
 					<%@ include file="../review/review.jsp"%>
 				</div>
 
 				<div id="section3" class="container-fluid center"
 					style="padding-top: 70px; padding-bottom: 70px">
 					<h1 style="">Q&A</h1>
-					<%@ include file="question/list.jsp"%>
+					<%@ include file="../question/list.jsp"%>
 				</div>
 			</body>
 		</div>

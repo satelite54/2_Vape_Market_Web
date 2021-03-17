@@ -15,8 +15,12 @@ import Servlet.Location.LocationForward;
 public class LoginAction implements Location {
 	@Override
 	public LocationForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		LocationForward forward = new LocationForward(); //// 필수!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		LocationForward forward = new LocationForward();
+		response.setContentType("text/html; charset=utf-8");
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
 
+		
 		Users user = new Users();
 		user.setId(request.getParameter("id"));
 		user.setPw(request.getParameter("pw"));
@@ -26,9 +30,7 @@ public class LoginAction implements Location {
 		if	(session.getAttribute("id") != null) {
 			id = (String) session.getAttribute("id");
 		}
-		if	(id != null) {
-			forward.setNextPath("main.do");
-		}
+		
 		Dao userDAO = new Dao();
 		int result = userDAO.login(user.getId(), user.getPw());
 		int admin = userDAO.getadmin(user.getId());
@@ -37,31 +39,32 @@ public class LoginAction implements Location {
 			if(admin == 1)
 				session.setAttribute("admin", String.valueOf(admin));
 			session.setMaxInactiveInterval(30*60);
-			forward.setNextPath("main.do");//// 필수!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			forward.setNextPath("main.do");
+			forward.setRedirect(false);
+			return forward;//// 필수!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		}
 		else if (result == 0) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('비밀번호가 틀립니다.')");
+			script.println("location.href = 'login.do'");
 			script.println("</script>");
-			forward.setNextPath("login.do");//// 필수!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		}
 		else if (result == -1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('존재하지 않는 아이디입니다.')");
+			script.println("location.href = 'login.do'");
 			script.println("</script>");
-			forward.setNextPath("login.do");//// 필수!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		}
 		else if (result == -2) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('데이터베이스 오류가 발생했습니다.')");
+			script.println("location.href = 'login.do'");
 			script.println("</script>");
-			forward.setNextPath("login.do");//// 필수!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		}
-		forward.setRedirect(true);//// 필수!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-		return forward;//// 필수!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		
+		return null;//// 필수!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	}
 }

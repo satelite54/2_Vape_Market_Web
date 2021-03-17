@@ -84,6 +84,7 @@ request.setCharacterEncoding("utf-8");
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+<div class="container">
 <div align="center"><br/>
 	<table align="center">
 		<tr>
@@ -141,8 +142,8 @@ request.setCharacterEncoding("utf-8");
 					<tr align="center">
 						<td><%=totalRecord-start-i%></td>
 						<td align="left">
-							<%for(int j=0;j<depth;j++){out.println("&nbsp;&nbsp;");} %>
-							<a href="javascript:read('<%=num%>')"><%=subject%></a>
+							<%for(int j=0;j<depth;j++){out.println("&nbsp;&nbsp;");} %> 	
+							<a href="question/read.jsp?<%=num%>" target="popup"onclick="window.open('question/read.jsp?num=<%=num%>','popup','width=600,height=600'); return false;"><%=subject%></a>
 							<%if(filename!=null&&!filename.equals("")){%>
 								<img src="img/icon_file.gif" align="middle">
 							<%}%>
@@ -199,7 +200,7 @@ request.setCharacterEncoding("utf-8");
 
 <div id="writeDiv" align="center" style="display: none;">
 <br/><br/>
-<form name="postFrm" method="post" action="<%=request.getContextPath()+"/question/questionPost"%>" enctype="multipart/form-data">
+<form name="postFrm" method="post" action="QuestionAnserWriteAction.do" enctype="multipart/form-data">
 	<table width="600" cellpadding="3" align="center">
 		<tr>
 			<td align=center>
@@ -255,3 +256,5 @@ request.setCharacterEncoding("utf-8");
 		<input type="hidden" name="num">
 	</form>
 </div>
+</div>
+

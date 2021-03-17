@@ -145,7 +145,7 @@ header {
 							%>
 							<li id="anchorBoxId_2379" class="item xans-record-">
 								<div class="box">
-									<a href="Productdetailpage.jsp?Imgname=<%=Imgname%>
+									<a href="productdetailpage.do?Imgname=<%=Imgname%>
 									&DetailImgName=<%=Detailedimagepath%>&Code=<%=Code%>
 									&Manufacturer=<%=Manufacturer%>&Pname=<%=Pname%>
 									&producttype=<%=producttype%>&Price=<%=Price%>" name="anchorBoxName_2379"><img

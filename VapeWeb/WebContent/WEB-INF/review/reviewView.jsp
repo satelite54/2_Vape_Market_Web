@@ -22,12 +22,9 @@
 		int RNum = 0;
 	%>
 		<%
-			if(request.getParameter("displayEdit") == null) {
-				
-			}
 		
 			if (request.getParameter("RNum") != null){
-		 	RNum = Integer.parseInt(request.getParameter("RNum"));
+		 	RNum = Integer.parseInt((String)request.getParameter("RNum"));
 		 	System.out.println(RNum) ;
 		 }
 
@@ -66,7 +63,7 @@
 		 				<%	String strid = (String) session.getAttribute("id");
 		 					if(review.getId().equals(strid) || admin == 1 ) {
 		 				%>
-	 					<a href="reviewDeleteAction.jsp?RNum=<%= review.getRNum() %>" class="btn btn-danger float-right mt-3" style="margin-right:5px; onclick="return confirm('글을 삭제하시겠습니까?');"">삭제</a>
+	 					<a href="reviewDeleteAction.jsp?RNum=<%= review.getRNum() %>" class="btn btn-danger float-right mt-3" style="margin-right:5px;" onclick="return confirm('글을 삭제하시겠습니까?');">삭제</a>
 	 					<a href="reviewUpdate.jsp?RNum=<%=review.getRNum()%>&RTitle=<%=review.getRTitle()%>&RContent=<%=review.getRContent()%>" class="btn btn-warning float-right mt-3" style="margin-right:5px;">수정</a>
 						<%
 							}

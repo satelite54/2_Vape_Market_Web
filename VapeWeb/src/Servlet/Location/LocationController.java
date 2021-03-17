@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +12,8 @@ import Action.admin.GetUserListAction;
 import Action.admin.ProductAction;
 import Action.admin.SetAuthorityAction;
 import Action.admin.UserDeleteAction;
+import Action.board.QuestionAnserWriteAction;
+import Action.board.ReviewWriteAction;
 import Action.board.community_Delete;
 import Action.board.community_Enter;
 import Action.board.community_List;
@@ -170,6 +171,12 @@ public class LocationController extends HttpServlet {
 					forward.setNextPath(user + "thank.jsp");
 					break;
 				}
+				case "reviewView.do": {
+					forward= new LocationForward();
+					forward.setRedirect(false);
+					forward.setNextPath(review + "reviewView.jsp");
+					break;
+				}
 				case "loginAction.do": { // 액션쪽 필수 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 					location = new LoginAction();// 액션쪽 필수 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 					forward = location.execute(request, response);// 액션쪽 필수 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -248,6 +255,16 @@ public class LocationController extends HttpServlet {
 				}
 				case "userJoinAction.do" : {
 					location = new JoinAction();
+					forward = location.execute(request, response);
+					break;
+				}
+				case "reviewWriteAction.do" : {
+					location = new ReviewWriteAction();
+					forward = location.execute(request, response);
+					break;
+				}
+				case "QuestionAnserWriteAction.do" : {
+					location = new QuestionAnserWriteAction();
 					forward = location.execute(request, response);
 					break;
 				}

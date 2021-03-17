@@ -31,7 +31,7 @@ request.setCharacterEncoding("utf-8");
 			<%}
 		}else{//비번을 입력 받기 위한 폼(form) 출력
 %>
-<title>JSP Board</title>
+<title>JASET VAPE Q&A</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
 	function check() {
