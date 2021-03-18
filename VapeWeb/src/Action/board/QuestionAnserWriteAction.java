@@ -20,6 +20,7 @@ public class QuestionAnserWriteAction implements Location{
 		QuestionMgr mgr = new QuestionMgr();
 		mgr.insertQuestion(request);
 		
+		
 		return forward;
 	}
 }

@@ -241,6 +241,12 @@ request.setCharacterEncoding("utf-8");
 			</td>
 		</tr>
 	</table>
+	<input type="hidden" name="pname" value="${param.Pname}">
+	<input type="hidden" name="pname" value="${param.Imgname}">
+	<input type="hidden" name="pname" value="${param.producttype}">
+	<input type="hidden" name="pname" value="${param.Price}">
+	<input type="hidden" name="pname" value="${param.Code}">
+	<input type="hidden" name="pname" value="${param.DetailImgName}">
 </form>
 </div>
 

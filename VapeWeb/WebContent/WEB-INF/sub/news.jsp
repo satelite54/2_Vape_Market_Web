@@ -21,7 +21,7 @@
 				<a href="${news.href}" class="btn btn-primary">본문보기</a>
 			</div>
 		</div>
-	</c:forEach>
+	</c:forEach>  
 </body>
 
 
