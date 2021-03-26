@@ -1,12 +1,14 @@
 package Servlet.Location;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Action.admin.GetUserListAction;
 import Action.admin.ProductAction;
@@ -25,6 +27,7 @@ import Action.user.DeleteAction;
 import Action.user.JoinAction;
 import Action.user.LoginAction;
 import Action.user.LogoutAction;
+import Action.user.ShoppingListAction;
 import Action.user.UpdateAction;
 import Action.user.UserlistAction;
 
@@ -62,6 +65,9 @@ public class LocationController extends HttpServlet {
 		String question = "/WEB-INF/question/";
 		String review = "/WEB-INF/review/";
 
+		HttpSession session = request.getSession();
+		List<String> templist = (List<String>) session.getAttribute("list");
+		
 		try {// 화면전환
 			switch (command) {
 				case "main.do": {
@@ -273,6 +279,11 @@ public class LocationController extends HttpServlet {
 				    location = new NewsListAction();
 				    forward = location.execute(request, response);
 				    break;
+				}
+				case "ShoppingListAction.do" : {
+					location = new ShoppingListAction();
+					forward = location.execute(request, response);
+					break;
 				}
 				default:
 					break;

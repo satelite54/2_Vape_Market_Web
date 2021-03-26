@@ -18,12 +18,13 @@
 <div class="container mt-4" style="max-width: 350px;">
 	<form name="frm" method="post" action="updateAction.do" onsubmit="return PleaseSendUTF8();" accept-charset="UTF-8">
 			<h2 style="text-align: center;">회원수정</h2>
+            <label style="float: left; margin-top: 5px;">이름</label> 
+   			<input type="text" class="form-control" name="name" maxlength="20" readonly value="${userList.name}">
+			
 			<label style="float: left; margin-top: 5px;">아이디</label>
 			<input type="text" class="form-control" name="id" maxlength="20" readonly value="${userList.id}">
 			<label style="float: left; margin-top: 5px;">비밀번호</label>
 			<input type="password" class="form-control" name="pw" maxlength="20">
-			<label style="float: left; margin-top: 5px;">성함</label>
-			<input type="text" class="form-control" name="name" maxlength="20" value="${userList.name}">
 			<label style="float: left; margin-top: 5px;">이메일</label>
 			<input type="email" class="form-control" name="email" maxlength="20" value="${userList.email}">
 			<label style="float: left; margin-top: 5px;">주소</label>

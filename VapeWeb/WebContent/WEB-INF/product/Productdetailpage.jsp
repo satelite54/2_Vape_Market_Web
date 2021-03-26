@@ -140,7 +140,7 @@ String ImgName = request.getParameter("Imgname");
 							<tfoot>
 								<tr>
 									<td colspan="3">
-										<form class="form-inline " action="myshopping.jsp">
+										<form class="form-inline " action="ShoppingListAction.do">
 											<button
 												class="btn bg-dark text-white btn-outline-white my-2 my-sm-0 {background-color: #223a6b !important;}"
 												type="submit" value="Submit">장바구니</button>

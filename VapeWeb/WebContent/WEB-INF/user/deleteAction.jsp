@@ -11,6 +11,9 @@
 <jsp:setProperty name="user" property="mobile" />
 <jsp:setProperty name="user" property="admin" />
 <jsp:setProperty name="user" property="authority" />
+<jsp:setProperty name="user" property="name" />
+<jsp:setProperty name="user" property="email" />
+
 <%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>
 <%@ page import="DAO.Dao"%>
 <%@ page import="DTO.Users" %>

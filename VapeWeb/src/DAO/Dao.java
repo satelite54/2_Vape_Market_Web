@@ -810,6 +810,7 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 				users.setBirthday(rs.getString(8));
 				users.setAdmin(rs.getInt(9));
 				users.setName(rs.getString(10));
+				users.setEmail(rs.getString(11));
 				AllUsersList.add(users);
 			}return AllUsersList;
 		} catch (Exception e) {

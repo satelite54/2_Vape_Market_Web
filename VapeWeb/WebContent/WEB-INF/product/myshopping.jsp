@@ -1,5 +1,6 @@
 <%@page import="DAO.Dao"%>
 <%@page import="DTO.Users"%>
+<%@page import="java.util.List"%>
 <%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib  prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -78,11 +79,11 @@
 					<th>수량</th>
 					<th>가격</th>
 				</tr>
-					<c:forEach var="product" items="${sessionScope.list}" varStatus="vs" begin="1" end="${fn:length(sessionScope.list)/3}">
+					<c:forEach var="product" items="${sessionScope.list}" varStatus="vs" end="${fn:length(sessionScope.list)/3}">
 					<tr>
-						<td>${sessionScope.list[0 + vs.index * 3]}</td>
-						<td>${sessionScope.list[1 + vs.index * 3]}</td>
-						<td>${sessionScope.list[2 + vs.index * 3]}</td>
+						<td>${product[0 + vs.index * 3]}</td>
+						<td>${product[1 + vs.index * 3]}</td>
+						<td>${product[2 + vs.index * 3]}</td>
 					 </tr>
 					</c:forEach>
 			</table>
@@ -90,33 +91,34 @@
 
 		<div id="cart">
 		<hr>
-		<p>Total: ${sessionScope.totalprice}
+		<p>Total: ${fn:length(sessionScope.list)/3}
 		</div>
-          <% 
-          	  Dao dao = new Dao();
-              Users User = dao.getUserList(session);
-          %>
-          <form action="importEx/payProc.jsp" method="post">
-              <input type="hidden" class="form-control" name="name" maxlength="20" readonly value="<%=User.getName()%>">
-              <input type="hidden" class="form-control"  name="email" maxlength="20" style="margin-top: 5px;" value="<%=User.getEmail()%>">
-              <input type="hidden" class="form-control" name="mobile" maxlength="11" value="<%= User.getMobile() %>">
-              <input type="hidden" class="form-control"  name="address" style="margin-top: 5px;" value="<%= User.getBuilding() + " " + User.getStreet()%>"> 
-              <input type="hidden" class="form-control"  name="totalPrice" style="margin-top: 5px;" value="${sessionScope.totalprice}"> 
-              <input type="hidden" class="form-control"  name="zip" style="margin-top: 5px;" value="<%= User.getZip()%>"> 
-              <div class="row">
-                  <table width="100%">
-                      <tr>
-                          <td align="center"><a href="./myshopping.do?id=<%=DeleteNumber%>" class="btn btn-danger text-white">카트 비우기</a></td>
-                          	  
-                          	  <c:if test="${fn:length(sessionScope.list) != 0}">
-                          		 <td align="center"><input type="submit" class="btn btn-dark" value="주문하기"></td>
-                          	  </c:if>
-
-                      </tr>
-                  </table>
-              </div>
-          </form>
-
+        <% 
+        	Dao dao = new Dao();
+            Users User = dao.getUserList(session);
+        %>
+        <form action="importEx/payProc.jsp" method="post">
+            <input type="hidden" class="form-control" name="name" maxlength="20" readonly value="<%=User.getName()%>">
+            <input type="hidden" class="form-control"  name="email" maxlength="20" style="margin-top: 5px;" value="<%=User.getEmail()%>">
+            <input type="hidden" class="form-control" name="mobile" maxlength="11" value="<%= User.getMobile() %>">
+            <input type="hidden" class="form-control"  name="address" style="margin-top: 5px;" value="<%= User.getBuilding() + " " + User.getStreet()%>"> 
+            <input type="hidden" class="form-control"  name="totalPrice" style="margin-top: 5px;" value="<%=totalPrice%>"> 
+            <input type="hidden" class="form-control"  name="zip" style="margin-top: 5px;" value="<%= User.getZip()%>"> 
+            <div class="row">
+                <table width="100%">
+                    <tr>
+                        <td align="center"><a href="./myshopping.jsp?id=<%=Deletenumber%>" class="btn btn-danger text-white">카트 비우기</a></td>
+                        <%
+                            if(list.size() != 0) {
+                        %>
+                            <td align="center"><input type="submit" class="btn btn-dark" value="주문하기"></td>
+                        <%
+                            }
+                        %>
+                    </tr>
+                </table>
+            </div>
+        </form>
 	</div>
 <br>
 <div id="submenu"><p>주문목록</div>
@@ -139,8 +141,8 @@
 
 			<c:forEach var="Order" items="${requestScope.Olist}">
 				<td style="text-align:center">${Order.cartID}</td>
-				<td style="text-align:center">${Order.odate}</td>
-				<td style="text-align:center">${Order.laterDate}</td>
+				<td style="text-align:center">${Order.Odate}%></td>
+				<td style="text-align:center">${Order.LaterDate}</td>
 			</c:forEach>
 			</table>
 

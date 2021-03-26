@@ -13,6 +13,8 @@ request.setCharacterEncoding("UTF-8");
 <jsp:setProperty name="user" property="street" />
 <jsp:setProperty name="user" property="building" />
 <jsp:setProperty name="user" property="mobile" />
+<jsp:setProperty name="user" property="email" />
+
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <html>
 

@@ -54,7 +54,6 @@ public class crawling {
 				e.printStackTrace();
 			}
 			
-			
 			for (int i = 0; i < listTk.size(); i++) { // 상세페이지 출력하는 부분 List나 다른 방법으로 데이터를 담아야함
 				Document doc3 = Jsoup.connect(listTk.get(i)).get();
 				Elements pElements = doc3.select("div.infoArea").select("div.xans-product-detaildesign")

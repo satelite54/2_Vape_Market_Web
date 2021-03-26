@@ -28,6 +28,8 @@ public class ShoppingListAction implements Location {
 		String idx = (String) session.getAttribute("id");
 
 		List<String> list = (List<String>) session.getAttribute("list");
+		
+		
 		if (list == null) {
 
 			list = new ArrayList<String>();
@@ -49,6 +51,8 @@ public class ShoppingListAction implements Location {
 
 		session.setAttribute("list", list);
 
+		
+		
 		String temp = request.getParameter("id");
 
 		if (temp == null) {
@@ -69,7 +73,16 @@ public class ShoppingListAction implements Location {
 
 		ArrayList<Orders> Olist = DAO.getOrderList((String)session.getAttribute("id"));
 		request.setAttribute("Olist", Olist);
-
+		
+		int totalprice = 0;
+		if(list != null) {
+			for(int i = 0; i < list.size()/3; i++) {
+				totalprice = Integer.parseInt(list.get(2 + i * 3));
+			}
+		}
+		
+		session.setAttribute("totalprice", totalprice);
+		
 		forward.setRedirect(false);
 		forward.setNextPath("myshopping.do");
 		return forward;
