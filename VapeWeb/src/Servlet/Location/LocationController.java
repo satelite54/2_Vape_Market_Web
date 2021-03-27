@@ -22,6 +22,8 @@ import Action.board.community_List;
 import Action.board.community_Update;
 import Action.board.community_Write;
 import Action.crawl.NewsListAction;
+import Action.pay.PayProcAction;
+import Action.pay.ThankAction;
 import Action.product.ProductListSortAction;
 import Action.user.DeleteAction;
 import Action.user.JoinAction;
@@ -55,7 +57,7 @@ public class LocationController extends HttpServlet {
 		String command = requsetURI.substring(cmdIdx);
 
 		LocationForward forward = null;
-
+		response.setContentType("text/html;");
 		Location location = null;
 
 		String sub =  "/WEB-INF/sub/";
@@ -64,6 +66,7 @@ public class LocationController extends HttpServlet {
 		String user = "/WEB-INF/user/";
 		String question = "/WEB-INF/question/";
 		String review = "/WEB-INF/review/";
+		String pay = "/WEB-INF/pay/";
 
 		HttpSession session = request.getSession();
 		List<String> templist = (List<String>) session.getAttribute("list");
@@ -184,6 +187,12 @@ public class LocationController extends HttpServlet {
 					forward.setNextPath(review + "reviewView.jsp");
 					break;
 				}
+				case "payProc.do": {
+					forward= new LocationForward();
+					forward.setRedirect(false);
+					forward.setNextPath(pay + "payProc.jsp");
+					break;
+				}
 				case "loginAction.do": { // 액션쪽 필수 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 					location = new LoginAction();// 액션쪽 필수 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 					forward = location.execute(request, response);// 액션쪽 필수 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -282,6 +291,16 @@ public class LocationController extends HttpServlet {
 				}
 				case "ShoppingListAction.do" : {
 					location = new ShoppingListAction();
+					forward = location.execute(request, response);
+					break;
+				}
+				case "PayProcAction.do" : {
+					location = new PayProcAction();
+					forward = location.execute(request, response);
+					break;
+				}
+				case "ThankAction.do" : {
+					location = new ThankAction();
 					forward = location.execute(request, response);
 					break;
 				}

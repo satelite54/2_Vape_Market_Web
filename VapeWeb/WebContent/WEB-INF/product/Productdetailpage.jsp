@@ -140,7 +140,7 @@ String ImgName = request.getParameter("Imgname");
 							<tfoot>
 								<tr>
 									<td colspan="3">
-										<form class="form-inline " action="ShoppingListAction.do">
+										<form name="shoppingForm" class="form-inline " action="ShoppingListAction.do" method="post">
 											<button
 												class="btn bg-dark text-white btn-outline-white my-2 my-sm-0 {background-color: #223a6b !important;}"
 												type="submit" value="Submit">장바구니</button>
@@ -149,6 +149,7 @@ String ImgName = request.getParameter("Imgname");
 												onClick="javascript:this.form.countresult.value++; javascript:transforValue();">
 											<input type=button value="감소"
 												onClick="javascript:this.form.countresult.value--; javascript:transforValue();">
+											<input type="hidden" name="inputtotal" value="${param.Price}">
 										</form> <strong>총 상품금액</strong>(수량) : <span class="total"> <strong><em
 												id="count">${param.Price}</em><em>원</em></strong></span>
 									</td>
@@ -161,6 +162,8 @@ String ImgName = request.getParameter("Imgname");
 							function transforValue() {
  								var productCnt = document.getElementById("productCnt").value;
  								document.getElementById("count").innerHTML = productCnt * document.getElementById("span_product_price_text").innerHTML;
+								var f = document.shoppingForm;
+								f.inputtotal.value = document.getElementById("count").innerHTML
 							}
 						</script>
 

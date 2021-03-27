@@ -38,7 +38,7 @@ public class ShoppingListAction implements Location {
 
 		list.add((String) session.getAttribute("pname"));
 		list.add(request.getParameter("countresult"));
-		list.add((String) session.getAttribute("price"));
+		list.add(request.getParameter("inputtotal"));
 
 		int listSize = list.size();
 
@@ -50,14 +50,13 @@ public class ShoppingListAction implements Location {
 		}
 
 		session.setAttribute("list", list);
-
-		
 		
 		String temp = request.getParameter("id");
 
 		if (temp == null) {
 			temp = "1";
 		}
+		
 		if (temp.equals("0")) {
 			for (int i = list.size() - 1; i >= 0; i--) {
 
@@ -77,7 +76,7 @@ public class ShoppingListAction implements Location {
 		int totalprice = 0;
 		if(list != null) {
 			for(int i = 0; i < list.size()/3; i++) {
-				totalprice = Integer.parseInt(list.get(2 + i * 3));
+				totalprice += Integer.parseInt(list.get(2 + i * 3));
 			}
 		}
 		

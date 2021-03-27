@@ -492,8 +492,6 @@ public int updateReview(String RTitle,String RContent,int RNum) {
 		try {
 			Random random = new Random(2100000000);
 			String n = Integer.toString(random.nextInt());
-			String n1 = String.valueOf(random.nextInt());
-			String n2 = Long.toString(random.nextInt());
 
 			sql = "INSERT INTO ORDERS VALUES (?,?,?)";
 			pstmt = conn.prepareStatement(sql);

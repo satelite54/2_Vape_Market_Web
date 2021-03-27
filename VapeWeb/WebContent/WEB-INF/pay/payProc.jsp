@@ -1,13 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
-<%
-         request.setCharacterEncoding("UTF-8");
-	     String name = (String)request.getParameter("name");
-	     String email = (String)request.getParameter("email");
-	     String phone = (String)request.getParameter("phone");
-	     String address = (String)request.getParameter("address");
-	     String stotalPrice = (String)request.getParameter("totalPrice");
-	     int totalPrice = Integer.parseInt(stotalPrice);
-%>
+<%@ page contentType="text/html; charset=utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,12 +19,12 @@
             pay_method : 'card',
             merchant_uid : 'merchant_' + new Date().getTime(),
             name : '주문명:결제테스트',
-            amount : <%=totalPrice%>,
-            buyer_email : '<%=email%>',
-            buyer_name : '<%=name%>',
-            buyer_tel : '<%=phone%>',
-            buyer_addr : '<%=address%>',
-            buyer_postcode : '123-456',
+            amount : ${requestScope.totalPrice},
+            buyer_email : '${requestScope.email}',
+            buyer_name : '${requestScope.name}',
+            buyer_tel : '${requestScope.phone}',
+            buyer_addr : '${requestScope.address}',
+            buyer_postcode : '${requsetScope.zip}',
             m_redirect_url : 'http://www.naver.com'
         }, function(rsp) {
             if (rsp.success ) {
@@ -61,13 +52,13 @@
                     }
                 });
                 //성공시 이동할 페이지
-               location.href='<%=request.getContextPath()%>/importEx/paymentProc.jsp?apply_num='+rsp.apply_num+'&paid_amount='+rsp.paid_amount;
+               location.href='ThankAction.do?apply_num='+rsp.apply_num+'&paid_amount='+rsp.paid_amount;
             } else {
                 msg = '결제에 실패하였습니다.';
                 msg += '에러내용 : ' + rsp.error_msg;
                 alert(msg);
                 //실패시 이동할 페이지
-                location.href="<%=request.getContextPath()%>/importEx/payForm.jsp";
+                location.href="main.do";
             }
         });
     });

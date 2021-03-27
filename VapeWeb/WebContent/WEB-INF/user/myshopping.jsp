@@ -78,12 +78,14 @@
 					<th>수량</th>
 					<th>가격</th>
 				</tr>
-					<c:forEach var="product" items="${sessionScope.list}" varStatus="vs" begin="1" end="${fn:length(sessionScope.list)/3}">
+					<c:set var="total" value="0"/>
+					<c:forEach var="product" items="${sessionScope.list}" varStatus="vs" begin="0" end="${fn:length(sessionScope.list)/3}">
 					<tr>
 						<td>${sessionScope.list[0 + vs.index * 3]}</td>
 						<td>${sessionScope.list[1 + vs.index * 3]}</td>
 						<td>${sessionScope.list[2 + vs.index * 3]}</td>
 					 </tr>
+					 <c:set var="total" value="${total + sessionScope.list[2 + vs.index * 3]}"/>
 					</c:forEach>
 			</table>
 		</div>
@@ -96,17 +98,17 @@
           	  Dao dao = new Dao();
               Users User = dao.getUserList(session);
           %>
-          <form action="importEx/payProc.jsp" method="post">
+          <form action="PayProcAction.do" method="post">
               <input type="hidden" class="form-control" name="name" maxlength="20" readonly value="<%=User.getName()%>">
               <input type="hidden" class="form-control"  name="email" maxlength="20" style="margin-top: 5px;" value="<%=User.getEmail()%>">
               <input type="hidden" class="form-control" name="mobile" maxlength="11" value="<%= User.getMobile() %>">
               <input type="hidden" class="form-control"  name="address" style="margin-top: 5px;" value="<%= User.getBuilding() + " " + User.getStreet()%>"> 
-              <input type="hidden" class="form-control"  name="totalPrice" style="margin-top: 5px;" value="${sessionScope.totalprice}"> 
-              <input type="hidden" class="form-control"  name="zip" style="margin-top: 5px;" value="<%= User.getZip()%>"> 
+              <input type="hidden" class="form-control"  name="totalPrice" style="margin-top: 5px;" value="${total}">
+              <input type="hidden" class="form-control"  name="zip" style="margin-top: 5px;" value="<%= User.getZip()%>">
               <div class="row">
                   <table width="100%">
                       <tr>
-                          <td align="center"><a href="./myshopping.do?id=<%=DeleteNumber%>" class="btn btn-danger text-white">카트 비우기</a></td>
+                          <td align="center"><a href="./ShoppingListAction.do?id=0" class="btn btn-danger text-white">카트 비우기</a></td>
                           	  
                           	  <c:if test="${fn:length(sessionScope.list) != 0}">
                           		 <td align="center"><input type="submit" class="btn btn-dark" value="주문하기"></td>

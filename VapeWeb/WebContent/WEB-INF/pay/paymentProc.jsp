@@ -9,5 +9,5 @@
 %>
 <script>
 	alert("<%=msg%>");
-	location.href="<%=request.getContextPath()%>/importEx/payForm.jsp";
+	location.href="thankAction.do";
 </script>
