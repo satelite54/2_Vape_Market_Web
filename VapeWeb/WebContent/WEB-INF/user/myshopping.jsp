@@ -79,7 +79,8 @@
 					<th>가격</th>
 				</tr>
 					<c:set var="total" value="0"/>
-					<c:forEach var="product" items="${sessionScope.list}" varStatus="vs" begin="0" end="${fn:length(sessionScope.list)/3}">
+					<c:forEach var="product" items="${sessionScope.list}" varStatus="vs"
+					 begin="0" end="${fn:length(sessionScope.list)/3}">
 					<tr>
 						<td>${sessionScope.list[0 + vs.index * 3]}</td>
 						<td>${sessionScope.list[1 + vs.index * 3]}</td>

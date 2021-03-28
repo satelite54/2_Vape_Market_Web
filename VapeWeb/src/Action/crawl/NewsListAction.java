@@ -20,10 +20,10 @@ public class NewsListAction implements Location {
 		LocationForward forward = new LocationForward();
 		List<News> newsList = new ArrayList<News>();
 		String search = "전자담배";
-		for (int j = 0; j < 1; j += 1) {
+
 			String URL = "https://search.naver.com/search.naver?&where=news&query=" + search
-					+ "&sm=tab_pge&sort=1&photo=0&field=0&reporter_article=&pd=0&ds=&de=&docid=&nso=so:dd,p:all,a:all&mynews=0&start="
-					+ j + "&refresh_start=0";
+					+ "&sm=tab_pge&sort=1&photo=0&field=0&reporter_article=&pd=0&ds=&de=&docid=&nso=so:dd,p:all,a:all&mynews=0&start=0"
+					+ "&refresh_start=0";
 			Document doc = Jsoup.connect(URL).get();
 			List<String> title = doc.getElementsByClass("news_tit").eachText();
 			List<String> href = doc.getElementsByClass("news_tit").eachAttr("href");
@@ -36,7 +36,6 @@ public class NewsListAction implements Location {
 				news.setContent((String) contents.get(i).subSequence(0, 100));
 				newsList.add(news);
 			}
-		}
 		request.setAttribute("newsList", newsList);
 		forward.setNextPath("news.do");
 		forward.setRedirect(false);
