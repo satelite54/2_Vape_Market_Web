@@ -13,7 +13,7 @@
 	<br>
 	<div class="row" style="clear: both;">
 		<div class="col-md-2" style="background-color: #141E3D;">
-			<img src="<c:url value="/img/logo2.jpg"/>" />
+			<img src="img/logo2.jpg"/>
 		</div>
 		<div class="col-md-10" style="background-color: #141E3D;">
 			<p>
