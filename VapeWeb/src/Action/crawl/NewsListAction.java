@@ -33,7 +33,7 @@ public class NewsListAction implements Location {
 			    	News news = new News();
 				news.setTitle(title.get(i));
 				news.setHref(href.get(i));
-				news.setContent((String) contents.get(i).subSequence(0, 100));
+				news.setContent(contents.get(i));
 				newsList.add(news);
 			}
 		request.setAttribute("newsList", newsList);

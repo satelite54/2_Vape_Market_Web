@@ -75,7 +75,9 @@
 				</li>
 			</ul>
 		</nav>
-		<a href="communityWrite.do"class="btn btn-success float-right">글쓰기</a>
+		<c:if test="${not empty sessionScope.id}">		
+			<a href="communityWrite.do"class="btn btn-success float-right">글쓰기</a>
+		</c:if>
 	</div>
 </body>
 

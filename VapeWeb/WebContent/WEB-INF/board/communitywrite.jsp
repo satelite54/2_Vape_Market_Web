@@ -13,6 +13,12 @@
 <jsp:include page="../sub/menu.jsp" flush="true" />
 <jsp:include page="../sub/submenu.jsp" flush="true" />
 
+<c:if test="${empty sessionScope.id}">
+	<script>
+		location.href = "login.do"
+	</script>
+</c:if>
+
 
 	<div class="container mt-3">
 	  <div class="card">
